@@ -43,7 +43,9 @@ class MyRecipe:
         """
         self.info = {
             'name': recipeName,
-            'ingredients': [],
+            'ingredients': { 
+                'default_group': [],
+                },
             'steps': [],
             'notes': [],
             }
@@ -60,11 +62,13 @@ class MyRecipe:
         return self.info['name']
     
     #-------------------------------------------------------------------------
-    def addIngredient(self, ingredientName ):
+    def addIngredient(self, ingredientName, ingredientAmount, ingredientUnits, ingredientGroupName = '__default_group'):
         """
         Add an Ingredient to a recipe. 
         
         TODO( TA, "How to keep track of usage? - Auto by steps?" )
+        ## Maybe with Python Measurements:
+          https://python-measurement.readthedocs.io/en/latest/topics/measures.html
 
         args:
             ingredientName: Name of the Ingredient, needs to match data in C_INGREDIENTS
@@ -85,14 +89,54 @@ class MyRecipe:
                 )
         
         knownListIng = []
-        for alreadyAddedIngredient in self.info['ingredients']:
-            knownListIng.append( alreadyAddedIngredient.getName() )
+        
+        if( ingredientGroupName not in self.info['ingredients'].keys() ):
+            self.info['ingredients'][ingredientGroupName] = []
+            
+        for alreadyAddedIngredient in self.info['ingredients'][ingredientGroupName]:
+            knownListIng.append( alreadyAddedIngredient['ingredients'].getName() )
+            if( alreadyAddedIngredient['ingredients'].getName() == ingredientName):
+                if(alreadyAddedIngredient['units'] == ingredientUnits):
+                    alreadyAddedIngredient['amount'] += ingredientAmount
+                else:
+                    raise Exception("uh - how do we combind %s and %s units?" % (alreadyAddedIngredient['units'], ingredientUnits) )
         
         if ingredientName not in knownListIng:
-            self.info['ingredients'].append( thisIngredientInfo )
+            self.info['ingredients'][ingredientGroupName].append( 
+                {
+                    'ingredients':thisIngredientInfo,
+                    'units': ingredientUnits,
+                    'amount': ingredientAmount
+                    } 
+                )
             thisIngredientInfo.inRecipe( self )
                 
     
+    #-------------------------------------------------------------------------
+    def setPathLoc(self, PathLoc):
+        """
+        Remember where the recipe file lived.
+
+        args:
+            Path of where the recipe file was found
+
+        returns:
+            Nothing
+        """
+        self.info['dir_path'] = PathLoc
+    
+    #-------------------------------------------------------------------------
+    def getPathLoc(self):
+        """
+        Remember where the recipe file lived.
+
+        args:
+            None
+
+        returns:
+            Path from Recipe
+        """
+        return self.info['dir_path']
     #-------------------------------------------------------------------------
     def method(self):
         """

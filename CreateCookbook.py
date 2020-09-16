@@ -19,7 +19,11 @@ import importlib
 
 from pathlib import Path
 
+## Custom objects
 from IngredientList import C_INGREDIENTS
+
+## For rendering options
+from mako.template import Template
 
 #*  Constants ****************************************************************
 
@@ -89,9 +93,11 @@ def mainControl(args):
 
     Find all the recipe files, build a cookbook!
     """
-
+    
+    RecipeList = []
+            
     # Sample of handling errors.
-    if not os.path.isdir(args.input_directory):
+    if not os.path.isdir( args.input_directory ):
         sys.stderr.write("Directory '%s' does not exist.\n" % args.input_directory)
         sys.exit(1)
     else:
@@ -123,18 +129,52 @@ def mainControl(args):
             print('\n')
                 
         ## for dir with info - run them
-        RecipeList = []
         for pythonModuleFile in pythonFiles:
             strModulePath = str(pythonModuleFile).replace('\\','.')[:-3]
             
             result = importlib.import_module(strModulePath)
-            
+
             newRecipe = result.makeRecipe( C_INGREDIENTS )
+            newRecipe.setPathLoc( os.path.dirname( pythonModuleFile.absolute() ) )
             RecipeList.append( newRecipe )
             
-    # Sample of using arguments.
-    if args.verbose:
-        print( args.file )
+    ## Any data clean up - post processing
+    
+    ## Generate outputs
+    
+    # -- HTML
+    genHtmlSample = True
+    if ( genHtmlSample ):
+        
+        for iRecipe in RecipeList:
+            print( "Building HTML file for Recipe:%s" % ( iRecipe.getName() ) )
+            
+            strPathToTemplate = str( Path( os.path.join(
+                            '.', 
+                            'scripts', 
+                            'makoHtmlSingleRecipeTemplate.html.t'
+                        )).absolute() )
+            
+            mytemplate = Template(
+                filename= strPathToTemplate
+            )
+            
+            ## Write to a file ( erasing the old one, if there is one )
+            strFullHtmlPath =  os.path.join( iRecipe.getPathLoc(), iRecipe.getName() + '.html' )
+            if (os.path.exists(strFullHtmlPath) ): os.remove( strFullHtmlPath )
+            fileHtmlOut = open(strFullHtmlPath, 'w+' )
+            fileHtmlOut.write(
+                mytemplate.render(
+                    runDate= " Now is the time.. ",
+                    computerName= 'me',
+                    userName='cookie'
+                    )
+            )
+            fileHtmlOut.close()
+
+    
+    # -- LaTex
+
 
     return True
 

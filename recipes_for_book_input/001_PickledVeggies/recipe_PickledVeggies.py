@@ -23,10 +23,20 @@ def makeRecipe( sharedIngredentList ):
         """
         r = MyRecipe('Dill Pickles or Veggies', sharedIngredentList)
         
-        # Add Ingredients
-        r.addIngredient('Distilled Vinegar White')
-        r.addIngredient('Tap Water')
-        r.addIngredient('Non-Iodized Salt')
+        #  -- Add Ingredients --
+        
+        ## Pickling liquid
+        ingGrpName = "Pickling Liquid"
+        r.addIngredient('Distilled Vinegar White', 1, 'quart', ingGrpName)
+        r.addIngredient('Tap Water', 3, 'quart', ingGrpName)
+        r.addIngredient('Non-Iodized Salt', 1, 'cup', ingGrpName)
+        
+        ## Flavoring
+        ingGrpName = "For inside the jars"
+        r.addIngredient('Garlic', 1, 'clove', ingGrpName)
+        r.addIngredient('Grape Leaves', 1, 'leaf', ingGrpName)
+        r.addIngredient('Celery seed', 0.25, 'teaspoon', ingGrpName)
+        r.addIngredient('Dill', 0.25, 'teaspoon', ingGrpName)
         
         # Add Steps and Notes
         
