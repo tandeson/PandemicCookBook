@@ -21,6 +21,10 @@
 #*****************************************************************************
 
 #*  Imports ******************************************************************
+from PIL import Image
+import base64
+import io
+
 #*  Constants ****************************************************************
 
 
@@ -116,6 +120,28 @@ def makeHtmlStyle():
 #
 #"  h2 {font-size: 1.6em;}\n"
 # 
+
+#=============================================================================
+def makeHtmlEmbedImgFromFile(filePath):
+    """
+    Take in a file path - send back base64 encoded file data for webpage
+    
+    ensure the size is small-ish ( 200, 200 pixels )
+    """
+    size = 300,300    
+    im = Image.open( filePath )
+    im.thumbnail(size, Image.ANTIALIAS)
+    
+    buffer = io.BytesIO()
+    im.save(buffer, format='PNG')
+    buffer.seek(0)
+    
+    data_uri = base64.b64encode(buffer.read()).decode('ascii')
+    
+    html = '<img src="data:image/png;base64,{0}">'.format(data_uri)
+    
+    return html
+    
 #=============================================================================
 def makeHtmlLink(text,targetName):
     '''

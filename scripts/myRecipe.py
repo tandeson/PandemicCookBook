@@ -16,6 +16,14 @@ version = '$Revision$'[1:-2]
 #*  Imports ******************************************************************
 # from {module} import {function}
 import sys
+from os import path
+import pathlib
+
+## HTML Helper functions
+#from scripts.html_helpers import makeHtmlTable
+#from scripts.html_helpers import makeHtmlLink
+#from scripts.html_helpers import makeHtmlLinkTarget
+
 
 #*  Constants ****************************************************************
 # PY-2.10
@@ -43,9 +51,13 @@ class MyRecipe:
         """
         self.info = {
             'name': recipeName,
+            'pictures': {},
+            'primaryPic': None,
+            
             'ingredients': { 
-                'default_group': [],
                 },
+            'ingredientsGrpOrder': [],
+            
             'steps': [],
             'notes': [],
             }
@@ -92,6 +104,7 @@ class MyRecipe:
         
         if( ingredientGroupName not in self.info['ingredients'].keys() ):
             self.info['ingredients'][ingredientGroupName] = []
+            self.info['ingredientsGrpOrder'].append( ingredientGroupName )
             
         for alreadyAddedIngredient in self.info['ingredients'][ingredientGroupName]:
             knownListIng.append( alreadyAddedIngredient['ingredients'].getName() )
@@ -111,7 +124,32 @@ class MyRecipe:
                 )
             thisIngredientInfo.inRecipe( self )
                 
+
+    #-------------------------------------------------------------------------
+    def addPicture(self, pictureName, picLocation):
+        """
+        Add a picture to this recipe
+        """
+        if pictureName  not in self.info['pictures'].keys():
+            self.info['pictures'][pictureName] = {
+                'path': picLocation
+                }
     
+    #-------------------------------------------------------------------------
+    def setPrimaryPicture(self, pictureName):
+        """
+        Sets the primary pictures to use with this recipe
+        """
+        if pictureName in self.info['pictures'].keys():
+            self.info['primaryPic'] = pictureName
+    
+    #-------------------------------------------------------------------------
+    def getPicturePrimary(self):
+        if self.info['primaryPic']:
+            return self.info['pictures'][ self.info['primaryPic'] ]
+        else:
+            return None
+                
     #-------------------------------------------------------------------------
     def setPathLoc(self, PathLoc):
         """
@@ -137,6 +175,34 @@ class MyRecipe:
             Path from Recipe
         """
         return self.info['dir_path']
+    
+    #-------------------------------------------------------------------------
+    def genIngredientsBlock(self, genOutFormat='html'):
+        """
+        One line description of method.
+
+        args:
+            argument descriptions
+
+        returns:
+            description of return objects
+        """
+        strBack = ''
+        
+        if ( genOutFormat == 'html'):
+            for ingredientGrp in self.info['ingredientsGrpOrder']:
+                strGrpTitle  = ingredientGrp
+                strBack += '<h2>' + strGrpTitle + '</h2>'
+                for ingredient in self.info['ingredients'][strGrpTitle]:
+                    strIngred = ingredient['ingredients'].genIngredientBlock( 
+                        ingredient['amount'],
+                        ingredient['units'],
+                        genOutFormat )
+                    strBack +=  strIngred + '<br>'
+        else:
+            raise Exception("Unknown gen format: %s" % (genOutFormat) )
+        return strBack
+    
     #-------------------------------------------------------------------------
     def method(self):
         """

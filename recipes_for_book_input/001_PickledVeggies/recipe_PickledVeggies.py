@@ -22,7 +22,8 @@ def makeRecipe( sharedIngredentList ):
         Make this specific Recipe
         """
         r = MyRecipe('Dill Pickles or Veggies', sharedIngredentList)
-        
+        r.addPicture('picklesDone', '2020_09_09_Pickles_post.jpg')
+        r.setPrimaryPicture( 'picklesDone')
         #  -- Add Ingredients --
         
         ## Pickling liquid
@@ -30,6 +31,7 @@ def makeRecipe( sharedIngredentList ):
         r.addIngredient('Distilled Vinegar White', 1, 'quart', ingGrpName)
         r.addIngredient('Tap Water', 3, 'quart', ingGrpName)
         r.addIngredient('Non-Iodized Salt', 1, 'cup', ingGrpName)
+        
         
         ## Flavoring
         ingGrpName = "For inside the jars"

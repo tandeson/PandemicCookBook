@@ -14,6 +14,8 @@
 
 import os
 import time
+import datetime
+
 import sys
 import importlib
 
@@ -26,6 +28,7 @@ from IngredientList import C_INGREDIENTS
 from mako.template import Template
 
 #*  Constants ****************************************************************
+C_DATETIME_STR_FMT_RULES = "%I:%M%p on %B %d, %Y" 
 
 # Exit codes - "no error" must be 0
 EXIT_OK, EXIT_ERR, EXIT_CTRL_C = range(3)
@@ -165,9 +168,11 @@ def mainControl(args):
             fileHtmlOut = open(strFullHtmlPath, 'w+' )
             fileHtmlOut.write(
                 mytemplate.render(
-                    runDate= " Now is the time.. ",
-                    computerName= 'me',
-                    userName='cookie'
+                    runDate= datetime.datetime.now().strftime(C_DATETIME_STR_FMT_RULES),
+                    genToolName= __file__,
+                    genToolTemplate= strPathToTemplate,
+                    genToolVersion = '0.00 - dev',
+                    inRecipeData = iRecipe,
                     )
             )
             fileHtmlOut.close()

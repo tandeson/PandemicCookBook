@@ -88,6 +88,29 @@ class RecipeIngredient:
         """
         if recipeUsingThisIngredient.getName() not in self.info['recipeList'].keys():
             self.info['recipeList'][recipeUsingThisIngredient.getName() ] = recipeUsingThisIngredient
+    
+    #-------------------------------------------------------------------------
+    def genIngredientBlock(self, inAmount, inUnits, genOutFormat='html'):
+        """
+        One line description of method.
+
+        args:
+            argument descriptions
+
+        returns:
+            description of return objects
+        """
+        strBack = ''
+        
+        if ( genOutFormat == 'html'):
+            strAmnt = "%8.2f" % (inAmount)
+            strLayout = "{0:6} {1:12} {2}"
+            strBack += strLayout.format(strAmnt, inUnits, self.getName()).replace(' ','&nbsp')
+        else:
+            raise Exception(" Unable to generate format: %s" % ( genOutFormat) )
+        
+        return strBack
+
 
 #=============================================================================
 def function():
