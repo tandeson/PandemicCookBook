@@ -26,7 +26,7 @@ C_INGREDIENTS = []
 
 C_INGREDIENTS.append( 
     RecipeIngredient( 
-        'Distilled Vinegar White', 
+        'Distilled White Vinegar', 
         'Generic white vinegar, usually just from the local supermarket.'
         )
     )

@@ -36,6 +36,8 @@ Recipe: ${inRecipeData.getName()}
   font-family: "Courier New", Courier, monospace;
 }
 
+% if inRecipeData.getPicturePrimary() == None:
+
 /* Style the header */
 header {
   background-color: #666;
@@ -44,6 +46,30 @@ header {
   font-size: 35px;
   color: white;
 }
+
+% else:
+
+/* Style the header */
+headerPic {
+  background-color: #666;
+  color: white;
+  width: 300px;
+  float: left;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  width: calc(100% - 300px);
+  float: left;
+  height: 300px;
+}
+
+% endif
 
 nav {
   float: left;
@@ -78,15 +104,21 @@ footer {
 
 <body>
 
-<header>
-  <h2>
+<section>
+
 % if inRecipeData.getPicturePrimary() != None:
+<headerPic>
     ${makeHtmlEmbedImgFromFile( inRecipeData.getPathLoc() + '\\' + inRecipeData.getPicturePrimary()['path']) }
+</headerPic>
 % endif
 
+<header>
+  <h2>
   Recipe: ${inRecipeData.getName()}
   </h2>
 </header>
+
+</section>
 
 <section>
 
@@ -96,8 +128,10 @@ footer {
 <h1> Ingredients </h1>
 ${inRecipeData.genIngredientsBlock()}
 </nav>
+
 <article>
-<h2> Future home of instructions </h2>
+<h2>Directions</h2>
+${inRecipeData.genStepsBlock('html')}
 </article>
 
 </section>

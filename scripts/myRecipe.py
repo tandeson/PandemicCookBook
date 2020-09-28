@@ -16,8 +16,6 @@ version = '$Revision$'[1:-2]
 #*  Imports ******************************************************************
 # from {module} import {function}
 import sys
-from os import path
-import pathlib
 
 ## HTML Helper functions
 #from scripts.html_helpers import makeHtmlTable
@@ -32,6 +30,42 @@ import pathlib
 
 #*  Class and Function Definitions *******************************************
 
+#=============================================================================
+class RecipeStep:
+    """
+    Represents a Step in a recipe
+
+    needs to be pretty .. flexalbe.
+    """
+    #-------------------------------------------------------------------------
+    def __init__(self, directionText, IngredientList=[], childStep = [] ):
+        """
+        Created a new Recipe Step!
+        
+        use the string format rules to place ingredient text. as in "mix in {} to {}".
+         - This allows the ingreident object to control the units and formatting.
+        """
+        self.info = {
+            'inText':directionText,
+            'ingredientList':IngredientList,
+            'childStep': childStep
+        }
+    
+    #-------------------------------------------------------------------------
+    def genStepBlock(self, genOutFormat='html'):
+        """
+        Generate the formatted for the steps section
+        """
+        strStep = '<li>' + self.info['inText'].format( self.info['ingredientList']) + '</li>'
+        
+        if len(self.info['childStep']):
+            strStep += '<ul>'
+            for stepInfo in self.info['childStep']:
+                strStep += stepInfo.genStepBlock( genOutFormat ) 
+            strStep += '</ul>'
+        
+        return strStep
+    
 #=============================================================================
 class MyRecipe:
     """
@@ -59,10 +93,18 @@ class MyRecipe:
             'ingredientsGrpOrder': [],
             
             'steps': [],
-            'notes': [],
+            
+            'todo': [],
             }
         self.ingredients = sharedIngredientList
     
+    #-------------------------------------------------------------------------
+    def addToDoNote(self, strToDoNote):
+        """
+        Keep track of missing information
+        """
+        self.info['todo'].append( strToDoNote)
+        
     #-------------------------------------------------------------------------
     def getName(self):
         """
@@ -201,6 +243,27 @@ class MyRecipe:
                     strBack +=  strIngred + '<br>'
         else:
             raise Exception("Unknown gen format: %s" % (genOutFormat) )
+        return strBack
+    
+
+    #-------------------------------------------------------------------------
+    def addStep(self, nextStep):
+        """
+        Add a step to this recipe - note that steps can be nested, etc. 
+        """
+        self.info['steps'].append( nextStep )
+    
+    #-------------------------------------------------------------------------
+    def genStepsBlock(self, genOutFormat='html'):
+        """
+        """
+        strBack = '<ul>'
+        
+        for step in self.info['steps']:
+            strBack += step.genStepBlock( genOutFormat )
+        
+        strBack += '</ul>'
+        
         return strBack
     
     #-------------------------------------------------------------------------
