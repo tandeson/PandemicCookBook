@@ -85,10 +85,11 @@ article {
 }
 
 /* Clear floats after the columns */
-section:after {
+bodySectionBlock {
   content: "";
-  display: table;
   clear: both;
+  display: flex;
+  flex-direction: row;
 }
 
 footer {
@@ -104,8 +105,6 @@ footer {
 
 <body>
 
-<section>
-
 % if inRecipeData.getPicturePrimary() != None:
 <headerPic>
     ${makeHtmlEmbedImgFromFile( inRecipeData.getPathLoc() + '\\' + inRecipeData.getPicturePrimary()['path']) }
@@ -118,9 +117,7 @@ footer {
   </h2>
 </header>
 
-</section>
-
-<section>
+<bodySectionBlock>
 
 <nav>
 
@@ -134,7 +131,7 @@ ${inRecipeData.genIngredientsBlock()}
 ${inRecipeData.genStepsBlock('html')}
 </article>
 
-</section>
+</bodySectionBlock>
 
 ##============================================================================
 ## Footer

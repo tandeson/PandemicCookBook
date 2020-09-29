@@ -105,8 +105,9 @@ class RecipeIngredient:
         
         if ( genOutFormat == 'html'):
             strAmnt = "%8.2f" % (inAmount)
-            strLayout = "{0:6} {1:12} {2}"
-            strBack += strLayout.format(strAmnt, inUnits, self.getName()).replace(' ','&nbsp')
+            strLayout = "{0:6} {1:8} "
+            strBack += strLayout.format(strAmnt, inUnits).replace(' ','&nbsp')
+            strBack += self.getName()
         else:
             raise Exception(" Unable to generate format: %s" % ( genOutFormat) )
         
