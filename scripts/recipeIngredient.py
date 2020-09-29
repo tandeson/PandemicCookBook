@@ -102,12 +102,19 @@ class RecipeIngredient:
             description of return objects
         """
         strBack = ''
+        strAmnt = "%8.2f" % (inAmount)
         
-        if ( genOutFormat == 'html'):
-            strAmnt = "%8.2f" % (inAmount)
+        if ( genOutFormat == 'html_text'):    
             strLayout = "{0:6} {1:8} "
             strBack += strLayout.format(strAmnt, inUnits).replace(' ','&nbsp')
             strBack += self.getName()
+            
+        elif (genOutFormat == 'html'):
+            strBack = str( '<tr>'
+                '<td> %s </td>' % (strAmnt) +
+                '<td>' + inUnits + '</td>' +
+                '<td>' + self.getName() + '</td>' +
+                '</tr>' )
         else:
             raise Exception(" Unable to generate format: %s" % ( genOutFormat) )
         

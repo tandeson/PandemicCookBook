@@ -39,6 +39,15 @@ C_INGREDIENTS.append(
     )
 
 #=============================================================================
+## oil
+C_INGREDIENTS.append(
+    RecipeIngredient(
+        'Extra Virgin Olive Oil', 
+        ''
+        )
+    )
+
+#=============================================================================
 ## Packaged goods
 
 grapeLeavesPickled = RecipeIngredient(

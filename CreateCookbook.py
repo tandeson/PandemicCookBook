@@ -79,6 +79,11 @@ def parseCommandLine(args = sys.argv[1:]):
         help = "root directory where recipes are stored.")
 
     parser.add_argument(
+        '-o','--output_directory',
+        action='store', default="output",
+        help = "root directory where recipes documents are generated.")
+    
+    parser.add_argument(
         '-v','--verbose',
         action='store_true',
         help = "Verbose progress messages. Progress messages are "
@@ -163,7 +168,15 @@ def mainControl(args):
             )
             
             ## Write to a file ( erasing the old one, if there is one )
-            strFullHtmlPath =  os.path.join( iRecipe.getPathLoc(), iRecipe.getName() + '.html' )
+            outAbsPath = Path( os.path.join( '.', args.output_directory ) )
+            if not os.path.exists( outAbsPath ):
+                os.makedirs( outAbsPath )
+            
+            outHtmlAbsPath = Path( os.path.join( outAbsPath, 'html') )
+            if not os.path.exists( outHtmlAbsPath ):
+                os.makedirs( outHtmlAbsPath )
+                
+            strFullHtmlPath =  os.path.join( outHtmlAbsPath , iRecipe.getName() + '.html' )
             if (os.path.exists(strFullHtmlPath) ): os.remove( strFullHtmlPath )
             fileHtmlOut = open(strFullHtmlPath, 'w+' )
             fileHtmlOut.write(

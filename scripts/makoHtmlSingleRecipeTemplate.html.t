@@ -33,7 +33,11 @@ Recipe: ${inRecipeData.getName()}
 
 * {
   box-sizing: border-box;
-  font-family: "Courier New", Courier, monospace;
+}
+
+th, td {
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 % if inRecipeData.getPicturePrimary() == None:
@@ -66,7 +70,6 @@ header {
   color: white;
   width: calc(100% - 300px);
   float: left;
-  height: 300px;
 }
 
 % endif
@@ -99,12 +102,14 @@ footer {
   color: white;
 }
 
+
 </style>
 
 ##============================================================================
 
 <body>
 
+<bodySectionBlock>
 % if inRecipeData.getPicturePrimary() != None:
 <headerPic>
     ${makeHtmlEmbedImgFromFile( inRecipeData.getPathLoc() + '\\' + inRecipeData.getPicturePrimary()['path']) }
@@ -116,6 +121,7 @@ footer {
   Recipe: ${inRecipeData.getName()}
   </h2>
 </header>
+</bodySectionBlock>
 
 <bodySectionBlock>
 

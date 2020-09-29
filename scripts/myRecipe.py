@@ -235,12 +235,15 @@ class MyRecipe:
             for ingredientGrp in self.info['ingredientsGrpOrder']:
                 strGrpTitle  = ingredientGrp
                 strBack += '<h2>' + strGrpTitle + '</h2>'
+                
+                strBack += '<table>'
                 for ingredient in self.info['ingredients'][strGrpTitle]:
                     strIngred = ingredient['ingredients'].genIngredientBlock( 
                         ingredient['amount'],
                         ingredient['units'],
                         genOutFormat )
-                    strBack +=  strIngred + '<br>'
+                    strBack +=  strIngred
+                strBack += '</table>'
         else:
             raise Exception("Unknown gen format: %s" % (genOutFormat) )
         return strBack
