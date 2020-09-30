@@ -16,6 +16,8 @@ import os
 import time
 import datetime
 
+import git
+
 import sys
 import importlib
 
@@ -149,7 +151,9 @@ def mainControl(args):
     ## Any data clean up - post processing
     
     ## Generate outputs
-    
+    gitRepo = git.Repo(search_parent_directories=True)
+    gitSha = gitRepo.head.object.hexsha
+
     # -- HTML
     genHtmlSample = True
     if ( genHtmlSample ):
@@ -169,14 +173,12 @@ def mainControl(args):
             
             ## Write to a file ( erasing the old one, if there is one )
             outAbsPath = Path( os.path.join( '.', args.output_directory ) )
-            if not os.path.exists( outAbsPath ):
-                os.makedirs( outAbsPath )
+            outAbsPath.mkdir(parents=True, exist_ok=True)
             
             outHtmlAbsPath = Path( os.path.join( outAbsPath, 'html') )
-            if not os.path.exists( outHtmlAbsPath ):
-                os.makedirs( outHtmlAbsPath )
+            outHtmlAbsPath.mkdir(parents=True, exist_ok=True)
                 
-            strFullHtmlPath =  os.path.join( outHtmlAbsPath , iRecipe.getName() + '.html' )
+            strFullHtmlPath =  os.path.join( outHtmlAbsPath , 'Recipe_' + iRecipe.getName() + '.html' )
             if (os.path.exists(strFullHtmlPath) ): os.remove( strFullHtmlPath )
             fileHtmlOut = open(strFullHtmlPath, 'w+' )
             fileHtmlOut.write(
@@ -184,7 +186,7 @@ def mainControl(args):
                     runDate= datetime.datetime.now().strftime(C_DATETIME_STR_FMT_RULES),
                     genToolName= __file__,
                     genToolTemplate= strPathToTemplate,
-                    genToolVersion = '0.00 - dev',
+                    genToolVersion = '0.00 - Git Hash:' + gitSha[:10] + ' Repo Clean:' + str(not gitRepo.is_dirty()),
                     inRecipeData = iRecipe,
                     )
             )
