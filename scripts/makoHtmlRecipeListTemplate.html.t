@@ -12,6 +12,7 @@
 # from {module} import {function}
 from scripts.html_helpers import makeHtmlStyle
 from scripts.html_helpers import makeHtmlEmbedImgFromFile
+from scripts.html_helpers import makeHtmlLink
 
 %>\
 ##  Constants ****************************************************************
@@ -22,15 +23,15 @@ from scripts.html_helpers import makeHtmlEmbedImgFromFile
 <hr color='GRAY' width="100%" size="2">
 ##============================================================================
 <html>
+
 <head>
 <title>
-Recipe: ${inRecipeData.getName()}
+Recipe List
 </title>
 <head>
+
 <style>
 
-% if inRecipeData.getPicturePrimary() == None:
-
 /* Style the header */
 header {
   background-color: #666;
@@ -38,30 +39,8 @@ header {
   text-align: center;
   font-size: 35px;
   color: white;
+  width:100%
 }
-
-% else:
-
-/* Style the header */
-headerPic {
-  background-color: #666;
-  color: white;
-  width: 300px;
-  float: left;
-}
-
-/* Style the header */
-header {
-  background-color: #666;
-  padding: 30px;
-  text-align: center;
-  font-size: 35px;
-  color: white;
-  width: calc(100% - 300px);
-  float: left;
-}
-
-% endif
 
 nav {
   float: left;
@@ -93,34 +72,59 @@ ${makeHtmlStyle()}
 <body>
 
 <bodySectionBlock>
-% if inRecipeData.getPicturePrimary() != None:
-<headerPic>
-    ${makeHtmlEmbedImgFromFile( inRecipeData.getPathLoc() + '\\' + inRecipeData.getPicturePrimary()['path']) }
-</headerPic>
-% endif
 
 <header>
   <h2>
-  Recipe: ${inRecipeData.getName()}
+  Recipe List
   </h2>
 </header>
+
 </bodySectionBlock>
 
 <bodySectionBlock>
 
-<nav>
-
-## Generate the Ingredients List  
-<h1> Ingredients </h1>
-${inRecipeData.genIngredientsBlock()}
-</nav>
-
 <article>
-<h2>Directions</h2>
-${inRecipeData.genStepsBlock('html')}
+
+<h2>Recipes</h2>
+<ul>
+% for recipName in cookbookData['Recipes']['sorted_names']:
+    <li>
+        <a href="${cookbookData['Recipes']['html'][recipName]['file_name']}"> ${recipName} </a>
+    </li>
+    %if len( cookbookData['Recipes']['inputObjects'][recipName].getToDoNotes() ):
+    <ul>
+        %for todoItem in cookbookData['Recipes']['inputObjects'][recipName].getToDoNotes():
+            <li> TODO: ${todoItem} </li>
+        % endfor
+    </ul>
+    %endif
+    
+% endfor
+</ul>
+
+% if len(cookbookData['errors']['dirMissingScripts']):
+<h2> Empty Directories </h2>
+<ul>
+<%
+  strListDir = []
+  for errDir in cookbookData['errors']['dirMissingScripts']:
+      strListDir.append( errDir )
+  
+  strListDir.sort()
+%>\
+
+% for errDir in strListDir:
+<li>${errDir}</li>
+% endfor
+
+</ul>
+% endif
+
 </article>
 
 </bodySectionBlock>
+
+
 
 ##============================================================================
 ## Footer

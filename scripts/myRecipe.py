@@ -99,13 +99,6 @@ class MyRecipe:
         self.ingredients = sharedIngredientList
     
     #-------------------------------------------------------------------------
-    def addToDoNote(self, strToDoNote):
-        """
-        Keep track of missing information
-        """
-        self.info['todo'].append( strToDoNote)
-        
-    #-------------------------------------------------------------------------
     def getName(self):
         """
         Get the Name of this Ingredient
@@ -116,7 +109,7 @@ class MyRecipe:
         return self.info['name']
     
     #-------------------------------------------------------------------------
-    def addIngredient(self, ingredientName, ingredientAmount, ingredientUnits, ingredientGroupName = '__default_group'):
+    def addIngredient(self, ingredientName, ingredientAmount, ingredientUnits, ingredientGroupName = ''):
         """
         Add an Ingredient to a recipe. 
         
@@ -218,6 +211,20 @@ class MyRecipe:
         """
         return self.info['dir_path']
     
+    #-------------------------------------------------------------------------
+    def addToDoNote(self, strToDoNote):
+        """
+        Keep track of missing information
+        """
+        self.info['todo'].append( strToDoNote)
+    
+    #-------------------------------------------------------------------------
+    def getToDoNotes(self):
+        """
+        Keep track of missing information
+        """
+        return self.info['todo']
+        
     #-------------------------------------------------------------------------
     def genIngredientsBlock(self, genOutFormat='html'):
         """

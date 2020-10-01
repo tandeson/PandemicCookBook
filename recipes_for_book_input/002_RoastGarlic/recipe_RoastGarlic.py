@@ -32,9 +32,7 @@ def makeRecipe( sharedIngredentList ):
         ## Garlic
         r.addIngredient('Garlic', 4, 'heads')
         r.addIngredient('Extra Virgin Olive Oil', 2, 'tablespoons')
-        
-        r.addToDoNote( 'Need to clean up group of "__default_group" in HTML out, should just collapse up.')
-        
+           
         # Add Steps and Notes
         steps = [
             'cut off aproximaly the top 1/4 of the garlic head',

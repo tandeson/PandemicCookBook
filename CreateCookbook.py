@@ -104,8 +104,28 @@ def mainControl(args):
     Find all the recipe files, build a cookbook!
     """
     
-    RecipeList = []
+    ## Holder for all data at this is build up..
+    cookbookData = {
+        'Recipes': {
+            # Input objects from files
+            'inputObjects': {},
             
+            # Sorted name list
+            'sorted_names': [],
+            
+            # html helpers
+            'html': {}
+            },
+        
+        'errors': {
+            'dirMissingScripts': [],
+            }
+        }
+
+    ##------------------------------
+    ## Read in data
+    ##------------------------------
+         
     # Sample of handling errors.
     if not os.path.isdir( args.input_directory ):
         sys.stderr.write("Directory '%s' does not exist.\n" % args.input_directory)
@@ -120,7 +140,6 @@ def mainControl(args):
         inDirList = next( os.walk(inDirRootPath) )[1]
         
         ## Check for missing dir info
-        dirMissingScripts = []
         for dirName in inDirList:
             if(args.verbose):
                 print( " Checking: %s" % dirName )
@@ -130,13 +149,13 @@ def mainControl(args):
                     didFind = True
                     break
             if( False == didFind):
-                dirMissingScripts.append(dirName)
-                
-        if (len(dirMissingScripts ) ):
-            print("\n** Warning - the following directories do not have a recipe python script. **")
-            for i in dirMissingScripts:
-                print(i)
-            print('\n')
+                cookbookData['errors']['dirMissingScripts'].append(dirName)
+        if (args.verbose):        
+            if (len(cookbookData['errors']['dirMissingScripts'] ) ):
+                print("\n** Warning - the following directories do not have a recipe python script. **")
+                for i in cookbookData['errors']['dirMissingScripts']:
+                    print(i)
+                print('\n')
                 
         ## for dir with info - run them
         for pythonModuleFile in pythonFiles:
@@ -146,20 +165,39 @@ def mainControl(args):
 
             newRecipe = result.makeRecipe( C_INGREDIENTS )
             newRecipe.setPathLoc( os.path.dirname( pythonModuleFile.absolute() ) )
-            RecipeList.append( newRecipe )
+            cookbookData['Recipes']['inputObjects'][ newRecipe.getName() ] = newRecipe
             
-    ## Any data clean up - post processing
+    ##------------------------------
+    ## Post Process
+    ##------------------------------
     
+    # -- Get out Recipe list - and sort
+    cookbookData['Recipes']['sorted_names'] = list( cookbookData['Recipes']['inputObjects'].keys() )
+    cookbookData['Recipes']['sorted_names'].sort()
+    
+    ##------------------------------
     ## Generate outputs
+    ##------------------------------
+    
+    ## build up Git info
     gitRepo = git.Repo(search_parent_directories=True)
     gitSha = gitRepo.head.object.hexsha
-
-    # -- HTML
+    
+    ## Build up Path info
+    outAbsPath = Path( os.path.join( '.', args.output_directory ) )
+    outAbsPath.mkdir(parents=True, exist_ok=True)
+        
+    # -- HTML        
     genHtmlSample = True
     if ( genHtmlSample ):
         
-        for iRecipe in RecipeList:
-            print( "Building HTML file for Recipe:%s" % ( iRecipe.getName() ) )
+        outHtmlAbsPath = Path( os.path.join( outAbsPath, 'html') )
+        outHtmlAbsPath.mkdir(parents=True, exist_ok=True)
+    
+        ## Write to a file ( erasing the old one, if there is one )
+        for iRecipe in cookbookData['Recipes']['inputObjects'].keys() :
+            if (args.verbose):
+                print( "Building HTML file for Recipe:%s" % ( iRecipe ) )
             
             strPathToTemplate = str( Path( os.path.join(
                             '.', 
@@ -171,14 +209,10 @@ def mainControl(args):
                 filename= strPathToTemplate
             )
             
-            ## Write to a file ( erasing the old one, if there is one )
-            outAbsPath = Path( os.path.join( '.', args.output_directory ) )
-            outAbsPath.mkdir(parents=True, exist_ok=True)
+            strHtmlFileName = 'Recipe_' + iRecipe + '.html'     
+            strFullHtmlPath =  os.path.join( outHtmlAbsPath , strHtmlFileName)
+            cookbookData['Recipes']['html'][iRecipe] ={'file_name': strHtmlFileName}
             
-            outHtmlAbsPath = Path( os.path.join( outAbsPath, 'html') )
-            outHtmlAbsPath.mkdir(parents=True, exist_ok=True)
-                
-            strFullHtmlPath =  os.path.join( outHtmlAbsPath , 'Recipe_' + iRecipe.getName() + '.html' )
             if (os.path.exists(strFullHtmlPath) ): os.remove( strFullHtmlPath )
             fileHtmlOut = open(strFullHtmlPath, 'w+' )
             fileHtmlOut.write(
@@ -187,7 +221,34 @@ def mainControl(args):
                     genToolName= __file__,
                     genToolTemplate= strPathToTemplate,
                     genToolVersion = '0.00 - Git Hash:' + gitSha[:10] + ' Repo Clean:' + str(not gitRepo.is_dirty()),
-                    inRecipeData = iRecipe,
+                    inRecipeData = cookbookData['Recipes']['inputObjects'][iRecipe],
+                    )
+            )
+            fileHtmlOut.close()
+        
+        # Do a Recipe Summary Page
+        doRecipeList = True
+        if ( doRecipeList ):
+            strPathToTemplate = str( Path( os.path.join(
+                            '.', 
+                            'scripts', 
+                            'makoHtmlRecipeListTemplate.html.t'
+                        )).absolute() )
+            
+            mytemplate = Template(
+                filename= strPathToTemplate
+            )
+            
+            strFullHtmlPath =  os.path.join( outHtmlAbsPath , 'Recipe_list' + '.html' )
+            if (os.path.exists(strFullHtmlPath) ): os.remove( strFullHtmlPath )
+            fileHtmlOut = open(strFullHtmlPath, 'w+' )
+            fileHtmlOut.write(
+                mytemplate.render(
+                    runDate= datetime.datetime.now().strftime(C_DATETIME_STR_FMT_RULES),
+                    genToolName= __file__,
+                    genToolTemplate= strPathToTemplate,
+                    genToolVersion = '0.00 - Git Hash:' + gitSha[:10] + ' Repo Clean:' + str(not gitRepo.is_dirty()),
+                    cookbookData = cookbookData,
                     )
             )
             fileHtmlOut.close()
