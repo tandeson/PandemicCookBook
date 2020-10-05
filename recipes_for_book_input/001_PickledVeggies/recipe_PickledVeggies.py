@@ -34,7 +34,7 @@ def makeRecipe( sharedIngredentList ):
         ## Pickling liquid
         ingGrpName = "Pickling Liquid"
         r.addIngredient('Distilled White Vinegar', 1, 'quart', ingGrpName)
-        r.addIngredient('Tap Water', 3, 'quart', ingGrpName)
+        r.addIngredient('Water', 3, 'quart', ingGrpName)
         r.addIngredient('Non-Iodized Salt', 1, 'cup', ingGrpName)
            
         ## Flavoring

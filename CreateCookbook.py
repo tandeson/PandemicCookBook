@@ -126,7 +126,12 @@ def mainControl(args):
             'dirMissingScripts': [],
             }
         }
-
+    
+    ##------------------------------
+    ## For now Verbose always on
+    ##------------------------------
+    args.verbose = True
+    
     ##------------------------------
     ## Read in data
     ##------------------------------

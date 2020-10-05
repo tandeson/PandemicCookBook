@@ -109,6 +109,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Bread Flour',
     grpNameDryGoods,
     ))
+
+C_INGREDIENTS.append( RecipeIngredient(    
+    'Black-Eyed Peas',
+    grpNameDryGoods,
+    ))
      
 C_INGREDIENTS.append( RecipeIngredient(
     'Corn Starch',
@@ -129,7 +134,7 @@ C_INGREDIENTS.append( RecipeIngredient(
 grpNameHousehold = 'Household'
 
 C_INGREDIENTS.append( RecipeIngredient(
-    'Tap Water',
+    'Water',
     grpNameHousehold,
     ))
 
@@ -236,7 +241,27 @@ C_INGREDIENTS.append( RecipeIngredient(
 grpNameSpices = "Spices"
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Asafetida',
+    grpNameSpices, 
+    ))
+    
+C_INGREDIENTS.append( RecipeIngredient(
+    'Cayenne Pepper',
+    grpNameSpices, 
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Coriander Powder',
+    grpNameSpices, 
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Celery seed',
+    grpNameSpices, 
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(   
+   'Cumin Seeds',
     grpNameSpices, 
     ))
     
@@ -247,7 +272,22 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Garam Masala',
+    grpNameSpices,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Lemon Juice',
+    grpNameSpices,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Non-Iodized Salt',
+    grpNameSpices,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Salt',
     grpNameSpices,
     ))
 
@@ -257,9 +297,10 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
-    'Salt',
+    'Turmeric',
     grpNameSpices,
     ))
+
 #=============================================================================
 #=============================================================================
 def main(argv=None):
