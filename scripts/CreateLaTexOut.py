@@ -18,7 +18,8 @@ import sys
 from pathlib import Path
 
 ## For rendering options
-from pylatex import Document, Section, Subsection, Command, Tabular
+from pylatex import Document, Section, Subsection, Command, Tabular, \
+                    simple_page_number, Foot, Head, PageStyle, NewPage
 from pylatex.utils import NoEscape
 
 #*  Constants ****************************************************************
@@ -37,17 +38,35 @@ def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
         
         # Basic document
     doc = Document(
-        documentclass='book')
+        documentclass='book',
+        geometry_options = {
+            'head': '40pt',
+            'margin': '0.5in',
+            'bottom': '0.6in',
+            'includeheadfoot': True
+            }
+         )
+    
+    ## Setup Syle for Recipe pages
+    styleBookContents = PageStyle("styleBookContents")
+    with styleBookContents.create( Head("C")) as docHeader:
+        docHeader.append("test")
+    with styleBookContents.create( Foot("C") ) as docFooter:
+        docFooter.append( simple_page_number() )
+    doc.preamble.append(styleBookContents)
+    doc.change_document_style("styleBookContents")
     
     ## --------------------
     ## Build Up the Recipe Book Structure
     genTitlePage(doc)
     
+    # Add in the Recipes
     for iRecipe in cookbookData['Recipes']['inputObjects'].keys() :
         if (args.verbose):
             print( "Building LaTex Code for Recipe:%s" % ( iRecipe ) )
         genRecipe(doc, iRecipe, cookbookData['Recipes']['inputObjects'][iRecipe] )
-        
+    
+    
     ## --------------------
     ## Do the generation
     if(args.verbose):
@@ -89,6 +108,8 @@ def genRecipe( latexDoc, recipeName, recipeData ):
         
         with latexDoc.create (Subsection( "Directions", numbering=False ) ):
             recipeData.genStepsBlock('LaTex', latexDoc)
+        
+        latexDoc.append( NewPage() )
             
 
 #=============================================================================
