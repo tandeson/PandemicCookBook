@@ -11,6 +11,7 @@ The project is primarly written in Python, using the 3.x language. It uses the f
   * Mako (formating data into output file format)
   * Pillow (for Image to base64)
   * GitPython ( for verion and repo dirty info)
+  * pylatex ( for LaTex compliation )
  * Custom ( Recipe )
   * MyRecipe (Object that holds one recipe)
    * RecipeIngredients (An Ingredient)

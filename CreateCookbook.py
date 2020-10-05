@@ -11,10 +11,8 @@
 #*****************************************************************************
 
 #*  Imports ******************************************************************
-
 import os
 import time
-import datetime
 
 import git
 
@@ -27,7 +25,8 @@ from pathlib import Path
 from IngredientList import C_INGREDIENTS
 
 ## For rendering options
-from mako.template import Template
+from scripts.CreateHtmlOut import genHtmlOut
+from scripts.CreateLaTexOut import genLaTexOut
 
 #*  Constants ****************************************************************
 C_DATETIME_STR_FMT_RULES = "%I:%M%p on %B %d, %Y" 
@@ -114,7 +113,8 @@ def mainControl(args):
             'sorted_names': [],
             
             # html helpers
-            'html': {}
+            'html': {},
+            'html_date_format': C_DATETIME_STR_FMT_RULES,
             },
         
         'ingredients': {
@@ -197,7 +197,6 @@ def mainControl(args):
     
     ## build up Git info
     gitRepo = git.Repo(search_parent_directories=True)
-    gitSha = gitRepo.head.object.hexsha
     
     ## Build up Path info
     outAbsPath = Path( os.path.join( '.', args.output_directory ) )
@@ -206,101 +205,12 @@ def mainControl(args):
     # -- HTML        
     genHtmlSample = True
     if ( genHtmlSample ):
+        genHtmlOut(args, outAbsPath, cookbookData, gitRepo)
         
-        outHtmlAbsPath = Path( os.path.join( outAbsPath, 'html') )
-        outHtmlAbsPath.mkdir(parents=True, exist_ok=True)
-    
-        #---------------------------------------------------------------
-        # Do a Recipe Page for each Recipes
-        for iRecipe in cookbookData['Recipes']['inputObjects'].keys() :
-            if (args.verbose):
-                print( "Building HTML file for Recipe:%s" % ( iRecipe ) )
-            
-            strPathToTemplate = str( Path( os.path.join(
-                            '.', 
-                            'scripts', 
-                            'makoHtmlSingleRecipeTemplate.html.t'
-                        )).absolute() )
-            
-            mytemplate = Template(
-                filename= strPathToTemplate
-            )
-            
-            strHtmlFileName = 'Recipe_' + iRecipe + '.html'     
-            strFullHtmlPath =  os.path.join( outHtmlAbsPath , strHtmlFileName)
-            cookbookData['Recipes']['html'][iRecipe] ={'file_name': strHtmlFileName}
-            
-            if (os.path.exists(strFullHtmlPath) ): os.remove( strFullHtmlPath )
-            fileHtmlOut = open(strFullHtmlPath, 'w+' )
-            fileHtmlOut.write(
-                mytemplate.render(
-                    runDate= datetime.datetime.now().strftime(C_DATETIME_STR_FMT_RULES),
-                    genToolName= __file__,
-                    genToolTemplate= strPathToTemplate,
-                    genToolVersion = '0.00 - Git Hash:' + gitSha[:10] + ' Repo Clean:' + str(not gitRepo.is_dirty()),
-                    inRecipeData = cookbookData['Recipes']['inputObjects'][iRecipe],
-                    )
-            )
-            fileHtmlOut.close()
-        
-        #---------------------------------------------------------------
-        # Do a Recipe Summary Page
-        doRecipeList = True
-        if ( doRecipeList ):
-            strPathToTemplate = str( Path( os.path.join(
-                            '.', 
-                            'scripts', 
-                            'makoHtmlRecipeListTemplate.html.t'
-                        )).absolute() )
-            
-            mytemplate = Template(
-                filename= strPathToTemplate
-            )
-            
-            strFullHtmlPath =  os.path.join( outHtmlAbsPath , 'Recipe_list' + '.html' )
-            if (os.path.exists(strFullHtmlPath) ): os.remove( strFullHtmlPath )
-            fileHtmlOut = open(strFullHtmlPath, 'w+' )
-            fileHtmlOut.write(
-                mytemplate.render(
-                    runDate= datetime.datetime.now().strftime(C_DATETIME_STR_FMT_RULES),
-                    genToolName= __file__,
-                    genToolTemplate= strPathToTemplate,
-                    genToolVersion = '0.00 - Git Hash:' + gitSha[:10] + ' Repo Clean:' + str(not gitRepo.is_dirty()),
-                    cookbookData = cookbookData,
-                    )
-            )
-            fileHtmlOut.close()
-        
-        #---------------------------------------------------------------
-        # Do a Ingredients Page
-        doIngredientsPage = True
-        if (doIngredientsPage ):
-            strPathToTemplate = str( Path( os.path.join(
-                            '.', 
-                            'scripts', 
-                            'makoHtmlIngredientsListTemplate.html.t'
-                        )).absolute() )
-            
-            mytemplate = Template(
-                filename= strPathToTemplate
-            )
-            
-            strFullHtmlPath =  os.path.join( outHtmlAbsPath , 'Ingredients_list' + '.html' )
-            if (os.path.exists(strFullHtmlPath) ): os.remove( strFullHtmlPath )
-            fileHtmlOut = open(strFullHtmlPath, 'w+' )
-            fileHtmlOut.write(
-                mytemplate.render(
-                    runDate= datetime.datetime.now().strftime(C_DATETIME_STR_FMT_RULES),
-                    genToolName= __file__,
-                    genToolTemplate= strPathToTemplate,
-                    genToolVersion = '0.00 - Git Hash:' + gitSha[:10] + ' Repo Clean:' + str(not gitRepo.is_dirty()),
-                    cookbookData = cookbookData,
-                    )
-            )
-            fileHtmlOut.close()
-
-    
     # -- LaTex
+    getLaTexOut = True
+    if ( getLaTexOut ):
+        genLaTexOut(args, outAbsPath, cookbookData, gitRepo)
 
 
     return True
