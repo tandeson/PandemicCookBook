@@ -117,6 +117,11 @@ def mainControl(args):
             'html': {}
             },
         
+        'ingredients': {
+            ## Tree of {'name': 'xxxx', html: 'xxxx',  'children': {} }
+            'text_tree': {}
+            
+            },
         'errors': {
             'dirMissingScripts': [],
             }
@@ -175,6 +180,12 @@ def mainControl(args):
     cookbookData['Recipes']['sorted_names'] = list( cookbookData['Recipes']['inputObjects'].keys() )
     cookbookData['Recipes']['sorted_names'].sort()
     
+    # -- Get out Ingredients
+    for inGred in C_INGREDIENTS:
+        if inGred.getGroup() not in cookbookData['ingredients']['text_tree'].keys():
+            cookbookData['ingredients']['text_tree'][inGred.getGroup()] = {}
+        cookbookData['ingredients']['text_tree'][inGred.getGroup()][inGred.getName()] = {'ingred': inGred, 'children': {} }
+    
     ##------------------------------
     ## Generate outputs
     ##------------------------------
@@ -194,7 +205,8 @@ def mainControl(args):
         outHtmlAbsPath = Path( os.path.join( outAbsPath, 'html') )
         outHtmlAbsPath.mkdir(parents=True, exist_ok=True)
     
-        ## Write to a file ( erasing the old one, if there is one )
+        #---------------------------------------------------------------
+        # Do a Recipe Page for each Recipes
         for iRecipe in cookbookData['Recipes']['inputObjects'].keys() :
             if (args.verbose):
                 print( "Building HTML file for Recipe:%s" % ( iRecipe ) )
@@ -226,6 +238,7 @@ def mainControl(args):
             )
             fileHtmlOut.close()
         
+        #---------------------------------------------------------------
         # Do a Recipe Summary Page
         doRecipeList = True
         if ( doRecipeList ):
@@ -240,6 +253,34 @@ def mainControl(args):
             )
             
             strFullHtmlPath =  os.path.join( outHtmlAbsPath , 'Recipe_list' + '.html' )
+            if (os.path.exists(strFullHtmlPath) ): os.remove( strFullHtmlPath )
+            fileHtmlOut = open(strFullHtmlPath, 'w+' )
+            fileHtmlOut.write(
+                mytemplate.render(
+                    runDate= datetime.datetime.now().strftime(C_DATETIME_STR_FMT_RULES),
+                    genToolName= __file__,
+                    genToolTemplate= strPathToTemplate,
+                    genToolVersion = '0.00 - Git Hash:' + gitSha[:10] + ' Repo Clean:' + str(not gitRepo.is_dirty()),
+                    cookbookData = cookbookData,
+                    )
+            )
+            fileHtmlOut.close()
+        
+        #---------------------------------------------------------------
+        # Do a Ingredients Page
+        doIngredientsPage = True
+        if (doIngredientsPage ):
+            strPathToTemplate = str( Path( os.path.join(
+                            '.', 
+                            'scripts', 
+                            'makoHtmlIngredientsListTemplate.html.t'
+                        )).absolute() )
+            
+            mytemplate = Template(
+                filename= strPathToTemplate
+            )
+            
+            strFullHtmlPath =  os.path.join( outHtmlAbsPath , 'Ingredients_list' + '.html' )
             if (os.path.exists(strFullHtmlPath) ): os.remove( strFullHtmlPath )
             fileHtmlOut = open(strFullHtmlPath, 'w+' )
             fileHtmlOut.write(

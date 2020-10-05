@@ -94,13 +94,13 @@ def makeHtmlStyle():
 # 
 
 #=============================================================================
-def makeHtmlEmbedImgFromFile(filePath):
+def makeHtmlEmbedImgFromFile(filePath, imageSize = (300,300)):
     """
     Take in a file path - send back base64 encoded file data for webpage
     
     ensure the size is small-ish ( 200, 200 pixels )
     """
-    size = 300,300    
+    size = imageSize   
     im = Image.open( filePath )
     im.thumbnail(size, Image.ANTIALIAS)
     

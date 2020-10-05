@@ -37,7 +37,7 @@ class RecipeIngredient:
     """
 
     #-------------------------------------------------------------------------
-    def __init__(self, IngredientName, IngredientDescrption=''):
+    def __init__(self, IngredientName, IngredientGroup, IngredientDescrption=''):
         """
         Create RecipeIngredient object.
 
@@ -45,9 +45,10 @@ class RecipeIngredient:
         """
         self.info = {
             'name': IngredientName,
+            'group': IngredientGroup,
             'description': IngredientDescrption,
             'exampleVendors': [],
-            'recipeList': {}
+            'recipeList': {},
             }
 
     #-------------------------------------------------------------------------
@@ -59,6 +60,16 @@ class RecipeIngredient:
             string - name
         """
         return self.info['name']
+    
+    #-------------------------------------------------------------------------
+    def getGroup(self):
+        """
+        Get the Name of this Ingredient
+
+        returns:
+            string - name
+        """
+        return self.info['group']
     
     #-------------------------------------------------------------------------
     def addVendor(self, vendorName, vendorDescription, vendorLink):

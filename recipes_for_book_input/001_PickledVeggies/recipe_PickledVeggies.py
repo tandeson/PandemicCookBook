@@ -24,6 +24,7 @@ def makeRecipe( sharedIngredentList ):
         """
         r = MyRecipe('Dill Pickles or Veggies', sharedIngredentList)
         r.addPicture('picklesDone', '2020_09_09_Pickles_post.jpg')
+        r.addPicture('picklesReady', '2020_09_09_Pickles_pre.jpg')
         r.setPrimaryPicture( 'picklesDone')
         
         #  -- Add Ingredients --
@@ -44,11 +45,11 @@ def makeRecipe( sharedIngredentList ):
         r.addIngredient('Dill', 0.25, 'teaspoon', ingGrpName)
         
         # Add Steps and Notes
-        r.addToDoNote( "Need to tell how much this makes - I think we got 3 1/2 jars?")
+        vegJarFullStep = RecipeStep("Load jar with vegetable")
+        vegJarFullStep.attachPic( r.getPicturePath('picklesReady'))
         
         stepPrepVeg = RecipeStep(
             "Prepare the Veggies for Pickling",
-            [],
             [   
                 RecipeStep(
                     "Clean the pickling cucumbers and " 
@@ -57,15 +58,13 @@ def makeRecipe( sharedIngredentList ):
                     "Snap the beans"),
                 RecipeStep(
                     "Layer 1 clove garlic, 1 grape leaf, 1/4 tsp dill, 1/4 tsp celery seed."),
-                RecipeStep(
-                    "Load jar with vegetable"),    
+                vegJarFullStep,    
                 ]
             )
         r.addStep( stepPrepVeg )
         
         stepPrepLiquid = RecipeStep(
             "Prepare the liquid",
-            [],
             [
                 RecipeStep(
                     "NOTE: Adjust this radio to match the number of Jars you plan to pickle."),
@@ -79,7 +78,6 @@ def makeRecipe( sharedIngredentList ):
         r.addStep( stepPrepLiquid )
         stepPrepJar = RecipeStep(
             "In each Jar",
-            [],
             [
                 RecipeStep(
                     "Pour boiling pickling liquid to the top of the jar"),
@@ -91,7 +89,6 @@ def makeRecipe( sharedIngredentList ):
         
         stepSecure = RecipeStep(
             "Prep for storage",
-            [],
             [
                 RecipeStep(
                     "Fill a large pot with water, and bring to "

@@ -16,12 +16,13 @@ version = '$Revision$'[1:-2]
 #*  Imports ******************************************************************
 # from {module} import {function}
 import sys
+import os
 
 ## HTML Helper functions
 #from scripts.html_helpers import makeHtmlTable
 #from scripts.html_helpers import makeHtmlLink
 #from scripts.html_helpers import makeHtmlLinkTarget
-
+from scripts.html_helpers import makeHtmlEmbedImgFromFile
 
 #*  Constants ****************************************************************
 # PY-2.10
@@ -38,7 +39,7 @@ class RecipeStep:
     needs to be pretty .. flexalbe.
     """
     #-------------------------------------------------------------------------
-    def __init__(self, directionText, IngredientList=[], childStep = [] ):
+    def __init__(self, directionText, childStep = [] ):
         """
         Created a new Recipe Step!
         
@@ -47,21 +48,32 @@ class RecipeStep:
         """
         self.info = {
             'inText':directionText,
-            'ingredientList':IngredientList,
-            'childStep': childStep
+            'childStep': childStep,
+            'inPic': []
         }
     
     #-------------------------------------------------------------------------
-    def genStepBlock(self, genOutFormat='html'):
+    def attachPic(self, picPath):
+        """
+        Attached a picture to this step
+        """
+        self.info['inPic'].append( picPath )
+        
+    #-------------------------------------------------------------------------
+    def genStepBlock(self, genOutFormat='html', baseFilePath=''):
         """
         Generate the formatted for the steps section
         """
-        strStep = '<li>' + self.info['inText'].format( self.info['ingredientList']) + '</li>'
+        strPics = ''
+        for picLoc in self.info['inPic']:
+                strPics += makeHtmlEmbedImgFromFile( os.path.join( baseFilePath, picLoc ) )
+        strStep = '<li>' + self.info['inText'] + '<br>' + strPics + '</li>'
+        
         
         if len(self.info['childStep']):
             strStep += '<ul>'
             for stepInfo in self.info['childStep']:
-                strStep += stepInfo.genStepBlock( genOutFormat ) 
+                strStep += stepInfo.genStepBlock( genOutFormat, baseFilePath )
             strStep += '</ul>'
         
         return strStep
@@ -93,6 +105,8 @@ class MyRecipe:
             'ingredientsGrpOrder': [],
             
             'steps': [],
+            
+            'notes': [],
             
             'todo': [],
             }
@@ -169,6 +183,10 @@ class MyRecipe:
             self.info['pictures'][pictureName] = {
                 'path': picLocation
                 }
+    
+    #-------------------------------------------------------------------------
+    def getPicturePath(self, picName):
+        return self.info['pictures'][picName]['path']
     
     #-------------------------------------------------------------------------
     def setPrimaryPicture(self, pictureName):
@@ -257,12 +275,33 @@ class MyRecipe:
     
 
     #-------------------------------------------------------------------------
-    def addStep(self, nextStep):
+    def addStep(self, nextStep, picNameList=[]):
         """
         Add a step to this recipe - note that steps can be nested, etc. 
         """
+        
+        for picName in picNameList:
+            if picName in self.info['pictures'].keys():
+                nextStep.attachPic( self.info['pictures'][picName]['path']  )
+        
         self.info['steps'].append( nextStep )
     
+    #-------------------------------------------------------------------------
+    def addNote(self, strNote, picNameList=[]):
+        """
+        Add a note to this recipe - note that steps can be nested, etc. 
+        """
+        noteData = {
+            'txt': strNote, 
+            'picPathList': [] 
+        }
+        
+        for picName in picNameList:
+            if picName in self.info['pictures'].keys():
+                noteData['picPathList'].append( self.info['pictures'][picName]['path'] )
+        
+        self.info['notes'].append( noteData )
+        
     #-------------------------------------------------------------------------
     def genStepsBlock(self, genOutFormat='html'):
         """
@@ -270,8 +309,7 @@ class MyRecipe:
         strBack = '<ul>'
         
         for step in self.info['steps']:
-            strBack += step.genStepBlock( genOutFormat )
-        
+            strBack += step.genStepBlock( genOutFormat, self.getPathLoc() )
         strBack += '</ul>'
         
         return strBack
