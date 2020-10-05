@@ -24,6 +24,8 @@ import os
 #from scripts.html_helpers import makeHtmlLinkTarget
 from scripts.html_helpers import makeHtmlEmbedImgFromFile
 
+from pylatex import Itemize
+
 #*  Constants ****************************************************************
 # PY-2.10
 # DELIMITER = ","
@@ -60,21 +62,36 @@ class RecipeStep:
         self.info['inPic'].append( picPath )
         
     #-------------------------------------------------------------------------
-    def genStepBlock(self, genOutFormat='html', baseFilePath=''):
+    def genStepBlock(self, genOutFormat='html', baseFilePath='', LaTexDoc=None):
         """
         Generate the formatted for the steps section
         """
-        strPics = ''
-        for picLoc in self.info['inPic']:
-                strPics += makeHtmlEmbedImgFromFile( os.path.join( baseFilePath, picLoc ) )
-        strStep = '<li>' + self.info['inText'] + '<br>' + strPics + '</li>'
+        strStep = None
         
+        if('html' == genOutFormat):
+            strPics = ''
+            for picLoc in self.info['inPic']:
+                    strPics += makeHtmlEmbedImgFromFile( os.path.join( baseFilePath, picLoc ) )
+            strStep = '<li>' + self.info['inText'] + '<br>' + strPics + '</li>'
+            
+            
+            if len(self.info['childStep']):
+                strStep += '<ul>'
+                for stepInfo in self.info['childStep']:
+                    strStep += stepInfo.genStepBlock( genOutFormat, baseFilePath )
+                strStep += '</ul>'
         
-        if len(self.info['childStep']):
-            strStep += '<ul>'
-            for stepInfo in self.info['childStep']:
-                strStep += stepInfo.genStepBlock( genOutFormat, baseFilePath )
-            strStep += '</ul>'
+        elif('LaTex' == genOutFormat):
+            ### TODO - Need to handle images
+            
+            with LaTexDoc.create(Itemize()) as itemize:
+                itemize.add_item( self.info['inText'] )
+                
+                for stepInfo in self.info['childStep']:
+                    stepInfo.genStepBlock( genOutFormat, baseFilePath,LaTexDoc=LaTexDoc )
+            
+        else:
+            raise Exception("Unknown format %s" % (genOutFormat) )
         
         return strStep
     
@@ -254,24 +271,38 @@ class MyRecipe:
         returns:
             description of return objects
         """
-        strBack = ''
+        dataBack = None
         
         if ( genOutFormat == 'html'):
+            dataBack = ''
             for ingredientGrp in self.info['ingredientsGrpOrder']:
-                strGrpTitle  = ingredientGrp
-                strBack += '<h2>' + strGrpTitle + '</h2>'
+                dataBack += '<h2>' + ingredientGrp + '</h2>'
                 
-                strBack += '<table>'
-                for ingredient in self.info['ingredients'][strGrpTitle]:
+                dataBack += '<table>'
+                for ingredient in self.info['ingredients'][ingredientGrp]:
                     strIngred = ingredient['ingredients'].genIngredientBlock( 
                         ingredient['amount'],
                         ingredient['units'],
                         genOutFormat )
-                    strBack +=  strIngred
-                strBack += '</table>'
+                    dataBack +=  strIngred
+                dataBack += '</table>'
+        
+        elif (genOutFormat == 'LaTex'):
+            dataBack = []
+            for ingredientGrp in self.info['ingredientsGrpOrder']:
+                for ingredient in self.info['ingredients'][ingredientGrp]:
+                    dataBack.append( 
+                        (
+                            ingredient['amount'],
+                            ingredient['units'],
+                            ingredient['ingredients'].getName() 
+                        ) 
+                    )
+        
         else:
             raise Exception("Unknown gen format: %s" % (genOutFormat) )
-        return strBack
+        
+        return dataBack
     
 
     #-------------------------------------------------------------------------
@@ -303,16 +334,22 @@ class MyRecipe:
         self.info['notes'].append( noteData )
         
     #-------------------------------------------------------------------------
-    def genStepsBlock(self, genOutFormat='html'):
+    def genStepsBlock(self, genOutFormat='html', LaTexDoc=None):
         """
         """
-        strBack = '<ul>'
+        dataBack =None
+        if( 'html' == genOutFormat):
+            dataBack = '<ul>'
+            for step in self.info['steps']:
+                dataBack += step.genStepBlock( genOutFormat, self.getPathLoc() )
+            dataBack += '</ul>'
+        elif( 'LaTex' == genOutFormat):
+            for step in self.info['steps']:
+                step.genStepBlock( genOutFormat, self.getPathLoc(), LaTexDoc=LaTexDoc )
+        else:
+            raise Exception(" Unknown Generation format %s" % genOutFormat)
         
-        for step in self.info['steps']:
-            strBack += step.genStepBlock( genOutFormat, self.getPathLoc() )
-        strBack += '</ul>'
-        
-        return strBack
+        return dataBack
     
     #-------------------------------------------------------------------------
     def method(self):

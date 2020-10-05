@@ -32,6 +32,12 @@ def genHtmlOut(args, outAbsPath, cookbookData, gitRepo):
     # -- HTML        
     outHtmlAbsPath = Path( os.path.join( outAbsPath, 'html') )
     outHtmlAbsPath.mkdir(parents=True, exist_ok=True)
+    
+    inTemplateFilePath = Path( os.path.join(
+                        '.', 
+                        'templates', 
+                        'html'
+                        ))
 
     #---------------------------------------------------------------
     # Do a Recipe Page for each Recipes
@@ -40,8 +46,7 @@ def genHtmlOut(args, outAbsPath, cookbookData, gitRepo):
             print( "Building HTML file for Recipe:%s" % ( iRecipe ) )
         
         strPathToTemplate = str( Path( os.path.join(
-                        '.', 
-                        'templates', 'html', 
+                        inTemplateFilePath, 
                         'makoHtmlSingleRecipeTemplate.html.t'
                     )).absolute() )
         
@@ -71,8 +76,7 @@ def genHtmlOut(args, outAbsPath, cookbookData, gitRepo):
     doRecipeList = True
     if ( doRecipeList ):
         strPathToTemplate = str( Path( os.path.join(
-                        '.', 
-                        'templates', 'html',
+                        inTemplateFilePath,
                         'makoHtmlRecipeListTemplate.html.t'
                     )).absolute() )
         
@@ -99,8 +103,7 @@ def genHtmlOut(args, outAbsPath, cookbookData, gitRepo):
     doIngredientsPage = True
     if (doIngredientsPage ):
         strPathToTemplate = str( Path( os.path.join(
-                        '.', 
-                        'templates', 'html',
+                        inTemplateFilePath,
                         'makoHtmlIngredientsListTemplate.html.t'
                     )).absolute() )
         

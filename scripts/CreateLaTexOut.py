@@ -11,121 +11,85 @@
 #*****************************************************************************
 
 #*  Imports ******************************************************************
-
 import os
-import datetime
 
 import sys
 
 from pathlib import Path
 
 ## For rendering options
-from mako.template import Template
+from pylatex import Document, Section, Subsection, Command, Tabular
+from pylatex.utils import NoEscape
 
 #*  Constants ****************************************************************
 
 #=============================================================================
 def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
-    pass
-
-#=============================================================================
-def oldHtmToBeRemoveButForRef(args, outAbsPath, cookbookData, gitRepo):
-    gitSha = gitRepo.head.object.hexsha
+    
+    outLaTexAbsPath = Path( os.path.join( outAbsPath, 'LaTex') )
+    outLaTexAbsPath.mkdir(parents=True, exist_ok=True)
+    
+    outLaTexAbsFilePath =  Path( os.path.join( outLaTexAbsPath, 'Pandemic_Cookbook') )
+    
+    ### --- Build LaTex Document / Object  ---
+    if(args.verbose):
+        print("formatting data for LaTex file: %s" % (outLaTexAbsFilePath) )
         
-    # -- HTML        
-    outHtmlAbsPath = Path( os.path.join( outAbsPath, 'html') )
-    outHtmlAbsPath.mkdir(parents=True, exist_ok=True)
-
-    #---------------------------------------------------------------
-    # Do a Recipe Page for each Recipes
+        # Basic document
+    doc = Document(
+        documentclass='book')
+    
+    ## --------------------
+    ## Build Up the Recipe Book Structure
+    genTitlePage(doc)
+    
     for iRecipe in cookbookData['Recipes']['inputObjects'].keys() :
         if (args.verbose):
-            print( "Building HTML file for Recipe:%s" % ( iRecipe ) )
+            print( "Building LaTex Code for Recipe:%s" % ( iRecipe ) )
+        genRecipe(doc, iRecipe, cookbookData['Recipes']['inputObjects'][iRecipe] )
         
-        strPathToTemplate = str( Path( os.path.join(
-                        '.', 
-                        'scripts', 
-                        'makoHtmlSingleRecipeTemplate.html.t'
-                    )).absolute() )
-        
-        mytemplate = Template(
-            filename= strPathToTemplate
-        )
-        
-        strHtmlFileName = 'Recipe_' + iRecipe + '.html'     
-        strFullHtmlPath =  os.path.join( outHtmlAbsPath , strHtmlFileName)
-        cookbookData['Recipes']['html'][iRecipe] ={'file_name': strHtmlFileName}
-        
-        if (os.path.exists(strFullHtmlPath) ): os.remove( strFullHtmlPath )
-        fileHtmlOut = open(strFullHtmlPath, 'w+' )
-        fileHtmlOut.write(
-            mytemplate.render(
-                runDate= datetime.datetime.now().strftime( cookbookData['Recipes']['html_date_format']),
-                genToolName= __file__,
-                genToolTemplate= strPathToTemplate,
-                genToolVersion = '0.00 - Git Hash:' + gitSha[:10] + ' Repo Clean:' + str(not gitRepo.is_dirty()),
-                inRecipeData = cookbookData['Recipes']['inputObjects'][iRecipe],
-                )
-        )
-        fileHtmlOut.close()
+    ## --------------------
+    ## Do the generation
+    if(args.verbose):
+        print("Building LaTex file: %s" % (outLaTexAbsFilePath) )
     
-    #---------------------------------------------------------------
-    # Do a Recipe Summary Page
-    doRecipeList = True
-    if ( doRecipeList ):
-        strPathToTemplate = str( Path( os.path.join(
-                        '.', 
-                        'scripts', 
-                        'makoHtmlRecipeListTemplate.html.t'
-                    )).absolute() )
-        
-        mytemplate = Template(
-            filename= strPathToTemplate
-        )
-        
-        strFullHtmlPath =  os.path.join( outHtmlAbsPath , 'Recipe_list' + '.html' )
-        if (os.path.exists(strFullHtmlPath) ): os.remove( strFullHtmlPath )
-        fileHtmlOut = open(strFullHtmlPath, 'w+' )
-        fileHtmlOut.write(
-            mytemplate.render(
-                runDate= datetime.datetime.now().strftime(cookbookData['Recipes']['html_date_format']),
-                genToolName= __file__,
-                genToolTemplate= strPathToTemplate,
-                genToolVersion = '0.00 - Git Hash:' + gitSha[:10] + ' Repo Clean:' + str(not gitRepo.is_dirty()),
-                cookbookData = cookbookData,
-                )
-        )
-        fileHtmlOut.close()
+    doc.generate_pdf(
+        outLaTexAbsFilePath, 
+        clean_tex=False)
+    doc.generate_tex()
     
-    #---------------------------------------------------------------
-    # Do a Ingredients Page
-    doIngredientsPage = True
-    if (doIngredientsPage ):
-        strPathToTemplate = str( Path( os.path.join(
-                        '.', 
-                        'scripts', 
-                        'makoHtmlIngredientsListTemplate.html.t'
-                    )).absolute() )
-        
-        mytemplate = Template(
-            filename= strPathToTemplate
-        )
-        
-        strFullHtmlPath =  os.path.join( outHtmlAbsPath , 'Ingredients_list' + '.html' )
-        if (os.path.exists(strFullHtmlPath) ): os.remove( strFullHtmlPath )
-        fileHtmlOut = open(strFullHtmlPath, 'w+' )
-        fileHtmlOut.write(
-            mytemplate.render(
-                runDate= datetime.datetime.now().strftime(cookbookData['Recipes']['html_date_format']),
-                genToolName= __file__,
-                genToolTemplate= strPathToTemplate,
-                genToolVersion = '0.00 - Git Hash:' + gitSha[:10] + ' Repo Clean:' + str(not gitRepo.is_dirty()),
-                cookbookData = cookbookData,
-                )
-        )
-        fileHtmlOut.close()
+    if(args.verbose):
+        print("Finished Building LaTex file: %s" % (outLaTexAbsFilePath) )
 
 
+#=============================================================================
+def genTitlePage( latexDoc ):
+    """
+    Build the Title Page
+    """
+    latexDoc.preamble.append(Command('title', 'The Pandemic Cookbook'))
+    latexDoc.preamble.append(Command('author', 'Bilyana Yakova and Thomas Anderson'))
+    latexDoc.preamble.append(Command('date', NoEscape(r'\today')))
+    latexDoc.append(NoEscape(r'\maketitle'))
+
+#=============================================================================
+def genRecipe( latexDoc, recipeName, recipeData ):
+    """
+    Format a Recipe into LaTex
+    """
+    with latexDoc.create (Section( "%s" % ( recipeName ), numbering=False) ):
+        
+        with latexDoc.create (Subsection( "Ingredients", numbering=False ) ):
+            
+            # Add in Ingredients
+            ingredLaTex = recipeData.genIngredientsBlock('LaTex')
+            with latexDoc.create(Tabular('rcl')) as table:
+                for ingredDat in ingredLaTex:
+                    table.add_row( ingredDat )
+        
+        with latexDoc.create (Subsection( "Directions", numbering=False ) ):
+            recipeData.genStepsBlock('LaTex', latexDoc)
+            
 
 #=============================================================================
 def main(argv=None):
