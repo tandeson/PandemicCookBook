@@ -18,9 +18,10 @@ import sys
 from pathlib import Path
 
 ## For rendering options
-from pylatex import Document, Section, Subsection, Command, Tabular, \
-                    simple_page_number, Foot, Head, PageStyle, NewPage
-from pylatex.utils import NoEscape
+from pylatex import Document, Section, SmallText, Command, Tabular, Tabularx, \
+                    simple_page_number, Foot, Head, PageStyle, NewPage, NewLine, \
+                    MiniPage, Package
+from pylatex.utils import NoEscape, bold
 
 #*  Constants ****************************************************************
 
@@ -50,7 +51,7 @@ def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
     ## Setup Syle for Recipe pages
     styleBookContents = PageStyle("styleBookContents")
     with styleBookContents.create( Head("C")) as docHeader:
-        docHeader.append("test")
+        docHeader.append("The Pandemic Cookbook")
     with styleBookContents.create( Foot("C") ) as docFooter:
         docFooter.append( simple_page_number() )
     doc.preamble.append(styleBookContents)
@@ -96,18 +97,40 @@ def genRecipe( latexDoc, recipeName, recipeData ):
     """
     Format a Recipe into LaTex
     """
-    with latexDoc.create (Section( "%s" % ( recipeName ), numbering=False) ):
+    with latexDoc.create ( Section( "%s" % ( recipeName ), numbering=False) ):
         
-        with latexDoc.create (Subsection( "Ingredients", numbering=False ) ):
-            
-            # Add in Ingredients
-            ingredLaTex = recipeData.genIngredientsBlock('LaTex')
-            with latexDoc.create(Tabular('rcl')) as table:
-                for ingredDat in ingredLaTex:
-                    table.add_row( ingredDat )
+        ## Create Recipe Header
+        with latexDoc.create( Tabularx( 'XXX', width_argument=NoEscape(r"\textwidth")) ) as recipeHeadTable:
+            recipeHeadTable.add_row( (
+                '.',
+                bold( recipeName ),
+                '.'
+                ))
+            recipeHeadTable.add_empty_row()
+            recipeHeadTable.add_hline()
+        latexDoc.append( NewLine() )
         
-        with latexDoc.create (Subsection( "Directions", numbering=False ) ):
-            recipeData.genStepsBlock('LaTex', latexDoc)
+        # Create Recipe body
+        
+        ##----
+        # Add in Ingredients
+        ingredLaTex = recipeData.genIngredientsBlock('LaTex')
+        ingredPage = Tabular('rcl')
+        for ingredDat in ingredLaTex:
+            ingredPage.add_row( ingredDat )
+        
+        ##---- Directions                        
+        dirPage = recipeData.genStepsBlock('LaTex', latexDoc)
+        
+        with latexDoc.create( SmallText() ):
+            latexDoc.append( Command('begin',['paracol', 2], packages=[ Package('paracol')]) )
+            latexDoc.append( ingredPage )
+            latexDoc.append(  Command('switchcolumn',packages=[ Package('paracol')]) )
+            latexDoc.append( dirPage )
+            latexDoc.append(  Command('end','paracol',packages=[ Package('paracol')]) )
+        
+        #with latexDoc.create( Tabularx( 'XX', width_argument=NoEscape(r"\textwidth")) ) as recipeBodyTable:
+        #    recipeBodyTable.add_row( ingredPage, dirPage )
         
         latexDoc.append( NewPage() )
             

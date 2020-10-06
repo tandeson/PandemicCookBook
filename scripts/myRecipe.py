@@ -62,7 +62,7 @@ class RecipeStep:
         self.info['inPic'].append( picPath )
         
     #-------------------------------------------------------------------------
-    def genStepBlock(self, genOutFormat='html', baseFilePath='', LaTexDoc=None):
+    def genStepBlock(self, genOutFormat='html', baseFilePath='', LaTexDoc=None, LaTexItemize=None):
         """
         Generate the formatted for the steps section
         """
@@ -83,12 +83,14 @@ class RecipeStep:
         
         elif('LaTex' == genOutFormat):
             ### TODO - Need to handle images
+            LaTexItemize.add_item( self.info['inText'] )
             
-            with LaTexDoc.create(Itemize()) as itemize:
-                itemize.add_item( self.info['inText'] )
-                
+            if( len( self.info['childStep'])):
+                itemize = Itemize()   
                 for stepInfo in self.info['childStep']:
-                    stepInfo.genStepBlock( genOutFormat, baseFilePath,LaTexDoc=LaTexDoc )
+                    stepInfo.genStepBlock( genOutFormat, baseFilePath,LaTexDoc=LaTexDoc, LaTexItemize=itemize )
+                LaTexItemize.add_item( itemize )
+                strStep = LaTexItemize
             
         else:
             raise Exception("Unknown format %s" % (genOutFormat) )
@@ -344,8 +346,11 @@ class MyRecipe:
                 dataBack += step.genStepBlock( genOutFormat, self.getPathLoc() )
             dataBack += '</ul>'
         elif( 'LaTex' == genOutFormat):
-            for step in self.info['steps']:
-                step.genStepBlock( genOutFormat, self.getPathLoc(), LaTexDoc=LaTexDoc )
+            if ( len( self.info['steps']) ):
+                itemize = Itemize() 
+                for step in self.info['steps']:
+                    step.genStepBlock( genOutFormat, self.getPathLoc(), LaTexDoc=LaTexDoc, LaTexItemize=itemize)
+                dataBack = itemize
         else:
             raise Exception(" Unknown Generation format %s" % genOutFormat)
         
