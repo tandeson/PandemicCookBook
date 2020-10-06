@@ -20,7 +20,7 @@ from pathlib import Path
 ## For rendering options
 from pylatex import Document, Section, SmallText, Command, Tabular, Tabularx, \
                     simple_page_number, Foot, Head, PageStyle, NewPage, NewLine, \
-                    MiniPage, Package
+                    Package, Figure
 from pylatex.utils import NoEscape, bold
 
 #*  Constants ****************************************************************
@@ -76,7 +76,6 @@ def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
     doc.generate_pdf(
         outLaTexAbsFilePath, 
         clean_tex=False)
-    doc.generate_tex()
     
     if(args.verbose):
         print("Finished Building LaTex file: %s" % (outLaTexAbsFilePath) )
@@ -100,9 +99,16 @@ def genRecipe( latexDoc, recipeName, recipeData ):
     with latexDoc.create ( Section( "%s" % ( recipeName ), numbering=False) ):
         
         ## Create Recipe Header
+        picForRecipe = ''
+        if( recipeData.getPicturePrimary()['path'] ):
+            picForRecipe = Figure(position='h!')
+            picForRecipe.add_image(
+                str( Path(os.path.join( recipeData.getPathLoc(), recipeData.getPicturePrimary()['path'])).absolute() ),
+                width=NoEscape(r"0.3\textwidth") )
+                                 
         with latexDoc.create( Tabularx( 'XXX', width_argument=NoEscape(r"\textwidth")) ) as recipeHeadTable:
             recipeHeadTable.add_row( (
-                '.',
+                '',
                 bold( recipeName ),
                 '.'
                 ))
@@ -125,6 +131,7 @@ def genRecipe( latexDoc, recipeName, recipeData ):
         with latexDoc.create( SmallText() ):
             latexDoc.append( Command('begin',['paracol', 2], packages=[ Package('paracol')]) )
             latexDoc.append( ingredPage )
+            latexDoc.append( picForRecipe )
             latexDoc.append(  Command('switchcolumn',packages=[ Package('paracol')]) )
             latexDoc.append( dirPage )
             latexDoc.append(  Command('end','paracol',packages=[ Package('paracol')]) )
