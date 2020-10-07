@@ -18,13 +18,15 @@ version = '$Revision$'[1:-2]
 import sys
 import os
 
+from pathlib import Path
+
 ## HTML Helper functions
 #from scripts.html_helpers import makeHtmlTable
 #from scripts.html_helpers import makeHtmlLink
 #from scripts.html_helpers import makeHtmlLinkTarget
 from scripts.html_helpers import makeHtmlEmbedImgFromFile
 
-from pylatex import Itemize
+from pylatex import Itemize, Figure, NoEscape
 
 #*  Constants ****************************************************************
 # PY-2.10
@@ -83,8 +85,18 @@ class RecipeStep:
         
         elif('LaTex' == genOutFormat):
             ### TODO - Need to handle images
-            LaTexItemize.add_item( self.info['inText'] )
+            imgFigList = []
+            for picLoc in self.info['inPic']:
+                imgFig = Figure(position='h!')
+                imgFig.add_image( 
+                    str( Path(os.path.join( baseFilePath, picLoc )).absolute() ), 
+                    width=NoEscape(r"0.3\textwidth")
+                    )
+                imgFigList.append( imgFig )
             
+            LaTexItemize.add_item( self.info['inText'] )
+            for iFig in imgFigList:
+                LaTexItemize.append( iFig ) 
             if( len( self.info['childStep'])):
                 itemize = Itemize()   
                 for stepInfo in self.info['childStep']:

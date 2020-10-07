@@ -19,9 +19,10 @@ from pathlib import Path
 
 ## For rendering options
 from pylatex import Document, Section, SmallText, Command, Tabular, Tabularx, \
-                    simple_page_number, Foot, Head, PageStyle, NewPage, NewLine, \
+                    simple_page_number, Foot, PageStyle, NewPage, NewLine, \
                     Package, Figure
-from pylatex.utils import NoEscape, bold
+from pylatex.utils import NoEscape, italic
+from pylatex.section import Chapter
 
 #*  Constants ****************************************************************
 
@@ -41,7 +42,7 @@ def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
     doc = Document(
         documentclass='book',
         geometry_options = {
-            'head': '40pt',
+            #'head': '40pt',
             'margin': '0.5in',
             'bottom': '0.6in',
             'includeheadfoot': True
@@ -50,8 +51,8 @@ def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
     
     ## Setup Syle for Recipe pages
     styleBookContents = PageStyle("styleBookContents")
-    with styleBookContents.create( Head("C")) as docHeader:
-        docHeader.append("The Pandemic Cookbook")
+    #with styleBookContents.create( Head("C")) as docHeader:
+    #    docHeader.append("The Pandemic Cookbook")
     with styleBookContents.create( Foot("C") ) as docFooter:
         docFooter.append( simple_page_number() )
     doc.preamble.append(styleBookContents)
@@ -61,11 +62,22 @@ def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
     ## Build Up the Recipe Book Structure
     genTitlePage(doc)
     
+    # Add in the Table of Contents
+    doc.append( Command('tableofcontents') )
+    
     # Add in the Recipes
-    for iRecipe in cookbookData['Recipes']['inputObjects'].keys() :
-        if (args.verbose):
-            print( "Building LaTex Code for Recipe:%s" % ( iRecipe ) )
-        genRecipe(doc, iRecipe, cookbookData['Recipes']['inputObjects'][iRecipe] )
+    with doc.create( Chapter('Recipes') ):
+        doc.append( 
+            italic(
+                "The following are the things we've been cooking together as we find ways to "
+                "keep busy inside and away from people. We've been enjoying them, and we hope you do too.")
+            )
+        doc.append( NewPage())
+        
+        for iRecipe in cookbookData['Recipes']['inputObjects'].keys() :
+            if (args.verbose):
+                print( "Building LaTex Code for Recipe:%s" % ( iRecipe ) )
+            genRecipe(doc, iRecipe, cookbookData['Recipes']['inputObjects'][iRecipe] )
     
     
     ## --------------------
@@ -96,8 +108,7 @@ def genRecipe( latexDoc, recipeName, recipeData ):
     """
     Format a Recipe into LaTex
     """
-    with latexDoc.create ( Section( "%s" % ( recipeName ), numbering=False) ):
-        
+    with latexDoc.create ( Section( "%s" % ( recipeName )) ):
         ## Create Recipe Header
         picForRecipe = ''
         if( recipeData.getPicturePrimary()['path'] ):
@@ -109,7 +120,7 @@ def genRecipe( latexDoc, recipeName, recipeData ):
         with latexDoc.create( Tabularx( 'XXX', width_argument=NoEscape(r"\textwidth")) ) as recipeHeadTable:
             recipeHeadTable.add_row( (
                 '',
-                bold( recipeName ),
+                '', #bold( recipeName ),
                 '.'
                 ))
             recipeHeadTable.add_empty_row()
@@ -122,6 +133,7 @@ def genRecipe( latexDoc, recipeName, recipeData ):
         # Add in Ingredients
         ingredLaTex = recipeData.genIngredientsBlock('LaTex')
         ingredPage = Tabular('rcl')
+        ingredPage.add_empty_row()
         for ingredDat in ingredLaTex:
             ingredPage.add_row( ingredDat )
         
