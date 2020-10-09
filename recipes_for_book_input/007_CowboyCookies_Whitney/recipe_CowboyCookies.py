@@ -48,7 +48,7 @@ def makeRecipe( sharedIngredentList ):
             'Add the Eggs and Vanilla and beat together,',
             'in a seperate bowl - sift and mix together Flour,'
             ' Baking Soda and Salt',
-            'Mix the wet and dry mixture together.',
+            'Mix the wet and dry mixtures together.',
             'to the dough, add the Rice Crispies, Oatmeal, '
             'Chocolate Chips and Butterscotch Chips.'
             'mix well',

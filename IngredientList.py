@@ -87,7 +87,12 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Heavy Cream',
     grpNameDairy,
     ))
-    
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Parmesan Cheese',
+    grpNameDairy,
+    ))
+
 C_INGREDIENTS.append( RecipeIngredient(
     'Whole Milk',
     grpNameDairy,
@@ -228,6 +233,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Broccoli',
+    grpNameProduce,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Carrot',
     grpNameProduce
     ))
@@ -283,6 +293,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Asafetida',
     grpNameSpices, 
     ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Black Pepper',
+    grpNameSpices, 
+    ))
     
 C_INGREDIENTS.append( RecipeIngredient(
     'Cayenne Pepper',
@@ -325,6 +340,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     grpNameSpices,
     ))
 
+C_INGREDIENTS.append( RecipeIngredient(
+    'Red Pepper Flakes',
+    grpNameSpices,
+    ))
+    
 C_INGREDIENTS.append( RecipeIngredient(
     'Salt',
     grpNameSpices,
