@@ -106,6 +106,16 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'All Purpose Flour',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Baking Soda',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Bread Flour',
     grpNameDryGoods,
     ))
@@ -114,12 +124,27 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Black-Eyed Peas',
     grpNameDryGoods,
     ))
-     
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Brown Sugar',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Butterscotch chips',
+    grpNameDryGoods,
+    ))
+         
 C_INGREDIENTS.append( RecipeIngredient(
     'Corn Starch',
     grpNameDryGoods,
     ))
 
+C_INGREDIENTS.append( RecipeIngredient(
+    'Dark Chocolate chips',
+    grpNameDryGoods,
+    ))
+    
 C_INGREDIENTS.append( RecipeIngredient(
     'Sugar',
     grpNameDryGoods,
@@ -127,6 +152,16 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Granulated White Sugar',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Oatmeal',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Rice Crispies',
     grpNameDryGoods,
     ))
 
@@ -180,6 +215,10 @@ C_INGREDIENTS.append( RecipeIngredient(
     grpNameOils
     ))
 
+C_INGREDIENTS.append( RecipeIngredient(
+    'Shortening',
+    grpNameOils
+    ))
 #=============================================================================
 grpNameProduce = 'Produce'
 
@@ -301,6 +340,10 @@ C_INGREDIENTS.append( RecipeIngredient(
     grpNameSpices,
     ))
 
+C_INGREDIENTS.append( RecipeIngredient(
+    'Vanilla',
+    grpNameSpices,
+    ))
 #=============================================================================
 #=============================================================================
 def main(argv=None):
