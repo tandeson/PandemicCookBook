@@ -41,6 +41,10 @@ def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
         # Basic document
     doc = Document(
         documentclass='book',
+        document_options = [
+            '10pt',
+            'twoside',
+            ],
         geometry_options = {
             #'head': '40pt',
             'margin': '0.5in',
@@ -111,7 +115,7 @@ def genRecipe( latexDoc, recipeName, recipeData ):
     with latexDoc.create ( Section( "%s" % ( recipeName )) ):
         ## Create Recipe Header
         picForRecipe = ''
-        if( recipeData.getPicturePrimary()['path'] ):
+        if( recipeData.getPicturePrimary() ):
             picForRecipe = Figure(position='h!')
             picForRecipe.add_image(
                 str( Path(os.path.join( recipeData.getPathLoc(), recipeData.getPicturePrimary()['path'])).absolute() ),

@@ -26,7 +26,7 @@ from pathlib import Path
 #from scripts.html_helpers import makeHtmlLinkTarget
 from scripts.html_helpers import makeHtmlEmbedImgFromFile
 
-from pylatex import Itemize, Figure, NoEscape
+from pylatex import Itemize, Figure, NoEscape, Command
 
 #*  Constants ****************************************************************
 # PY-2.10
@@ -64,7 +64,7 @@ class RecipeStep:
         self.info['inPic'].append( picPath )
         
     #-------------------------------------------------------------------------
-    def genStepBlock(self, genOutFormat='html', baseFilePath='', LaTexDoc=None, LaTexItemize=None):
+    def genStepBlock(self, genOutFormat='html', baseFilePath='', LaTexDoc=None, LaTexItemize=None, isFirstCall=True):
         """
         Generate the formatted for the steps section
         """
@@ -94,16 +94,16 @@ class RecipeStep:
                     )
                 imgFigList.append( imgFig )
             
-            LaTexItemize.add_item( self.info['inText'] )
+            if( self.info['inText']): LaTexItemize.add_item( self.info['inText'] )
+            
             for iFig in imgFigList:
                 LaTexItemize.append( iFig ) 
             if( len( self.info['childStep'])):
                 itemize = Itemize()   
                 for stepInfo in self.info['childStep']:
-                    stepInfo.genStepBlock( genOutFormat, baseFilePath,LaTexDoc=LaTexDoc, LaTexItemize=itemize )
-                LaTexItemize.add_item( itemize )
+                    stepInfo.genStepBlock( genOutFormat, baseFilePath,LaTexDoc=LaTexDoc, LaTexItemize=itemize, isFirstCall=False )
+                LaTexItemize.append( itemize )
                 strStep = LaTexItemize
-            
         else:
             raise Exception("Unknown format %s" % (genOutFormat) )
         
