@@ -118,7 +118,7 @@ def genRecipe( latexDoc, recipeName, recipeData ):
         if( recipeData.getPicturePrimary() ):
             picForRecipe = Figure(position='h!')
             picForRecipe.add_image(
-                str( Path(os.path.join( recipeData.getPathLoc(), recipeData.getPicturePrimary()['path'])).absolute() ),
+                str( Path( recipeData.getPicturePrimary()['path']).absolute() ),
                 width=NoEscape(r"0.3\textwidth") )
                                  
         with latexDoc.create( Tabularx( 'XXX', width_argument=NoEscape(r"\textwidth")) ) as recipeHeadTable:

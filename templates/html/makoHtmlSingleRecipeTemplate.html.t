@@ -95,7 +95,7 @@ ${makeHtmlStyle()}
 <bodySectionBlock>
 % if inRecipeData.getPicturePrimary() != None:
 <headerPic>
-    ${makeHtmlEmbedImgFromFile( inRecipeData.getPathLoc() + '\\' + inRecipeData.getPicturePrimary()['path']) }
+    ${makeHtmlEmbedImgFromFile( inRecipeData.getPicturePrimary()['path']) }
 </headerPic>
 % endif
 

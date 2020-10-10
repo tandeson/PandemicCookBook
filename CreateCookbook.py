@@ -173,8 +173,10 @@ def mainControl(args):
             
             result = importlib.import_module(strModulePath)
 
-            newRecipe = result.makeRecipe( C_INGREDIENTS )
-            newRecipe.setPathLoc( os.path.dirname( pythonModuleFile.absolute() ) )
+            newRecipe = result.makeRecipe( 
+                os.path.dirname( pythonModuleFile.absolute() ), 
+                C_INGREDIENTS )
+            
             cookbookData['Recipes']['inputObjects'][ newRecipe.getName() ] = newRecipe
             
     ##------------------------------
@@ -208,7 +210,7 @@ def mainControl(args):
         genHtmlOut(args, outAbsPath, cookbookData, gitRepo)
         
     # -- LaTex
-    getLaTexOut = True
+    getLaTexOut = False
     if ( getLaTexOut ):
         genLaTexOut(args, outAbsPath, cookbookData, gitRepo)
 

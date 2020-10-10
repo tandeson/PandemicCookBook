@@ -18,11 +18,12 @@ from scripts.myRecipe import RecipeStep
 #*  Class and Function Definitions *******************************************
 
 #=============================================================================
-def makeRecipe( sharedIngredentList ):
+def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
         r = MyRecipe('Cowboy Cookies', sharedIngredentList)
+        r.setPathLoc( dirPathRecipe )
         
         #  -- Add Ingredients --
         

@@ -26,7 +26,7 @@ from pathlib import Path
 #from scripts.html_helpers import makeHtmlLinkTarget
 from scripts.html_helpers import makeHtmlEmbedImgFromFile
 
-from pylatex import Itemize, Figure, NoEscape, Command
+from pylatex import Itemize, Figure, NoEscape
 
 #*  Constants ****************************************************************
 # PY-2.10
@@ -73,7 +73,7 @@ class RecipeStep:
         if('html' == genOutFormat):
             strPics = ''
             for picLoc in self.info['inPic']:
-                    strPics += makeHtmlEmbedImgFromFile( os.path.join( baseFilePath, picLoc ) )
+                    strPics += makeHtmlEmbedImgFromFile( picLoc )
             strStep = '<li>' + self.info['inText'] + '<br>' + strPics + '</li>'
             
             
@@ -89,7 +89,7 @@ class RecipeStep:
             for picLoc in self.info['inPic']:
                 imgFig = Figure(position='h!')
                 imgFig.add_image( 
-                    str( Path(os.path.join( baseFilePath, picLoc )).absolute() ), 
+                    str( Path( picLoc ).absolute() ), 
                     width=NoEscape(r"0.3\textwidth")
                     )
                 imgFigList.append( imgFig )
@@ -212,7 +212,7 @@ class MyRecipe:
         """
         if pictureName  not in self.info['pictures'].keys():
             self.info['pictures'][pictureName] = {
-                'path': picLocation
+                'path': os.path.join( self.info['dir_path'], picLocation)
                 }
     
     #-------------------------------------------------------------------------

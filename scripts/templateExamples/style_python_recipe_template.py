@@ -17,12 +17,12 @@ from scripts.myRecipe import MyRecipe
 #*  Class and Function Definitions *******************************************
 
 #=============================================================================
-def makeRecipe( sharedIngredentList ):
+def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
         r = MyRecipe('This Name', sharedIngredentList)
-        
+        r.setPathLoc( dirPathRecipe )
         # Add Ingredients
         r.addIngredient('ingredientName')
         

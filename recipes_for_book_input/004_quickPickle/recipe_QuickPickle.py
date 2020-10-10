@@ -18,11 +18,12 @@ from scripts.myRecipe import RecipeStep
 #*  Class and Function Definitions *******************************************
 
 #=============================================================================
-def makeRecipe( sharedIngredentList ):
+def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
         r = MyRecipe('Red Onion Quick Pickle', sharedIngredentList)
+        r.setPathLoc( dirPathRecipe )
         r.addPicture('PickleOnionPeas', '2020_09_09_QuickPickleBlackEyedPeasGreekYougert.jpg')
         r.addPicture('PickleOnionToast', '2020_09_09_QuickPickleOnToastEgg.jpg')
         r.setPrimaryPicture( 'PickleOnionToast')
