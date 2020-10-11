@@ -215,14 +215,14 @@ class MyRecipe:
         """
         if pictureName  not in self.info['pictures'].keys():
             self.info['pictures'][pictureName] = {
-                'path': os.path.join( self.info['dir_path'], picLocation)
+                'path_orig': os.path.join( self.info['dir_path'], picLocation)
                 }
-            
-            ## TEMP - TESTING
-            buildPdfImg(
+        
+            newImgPath = buildPdfImg(
                 Path( os.path.join( self.info['dir_path'], '..', '..', 'output', 'img')).resolve(), 
-                self.info['pictures'][pictureName]['path'] )
-    
+                self.info['pictures'][pictureName]['path_orig'] )
+            
+            self.info['pictures'][pictureName]['path'] = newImgPath
     #-------------------------------------------------------------------------
     def getPicturePath(self, picName):
         return self.info['pictures'][picName]['path']

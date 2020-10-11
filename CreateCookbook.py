@@ -210,7 +210,7 @@ def mainControl(args):
         genHtmlOut(args, outAbsPath, cookbookData, gitRepo)
         
     # -- LaTex
-    getLaTexOut = False
+    getLaTexOut = True
     if ( getLaTexOut ):
         genLaTexOut(args, outAbsPath, cookbookData, gitRepo)
 

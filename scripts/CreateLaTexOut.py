@@ -160,7 +160,7 @@ def genRecipe( latexDoc, recipeName, recipeData ):
         latexDoc.append( NewPage() )
             
 #=============================================================================
-def buildPdfImg( outAbsPath, inFilePath):
+def buildPdfImg( outAbsPath, inFilePath, inMaxDpi=300, inMaxSizeInch=4):
     """
     Convert a Image for use in LaTex PDF - and store to an out directory.
      
@@ -176,22 +176,20 @@ def buildPdfImg( outAbsPath, inFilePath):
     outFilePath = os.path.join( outFilePath, fileNameSplit[1])
     
     # Figure out what DPI to set this do
-    C_TARGET_DPI = 300
     dpiInW, dpiInH = myImage.info['dpi']
     maxDpi = max( [dpiInW, dpiInH])
-    dpiRatioAdjust = C_TARGET_DPI / maxDpi
+    dpiRatioAdjust = inMaxDpi / maxDpi
     newDpioutW = (dpiRatioAdjust * dpiInW)
     newDpioutH = (dpiRatioAdjust * dpiInH) 
     
     ## See if we need a re-size
-    C_MAX_INC_IMG = 4
     sizeInIncW, sizeInIncH = myImage.size
     sizeInIncW /= newDpioutW
     sizeInIncH /= newDpioutH
     maxSizeInInc = max( [sizeInIncW, sizeInIncH])
     sizeInIncRatio = 1
-    if(maxSizeInInc > C_MAX_INC_IMG):
-        sizeInIncRatio = C_MAX_INC_IMG / maxSizeInInc
+    if(maxSizeInInc > inMaxSizeInch):
+        sizeInIncRatio = inMaxSizeInch / maxSizeInInc
     myImage = myImage.resize( 
         ( int( sizeInIncW * sizeInIncRatio * newDpioutW) , int(sizeInIncH * sizeInIncRatio * newDpioutH) ), 
         Image.ANTIALIAS)
@@ -201,7 +199,7 @@ def buildPdfImg( outAbsPath, inFilePath):
         dpi=(newDpioutW, newDpioutH)
         )
     
-    if( True ):
+    if( False ):
         print(
             "Coverting image %s to lower res at %s" % 
             (inFilePath, outFilePath) )
