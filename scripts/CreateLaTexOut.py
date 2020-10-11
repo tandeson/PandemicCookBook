@@ -17,6 +17,8 @@ import sys
 
 from pathlib import Path
 
+from PIL import Image
+
 ## For rendering options
 from pylatex import Document, Section, SmallText, Command, Tabular, Tabularx, \
                     simple_page_number, Foot, PageStyle, NewPage, NewLine, \
@@ -157,6 +159,54 @@ def genRecipe( latexDoc, recipeName, recipeData ):
         
         latexDoc.append( NewPage() )
             
+#=============================================================================
+def buildPdfImg( outAbsPath, inFilePath):
+    """
+    Convert a Image for use in LaTex PDF - and store to an out directory.
+     
+    Pass back the new path.
+    """
+    
+    myImage = Image.open(inFilePath)
+    fileNameSplit = os.path.split(inFilePath)
+    fileDirSplit = os.path.split( fileNameSplit[0])
+    
+    outFilePath = os.path.join( outAbsPath, fileDirSplit[1] )
+    Path(outFilePath).mkdir(parents=True, exist_ok=True)
+    outFilePath = os.path.join( outFilePath, fileNameSplit[1])
+    
+    # Figure out what DPI to set this do
+    C_TARGET_DPI = 300
+    dpiInW, dpiInH = myImage.info['dpi']
+    maxDpi = max( [dpiInW, dpiInH])
+    dpiRatioAdjust = C_TARGET_DPI / maxDpi
+    newDpioutW = (dpiRatioAdjust * dpiInW)
+    newDpioutH = (dpiRatioAdjust * dpiInH) 
+    
+    ## See if we need a re-size
+    C_MAX_INC_IMG = 4
+    sizeInIncW, sizeInIncH = myImage.size
+    sizeInIncW /= newDpioutW
+    sizeInIncH /= newDpioutH
+    maxSizeInInc = max( [sizeInIncW, sizeInIncH])
+    sizeInIncRatio = 1
+    if(maxSizeInInc > C_MAX_INC_IMG):
+        sizeInIncRatio = C_MAX_INC_IMG / maxSizeInInc
+    myImage = myImage.resize( 
+        ( int( sizeInIncW * sizeInIncRatio * newDpioutW) , int(sizeInIncH * sizeInIncRatio * newDpioutH) ), 
+        Image.ANTIALIAS)
+    
+    myImage.convert('RGB').save(
+        outFilePath, 
+        dpi=(newDpioutW, newDpioutH)
+        )
+    
+    if( True ):
+        print(
+            "Coverting image %s to lower res at %s" % 
+            (inFilePath, outFilePath) )
+        
+    return outFilePath
 
 #=============================================================================
 def main(argv=None):
@@ -164,7 +214,6 @@ def main(argv=None):
     Description of program.
     """
     pass
-
 
 #*  Main Code Path ***********************************************************
 if __name__ == "__main__":

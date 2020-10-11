@@ -28,6 +28,9 @@ from scripts.html_helpers import makeHtmlEmbedImgFromFile
 
 from pylatex import Itemize, Figure, NoEscape
 
+## TODO - TEMP RMEOVE?
+from scripts.CreateLaTexOut import buildPdfImg
+
 #*  Constants ****************************************************************
 # PY-2.10
 # DELIMITER = ","
@@ -214,6 +217,11 @@ class MyRecipe:
             self.info['pictures'][pictureName] = {
                 'path': os.path.join( self.info['dir_path'], picLocation)
                 }
+            
+            ## TEMP - TESTING
+            buildPdfImg(
+                Path( os.path.join( self.info['dir_path'], '..', '..', 'output', 'img')).resolve(), 
+                self.info['pictures'][pictureName]['path'] )
     
     #-------------------------------------------------------------------------
     def getPicturePath(self, picName):
