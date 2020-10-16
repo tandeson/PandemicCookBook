@@ -26,6 +26,11 @@ C_INGREDIENTS = []
 grpNameCanned = 'Canned Goods'
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Black Beans',
+    grpNameCanned,
+    ))
+ 
+C_INGREDIENTS.append( RecipeIngredient(
     'Dry Wide Rice Noodles',
     grpNameCanned
     ))
@@ -84,12 +89,22 @@ C_INGREDIENTS.append( RecipeIngredient(
 grpNameDairy = 'Dairy'
 
 C_INGREDIENTS.append( RecipeIngredient(
+   'Feta Cheese',
+   grpNameDairy,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Heavy Cream',
     grpNameDairy,
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Parmesan Cheese',
+    grpNameDairy,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Salted Butter',
     grpNameDairy,
     ))
 
@@ -112,6 +127,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(
     'All Purpose Flour',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Baking Powder',
     grpNameDryGoods,
     ))
 
@@ -146,7 +166,17 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Corn Tortillas',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Dark Chocolate chips',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(    
+    'Diastatic Malt Powder',
     grpNameDryGoods,
     ))
     
@@ -166,6 +196,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Potato Flour',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Rice Crispies',
     grpNameDryGoods,
     ))
@@ -175,6 +210,11 @@ grpNameHousehold = 'Household'
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Water',
+    grpNameHousehold,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Sourdough Starter',
     grpNameHousehold,
     ))
 
@@ -228,6 +268,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 grpNameProduce = 'Produce'
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Apples',
+    grpNameProduce,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Bird Chillies',
     grpNameProduce,
     ))
@@ -276,6 +321,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Romaine Lettuce',
+    grpNameProduce
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Tomatoes',
     grpNameProduce,
     ))
@@ -305,12 +355,27 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Chili powder',
+    grpNameSpices, 
+    ))
+    
+C_INGREDIENTS.append( RecipeIngredient(
     'Coriander Powder',
     grpNameSpices, 
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Celery seed',
+    grpNameSpices, 
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Cinnamon',
+    grpNameSpices, 
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(   
+    'Cumin',
     grpNameSpices, 
     ))
 
@@ -331,12 +396,22 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Garlic Powder',
+    grpNameSpices,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Lemon Juice',
     grpNameSpices,
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Non-Iodized Salt',
+    grpNameSpices,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Onion Powder',
     grpNameSpices,
     ))
 

@@ -80,7 +80,10 @@ def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
             )
         doc.append( NewPage())
         
-        for iRecipe in cookbookData['Recipes']['inputObjects'].keys() :
+        recipeList = list( cookbookData['Recipes']['inputObjects'].keys() )
+        recipeList.sort()
+        
+        for iRecipe in recipeList:
             if (args.verbose):
                 print( "Building LaTex Code for Recipe:%s" % ( iRecipe ) )
             genRecipe(doc, iRecipe, cookbookData['Recipes']['inputObjects'][iRecipe] )
@@ -176,8 +179,12 @@ def buildPdfImg( outAbsPath, inFilePath, inMaxDpi=300, inMaxSizeInch=4):
     outFilePath = os.path.join( outFilePath, fileNameSplit[1])
     
     # Figure out what DPI to set this do
-    dpiInW, dpiInH = myImage.info['dpi']
-    maxDpi = max( [dpiInW, dpiInH])
+    dpiInW = 300
+    dpiInH = 300 
+    if ('dpi' in  myImage.info.keys() ):
+        dpiInW, dpiInH = myImage.info['dpi']
+        
+    maxDpi = max( [dpiInW, dpiInH])    
     dpiRatioAdjust = inMaxDpi / maxDpi
     newDpioutW = (dpiRatioAdjust * dpiInW)
     newDpioutH = (dpiRatioAdjust * dpiInH) 
