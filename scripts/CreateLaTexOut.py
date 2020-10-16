@@ -150,6 +150,7 @@ def genRecipe( latexDoc, recipeName, recipeData ):
         dirPage = recipeData.genStepsBlock('LaTex', latexDoc)
         
         with latexDoc.create( SmallText() ):
+            latexDoc.append( Command('columnratio',[0.53]) )
             latexDoc.append( Command('begin',['paracol', 2], packages=[ Package('paracol')]) )
             latexDoc.append( ingredPage )
             latexDoc.append( picForRecipe )

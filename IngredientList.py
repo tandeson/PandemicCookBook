@@ -103,6 +103,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+   'Cream Cheese',
+   grpNameDairy,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
    'Feta Cheese',
    grpNameDairy,
     ))
@@ -136,6 +141,12 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Unsalted Butter',
     grpNameDairy,
     ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Whipping Cream',
+    grpNameDairy,
+    ))
+    
 #=============================================================================
 grpNameDryGoods = 'Dry Goods'
 
@@ -210,6 +221,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Graham Cracker Crumbs',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Granulated White Sugar',
     grpNameDryGoods,
     ))
@@ -239,6 +255,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     grpNameDryGoods,
     ))
 
+C_INGREDIENTS.append( RecipeIngredient(
+    'Walnuts',
+    grpNameDryGoods,
+    ))
+
 #=============================================================================
 grpNameHousehold = 'Household'
 
@@ -262,6 +283,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient( 
     'Eggs',
+    grpNameProtien
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Eggs Yolks',
     grpNameProtien
     ))
 
@@ -307,6 +333,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Banana',
+    grpNameProduce,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Bird Chillies',
     grpNameProduce,
     ))
@@ -341,6 +372,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Garlic',
     grpNameProduce, 
     'typically a whole head from the local supermarket.'
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Lemon',
+    grpNameProduce,
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
@@ -456,6 +492,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Non-Iodized Salt',
+    grpNameSpices,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Nutmeg',
     grpNameSpices,
     ))
 
