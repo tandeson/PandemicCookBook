@@ -76,6 +76,15 @@ C_INGREDIENTS.append( RecipeIngredient(
     grpNameCondiments,
     ))
 
+C_INGREDIENTS.append( RecipeIngredient(
+    'Pickled Jalapenos',
+    grpNameCondiments, 
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Pickled Red onions',
+    grpNameCondiments, 
+    ))
 C_INGREDIENTS.append( RecipeIngredient( 
     'Rice Vinegar',
     grpNameCondiments, 
@@ -87,6 +96,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 #=============================================================================
 grpNameDairy = 'Dairy'
+
+C_INGREDIENTS.append( RecipeIngredient(
+   'Blue Cheese',
+    grpNameDairy,
+    ))
 
 C_INGREDIENTS.append( RecipeIngredient(
    'Feta Cheese',
@@ -109,6 +123,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+   'Shredded Mexican Cheese',
+    grpNameDairy,
+    ))
+   
+C_INGREDIENTS.append( RecipeIngredient(
     'Whole Milk',
     grpNameDairy,
     ))
@@ -127,6 +146,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(
     'All Purpose Flour',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Bakers Special Dry Milk',
     grpNameDryGoods,
     ))
 
@@ -179,14 +203,19 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Diastatic Malt Powder',
     grpNameDryGoods,
     ))
-    
+
 C_INGREDIENTS.append( RecipeIngredient(
-    'Sugar',
+    'French\'s Original Crispy Fried Onions',
     grpNameDryGoods,
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Granulated White Sugar',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Instant Yeast',
     grpNameDryGoods,
     ))
 
@@ -202,6 +231,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Rice Crispies',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Sugar',
     grpNameDryGoods,
     ))
 
@@ -278,6 +312,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+   'Blueberries',
+   grpNameProduce,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Broccoli',
     grpNameProduce,
     ))
@@ -285,6 +324,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 C_INGREDIENTS.append( RecipeIngredient(
     'Carrot',
     grpNameProduce
+    ))
+
+C_INGREDIENTS.append(RecipeIngredient(
+    'Cilantro',
+    grpNameProduce, 
     ))
 
 C_INGREDIENTS.append(RecipeIngredient(
@@ -323,6 +367,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 C_INGREDIENTS.append( RecipeIngredient(
     'Romaine Lettuce',
     grpNameProduce
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Sweet Potatoes',
+    grpNameProduce,
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
