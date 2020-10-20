@@ -146,9 +146,10 @@ def genRecipe( latexDoc, recipeName, recipeData ):
         for ingredDat in ingredLaTex:
             ingredPage.add_row( ingredDat )
         
-        ##---- Directions                        
-        dirPage = recipeData.genStepsBlock('LaTex', latexDoc)
+        ##---- Directions            
+        dirPage =  recipeData.genStepsBlock('LaTex', latexDoc)
         
+        latexDoc.append( Command('begin', ['samepage']) )
         with latexDoc.create( SmallText() ):
             latexDoc.append( Command('columnratio',[0.53]) )
             latexDoc.append( Command('begin',['paracol', 2], packages=[ Package('paracol')]) )
@@ -157,9 +158,7 @@ def genRecipe( latexDoc, recipeName, recipeData ):
             latexDoc.append(  Command('switchcolumn',packages=[ Package('paracol')]) )
             latexDoc.append( dirPage )
             latexDoc.append(  Command('end','paracol',packages=[ Package('paracol')]) )
-        
-        #with latexDoc.create( Tabularx( 'XX', width_argument=NoEscape(r"\textwidth")) ) as recipeBodyTable:
-        #    recipeBodyTable.add_row( ingredPage, dirPage )
+        latexDoc.append( Command('end', ['samepage']) )
         
         latexDoc.append( NewPage() )
             

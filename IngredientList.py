@@ -72,6 +72,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Honey',
+    grpNameCondiments,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Oyster Sauce',
     grpNameCondiments,
     ))
@@ -507,6 +512,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Red Pepper Flakes',
+    grpNameSpices,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Rosemary',
     grpNameSpices,
     ))
     

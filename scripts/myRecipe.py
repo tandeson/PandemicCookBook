@@ -27,6 +27,7 @@ from pathlib import Path
 from scripts.html_helpers import makeHtmlEmbedImgFromFile
 
 from pylatex import Itemize, Figure, NoEscape
+from pylatex.utils import bold
 
 ## TODO - TEMP RMEOVE?
 from scripts.CreateLaTexOut import buildPdfImg
@@ -312,6 +313,11 @@ class MyRecipe:
         elif (genOutFormat == 'LaTex'):
             dataBack = []
             for ingredientGrp in self.info['ingredientsGrpOrder']:
+                
+                if( len(ingredientGrp) ):
+                    dataBack.append( ('',  '' , '') )
+                    dataBack.append( ('', bold(ingredientGrp), '') )
+                    
                 for ingredient in self.info['ingredients'][ingredientGrp]:
                     dataBack.append( 
                         (

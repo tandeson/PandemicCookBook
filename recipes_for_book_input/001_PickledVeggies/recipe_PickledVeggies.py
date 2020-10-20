@@ -39,7 +39,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Non-Iodized Salt', 1, 'cup', ingGrpName)
            
         ## Flavoring
-        ingGrpName = "For inside the jars <br> (one set per jar)"
+        ingGrpName = "For inside the jars (1 per jar)"
         r.addIngredient('Garlic', 1, 'clove', ingGrpName)
         r.addIngredient('Grape Leaves', 1, 'leaf', ingGrpName)
         r.addIngredient('Celery seed', 0.25, 'teaspoon', ingGrpName)
