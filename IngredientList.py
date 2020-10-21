@@ -29,7 +29,22 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Black Beans',
     grpNameCanned,
     ))
- 
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Chickpeas',
+    grpNameCanned,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Coconut Milk',
+    grpNameCanned
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Diced Tomatoes',
+    grpNameCanned
+    ))
+
 C_INGREDIENTS.append( RecipeIngredient(
     'Dry Wide Rice Noodles',
     grpNameCanned
@@ -60,8 +75,13 @@ C_INGREDIENTS.append( RecipeIngredient(
 grpNameCondiments = 'Condiments'
 
 C_INGREDIENTS.append( RecipeIngredient( 
+    'Agave Nectar',
+    grpNameCondiments,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient( 
     'Apple Cider Vinegar',
-     grpNameCondiments,
+    grpNameCondiments,
     ))
 
 C_INGREDIENTS.append( RecipeIngredient( 
@@ -199,6 +219,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Baking Soda',
     grpNameDryGoods,
     ))
+    
+C_INGREDIENTS.append( RecipeIngredient(
+    'Breadcrumbs',
+    grpNameDryGoods,
+    ))
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Bread Flour',
@@ -219,7 +244,12 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Butterscotch chips',
     grpNameDryGoods,
     ))
-         
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Cashews',
+    grpNameDryGoods,
+    ))
+   
 C_INGREDIENTS.append( RecipeIngredient(
     'Corn Starch',
     grpNameDryGoods,
@@ -272,6 +302,21 @@ C_INGREDIENTS.append( RecipeIngredient(
     
 C_INGREDIENTS.append( RecipeIngredient(
     'Potato Flour',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Quinoa',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Red Cabbage',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Red Lentils',
     grpNameDryGoods,
     ))
 
@@ -351,6 +396,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Sesame Oil',
+    grpNameOils
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Shortening',
     grpNameOils
     ))
@@ -387,6 +437,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     grpNameProduce
     ))
 
+C_INGREDIENTS.append( RecipeIngredient(
+    'Cauliflower',
+    grpNameProduce
+    ))
+    
 C_INGREDIENTS.append(RecipeIngredient(
     'Cilantro',
     grpNameProduce, 
@@ -413,12 +468,22 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Ginger',
     grpNameProduce,
     ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Kale',
+    grpNameProduce,
+    ))
     
 C_INGREDIENTS.append( RecipeIngredient(
     'Lemon',
     grpNameProduce,
     ))
 
+C_INGREDIENTS.append( RecipeIngredient(
+    'Lime',
+    grpNameProduce,
+    ))
+    
 C_INGREDIENTS.append( RecipeIngredient(
     'Mushrooms',
     grpNameProduce,
@@ -446,6 +511,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Roma Tomato',
+    grpNameProduce
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Romaine Lettuce',
     grpNameProduce
     ))
@@ -464,6 +534,12 @@ C_INGREDIENTS.append( RecipeIngredient(
     'White Onion',
     grpNameProduce,
     ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Yellow Onion',
+    grpNameProduce,
+    ))
+    
       
 #=============================================================================
 ## Spices
@@ -475,10 +551,20 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Bebere',
+    grpNameSpices, 
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Black Pepper',
     grpNameSpices, 
     ))
     
+C_INGREDIENTS.append( RecipeIngredient(
+    'Cardamom',
+    grpNameSpices, 
+    ))
+
 C_INGREDIENTS.append( RecipeIngredient(
     'Cayenne Pepper',
     grpNameSpices, 
@@ -511,6 +597,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(   
    'Cumin Seeds',
+    grpNameSpices, 
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Curry Powder',
     grpNameSpices, 
     ))
     
@@ -556,6 +647,16 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Oregano',
+    grpNameSpices,
+    ))
+    
+C_INGREDIENTS.append( RecipeIngredient(
+    'Paprika',
+    grpNameSpices,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Red Pepper Flakes',
     grpNameSpices,
     ))
@@ -567,6 +668,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     
 C_INGREDIENTS.append( RecipeIngredient(
     'Salt',
+    grpNameSpices,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Smoked Paprika',
     grpNameSpices,
     ))
 
