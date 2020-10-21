@@ -47,6 +47,15 @@ grapeLeavesPickled.addVendor(
     )
 C_INGREDIENTS.append( grapeLeavesPickled )
 
+C_INGREDIENTS.append( RecipeIngredient(
+    'Peanut Butter',
+    grpNameCanned
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Tomato Paste',
+    grpNameCanned
+    ))    
 #=============================================================================
 grpNameCondiments = 'Condiments'
 
@@ -90,8 +99,14 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Pickled Red onions',
     grpNameCondiments, 
     ))
+
 C_INGREDIENTS.append( RecipeIngredient( 
     'Rice Vinegar',
+    grpNameCondiments, 
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient( 
+    'Sriracha',
     grpNameCondiments, 
     ))
 
@@ -251,6 +266,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Peanuts',
+    grpNameDryGoods,
+    ))
+    
+C_INGREDIENTS.append( RecipeIngredient(
     'Potato Flour',
     grpNameDryGoods,
     ))
@@ -372,6 +392,11 @@ C_INGREDIENTS.append(RecipeIngredient(
     grpNameProduce, 
     ))
 
+C_INGREDIENTS.append(RecipeIngredient(
+    'Collard Greens',
+    grpNameProduce, 
+    ))
+    
 C_INGREDIENTS.append(RecipeIngredient(
     'Fresh Green Beans',
     grpNameProduce, 
@@ -546,6 +571,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Sesame seeds',
+    grpNameSpices,
+    ))
+    
+C_INGREDIENTS.append( RecipeIngredient(
     'Thai Basil',
     grpNameSpices,
     ))
@@ -557,6 +587,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Vanilla',
+    grpNameSpices,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Vegetable Broth',
     grpNameSpices,
     ))
 #=============================================================================

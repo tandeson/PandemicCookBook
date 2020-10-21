@@ -22,31 +22,38 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
-        r = MyRecipe('Broccoli and Mushroom Stir Fry', sharedIngredentList)
+        r = MyRecipe('West African Peanut Soup', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
-
+        r.addPicture('SoupPot', '2020_09_30_Peanut_soup.jpg')
+        r.setPrimaryPicture('SoupPot')
+        
         #  -- Add Ingredients --
 
         ## 
-        r.addIngredient('Garlic', 6, 'cloves, or more')
-        r.addIngredient('Ginger', 2 , 'tablespoons, chopped')
-        r.addIngredient('Red Pepper Flakes', 1, 'shake, or to taste')
-        r.addIngredient('Soy Sauce', 3, 'tablespoons (aprox)')
-        r.addIngredient('Rice Vinegar', 3 , 'tablespoons (aprox)')
-        r.addIngredient('Broccoli', 3, 'heads, about 1 pound, chopped')
-        r.addIngredient('Mushrooms', 8, 'oz (or more) chopped')
-        r.addIngredient('Sesame seeds', 2, 'tablespoons (aprox)')
-        r.addIngredient('Extra Virgin Olive Oil', 2, 'tablespoons (aprox)')
+        r.addIngredient('Vegetable Broth', 4, 'cups')
+        r.addIngredient('Water', 2, 'cups')
+        r.addIngredient('Red Onion', 1, 'medium, chopped')
+        r.addIngredient('Ginger', 2 , 'tablespoons, minced')
+        r.addIngredient('Garlic', 4, 'cloves, chopped')
+        r.addIngredient('Salt', 1, 'teaspoon')
+        r.addIngredient('Collard Greens', 1, 'bunch (or Kale)')
+        r.addIngredient('Peanut Butter', 0.75, 'cups (unsalted')
+        r.addIngredient('Tomato Paste', 0.5 , 'cups')
+        r.addIngredient('Sriracha', 1, 'other hot sauce.')
+        r.addIngredient('Peanuts', 0.25, 'cups, chopped')
+           
         # Add Steps and Notes
         steps= [
-            'Heat olive oil in pan on medium-high heat.',
-            'Add ginger, garlic and red pepper flakes',
-            'Saute for 1 - 2 minutes until fragrant',
-            'Add broccoli and a little water - roughly 2 tablespoons to steam them.',
-            'Stir for about 5 min, until broccoli becomes a brighter green',
-            'Add mushrooms, continue to stir over head for 10 - 15 minutes until everything is cooked.',
-            'Combine soy sauce and vinegar, then stir in for 5 -10 seconds.',
-            'Remove from heat, sprinkle with sesame seeds',
+            'Combine the broth and water in a medium pot.',
+            'Bring to boil, then add the Red Onion, Ginger, Garlic and Salt.',
+            'Cook on medium-low heat for 20 minutes.',
+            'In a medium-sized heat-safe mixing bowl, combind the Peanut Butter and Tomato Paste.',
+            'Transfer 1 - 2 cups of the hot stock to the bowl. Wisk until smooth, then pour back '
+            'into the soup and mix well.',
+            'Stir in Collard Greens and season the soup with Hot Sauce to taste.',
+            'Simmer for 15 minutes on medium-low heat, stirring often.',
+            'Season with additional sal or Hot Sauce if desired.',
+            'Serve sprinkle of chopped Peanuts. Goes well over Quinona or Brown Rice.'
         ]
         for s in steps:
             r.addStep( RecipeStep( s ) )
