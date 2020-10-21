@@ -108,6 +108,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+   'Cottage Cheese',
+   grpNameDairy,
+    ))
+   
+C_INGREDIENTS.append( RecipeIngredient(
    'Cream Cheese',
    grpNameDairy,
     ))
@@ -380,10 +385,20 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Ginger',
+    grpNameProduce,
+    ))
+    
+C_INGREDIENTS.append( RecipeIngredient(
     'Lemon',
     grpNameProduce,
     ))
 
+C_INGREDIENTS.append( RecipeIngredient(
+    'Mushrooms',
+    grpNameProduce,
+    ))
+    
 C_INGREDIENTS.append( RecipeIngredient(
     'Onion',
     grpNameProduce,
@@ -490,6 +505,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     grpNameSpices,
     ))
 
+C_INGREDIENTS.append( RecipeIngredient(
+    'Green Onion',
+    grpNameSpices,
+    ))
+    
 C_INGREDIENTS.append( RecipeIngredient(
     'Lemon Juice',
     grpNameSpices,
