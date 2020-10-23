@@ -31,6 +31,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Black Olives',
+    grpNameCanned,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Chickpeas',
     grpNameCanned,
     ))
@@ -112,6 +117,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Pickled Jalapenos',
+    grpNameCondiments, 
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Red Wine Vinegar',
     grpNameCondiments, 
     ))
 
@@ -296,6 +306,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Orzo',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Peanuts',
     grpNameDryGoods,
     ))
@@ -322,6 +337,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Rice Crispies',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Split Peas',
     grpNameDryGoods,
     ))
 
@@ -375,6 +395,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Ham', 
     grpNameProtien
     ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Tofu',
+    grpNameProtien
+    ))
     
 #=============================================================================
 grpNameOils = 'Oils'
@@ -409,6 +434,11 @@ grpNameProduce = 'Produce'
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Apples',
+    grpNameProduce,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Avocados',
     grpNameProduce,
     ))
 
@@ -451,6 +481,11 @@ C_INGREDIENTS.append(RecipeIngredient(
     'Collard Greens',
     grpNameProduce, 
     ))
+
+C_INGREDIENTS.append(RecipeIngredient(
+    'Cucumber',
+    grpNameProduce, 
+    ))
     
 C_INGREDIENTS.append(RecipeIngredient(
     'Fresh Green Beans',
@@ -466,6 +501,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Ginger',
+    grpNameProduce,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Jalapeno Pepper',
     grpNameProduce,
     ))
 
@@ -494,6 +534,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     grpNameProduce,
     ))
 
+C_INGREDIENTS.append( RecipeIngredient(
+    'Parsley',
+    grpNameProduce,
+    ))
+    
 C_INGREDIENTS.append( RecipeIngredient(
     'Pickling Cucumbers',
     grpNameProduce,
