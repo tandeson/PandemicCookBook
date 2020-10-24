@@ -55,6 +55,12 @@ C_INGREDIENTS.append( RecipeIngredient(
     grpNameCanned
     ))
 
+C_INGREDIENTS.append( RecipeIngredient(
+    'Enchilada Sauce',
+    grpNameCanned,
+    'Usually I get Las Palmas mild or medium sauce. '
+    ))
+    
 grapeLeavesPickled = RecipeIngredient(
     'Grape Leaves',
     grpNameCanned, 
@@ -242,6 +248,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(    
     'Black-Eyed Peas',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Brown Lentils',
     grpNameDryGoods,
     ))
 
@@ -471,7 +482,12 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Cauliflower',
     grpNameProduce
     ))
-    
+
+C_INGREDIENTS.append(RecipeIngredient(
+    'Celery',
+    grpNameProduce, 
+    ))
+
 C_INGREDIENTS.append(RecipeIngredient(
     'Cilantro',
     grpNameProduce, 
@@ -546,6 +562,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Potato',
+    grpNameProduce
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Red Bell Pepper',
     grpNameProduce
     ))
@@ -563,6 +584,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 C_INGREDIENTS.append( RecipeIngredient(
     'Romaine Lettuce',
     grpNameProduce
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Spinach',
+    grpNameProduce,
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
