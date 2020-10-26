@@ -235,6 +235,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Baking Soda',
     grpNameDryGoods,
     ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Bread',
+    grpNameDryGoods,
+    ))
     
 C_INGREDIENTS.append( RecipeIngredient(
     'Breadcrumbs',
@@ -610,7 +615,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Yellow Onion',
     grpNameProduce,
     ))
-    
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Zucchini',
+    grpNameProduce,
+    ))
       
 #=============================================================================
 ## Spices
