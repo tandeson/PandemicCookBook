@@ -23,6 +23,15 @@ C_INGREDIENTS = []
 
 #=============================================================================
 ## Packaged goods
+grpNameAlcohol = 'Alcohol'
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Wine',
+    grpNameAlcohol,
+    ))
+
+#=============================================================================
+## Packaged goods
 grpNameCanned = 'Canned Goods'
 
 C_INGREDIENTS.append( RecipeIngredient(
@@ -293,6 +302,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(    
     'Diastatic Malt Powder',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Doritos',
     grpNameDryGoods,
     ))
 
