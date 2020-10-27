@@ -83,6 +83,11 @@ grapeLeavesPickled.addVendor(
 C_INGREDIENTS.append( grapeLeavesPickled )
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Kidney Beans',
+    grpNameCanned
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Peanut Butter',
     grpNameCanned
     ))
@@ -430,6 +435,12 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Tofu',
     grpNameProtien
     ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Veggie Grillers Crumbles',
+    grpNameProtien,
+    'I Commonly use MorningStar farms, this is a replacement for ground beef.'
+    ))
     
 #=============================================================================
 grpNameOils = 'Oils'
@@ -490,6 +501,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 C_INGREDIENTS.append( RecipeIngredient(
     'Broccoli',
     grpNameProduce,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Brussel Sprouts',
+    grpNameProduce
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(

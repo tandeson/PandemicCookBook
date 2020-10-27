@@ -45,7 +45,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         # Add Steps and Notes
         steps = [
-            'Preheat oven to 400 degrees F.',
+            'Preheat oven to 400 deg F.',
             'Place the sweet potato rounds on a large baking sheet. You '
             'don\'t want to overcrowd the sweet potatoes. Toss the sweet '
             'potatoes in olive oil and season with salt and pepper. Bake for '
