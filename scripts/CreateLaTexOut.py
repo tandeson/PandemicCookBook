@@ -108,7 +108,7 @@ def genTitlePage( latexDoc ):
     Build the Title Page
     """
     latexDoc.preamble.append(Command('title', 'The Pandemic Cookbook'))
-    latexDoc.preamble.append(Command('author', 'Bilyana Yakova and Thomas Anderson'))
+    latexDoc.preamble.append(Command('author', NoEscape(r'Bilyana Yakova \and Thomas Anderson')))
     latexDoc.preamble.append(Command('date', NoEscape(r'\today')))
     latexDoc.append(NoEscape(r'\maketitle'))
 
@@ -127,11 +127,6 @@ def genRecipe( latexDoc, recipeName, recipeData ):
                 width=NoEscape(r"0.3\textwidth") )
                                  
         with latexDoc.create( Tabularx( 'XXX', width_argument=NoEscape(r"\textwidth")) ) as recipeHeadTable:
-            recipeHeadTable.add_row( (
-                '',
-                '', #bold( recipeName ),
-                '.'
-                ))
             recipeHeadTable.add_empty_row()
             recipeHeadTable.add_hline()
         latexDoc.append( NewLine() )

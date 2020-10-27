@@ -37,7 +37,7 @@ class RecipeIngredient:
     """
 
     #-------------------------------------------------------------------------
-    def __init__(self, IngredientName, IngredientGroup, IngredientDescrption=''):
+    def __init__(self, IngredientName, IngredientGroup, IngredientDescrption='',recipeToMakeName=None):
         """
         Create RecipeIngredient object.
 
@@ -49,6 +49,7 @@ class RecipeIngredient:
             'description': IngredientDescrption,
             'exampleVendors': [],
             'recipeList': {},
+            'recipeToMakeName': recipeToMakeName
             }
 
     #-------------------------------------------------------------------------
@@ -131,27 +132,11 @@ class RecipeIngredient:
         
         return strBack
 
-
-#=============================================================================
-def function():
-        """
-        One line description of method.
-
-        args:
-            argument descriptions
-
-        returns:
-            description of return objects
-        """
-
-
-
 #=============================================================================
 def main(argv=None):
     """
     Description of program.
     """
-
     pass
 
 

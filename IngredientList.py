@@ -35,6 +35,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 grpNameCanned = 'Canned Goods'
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Artichoke Hearts',
+    grpNameCanned,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Black Beans',
     grpNameCanned,
     ))
@@ -185,6 +190,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 C_INGREDIENTS.append( RecipeIngredient(
    'Feta Cheese',
    grpNameDairy,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Greek Yogurt',
+    grpNameDairy,
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
@@ -349,7 +359,17 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Peanuts',
     grpNameDryGoods,
     ))
-    
+
+dryPizzaDoughFlavor = RecipeIngredient(
+    'Pizza Dough Flavor',
+    grpNameDryGoods
+    )
+dryPizzaDoughFlavor.addVendor(
+    'King Arthur Baking', 
+    'For over the top flavor in your homemade pizza or Italian bread dough. Features cheese powder, garlic, and natural flavors.',
+     'https://shop.kingarthurbaking.com/items/pizza-dough-flavor-4-oz')
+C_INGREDIENTS.append( dryPizzaDoughFlavor )
+ 
 C_INGREDIENTS.append( RecipeIngredient(
     'Potato Flour',
     grpNameDryGoods,
@@ -470,6 +490,20 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Shortening',
     grpNameOils
     ))
+
+#=============================================================================
+grpNameOther = 'Other'
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Mayonnaise',
+    grpNameOther))
+    
+C_INGREDIENTS.append( RecipeIngredient(
+    'Pizza Dough',
+    grpNameOther,
+    recipeToMakeName='Sourdough Pizza Dough'
+    ))
+
 #=============================================================================
 grpNameProduce = 'Produce'
 

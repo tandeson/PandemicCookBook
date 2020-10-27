@@ -98,7 +98,7 @@ class RecipeStep:
                     )
                 imgFigList.append( imgFig )
             
-            if( self.info['inText']): LaTexItemize.add_item( self.info['inText'] )
+            if( self.info['inText']): LaTexItemize.add_item(  self.info['inText'] )
             
             for iFig in imgFigList:
                 LaTexItemize.append( iFig ) 
