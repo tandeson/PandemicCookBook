@@ -50,6 +50,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Capers',
+    grpNameCanned,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Chickpeas',
     grpNameCanned,
     ))
@@ -97,6 +102,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     grpNameCanned
     ))
 
+C_INGREDIENTS.append( RecipeIngredient(
+    'Pizza Sauce',
+    grpNameCanned
+    ))
+    
 C_INGREDIENTS.append( RecipeIngredient(
     'Tomato Paste',
     grpNameCanned
