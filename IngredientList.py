@@ -441,6 +441,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     grpNameProtien
     ))
 
+C_INGREDIENTS.append( RecipeIngredient(
+    'Chopped Clams',
+    grpNameProtien
+    ))
+
 C_INGREDIENTS.append( RecipeIngredient( 
     'Eggs',
     grpNameProtien
@@ -837,6 +842,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     
 C_INGREDIENTS.append( RecipeIngredient(
     'Thai Basil',
+    grpNameSpices,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Thyme',
     grpNameSpices,
     ))
 
