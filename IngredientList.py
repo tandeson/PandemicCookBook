@@ -266,6 +266,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Almond Flour',
+    grpNameDryGoods,
+    ))
+    
+C_INGREDIENTS.append( RecipeIngredient(
     'Bakers Special Dry Milk',
     grpNameDryGoods,
     ))
