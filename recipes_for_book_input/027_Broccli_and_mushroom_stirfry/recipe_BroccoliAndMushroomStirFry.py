@@ -24,7 +24,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Broccoli and Mushroom Stir Fry', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
-
+        r.addPicture('PlateOne', 'MushroomsAndBroccliPlate_1.jpg')
+        r.addPicture('PlateTwo', 'MushroomsAndBroccliPlate_2.jpg')
+        r.setPrimaryPicture('PlateOne')
+        
         #  -- Add Ingredients --
 
         ## 
