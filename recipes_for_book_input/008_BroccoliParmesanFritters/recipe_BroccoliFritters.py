@@ -24,6 +24,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Broccoli Parmesan Fritters', sharedIngredentList)
         r.setPathLoc( dirPathRecipe )
+        r.addPicture('FrittersFrying', 'FrittersCooking.jpg')
+        r.setPrimaryPicture('FrittersFrying')
         #  -- Add Ingredients --
         
         ## Yields about 9 

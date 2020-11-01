@@ -146,8 +146,18 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Mustard',
+    grpNameCondiments,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Oyster Sauce',
     grpNameCondiments,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Pickles',
+    grpNameCondiments, 
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(

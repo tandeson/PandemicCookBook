@@ -24,6 +24,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Clam Chowder', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        r.addPicture('Chowder', 'chowderInABowl.jpg')
+        r.setPrimaryPicture('Chowder')
         
         #  -- Add Ingredients --
 
