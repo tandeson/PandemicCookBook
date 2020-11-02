@@ -32,18 +32,19 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         ##
         r.addIngredient('Unsalted Butter', 1 , 'tablespoon')
         r.addIngredient('Extra Virgin Olive Oil', 4, 'tablespoons')
-        r.addIngredient('Garlic', 4, 'cloves, chopped')
+        r.addIngredient('Garlic', 6, 'cloves, chopped')
         r.addIngredient('Yellow Onion', 1, 'large, chopped')
-        r.addIngredient('Celery', 4, 'ribs, chopped')
+        r.addIngredient('Celery', 2, 'ribs, chopped')
         
-        r.addIngredient('Potato', 4, 'medium, skinned and cubed')
-        r.addIngredient('Vegetable Broth', 1, 'cup' )
-        r.addIngredient('Thyme', 1, 'teaspoon')
+        r.addIngredient('Potato', 3, 'large, cubed')
+        r.addIngredient('Vegetable Broth', 3, 'cup' )
+        r.addIngredient('Thyme', 3, 'teaspoon')
+        r.addIngredient('Dill', 3, 'teaspoon')
         r.addIngredient('Salt', 2, 'teaspoons')
         r.addIngredient('Black Pepper', 1, 'teaspoons')
        
-        r.addIngredient('Whole Milk', 2, 'cups')
-        r.addIngredient('All Purpose Flour', 0.25, 'cups')
+        r.addIngredient('Whole Milk', 3, 'cups')
+        r.addIngredient('All Purpose Flour', 0.75, 'cups')
         
         r.addIngredient('Chopped Clams', 2, 'cans, 6.5 oz each')
         
