@@ -52,12 +52,12 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         # Add Steps and Notes
         steps= [
             'In a large pot over medium-high heat, melt the Butter.',
-            'Add in the Oil, Onion and Celery. Saute until softened, mixing often.',
-            'Add in the  Garlic and cook 1 minute longer.',
-            'Add in the Potatos, Broth, Thyme, Salt and Pepper.',
-            'Bring to a boil, then reduce heat and simmer uncovered until Potatos are tender, 15-20 minutes',
+            'Add in the Oil, Onion, Garlic and Celery. Saute until softened, mixing often.',
+            'Add in the Potatoes, Broth, Thyme, Dill, Salt and Pepper.',
+            'Bring to a boil, then reduce heat and simmer uncovered until Potatoes are tender, 15-20 minutes',
             'In a small bowl, combine flour and Milk. Gradually stir into soup. Bring to Boil an stir until thickened, 1 - 2 minutes.',
-            'Stir in Clams with their juice and heat.'
+            'Stir in Clams with their juice and heat.',
+            'Check seasoning - and add additional Salt, Pepper, Dill and Thyme to taste.'
         ]
         for s in steps:
             r.addStep( RecipeStep( s ) )
