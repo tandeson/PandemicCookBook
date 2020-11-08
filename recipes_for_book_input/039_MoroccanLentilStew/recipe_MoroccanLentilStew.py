@@ -22,7 +22,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
-        r = MyRecipe('Moroccan Lentil Soup', sharedIngredentList)
+        r = MyRecipe('Moroccan Lentil Stew', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         
         ## Source: https://www.simplyquinoa.com/detox-moroccan-lentil-soup/
