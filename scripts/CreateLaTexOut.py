@@ -125,7 +125,13 @@ def genRecipe( latexDoc, recipeName, recipeData ):
             picForRecipe.add_image(
                 str( Path( recipeData.getPicturePrimary()['path']).absolute() ),
                 width=NoEscape(r"0.3\textwidth") )
-                                 
+        
+        if recipeData.GetDescription():
+            latexDoc.append( 
+                SmallText( italic( recipeData.GetDescription() ))
+            )
+            latexDoc.append( NewLine() )
+                                     
         with latexDoc.create( Tabularx( 'XXX', width_argument=NoEscape(r"\textwidth")) ) as recipeHeadTable:
             recipeHeadTable.add_empty_row()
             recipeHeadTable.add_hline()
@@ -133,6 +139,7 @@ def genRecipe( latexDoc, recipeName, recipeData ):
         
         # Create Recipe body
         
+                
         ##----
         # Add in Ingredients
         ingredLaTex = recipeData.genIngredientsBlock('LaTex')

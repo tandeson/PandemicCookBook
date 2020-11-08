@@ -116,6 +116,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Pumpkin Puree',
     grpNameCanned
     ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Sauerkraut',
+    grpNameCanned
+    ))
     
 C_INGREDIENTS.append( RecipeIngredient(
     'Tomato Paste',
@@ -428,6 +433,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Red Lentils',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Rice',
     grpNameDryGoods,
     ))
 

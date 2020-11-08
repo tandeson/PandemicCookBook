@@ -27,7 +27,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addPicture('picklesDone', '2020_09_09_Pickles_post.jpg')
         r.addPicture('picklesReady', '2020_09_09_Pickles_pre.jpg')
         r.setPrimaryPicture( 'picklesDone')
-        
+        r.AddDescription(
+            'Bilyana\'s Friend Lisa shared this with us, and it was one of our first experiments.'
+            )
         #  -- Add Ingredients --
         r.addToDoNote( "Needs to list vegies for pickling - amounts")
         r.addToDoNote( "Jar sizes? used Kerr Wide Mouth Mason jars - not sure oz? 15 on glass on bottom.")

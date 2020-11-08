@@ -383,19 +383,19 @@ class MyRecipe:
         return dataBack
     
     #-------------------------------------------------------------------------
-    def method(self):
+    def AddDescription(self, descriptText):
         """
-        One line description of method.
-
-        args:
-            argument descriptions
-
-        returns:
-            description of return objects
+        Add Recipe Description
         """
-        pass
+        self.info['description'] = descriptText
 
-
+    #-------------------------------------------------------------------------
+    def GetDescription(self):
+        if 'description' in self.info.keys():
+            return self.info['description']
+        else:
+            return None
+    
 #=============================================================================
 def function():
         """
