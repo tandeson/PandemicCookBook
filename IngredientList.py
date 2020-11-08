@@ -98,6 +98,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Marinara Sauce',
+    grpNameCanned
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Peanut Butter',
     grpNameCanned
     ))
@@ -106,11 +111,17 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Pizza Sauce',
     grpNameCanned
     ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Pumpkin Puree',
+    grpNameCanned
+    ))
     
 C_INGREDIENTS.append( RecipeIngredient(
     'Tomato Paste',
     grpNameCanned
-    ))    
+    ))
+
 #=============================================================================
 grpNameCondiments = 'Condiments'
 
@@ -254,6 +265,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     
 #=============================================================================
 grpNameDryGoods = 'Dry Goods'
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Arborio Rice',
+    grpNameDryGoods,
+    ))
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Active Dry Yeast',
@@ -531,8 +547,14 @@ grpNameOther = 'Other'
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Mayonnaise',
-    grpNameOther))
-    
+    grpNameOther
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Peas',
+    grpNameOther
+    ))
+        
 C_INGREDIENTS.append( RecipeIngredient(
     'Pizza Dough',
     grpNameOther,
@@ -725,6 +747,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 grpNameSpices = "Spices"
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Ancho Chili powder',
+    grpNameSpices, 
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Asafetida',
     grpNameSpices, 
     ))
@@ -804,7 +831,12 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Green Onion',
     grpNameSpices,
     ))
-    
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Italian Seasoning',
+    grpNameSpices,
+    ))
+
 C_INGREDIENTS.append( RecipeIngredient(
     'Lemon Juice',
     grpNameSpices,

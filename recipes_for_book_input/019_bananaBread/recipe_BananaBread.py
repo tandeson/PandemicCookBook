@@ -42,7 +42,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         r.addIngredient('Banana', 1, 'cup, very ripe mashed (about 2)')
         r.addIngredient('Walnuts', 0.5, 'cups, coarsely chopped')
-               
+        r.addIngredient('Dark Chocolate chips', 0.5, 'cups')
+        
         # Add Steps and Notes
         steps = [
             'Preheat the oven to 350 deg F.',
@@ -51,7 +52,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'In a separate bowl, beat Butter and Sugar on high speed until lightened in color and text 2 to 3 minutes.',
             'Beat in the flour mixture until blended and the consistency of brown sugar.',
             'Gradually beat in the Eggs.',
-            'Fold in Bananas and Walnuts until just combined.',
+            'Fold in Bananas, Chocolate Chips and Walnuts until just combined.',
             'Scrape the batter into the pan and spread evenly.',
             'Bake until a toothpick inserted in the center comes out clean, 50 - 60 minutes.',
             'Let cool in the pan on a rack for 5 - 10 minutes before unmolding to cool completely on the rack.'
