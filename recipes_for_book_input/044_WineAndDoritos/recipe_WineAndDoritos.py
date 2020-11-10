@@ -24,6 +24,11 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Wine and Doritos', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        
+        r.AddDescription(
+            'Some nights, we\'re fancy - some nights we make '
+            'this for dinner. ~Thomas'
+        )
         #  -- Add Ingredients --
 
         ##

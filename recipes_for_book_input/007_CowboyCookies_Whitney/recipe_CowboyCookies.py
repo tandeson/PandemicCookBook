@@ -25,6 +25,13 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r = MyRecipe('Cowboy Cookies', sharedIngredentList)
         r.setPathLoc( dirPathRecipe )
         
+        r.AddDescription(
+           'My friend Whitney Hudson used to bring these cookies into work. I\'d never '
+           'had a cookie with Rice Crispies in it before - and it adds a wonderful crunch! '
+           'When she took a job at Microsoft, she gave this recipe to me as a parting gift. '
+           'This is 1/2 of what the original recipe called for - as it made what she described as '
+           '"a Lutheran Funeral" of cookies. ~Thomas'
+        )
         #  -- Add Ingredients --
         
         ## Makes about 2 dozen?

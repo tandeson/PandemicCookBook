@@ -25,6 +25,12 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r = MyRecipe('Flour Tortillas', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         
+        r.AddDescription(
+            'Rick Rodriguez shared this with me after a conversation at the coffee stand. '
+            'He likes to make these in the morning for his wife, and fill them with eggs and '
+            'potatoes. They can also come out like a Pita bread by adding a pinch of baking soda. '
+            'As Pita they work well, for things like the base of a Gyro. ~Thomas'    
+        )
         #  -- Add Ingredients --
 
         ## Garlic

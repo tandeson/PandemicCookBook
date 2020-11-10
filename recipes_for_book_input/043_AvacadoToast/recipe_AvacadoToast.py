@@ -27,6 +27,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addPicture('ToastOnAPlate', '2020_10_25_ToastAndAvacado.jpg')
         r.setPrimaryPicture('ToastOnAPlate')
         
+        r.AddDescription(
+            'While not a complex recipe, this is almost a daily breakfast for Bilyana.'
+        )
         #  -- Add Ingredients --
 
         ##

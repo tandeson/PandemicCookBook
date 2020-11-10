@@ -27,6 +27,12 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addPicture('OurPadKeeMaoMade', '2020_09_09_PadKeeMao_done.jpg')
         r.setPrimaryPicture( 'OurPadKeeMaoMade')
         
+        r.AddDescription(
+            'In July of 2020 we went and got takout for our 6 month anniversary at a Thai restaurant. '
+            'This was our first restaurant food since the pandemic lockdown. This caused us to bemoan '
+            'the fact that we couldn\'t get Thai food. Later that month, we found this recipe online and '
+            'adapted it for us. Since then we\'ve made it multiple times! ~Thomas'
+        )
         #  -- Add Ingredients --
 
         ## Noodles

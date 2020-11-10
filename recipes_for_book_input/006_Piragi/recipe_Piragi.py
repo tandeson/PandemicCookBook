@@ -28,6 +28,12 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addPicture('PerogiInHalf', '2020_08_25_PerogiInHalf_edited.JPG')
         r.setPrimaryPicture( 'PerogiBatch')
         
+        r.AddDescription(
+            'This recipe was shared with me by my friend Xenia Hertzenberg. We were co-workers at the '
+            'time and I\'d used a Pizza Dough recipe to make something like Pierogi after a trip to a '
+            'Russian bakery near Pike\'s Place Market. The next day she brought in this recipe from '
+            'her uncle, who I think is Russian. ~Thomas'
+            )
         #  -- Add Ingredients --
 
         ## Dough

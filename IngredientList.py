@@ -127,6 +127,12 @@ C_INGREDIENTS.append( RecipeIngredient(
     grpNameCanned
     ))
 
+C_INGREDIENTS.append( RecipeIngredient(
+    'Worcestershire Sauce',
+    grpNameCanned
+    ))
+
+
 #=============================================================================
 grpNameCondiments = 'Condiments'
 
@@ -720,6 +726,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 C_INGREDIENTS.append( RecipeIngredient(
     'Romaine Lettuce',
     grpNameProduce
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Serrano Chile',
+    grpNameProduce,
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
