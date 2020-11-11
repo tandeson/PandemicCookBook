@@ -57,6 +57,17 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Worcestershire Sauce', 1, 'tablespoon', recipeGroupShepardsPie)
         r.addIngredient('Veggie Grillers Crumbles', 1, 'package, about 12 oz',recipeGroupShepardsPie),
         
+        recipeGroupIndianPotato = 'Indian Potato Filling'
+        r.addIngredient('Potato', 5, 'large', recipeGroupIndianPotato)
+        r.addIngredient('Extra Virgin Olive Oil', 3, 'tablespoons',recipeGroupIndianPotato) 
+        r.addIngredient('Garlic', 5, 'cloves, minced', recipeGroupIndianPotato)
+        r.addIngredient('Ginger', 1, 'tablespoon, minced', recipeGroupIndianPotato)
+        r.addIngredient('Red Onion', 1, 'medium, chopped', recipeGroupIndianPotato)
+        r.addIngredient('Serrano Chile', 2, 'small, seeded and chopped', recipeGroupIndianPotato)
+        r.addIngredient('Salt', 2, 'teaspoons', recipeGroupIndianPotato)
+        r.addIngredient('Curry Powder', 2, 'tablespoons', recipeGroupIndianPotato)
+        r.addIngredient('Cumin', 1, 'tablespoons', recipeGroupIndianPotato)
+        
         r.addStep( RecipeStep(
             'To make the Shepherd\'s Pie Filling',
             [
