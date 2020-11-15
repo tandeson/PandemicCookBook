@@ -24,6 +24,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Cowboy Cookies', sharedIngredentList)
         r.setPathLoc( dirPathRecipe )
+        r.addPicture('CowboyCookies', 'cowboycookiesBeingMade.jpg')
+        r.setPrimaryPicture('CowboyCookies')
         
         r.AddDescription(
            'My friend Whitney Hudson used to bring these cookies into work. I\'d never '

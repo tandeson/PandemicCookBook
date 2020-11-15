@@ -151,7 +151,6 @@ def genRecipe( latexDoc, recipeName, recipeData ):
         ##---- Directions            
         dirPage =  recipeData.genStepsBlock('LaTex', latexDoc)
         
-        latexDoc.append( Command('begin', ['samepage']) )
         with latexDoc.create( SmallText() ):
             latexDoc.append( Command('columnratio',[0.53]) )
             latexDoc.append( Command('begin',['paracol', 2], packages=[ Package('paracol')]) )
@@ -160,7 +159,6 @@ def genRecipe( latexDoc, recipeName, recipeData ):
             latexDoc.append(  Command('switchcolumn',packages=[ Package('paracol')]) )
             latexDoc.append( dirPage )
             latexDoc.append(  Command('end','paracol',packages=[ Package('paracol')]) )
-        latexDoc.append( Command('end', ['samepage']) )
         
         latexDoc.append( NewPage() )
             

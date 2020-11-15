@@ -29,7 +29,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addPicture('ShepardPie', 'ShepardsPie.jpg' )
         r.addPicture('ShepardPiePlate', 'ShepardsPiePlate.jpg')
         r.addPicture('ShepardPiePlateClose', 'ShepardsPiePlateClose.jpg')
-        r.setPrimaryPicture('ShepardPiePlateClose')
+        r.setPrimaryPicture('ShepardPie')
         
         r.AddDescription(
             'We decided to make this after watching a series of Episodes of the Great British Bake off. '
@@ -88,7 +88,21 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
                     ]
                     ),
             ]
-            ))
+            ),
+            ['ShepardPiePlateClose']
+            )
+        
+        r.addStep( RecipeStep(
+            'To make the Indian Potato Filling',
+            [
+                RecipeStep('Wash and Clean the Potatoes. Pre-cook them in the microwave - either about 8 - 10 minutes, or using the built in baked potato option.'),
+                RecipeStep('Heat a frying pan on medium high heat.'),
+                RecipeStep('Cut the potatos into large cubes and put into the frying pan with the oil. Fry until browned on the sies 3 - 8 minutes.'),
+                RecipeStep('Add in the Garlic, Ginger, Onion, Chile, Salt, Curry and Cumin. Continue to cook until the vegitables are soft, 2 - 5 minutes.'),
+                RecipeStep('When ready to place in the pie crust, fill with the mixture evenly.')
+            ]),
+            ['PotatoPieCut']
+        )
         
         r.addStep( RecipeStep(
             'To make the Pastry Dough',
