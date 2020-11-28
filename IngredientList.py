@@ -899,6 +899,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Poultry Seasoning',
+    grpNameSpices,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Red Pepper Flakes',
     grpNameSpices,
     ))
