@@ -22,38 +22,41 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
-        r = MyRecipe('Zucchini Bread', sharedIngredentList)
-        r.setPathLoc(dirPathRecipe)
-        r.addPicture('full_loaf', '2020ThanksgivingBread.jpg')
-        r.setPrimaryPicture('full_loaf')
+        r = MyRecipe('Coconut Shortbread Cookies', sharedIngredentList)
+        r.setPathLoc( dirPathRecipe )
+        
+        r.AddDescription(
+           'Early in our dating, I found out that Bilyana likes coconut. I made '
+           'these as a present for one of our dates. ~ Thomas'
+        )
         #  -- Add Ingredients --
-
-        ##
-        r.addIngredient('Eggs', 3, 'large')
-        r.addIngredient('Granulated White Sugar', 2, 'cups')
-        r.addIngredient('Vegetable Oil', 1, 'cup')
-        r.addIngredient('Zucchini', 2, 'cups, grated, raw')
-        r.addIngredient('All Purpose Flour', 2, 'cups')
-        r.addIngredient('Cinnamon', 3, 'teaspoons')
-        r.addIngredient('Baking Soda', 2, 'teaspoons')
-        r.addIngredient('Baking Powder', 0.25, 'teaspoons')
-        r.addIngredient('Salt', 0.75, 'teaspoons')
-        r.addIngredient('Walnuts', 1, 'cup, chopped')
-        r.addIngredient('Vanilla', 2, 'teaspoons')
+        
+        ## Makes about 2 dozen?
+        #--
+        r.addIngredient('Coconut Flour', 32, 'grams (1/4 cup)')
+        r.addIngredient('All Purpose Flour', 39, 'grams (1/4 cup)')
+        r.addIngredient('Granulated White Sugar', 50, 'grams (1/4 cup)')
+        r.addIngredient('Unsalted Butter', 57, 'grams (4 tablespoons) soft')
+        r.addIngredient('Salt', 0.25, 'teaspoon')
+        r.addIngredient('Eggs', 1, 'large')
+        
         
         # Add Steps and Notes
-        steps= [
-            'Preheat oven to 350 deg F.',
-            'In a large bowl, Beat eggs until light.',
-            'Add sugar and oil together and beat until well mixed.',
-            'Sift flour with cinnamon, baking soda, baking powder, and salt. Add to bowl and mix.',
-            'Add zucchini to bowl and mix.',
-            'Add nuts and vanilla, mix well.',
-            'In two greased and floured 8 inch by 4 inch baking pans, pour in the batter.',
-            'Bake for 1 hour.'
-        ]
+        steps = [
+            'Pre-heat the oven to 400 deg F.',
+            'Lightly grease a baking sheet, or line it with parchment.',
+            'Mix all the dough ingredients, by hand or mixer, until a '
+            'well-blended, cohesive dough forms.',
+            'Scoop the dough by the tablespoon and pat into rounds 1/2" '
+            'thick. Place the cookies on the prepared baking sheet, spacing them 1" apart.',
+            'Bake for 10 to 14 minutes, until just browned on the bottom.',
+            'Remove from the oven and let cool completely on the baking sheet.'
+            ]
+        
         for s in steps:
             r.addStep( RecipeStep( s ) )
+        
+        # Notes
         
         # Return this back.
         return r

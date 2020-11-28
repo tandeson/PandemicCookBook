@@ -22,38 +22,36 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
-        r = MyRecipe('Zucchini Bread', sharedIngredentList)
-        r.setPathLoc(dirPathRecipe)
-        r.addPicture('full_loaf', '2020ThanksgivingBread.jpg')
-        r.setPrimaryPicture('full_loaf')
+        r = MyRecipe('Stuffed Portobello Mushrooms', sharedIngredentList)
+        r.setPathLoc( dirPathRecipe )
+        
         #  -- Add Ingredients --
-
-        ##
-        r.addIngredient('Eggs', 3, 'large')
-        r.addIngredient('Granulated White Sugar', 2, 'cups')
-        r.addIngredient('Vegetable Oil', 1, 'cup')
-        r.addIngredient('Zucchini', 2, 'cups, grated, raw')
-        r.addIngredient('All Purpose Flour', 2, 'cups')
-        r.addIngredient('Cinnamon', 3, 'teaspoons')
-        r.addIngredient('Baking Soda', 2, 'teaspoons')
-        r.addIngredient('Baking Powder', 0.25, 'teaspoons')
-        r.addIngredient('Salt', 0.75, 'teaspoons')
-        r.addIngredient('Walnuts', 1, 'cup, chopped')
-        r.addIngredient('Vanilla', 2, 'teaspoons')
+        
+        ## Makes about 2 dozen?
+        #--
+        r.addIngredient('Mushrooms', 2, 'large Portobello')
+        r.addIngredient('Brie', 0.25, 'cups, approximately')
+        r.addIngredient('Extra Virgin Olive Oil', 2, 'tablespoons')
+        r.addIngredient('Salt', 1, 'pinch, to taste')
+        r.addIngredient('Black Pepper', 1, 'pinch, to taste')
+        
         
         # Add Steps and Notes
-        steps= [
-            'Preheat oven to 350 deg F.',
-            'In a large bowl, Beat eggs until light.',
-            'Add sugar and oil together and beat until well mixed.',
-            'Sift flour with cinnamon, baking soda, baking powder, and salt. Add to bowl and mix.',
-            'Add zucchini to bowl and mix.',
-            'Add nuts and vanilla, mix well.',
-            'In two greased and floured 8 inch by 4 inch baking pans, pour in the batter.',
-            'Bake for 1 hour.'
-        ]
+        steps = [
+            'Pre-heat the oven to 350 deg F.',
+            'Lightly grease a baking sheet, or line it with parchment.',
+            'Brush the top of the mushroom cap with oil, and place on the sheet stem side up.',
+            'Evenly divide the cheese between the mushrooms, and place on top. You can also use Feta, '
+            'cream cheese or other cheese as well. If the mushrooms seems dry - add additional oil.',
+            'Season to taste with Salt and Pepper.',
+            'Bake for 15 minutes.',
+            'Remove and serve.'
+            ]
+        
         for s in steps:
             r.addStep( RecipeStep( s ) )
+        
+        # Notes
         
         # Return this back.
         return r

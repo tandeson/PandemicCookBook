@@ -24,6 +24,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Stuffed Bell Peppers', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        r.addPicture( 'PepperPlate', '2020_PepperWithSweetPotatos.jpg' )
+        r.setPrimaryPicture( 'PepperPlate' )
         
         #  -- Add Ingredients --
         

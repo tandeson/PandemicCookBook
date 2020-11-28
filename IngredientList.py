@@ -220,6 +220,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+   'Brie',
+    grpNameDairy,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
    'Cottage Cheese',
    grpNameDairy,
     ))
@@ -349,6 +354,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Cashews',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Coconut Flour',
     grpNameDryGoods,
     ))
    
