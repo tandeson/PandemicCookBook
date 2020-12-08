@@ -24,7 +24,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Black Bean Enchiladas', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
-        
+        r.addPicture('RedSauceEnchalads', 'blackBeanEnchaladas_2020.jpg')
+        r.setPrimaryPicture('RedSauceEnchalads')
         #  -- Add Ingredients --
 
         ##
