@@ -28,6 +28,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addPicture('PickleOnionToast', '2020_09_09_QuickPickleOnToastEgg.jpg')
         r.setPrimaryPicture( 'PickleOnionToast')
         
+        r.AddDescription(
+            'After trying Lisa\'s Pickling recipe, and seeing this on "Beat Bobby Flay", we tried this. And lOVED it. '
+            'You\'ll see these quick pickled red onion in a lot of the other photos. ~Thomas'
+            )
         #  -- Add Ingredients --
 
         ## Garlic
