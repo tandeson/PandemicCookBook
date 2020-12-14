@@ -47,7 +47,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'ingredients burn.',
             'Add onions, mix with the spices. Saute for about 3-5 minutes.',
             'Throw in chopped Kale, cayenne pepper, lemon juice.',
-            'Continue cooking for another 7-10 minutes until flavors have blend and greens are cooked, according to preference.',
+            'Continue cooking for another 7-10 minutes until flavors have blended and greens are cooked, according to preference.',
             'Adjust seasoning - Salt and pepper.',
             'Remove from heat and let cool.'
         ]

@@ -72,7 +72,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         fillingSteps = [
             'Heat oil in a 4-quart saucepan over medium heat.',
-            'Add bacon/hame mixture. Cook stirring until fat renders - about 6 minutes.',
+            'Add bacon/ham mixture. Cook stirring until fat renders - about 6 minutes.',
             'Add Onion and cook, stirring, until the onion is lighly caramelized'
             ' but bacon/ham is not crisp - about 6 minutes',
             'Remove from heat, season with salt and pepper.',
@@ -95,9 +95,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Using a 2 1/2" round cutter, cut out dough rounds.',
             'Place 1 teaspon of filling in center of each round.',
             'Using your fingers, moisten edges of round with egg white',
-            'fold over to enclose filling, and pintch edges together to seal.',
+            'fold over to enclose filling, and pinch edges together to seal.',
             'Transfer turnovers, seam side down, to parchment paper '
-            'lined baking sheet, spaced abotu 3" apart.',
+            'lined baking sheet, spaced about 3" apart.',
             'Using a pastry brush, brush egg wash over each bun.',
             'Bake until golden brown, 12 - 15 minutes.'
             ]

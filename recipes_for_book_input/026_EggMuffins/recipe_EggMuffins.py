@@ -23,7 +23,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
-        r = MyRecipe('Mini Quiche', sharedIngredentList)
+        r = MyRecipe('Egg Muffins', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         r.addPicture(
             'muffins_on_plate', 
@@ -45,7 +45,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         # Add Steps and Notes
         steps= [
             'Saute mushroom and onions in 1 tablespoon olive oil until tender',
-            'In a bowl, combined flour, baking powder and salt',
+            'In a bowl, combine flour, baking powder and salt',
             'In another bowl combined eggs, cheese and 1/4 cup olive oil',
             'Combine all ingredients into one bowl, and mix',
             'Fill greased muffin cups',

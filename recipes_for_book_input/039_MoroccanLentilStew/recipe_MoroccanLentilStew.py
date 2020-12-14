@@ -24,6 +24,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Moroccan Lentil Stew', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        r.addPicture('StewInACup', 'LentilStew_2020.jpg')
+        r.setPrimaryPicture('StewInACup')
         
         ## Source: https://www.simplyquinoa.com/detox-moroccan-lentil-soup/
         #  -- Add Ingredients --
@@ -57,7 +59,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Season with salt, pepper and the spices and cook about 2 minutes.',
             'Add lentils and saute 1 - 2 minutes',
             'Add the broth, water and tomato paste. Stir to combine and until the tomato paste has dissolved.',
-            'Bring the soup to a boil, cover and reduce to simmer for 30 minutes.',
+            'Bring the soup to a boil, cover and reduce to simmer for 40 minutes (if spinach is frozen), 60 minutes if using fresh spinach. '
+            'With frozen spinach, add and let simmer an additional 20 minutes. '
+            ,
             'Remove from heat and stir in Coconut milk, lemon juice, and spinach, and stir until the spinach has wilted.',
             'Serve immediately and top with your desired toppings.'
         ]

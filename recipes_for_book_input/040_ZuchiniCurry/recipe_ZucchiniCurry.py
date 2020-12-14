@@ -24,6 +24,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Zucchini Curry', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        r.addPicture('ZucchiniCurryInBowl', '2020_ZuchiniCurry.jpg')
+        r.setPrimaryPicture('ZucchiniCurryInBowl')
         
         ## Source: https://www.simplyquinoa.com/detox-moroccan-lentil-soup/
         #  -- Add Ingredients --
@@ -39,7 +41,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Cumin', 1, 'teaspoons')
         r.addIngredient('Zucchini', 3, 'medium' )
         r.addIngredient('Tomato Paste', 1, 'can, 6 oz')
-        r.addIngredient('Vegetable Broth', 0.5, 'cups')
+        r.addIngredient('Vegetable Broth', 1, 'cups')
         r.addIngredient('Coconut Milk', 1, 'can, 14 oz full fat')
         r.addIngredient('Salt', 1, 'pinch, to taste')
         r.addIngredient('Black Pepper', 1, 'pinch, to taste')
@@ -53,8 +55,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'While the onions are sauteing, dice the zucchini into bite sized pieces.',
             'Add in the ginger, garlic and zucchini into the pan with the sauteed onions and saute about 5 minutes, stirring often.',
             'Add in the coriander, cumin, smoked paprika and turmeric and stir so spices are well incorporated.',
-            'add in the tomato paste, vegetable stock and coconut milk and stir till all threehave combined well. Once it has been mixed'
-            ' well, let this simmer about 3-5 minutes.',
+            'add in the tomato paste, vegetable stock and coconut milk and stir till all three have combined well. Once it has been mixed'
+            ' well, let this simmer about 15 minutes.',
             'Season with salt and pepper. If you\'d like it a bit spicy, add in a teaspoon of chili powder and mix. Garnish with chopped '
             'cilantro and enjoy with quinoa, naan or rice.'
         ]

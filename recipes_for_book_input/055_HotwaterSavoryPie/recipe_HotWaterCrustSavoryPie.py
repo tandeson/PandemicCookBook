@@ -73,7 +73,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             [
                 RecipeStep('In a large pot, add Potatoes and cover with water and add Salt.'),
                 RecipeStep('Bring to boil, and then lower to a simmer - cook for 25 minutes.'),
-                RecipeStep('Dry Potatos, and remove the skins.'),
+                RecipeStep('Dry potatoes, and remove the skins.'),
                 RecipeStep('Mash along with Butter and Milk. Set Aside'),
                 RecipeStep('In a Frying pan on medium heat, cook the Carrots, Onions and Garlic until just softening. About 2 - 3 minutes. and set aside.'),
                 RecipeStep('Defrost the peas in the microwave, covered with a paper towel to keep the moisure in, 2 - 4 minutes.'),
@@ -82,7 +82,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
                     'When ready to place in the pie crust, assemble by:',
                     [
                         RecipeStep('Place the Mashed Potatoes on the bottom.'),
-                        RecipeStep('Then cover with the fried Veggitable mixture.'),
+                        RecipeStep('Then cover with the fried Vegetable mixture.'),
                         RecipeStep('Place down the layer of peas.'),
                         RecipeStep('Place down the layer of seasoned Veggies Crumbles.'),
                     ]
@@ -97,8 +97,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             [
                 RecipeStep('Wash and Clean the Potatoes. Pre-cook them in the microwave - either about 8 - 10 minutes, or using the built in baked potato option.'),
                 RecipeStep('Heat a frying pan on medium high heat.'),
-                RecipeStep('Cut the potatos into large cubes and put into the frying pan with the oil. Fry until browned on the sies 3 - 8 minutes.'),
-                RecipeStep('Add in the Garlic, Ginger, Onion, Chile, Salt, Curry and Cumin. Continue to cook until the vegitables are soft, 2 - 5 minutes.'),
+                RecipeStep('Cut the potatoes into large cubes and put into the frying pan with the oil. Fry until browned on the sides 3 - 8 minutes.'),
+                RecipeStep('Add in the Garlic, Ginger, Onion, Chile, Salt, Curry and Cumin. Continue to cook until the vegetables are soft, 2 - 5 minutes.'),
                 RecipeStep('When ready to place in the pie crust, fill with the mixture evenly.')
             ]),
             ['PotatoPieCut']

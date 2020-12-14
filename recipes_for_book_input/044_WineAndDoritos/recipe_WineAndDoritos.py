@@ -24,6 +24,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Wine and Doritos', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        r.addPicture('WineAndChips', 'WineAndDoritoes_2020.jpg')
+        r.setPrimaryPicture('WineAndChips')
         
         r.AddDescription(
             'Some nights, we\'re fancy - some nights we make '

@@ -41,19 +41,20 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Tomato Paste', 0.5 , 'cups')
         r.addIngredient('Sriracha', 1, 'other hot sauce.')
         r.addIngredient('Peanuts', 0.25, 'cups, chopped')
+        r.addIngredient('Sweet Potatoes', 1, 'chopped')
            
         # Add Steps and Notes
         steps= [
             'Combine the broth and water in a medium pot.',
-            'Bring to boil, then add the Red Onion, Ginger, Garlic and Salt.',
+            'Bring to boil, then add the Red Onion, Ginger, Garlic, Salt and Sweet Potato.',
             'Cook on medium-low heat for 20 minutes.',
-            'In a medium-sized heat-safe mixing bowl, combind the Peanut Butter and Tomato Paste.',
+            'In a medium-sized heat-safe mixing bowl, combine the Peanut Butter and Tomato Paste.',
             'Transfer 1 - 2 cups of the hot stock to the bowl. Wisk until smooth, then pour back '
             'into the soup and mix well.',
             'Stir in Collard Greens and season the soup with Hot Sauce to taste.',
             'Simmer for 15 minutes on medium-low heat, stirring often.',
-            'Season with additional sal or Hot Sauce if desired.',
-            'Serve sprinkle of chopped Peanuts. Goes well over Quinona or Brown Rice.'
+            'Season with additional salt or Hot Sauce if desired.',
+            'Serve sprinkle of chopped Peanuts. Goes well over Quinoa or Brown Rice.'
         ]
         for s in steps:
             r.addStep( RecipeStep( s ) )

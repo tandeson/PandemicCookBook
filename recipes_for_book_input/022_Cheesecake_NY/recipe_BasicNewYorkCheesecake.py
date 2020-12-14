@@ -54,7 +54,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addStep( RecipeStep( 
             'Make the Crust.', [
             RecipeStep( 'Preheat Oven to 350 deg F.'),
-            RecipeStep( 'Mix the Grahm Cracker Crumbs, Sugar and Butter together in a bowl.'),
+            RecipeStep( 'Mix the Graham Cracker Crumbs, Sugar and Butter together in a bowl.'),
             RecipeStep( 'Gently press the mixture into the bottom of a 9" spring form pan. Use a spoon to smooth.'),
             RecipeStep( 'Bake for 8-10 minutes, and set aside.')
             ]

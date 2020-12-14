@@ -111,7 +111,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
                 RecipeStep(
                     'Add the sauce and stir-fry until the noodles are evenly coated '
                     'and the liquid has been absorbed.'),
-                RecipeStep('Return the chicken to the pan and add the Tomatoes and basil.'),
+                RecipeStep('Return the Tofu to the pan and add the Tomatoes and basil.'),
                 RecipeStep('Quickly stir-fry to reheat the Tofu and wilt the Basil.')
             ],
             ))

@@ -44,7 +44,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         # Add Steps and Notes
         steps= [
             'Drain and rinse the Black Beans and place in a bowl. Mash.',
-            'Add in the Quinona, Tomato Paste, spices and Breadcrumbs.',
+            'Add in the Quinoa, Tomato Paste, spices and Breadcrumbs.',
             'Mix well.',
             'Form into hamburger shaped patties.',
             'Fry for 4 minutes on each side.'
