@@ -147,6 +147,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient( 
+    'Apricot Preserves',
+    grpNameCondiments,
+    ))
+    
+C_INGREDIENTS.append( RecipeIngredient( 
     'Distilled White Vinegar', 
      grpNameCondiments,
     'Generic white vinegar, usually just from the local supermarket.'
@@ -422,6 +427,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     grpNameDryGoods,
     ))
 
+C_INGREDIENTS.append( RecipeIngredient(
+    'Pistachios',
+    grpNameDryGoods,
+    ))
+    
 dryPizzaDoughFlavor = RecipeIngredient(
     'Pizza Dough Flavor',
     grpNameDryGoods
@@ -673,6 +683,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Green Chillies',
+    grpNameProduce,
+    ))
+    
+C_INGREDIENTS.append( RecipeIngredient(
     'Jalapeno Pepper',
     grpNameProduce,
     ))
@@ -791,6 +806,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Bebere',
     grpNameSpices, 
     ))
+    
+C_INGREDIENTS.append( RecipeIngredient(
+    'Black Mustard Seeds',
+    grpNameSpices, 
+    ))
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Black Pepper',
@@ -834,6 +854,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(   
    'Cumin Seeds',
+    grpNameSpices, 
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Curry Leaves',
     grpNameSpices, 
     ))
 
