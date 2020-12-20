@@ -230,6 +230,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Cheddar Cheese',
+    grpNameDairy,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
    'Cottage Cheese',
    grpNameDairy,
     ))
@@ -239,6 +244,11 @@ C_INGREDIENTS.append( RecipeIngredient(
    grpNameDairy,
     ))
 
+C_INGREDIENTS.append( RecipeIngredient(
+    'Evaporated Milk',
+    grpNameDairy,
+    ))
+    
 C_INGREDIENTS.append( RecipeIngredient(
    'Feta Cheese',
    grpNameDairy,
@@ -587,6 +597,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Premade Pastry Shell',
+    grpNameOther
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Peas',
     grpNameOther
     ))
@@ -596,6 +611,7 @@ C_INGREDIENTS.append( RecipeIngredient(
     grpNameOther,
     recipeToMakeName='Sourdough Pizza Dough'
     ))
+
 
 #=============================================================================
 grpNameProduce = 'Produce'
@@ -697,6 +713,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     grpNameProduce,
     ))
     
+C_INGREDIENTS.append( RecipeIngredient(
+    'Leek',
+    grpNameProduce,
+    ))
+
 C_INGREDIENTS.append( RecipeIngredient(
     'Lemon',
     grpNameProduce,
