@@ -173,6 +173,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Molasses',
+    grpNameCondiments,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Mustard',
     grpNameCondiments,
     ))
@@ -229,6 +234,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     grpNameDairy,
     ))
 
+C_INGREDIENTS.append( RecipeIngredient(
+    'Buttermilk',
+    grpNameDairy,
+    ))
+    
 C_INGREDIENTS.append( RecipeIngredient(
     'Cheddar Cheese',
     grpNameDairy,
@@ -437,6 +447,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     grpNameDryGoods,
     ))
 
+C_INGREDIENTS.append( RecipeIngredient(
+   'Powdered Sugar',
+    grpNameDryGoods,
+    ))
+   
 C_INGREDIENTS.append( RecipeIngredient(
     'Pistachios',
     grpNameDryGoods,
@@ -867,7 +882,12 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Cinnamon',
     grpNameSpices, 
     ))
-
+    
+C_INGREDIENTS.append( RecipeIngredient(
+    'Cream of Tartar',
+    grpNameSpices, 
+    ))
+    
 C_INGREDIENTS.append( RecipeIngredient(   
     'Cumin',
     grpNameSpices, 
