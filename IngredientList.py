@@ -983,7 +983,12 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Salt',
     grpNameSpices,
     ))
-
+    
+C_INGREDIENTS.append( RecipeIngredient(
+    'Sea Salt',
+    grpNameSpices,
+    ))
+    
 C_INGREDIENTS.append( RecipeIngredient(
     'Smoked Paprika',
     grpNameSpices,
