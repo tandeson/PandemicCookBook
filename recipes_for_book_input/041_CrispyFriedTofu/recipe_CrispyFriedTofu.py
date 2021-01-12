@@ -24,7 +24,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Fried Tofu', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
-        
+        r.addPicture('Tofu_1', '20201_Tofu_1.JPEG')
+        r.addPicture('Tofu_2','2021_Tofu_2.JPEG')
+        r.setPrimaryPicture('Tofu_1')
         #  -- Add Ingredients --
 
         ##
