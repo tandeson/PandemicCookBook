@@ -386,7 +386,12 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Coconut Flour',
     grpNameDryGoods,
     ))
-   
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Cornmeal',
+    grpNameDryGoods,
+    ))
+
 C_INGREDIENTS.append( RecipeIngredient(
     'Corn Starch',
     grpNameDryGoods,
