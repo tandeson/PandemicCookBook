@@ -522,6 +522,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     grpNameDryGoods,
     ))
 
+C_INGREDIENTS.append( RecipeIngredient(
+    'Wild Rice Blend',
+    grpNameDryGoods,
+    ))
+
 #=============================================================================
 grpNameHousehold = 'Household'
 
