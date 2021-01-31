@@ -21,7 +21,7 @@ from PIL import Image
 
 ## For rendering options
 from pylatex import Document, Section, SmallText, Command, Tabular, Tabularx, \
-                    simple_page_number, Foot, PageStyle, NewPage, NewLine, \
+                    simple_page_number, Foot, Head, PageStyle, NewPage, NewLine, \
                     Package, Figure
 from pylatex.utils import NoEscape, italic
 from pylatex.section import Chapter
@@ -44,11 +44,11 @@ def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
     doc = Document(
         documentclass='book',
         document_options = [
-            '10pt',
+            '11pt',
             'twoside',
             ],
         geometry_options = {
-            #'head': '40pt',
+            'head': '40pt',
             'margin': '0.5in',
             'bottom': '0.6in',
             'includeheadfoot': True
@@ -56,14 +56,26 @@ def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
          )
     
     ## Setup Syle for Recipe pages
-    styleBookContents = PageStyle("styleBookContents")
-    #with styleBookContents.create( Head("C")) as docHeader:
-    #    docHeader.append("The Pandemic Cookbook")
-    with styleBookContents.create( Foot("C") ) as docFooter:
-        docFooter.append( simple_page_number() )
-    doc.preamble.append(styleBookContents)
-    doc.change_document_style("styleBookContents")
+    strNameBookStyle = 'styleBookContents'
+    styleBookContents = PageStyle(strNameBookStyle)
     
+    ## Setup Headers
+    with styleBookContents.create( Head("RO") ) as docFooter:
+        docFooter.append( NoEscape(r'\thepage\ ') )
+    with styleBookContents.create( Head("LE") ) as docFooter:
+        docFooter.append( NoEscape(r'\thepage\ ') )
+    doc.preamble.append(styleBookContents)
+    
+    ## Override the Table Of Conents to use Header/Footer formating.
+    doc.preamble.append(Command( 'AtBeginDocument', 
+            [ 
+            Command('addtocontents',
+                ['toc', 
+                NoEscape(r'\protect\thispagestyle{' + strNameBookStyle + '}')]
+            )
+        ])
+    )
+
     ## --------------------
     ## Build Up the Recipe Book Structure
     genTitlePage(doc)
@@ -72,7 +84,9 @@ def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
     doc.append( Command('tableofcontents') )
     
     # Add in the Recipes
+    doc.change_document_style("styleBookContents")
     with doc.create( Chapter('Recipes') ):
+        doc.append( Command('thispagestyle', [ strNameBookStyle]) )
         doc.append( 
             italic(
                 "The following are the things we've been cooking together as we find ways to "
