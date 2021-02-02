@@ -22,7 +22,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
-        r = MyRecipe('Fried Brussel Sprouts and Onions', sharedIngredentList)
+        r = MyRecipe('Fried Brussel Sprouts and Onions', 'Main dishes', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         #  -- Add Ingredients --
 

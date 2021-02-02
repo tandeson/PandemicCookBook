@@ -22,7 +22,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
-        r = MyRecipe('Ethiopian Style Kale', sharedIngredentList)
+        r = MyRecipe('Ethiopian Style Kale', 'Sides', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         r.addPicture('KaleOnAPlate', 'IMG_1303.JPEG')
         r.setPrimaryPicture('KaleOnAPlate')

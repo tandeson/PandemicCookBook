@@ -25,7 +25,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         ## From First for women magaizin, 2020-11-30
         
-        r = MyRecipe('Zoodles', sharedIngredentList)
+        r = MyRecipe('Zoodles', 'Main dishes', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         r.addPicture('OurZoodles', 'Zoodles_Nov2020.jpg')
         r.setPrimaryPicture('OurZoodles')

@@ -22,7 +22,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
-        r = MyRecipe('Blue Cheese and Onion Rolls', sharedIngredentList)
+        r = MyRecipe('Blue Cheese and Onion Rolls','Baking and Breads', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         r.addPicture('BlueCheeseRolls', '2020_08_02_BlueCheeseOnionSwirlRoll.jpeg')
         r.setPrimaryPicture( 'BlueCheeseRolls')

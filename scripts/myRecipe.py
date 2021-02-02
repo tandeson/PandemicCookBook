@@ -21,10 +21,8 @@ import os
 from pathlib import Path
 
 ## HTML Helper functions
-#from scripts.html_helpers import makeHtmlTable
-#from scripts.html_helpers import makeHtmlLink
-#from scripts.html_helpers import makeHtmlLinkTarget
 from scripts.html_helpers import makeHtmlEmbedImgFromFile
+from CookbookConst import C_BOOK_SECTIONS
 
 from pylatex import Itemize, Figure, NoEscape
 from pylatex.utils import bold
@@ -124,7 +122,7 @@ class MyRecipe:
     """
 
     #-------------------------------------------------------------------------
-    def __init__(self, recipeName, sharedIngredientList):
+    def __init__(self, recipeName, SectionNameStr, sharedIngredientList):
         """
         Create MyRecipe object.
 
@@ -134,6 +132,7 @@ class MyRecipe:
             'name': recipeName,
             'pictures': {},
             'primaryPic': None,
+            'RecipeSection': SectionNameStr,
             
             'ingredients': { 
                 },
@@ -146,6 +145,12 @@ class MyRecipe:
             'todo': [],
             }
         self.ingredients = sharedIngredientList
+        
+        if self.info['RecipeSection'] not in C_BOOK_SECTIONS:
+            raise Exception(
+                " ** Recipe Section: %s is not in the list of Ingredient in C_BOOK_SECTIONS. **\n" % 
+                (self['RecipeSection']) 
+                )
     
     #-------------------------------------------------------------------------
     def getName(self):

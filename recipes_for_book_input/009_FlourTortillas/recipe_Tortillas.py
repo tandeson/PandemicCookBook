@@ -22,7 +22,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
-        r = MyRecipe('Flour Tortillas', sharedIngredentList)
+        r = MyRecipe('Flour Tortillas',"Baking and Breads", sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         
         r.AddDescription(

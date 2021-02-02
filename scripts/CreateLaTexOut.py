@@ -21,7 +21,7 @@ from PIL import Image
 
 ## For rendering options
 from pylatex import Document, Section, SmallText, Command, Tabular, Tabularx, \
-                    simple_page_number, Foot, Head, PageStyle, NewPage, NewLine, \
+                    Foot, Head, PageStyle, NewPage, NewLine, \
                     Package, Figure
 from pylatex.utils import NoEscape, italic
 from pylatex.section import Chapter
@@ -164,6 +164,13 @@ def genRecipe( latexDoc, recipeName, recipeData ):
         
         ##---- Directions            
         dirPage =  recipeData.genStepsBlock('LaTex', latexDoc)
+        
+        ## Possible new Layout style
+        ## \vspace{5pt}
+        ## \begin{large}
+        ## Ingredients
+        ## \end{large}
+        ## \hrule width 4in
         
         with latexDoc.create( SmallText() ):
             latexDoc.append( Command('columnratio',[0.53]) )

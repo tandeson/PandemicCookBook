@@ -25,7 +25,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         Based on Recipe provided in class at King Arthur Baking School in Skagit Valley WA.
         Yeilds: 12 Pretzels
         """
-        r = MyRecipe('Soft Pretzels', sharedIngredentList)
+        r = MyRecipe('Soft Pretzels','Baking and Breads', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         r.addPicture('PretzelBasket', '2020_01_16_Pretzels_andPretzelRolls.jpeg')
         r.addPicture('ShapePretzel','pretzel_shape_From_web.jpg')

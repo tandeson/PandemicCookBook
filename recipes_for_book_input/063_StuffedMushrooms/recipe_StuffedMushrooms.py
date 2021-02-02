@@ -25,7 +25,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         ## From First for women magaizin, 2020-11-30
         
-        r = MyRecipe('Blue cheese and Walnut Stuffed Mushrooms', sharedIngredentList)
+        r = MyRecipe('Blue cheese and Walnut Stuffed Mushrooms', 'Appetizers', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         r.addPicture('Mushrooms', 'StuffedMushrooms_Nov2020.jpg')
         r.setPrimaryPicture('Mushrooms')

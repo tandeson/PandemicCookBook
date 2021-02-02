@@ -22,7 +22,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
-        r = MyRecipe('Leek and Mushroom Quiche', sharedIngredentList)
+        r = MyRecipe('Leek and Mushroom Quiche', 'Main dishes', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         #  -- Add Ingredients --
 

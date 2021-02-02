@@ -23,7 +23,7 @@ from pathlib import Path
 
 ## Custom objects
 from IngredientList import C_INGREDIENTS
-
+from CookbookConst import C_BOOK_SECTIONS
 ## For rendering options
 from scripts.CreateHtmlOut import genHtmlOut
 from scripts.CreateLaTexOut import genLaTexOut
@@ -205,7 +205,7 @@ def mainControl(args):
     outAbsPath.mkdir(parents=True, exist_ok=True)
         
     # -- HTML        
-    genHtmlSample = True
+    genHtmlSample = False
     if ( genHtmlSample ):
         genHtmlOut(args, outAbsPath, cookbookData, gitRepo)
         
