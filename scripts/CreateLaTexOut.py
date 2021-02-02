@@ -68,9 +68,9 @@ def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
         docFooter.append( NoEscape(r'\thepage\ ') )
     
     with styleBookContents.create( Foot("RO") ) as docFooter:
-        docFooter.append( NoEscape(r'\thepage\ ') )
+        docFooter.append( NoEscape(r'\rightmark') )
     with styleBookContents.create( Foot("LE") ) as docFooter:
-        docFooter.append( NoEscape(r'\thepage\ ') )
+        docFooter.append( NoEscape(r'\rightmark') )
           
     doc.preamble.append(styleBookContents)
     
