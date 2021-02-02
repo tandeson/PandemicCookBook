@@ -162,6 +162,16 @@ class MyRecipe:
         """
         return self.info['name']
     
+        #-------------------------------------------------------------------------
+    def getSection(self):
+        """
+        Get the Name of this Ingredient
+
+        returns:
+            string - name
+        """
+        return self.info['RecipeSection']
+    
     #-------------------------------------------------------------------------
     def addIngredient(self, ingredientName, ingredientAmount, ingredientUnits, ingredientGroupName = ''):
         """

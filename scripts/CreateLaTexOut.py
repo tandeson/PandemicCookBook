@@ -15,12 +15,14 @@ import os
 
 import sys
 
+from CookbookConst import C_BOOK_SECTIONS
+
 from pathlib import Path
 
 from PIL import Image
 
 ## For rendering options
-from pylatex import Document, Section, SmallText, Command, Tabular, Tabularx, \
+from pylatex import Document, Section, Subsection, SmallText, Command, Tabular, Tabularx, \
                     Foot, Head, PageStyle, NewPage, NewLine, \
                     Package, Figure
 from pylatex.utils import NoEscape, italic
@@ -64,8 +66,17 @@ def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
         docFooter.append( NoEscape(r'\thepage\ ') )
     with styleBookContents.create( Head("LE") ) as docFooter:
         docFooter.append( NoEscape(r'\thepage\ ') )
+    
+    with styleBookContents.create( Foot("RO") ) as docFooter:
+        docFooter.append( NoEscape(r'\thepage\ ') )
+    with styleBookContents.create( Foot("LE") ) as docFooter:
+        docFooter.append( NoEscape(r'\thepage\ ') )
+          
     doc.preamble.append(styleBookContents)
     
+    # Don't show chapter, section, etc numbering ( like 1.1.1..)
+    doc.preamble.append( Command('setcounter', ['secnumdepth', NoEscape(r'-1')]) )
+                         
     ## Override the Table Of Conents to use Header/Footer formating.
     doc.preamble.append(Command( 'AtBeginDocument', 
             [ 
@@ -97,11 +108,20 @@ def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
         recipeList = list( cookbookData['Recipes']['inputObjects'].keys() )
         recipeList.sort()
         
-        for iRecipe in recipeList:
+        for grpSectionName in C_BOOK_SECTIONS:
             if (args.verbose):
-                print( "Building LaTex Code for Recipe:%s" % ( iRecipe ) )
-            genRecipe(doc, iRecipe, cookbookData['Recipes']['inputObjects'][iRecipe] )
-    
+                    print( "Building LaTex Code for Section:%s" % ( grpSectionName ) )
+            
+            with doc.create( Section( grpSectionName ) ):
+                ## TODO - any info on this sections..
+                doc.append( NewPage())
+                
+                for iRecipe in recipeList:
+                    if (args.verbose):
+                        print( "-Building LaTex Code for Recipe:%s" % ( iRecipe ) )
+                    if (cookbookData['Recipes']['inputObjects'][iRecipe].getSection() == grpSectionName):
+                        genRecipe(doc, iRecipe, cookbookData['Recipes']['inputObjects'][iRecipe] )
+        
     
     ## --------------------
     ## Do the generation
@@ -131,7 +151,7 @@ def genRecipe( latexDoc, recipeName, recipeData ):
     """
     Format a Recipe into LaTex
     """
-    with latexDoc.create ( Section( "%s" % ( recipeName )) ):
+    with latexDoc.create ( Subsection( "%s" % ( recipeName )) ):
         ## Create Recipe Header
         picForRecipe = ''
         if( recipeData.getPicturePrimary() ):

@@ -23,7 +23,7 @@ from pathlib import Path
 
 ## Custom objects
 from IngredientList import C_INGREDIENTS
-from CookbookConst import C_BOOK_SECTIONS
+
 ## For rendering options
 from scripts.CreateHtmlOut import genHtmlOut
 from scripts.CreateLaTexOut import genLaTexOut
