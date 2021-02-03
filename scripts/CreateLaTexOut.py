@@ -24,11 +24,10 @@ from PIL import Image
 ## For rendering options
 from pylatex import Document, Section, Subsection, LargeText, SmallText, \
                     Command, Tabular, Tabularx,  Center, \
-                    Foot, Head, PageStyle, NewPage, NewLine, MiniPage, \
+                    Foot, Head, PageStyle, NewPage, NewLine, \
                     Package, Figure
-from pylatex.utils import NoEscape, italic
+from pylatex.utils import NoEscape, italic, bold
 from pylatex.section import Chapter
-from pylatex.basic import LargeText, NewLine
 
 #*  Constants ****************************************************************
 
@@ -177,38 +176,61 @@ def genRecipeFormatFancyWidePic( latexDoc, recipeName, recipeData  ):
     # Add in Ingredients
     ingredLaTex = recipeData.genIngredientsBlock('LaTex')
     
-    ingredPage = Tabular('rl')
+    ingredPage = Tabular('p{0.20\linewidth}p{0.75\linewidth}')
     ingredPage.add_empty_row()
     for ingredDat in ingredLaTex:
-        ingredPage.add_row( (ingredDat[0], ingredDat[1] + ' ' + ingredDat[2])  )
+        if ('' == ingredDat[0] and '' == ingredDat[2]):
+            ingredPage.add_row( ('', ingredDat[1])  )
+        else:
+            ingredPage.add_row( (ingredDat[0], ingredDat[1] + ' ' + ingredDat[2])  )
     
     
     ###################
-    latexDoc.append( Command('begin',['tabularx',NoEscape(r"\textwidth"),  NoEscape(r' p{.2\textwidth}p{.01\textwidth}X')]))
+    latexDoc.append( Command('begin',['tabularx',NoEscape(r"\textwidth"),  NoEscape(r' p{.3\textwidth}p{.01\textwidth}X')]))
     
     ## Column 1
     latexDoc.append( Command('vspace', ['10pt'] ) )
-    latexDoc.append( LargeText('Ingredients') )
+    latexDoc.append( LargeText( bold('Ingredients')) )
     latexDoc.append( NewLine() )
     latexDoc.append(ingredPage )
-    latexDoc.append( NoEscape(r'&'))
     
+    if recipeData.GetDescription():
+        latexDoc.append( Command('vspace', ['20pt'] ) )
+        latexDoc.append( NewLine() )
+        latexDoc.append( LargeText( bold('Notes')) )
+        latexDoc.append( NewLine() )
+        latexDoc.append( 
+                SmallText( italic( recipeData.GetDescription() ))
+            )
+        latexDoc.append( NewLine() )
+    
+    latexDoc.append( NoEscape(r'&'))
+       
     ## Column 2
     latexDoc.append( Command('vrule depth  7in' ) )
     latexDoc.append( NoEscape(r'&'))
     
     ## Column 3
     latexDoc.append( Command('vspace', ['10pt'] ) )
-    latexDoc.append( LargeText('Directions') )
+    
+    if( recipeData.getPicturePrimary() ):
+        latexDoc.append( Command(
+            'includegraphics',
+            NoEscape(Path( recipeData.getPicturePrimary()['path']).absolute().as_posix()),
+            NoEscape(r"width=0.5\columnwidth"))
+        )
+        latexDoc.append( NewLine() )
+    
+    latexDoc.append( Command('vspace', ['5pt'] ) )
+    latexDoc.append( NewLine() )
+    latexDoc.append( LargeText( bold('Directions')) )
     latexDoc.append( NewLine() )
     latexDoc.append(recipeData.genStepsBlock('LaTex', latexDoc) )
     latexDoc.append( NoEscape(r'\\'))
     
     latexDoc.append( Command('end',['tabularx']))
-
     
-
-    
+    ## Setup for next page
     latexDoc.append( NewPage() )
 
 #=============================================================================
@@ -237,15 +259,18 @@ def genRecipeFormatDefault( latexDoc, recipeName, recipeData  ):
         latexDoc.append( NewLine() )
         
         # Create Recipe body
-        
-                
+    
         ##----
         # Add in Ingredients
         ingredLaTex = recipeData.genIngredientsBlock('LaTex')
         ingredPage = Tabular('rl')
         ingredPage.add_empty_row()
         for ingredDat in ingredLaTex:
-            ingredPage.add_row( (ingredDat[0], ingredDat[1] + ' ' + ingredDat[2])  )
+            if ('' == ingredDat[0] and '' == ingredDat[2]):
+                ## Special case for Grouped title in the middle column
+                ingredPage.add_row('',ingredDat[1])
+            else:
+                ingredPage.add_row( (ingredDat[0], ingredDat[1] + ' ' + ingredDat[2])  )
         
         ##---- Directions            
         dirPage =  recipeData.genStepsBlock('LaTex', latexDoc)

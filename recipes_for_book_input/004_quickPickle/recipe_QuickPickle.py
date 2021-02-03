@@ -27,6 +27,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addPicture('PickleOnionPeas', '2020_09_09_QuickPickleBlackEyedPeasGreekYougert.jpg')
         r.addPicture('PickleOnionToast', '2020_09_09_QuickPickleOnToastEgg.jpg')
         r.setPrimaryPicture( 'PickleOnionToast')
+        r.setRecipeFormat('FANCY_WIDE_PIC_OVER_DIRECTIONS')
         
         r.AddDescription(
             'After trying Lisa\'s Pickling recipe, and seeing this on "Beat Bobby Flay", we tried this. And lOVED it. '
