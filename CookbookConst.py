@@ -37,7 +37,11 @@ C_BOOK_SECTIONS = [
 
 #*  Sections *****************************************************************
 C_RECIPE_FORMATING = [
-   'TWO_COLUMN_OPTIONAL_PICTURES'
+    ## Default used at first creation
+   'TWO_COLUMN_OPTIONAL_PICTURES',
+   
+   ## Taken from Web example 
+   'FANCY_WIDE_PIC_OVER_DIRECTIONS',
    ]
 
 #=============================================================================

@@ -26,7 +26,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPathLoc(dirPathRecipe)
         r.addPicture('JamOnBread', '2020_09_14_BlueberryJam.JPG')
         r.setPrimaryPicture( 'JamOnBread')
-        
+        r.setRecipeFormat('FANCY_WIDE_PIC_OVER_DIRECTIONS')
         #  -- Add Ingredients --
 
         ## Garlic

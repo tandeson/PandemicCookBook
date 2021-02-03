@@ -22,7 +22,7 @@ from pathlib import Path
 
 ## HTML Helper functions
 from scripts.html_helpers import makeHtmlEmbedImgFromFile
-from CookbookConst import C_BOOK_SECTIONS
+from CookbookConst import C_BOOK_SECTIONS, C_RECIPE_FORMATING
 
 from pylatex import Itemize, Figure, NoEscape
 from pylatex.utils import bold
@@ -133,6 +133,7 @@ class MyRecipe:
             'pictures': {},
             'primaryPic': None,
             'RecipeSection': SectionNameStr,
+            'RecipeLaTexFormat': None,
             
             'ingredients': { 
                 },
@@ -151,27 +152,55 @@ class MyRecipe:
                 " ** Recipe Section: %s is not in the list of Ingredient in C_BOOK_SECTIONS. **\n" % 
                 (self['RecipeSection']) 
                 )
-    
+        
+        self.setRecipeFormat( 'TWO_COLUMN_OPTIONAL_PICTURES' )
+
     #-------------------------------------------------------------------------
     def getName(self):
         """
-        Get the Name of this Ingredient
+        Return the name of this Recipe
 
         returns:
             string - name
         """
         return self.info['name']
     
-        #-------------------------------------------------------------------------
+    #-------------------------------------------------------------------------
     def getSection(self):
         """
-        Get the Name of this Ingredient
+        Get the name of the Section this Recipe lives under.
 
         returns:
             string - name
         """
         return self.info['RecipeSection']
     
+    #-------------------------------------------------------------------------
+    def getRecipeFormat(self):
+        """
+        Get the Format to use for this recipe.
+
+        returns:
+            string - name
+        """
+        return self.info['RecipeLaTexFormat']
+    
+    #-------------------------------------------------------------------------
+    def setRecipeFormat(self, newFormat):
+        """
+        Get the Format to use for this recipe.
+
+        returns:
+            string - name
+        """
+        if newFormat not in C_RECIPE_FORMATING:
+            raise Exception(
+                " ** Recipe Formating: %s is not in the list of Ingredient in C_RECIPE_FORMATING. **\n" % 
+                (self.info['RecipeLaTexFormat']) 
+                )
+        else:
+            self.info['RecipeLaTexFormat'] = newFormat
+            
     #-------------------------------------------------------------------------
     def addIngredient(self, ingredientName, ingredientAmount, ingredientUnits, ingredientGroupName = ''):
         """

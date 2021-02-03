@@ -22,11 +22,13 @@ from pathlib import Path
 from PIL import Image
 
 ## For rendering options
-from pylatex import Document, Section, Subsection, SmallText, Command, Tabular, Tabularx, \
-                    Foot, Head, PageStyle, NewPage, NewLine, \
+from pylatex import Document, Section, Subsection, LargeText, SmallText, \
+                    Command, Tabular, Tabularx,  Center, \
+                    Foot, Head, PageStyle, NewPage, NewLine, MiniPage, \
                     Package, Figure
 from pylatex.utils import NoEscape, italic
 from pylatex.section import Chapter
+from pylatex.basic import LargeText, NewLine
 
 #*  Constants ****************************************************************
 
@@ -151,6 +153,69 @@ def genRecipe( latexDoc, recipeName, recipeData ):
     """
     Format a Recipe into LaTex
     """
+    if( recipeData.getRecipeFormat() == 'TWO_COLUMN_OPTIONAL_PICTURES'): 
+        genRecipeFormatDefault( latexDoc, recipeName, recipeData )
+    elif( recipeData.getRecipeFormat() == 'FANCY_WIDE_PIC_OVER_DIRECTIONS'):
+        genRecipeFormatFancyWidePic( latexDoc, recipeName, recipeData )
+    else:
+        raise Exception("Unknown Latex Recipe Format! - %s" % (recipeData.getRecipeFormat()))
+
+#=============================================================================
+def genRecipeFormatFancyWidePic( latexDoc, recipeName, recipeData  ):
+    '''
+    Fancy formating with inspiration from https://www.etsy.com/listing/827640730/printable-recipe-book-kit-editable
+    '''
+
+    ## Setup header
+    latexDoc.append( Command('hrule' ))
+    latexDoc.append( Command('vspace', ['5pt']))
+    with latexDoc.create(Center()) as centered:
+        centered.append( Subsection( "%s" % ( recipeName )))
+    latexDoc.append( Command('hrule' ))
+    
+    # Generate Ingredients List and Format
+    # Add in Ingredients
+    ingredLaTex = recipeData.genIngredientsBlock('LaTex')
+    
+    ingredPage = Tabular('rl')
+    ingredPage.add_empty_row()
+    for ingredDat in ingredLaTex:
+        ingredPage.add_row( (ingredDat[0], ingredDat[1] + ' ' + ingredDat[2])  )
+    
+    
+    ###################
+    latexDoc.append( Command('begin',['tabularx',NoEscape(r"\textwidth"),  NoEscape(r' p{.2\textwidth}p{.01\textwidth}X')]))
+    
+    ## Column 1
+    latexDoc.append( Command('vspace', ['10pt'] ) )
+    latexDoc.append( LargeText('Ingredients') )
+    latexDoc.append( NewLine() )
+    latexDoc.append(ingredPage )
+    latexDoc.append( NoEscape(r'&'))
+    
+    ## Column 2
+    latexDoc.append( Command('vrule depth  7in' ) )
+    latexDoc.append( NoEscape(r'&'))
+    
+    ## Column 3
+    latexDoc.append( Command('vspace', ['10pt'] ) )
+    latexDoc.append( LargeText('Directions') )
+    latexDoc.append( NewLine() )
+    latexDoc.append(recipeData.genStepsBlock('LaTex', latexDoc) )
+    latexDoc.append( NoEscape(r'\\'))
+    
+    latexDoc.append( Command('end',['tabularx']))
+
+    
+
+    
+    latexDoc.append( NewPage() )
+
+#=============================================================================
+def genRecipeFormatDefault( latexDoc, recipeName, recipeData  ):
+    '''
+    Generic Recipe processing function
+    '''
     with latexDoc.create ( Subsection( "%s" % ( recipeName )) ):
         ## Create Recipe Header
         picForRecipe = ''
@@ -177,20 +242,13 @@ def genRecipe( latexDoc, recipeName, recipeData ):
         ##----
         # Add in Ingredients
         ingredLaTex = recipeData.genIngredientsBlock('LaTex')
-        ingredPage = Tabular('rcl')
+        ingredPage = Tabular('rl')
         ingredPage.add_empty_row()
         for ingredDat in ingredLaTex:
-            ingredPage.add_row( ingredDat )
+            ingredPage.add_row( (ingredDat[0], ingredDat[1] + ' ' + ingredDat[2])  )
         
         ##---- Directions            
         dirPage =  recipeData.genStepsBlock('LaTex', latexDoc)
-        
-        ## Possible new Layout style
-        ## \vspace{5pt}
-        ## \begin{large}
-        ## Ingredients
-        ## \end{large}
-        ## \hrule width 4in
         
         with latexDoc.create( SmallText() ):
             latexDoc.append( Command('columnratio',[0.53]) )
@@ -202,7 +260,7 @@ def genRecipe( latexDoc, recipeName, recipeData ):
             latexDoc.append(  Command('end','paracol',packages=[ Package('paracol')]) )
         
         latexDoc.append( NewPage() )
-            
+   
 #=============================================================================
 def buildPdfImg( outAbsPath, inFilePath, inMaxDpi=300, inMaxSizeInch=4):
     """
