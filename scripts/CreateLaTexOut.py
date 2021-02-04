@@ -332,53 +332,54 @@ def genRecipeFormatDefault( latexDoc, recipeName, recipeData  ):
     '''
     Generic Recipe processing function
     '''
-    with latexDoc.create ( Subsection( "%s" % ( recipeName )) ):
-        ## Create Recipe Header
-        picForRecipe = ''
-        if( recipeData.getPicturePrimary() ):
-            picForRecipe = Figure(position='h!')
-            picForRecipe.add_image(
-                str( Path( recipeData.getPicturePrimary()['path']).absolute() ),
-                width=NoEscape(r"0.3\textwidth") )
-        
-        if recipeData.GetDescription():
-            latexDoc.append( 
-                SmallText( italic( recipeData.GetDescription() ))
-            )
-            latexDoc.append( NewLine() )
-                                     
-        with latexDoc.create( Tabularx( 'XXX', width_argument=NoEscape(r"\textwidth")) ) as recipeHeadTable:
-            recipeHeadTable.add_empty_row()
-            recipeHeadTable.add_hline()
-        latexDoc.append( NewLine() )
-        
-        # Create Recipe body
+    util_FancyBuildHeader(latexDoc, recipeName)
+
+    ## Create Recipe Header
+    picForRecipe = ''
+    if( recipeData.getPicturePrimary() ):
+        picForRecipe = Figure(position='h!')
+        picForRecipe.add_image(
+            str( Path( recipeData.getPicturePrimary()['path']).absolute() ),
+            width=NoEscape(r"0.3\textwidth") )
     
-        ##----
-        # Add in Ingredients
-        ingredLaTex = recipeData.genIngredientsBlock('LaTex')
-        ingredPage = Tabular('rl')
-        ingredPage.add_empty_row()
-        for ingredDat in ingredLaTex:
-            if ('' == ingredDat[0] and '' == ingredDat[2]):
-                ## Special case for Grouped title in the middle column
-                ingredPage.add_row('',ingredDat[1])
-            else:
-                ingredPage.add_row( (ingredDat[0], ingredDat[1] + ' ' + ingredDat[2])  )
-        
-        ##---- Directions            
-        dirPage =  recipeData.genStepsBlock('LaTex', latexDoc)
-        
-        with latexDoc.create( SmallText() ):
-            latexDoc.append( Command('columnratio',[0.53]) )
-            latexDoc.append( Command('begin',['paracol', 2], packages=[ Package('paracol')]) )
-            latexDoc.append( ingredPage )
-            latexDoc.append( picForRecipe )
-            latexDoc.append(  Command('switchcolumn',packages=[ Package('paracol')]) )
-            latexDoc.append( dirPage )
-            latexDoc.append(  Command('end','paracol',packages=[ Package('paracol')]) )
-        
-        latexDoc.append( NewPage() )
+    if recipeData.GetDescription():
+        latexDoc.append( Command('vspace', ['10pt'] ) )
+        latexDoc.append( 
+            italic( recipeData.GetDescription() )
+        )
+        latexDoc.append( NewLine() )
+                                 
+    with latexDoc.create( Tabularx( 'XXX', width_argument=NoEscape(r"\textwidth")) ) as recipeHeadTable:
+        recipeHeadTable.add_empty_row()
+    latexDoc.append( NewLine() )
+    
+    # Create Recipe body
+
+    ##----
+    # Add in Ingredients
+    ingredLaTex = recipeData.genIngredientsBlock('LaTex')
+    ingredPage = Tabular('rl')
+    ingredPage.add_empty_row()
+    for ingredDat in ingredLaTex:
+        if ('' == ingredDat[0] and '' == ingredDat[2]):
+            ## Special case for Grouped title in the middle column
+            ingredPage.add_row('',ingredDat[1])
+        else:
+            ingredPage.add_row( (ingredDat[0], ingredDat[1] + ' ' + ingredDat[2])  )
+    
+    ##---- Directions            
+    dirPage =  recipeData.genStepsBlock('LaTex', latexDoc)
+    
+    with latexDoc.create( SmallText() ):
+        latexDoc.append( Command('columnratio',[0.53]) )
+        latexDoc.append( Command('begin',['paracol', 2], packages=[ Package('paracol')]) )
+        latexDoc.append( ingredPage )
+        latexDoc.append( picForRecipe )
+        latexDoc.append(  Command('switchcolumn',packages=[ Package('paracol')]) )
+        latexDoc.append( dirPage )
+        latexDoc.append(  Command('end','paracol',packages=[ Package('paracol')]) )
+    
+    latexDoc.append( NewPage() )
    
 #=============================================================================
 def buildPdfImg( outAbsPath, inFilePath, inMaxDpi=300, inMaxSizeInch=4):
