@@ -26,6 +26,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPathLoc(dirPathRecipe)
         r.addPicture('BakedRolls', 'Pinwheels_Pizza_r.jpg')
         r.setPrimaryPicture('BakedRolls')
+        r.setRecipeFormat('FANCY_WIDE_PIC_OVER_DIRECTIONS')
         #  -- Add Ingredients --
 
         ##

@@ -24,10 +24,10 @@ EXIT_OK, EXIT_ERR, EXIT_CTRL_C = range(3)
 C_BOOK_SECTIONS = [
     'Spreads and Dips',
     'Appetizers',
-    'Sides', 
     'Soups',
-    'Main dishes',
+    'Salads',
     'Baking and Breads', 
+    'Main dishes',
     'Dessert', 
 ]
 

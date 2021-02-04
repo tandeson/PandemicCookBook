@@ -38,7 +38,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Potato Flour', 20, 'grams')
         
         r.addIngredient('Sourdough Starter', 227, 'grams')
-        r.addIngredient('Water', 530, 'grams, lukewarm')
+        r.addIngredient('Water', 400, 'grams, lukewarm')
         
         r.addIngredient('Vegetable Oil', 1, 'tablespoon')
            

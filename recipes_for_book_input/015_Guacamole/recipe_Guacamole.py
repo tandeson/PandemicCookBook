@@ -22,8 +22,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
-        r = MyRecipe('Guacamole',"Appetizers", sharedIngredentList)
+        r = MyRecipe('Guacamole','Spreads and Dips', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        r.addPicture('GuacOnSweetPotatoNachos', '2020_09_14_NachosWithGuac.JPG')
+        r.setPrimaryPicture('GuacOnSweetPotatoNachos')
 
         #  -- Add Ingredients --
 

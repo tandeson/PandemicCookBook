@@ -26,6 +26,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPathLoc(dirPathRecipe)
         r.addPicture('full_loaf', '2020ThanksgivingBread.jpg')
         r.setPrimaryPicture('full_loaf')
+        r.setRecipeFormat('FANCY_WIDE_PIC_OVER_DIRECTIONS')
         #  -- Add Ingredients --
 
         ##

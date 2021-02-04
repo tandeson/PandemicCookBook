@@ -30,6 +30,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             os.path.join('2020_10_4_EggMuffinPic','IMG_1296.JPEG')
             )
         r.setPrimaryPicture('muffins_on_plate')
+        r.setRecipeFormat('FANCY_WIDE_PIC_OVER_DIRECTIONS')
         #  -- Add Ingredients --
 
         ## 

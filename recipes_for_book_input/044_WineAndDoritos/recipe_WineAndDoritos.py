@@ -26,6 +26,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPathLoc(dirPathRecipe)
         r.addPicture('WineAndChips', 'WineAndDoritoes_2020.jpg')
         r.setPrimaryPicture('WineAndChips')
+        r.setRecipeFormat('FANCY_WIDE_PIC_OVER_DIRECTIONS')
         
         r.AddDescription(
             'Some nights, we\'re fancy - some nights we make '

@@ -25,7 +25,6 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r = MyRecipe('Sweet Potato Nachos',"Appetizers", sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         r.addPicture('FullNachos', '2020_09_14_NachosFull.JPG')
-        r.addPicture('FullNachosGuac', '2020_09_14_NachosWithGuac.JPG')
         r.setPrimaryPicture( 'FullNachos')
         
         #  -- Add Ingredients --
@@ -59,8 +58,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             r.addStep( RecipeStep( s ) )
         
         r.addStep( 
-            RecipeStep( "Serve with Guacamole and enjoy!" ),
-            ['FullNachosGuac']
+            RecipeStep( "Serve with Guacamole and enjoy!" )
             )
         
         # Return this back.

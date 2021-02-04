@@ -217,7 +217,7 @@ def genRecipeFormatFancyWidePic( latexDoc, recipeName, recipeData  ):
         latexDoc.append( Command(
             'includegraphics',
             NoEscape(Path( recipeData.getPicturePrimary()['path']).absolute().as_posix()),
-            NoEscape(r"width=0.5\columnwidth"))
+            NoEscape(r"width=0.55\columnwidth"))
         )
         latexDoc.append( NewLine() )
     

@@ -22,11 +22,11 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
-        r = MyRecipe('Black Eyed Peas', "Sides", sharedIngredentList)
+        r = MyRecipe('Black Eyed Peas', "Main dishes", sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         r.addPicture('PeasWithOnionBowl', '2020_09_09_QuickPickleBlackEyedPeasGreekYougert.jpg')
         r.setPrimaryPicture( 'PeasWithOnionBowl')
-        
+        r.setRecipeFormat('FANCY_WIDE_PIC_OVER_DIRECTIONS')
         #  -- Add Ingredients --
 
         ## Garlic

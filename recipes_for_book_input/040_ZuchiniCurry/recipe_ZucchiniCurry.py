@@ -22,10 +22,11 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
-        r = MyRecipe('Zucchini Curry',  'Sides', sharedIngredentList)
+        r = MyRecipe('Zucchini Curry',  'Main dishes', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         r.addPicture('ZucchiniCurryInBowl', '2020_ZuchiniCurry.jpg')
         r.setPrimaryPicture('ZucchiniCurryInBowl')
+        r.setRecipeFormat('FANCY_WIDE_PIC_OVER_DIRECTIONS')
         
         ## Source: https://www.simplyquinoa.com/detox-moroccan-lentil-soup/
         #  -- Add Ingredients --

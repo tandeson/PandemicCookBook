@@ -26,7 +26,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPathLoc(dirPathRecipe)
         r.addPicture('BurgerOnAPlate', 'IMG_1336.JPG')
         r.setPrimaryPicture('BurgerOnAPlate')
-        
+        r.setRecipeFormat('FANCY_WIDE_PIC_OVER_DIRECTIONS')
         #  -- Add Ingredients --
 
         ## 
