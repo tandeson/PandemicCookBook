@@ -26,10 +26,11 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPathLoc(dirPathRecipe)
         r.addPicture('BlueCheeseRolls', '2020_08_02_BlueCheeseOnionSwirlRoll.jpeg')
         r.setPrimaryPicture( 'BlueCheeseRolls')
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         
         #  -- Add Ingredients --
 
-        ## Garlic
+        ##
         r.addIngredient('Water', 198, 'grams, (0.75 cup)')
         r.addIngredient('Sourdough Starter', 227, 'grams (1 cup)')
         r.addIngredient('Bread Flour', 361, 'grams (3 cups)')

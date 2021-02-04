@@ -26,6 +26,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPathLoc(dirPathRecipe)
         r.addPicture('FullNachos', '2020_09_14_NachosFull.JPG')
         r.setPrimaryPicture( 'FullNachos')
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         
         #  -- Add Ingredients --
 

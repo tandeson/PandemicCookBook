@@ -29,6 +29,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPathLoc(dirPathRecipe)
         r.addPicture('OurZoodles', 'Zoodles_Nov2020.jpg')
         r.setPrimaryPicture('OurZoodles')
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         #  -- Add Ingredients --
 
         ##

@@ -156,8 +156,114 @@ def genRecipe( latexDoc, recipeName, recipeData ):
         genRecipeFormatDefault( latexDoc, recipeName, recipeData )
     elif( recipeData.getRecipeFormat() == 'FANCY_WIDE_PIC_OVER_DIRECTIONS'):
         genRecipeFormatFancyWidePic( latexDoc, recipeName, recipeData )
+    elif( recipeData.getRecipeFormat() == 'FANCY_TALL_PIC_OVER_INSTRUCTIONS'):
+        genRecipeFormatFancyTallPic( latexDoc, recipeName, recipeData )
     else:
         raise Exception("Unknown Latex Recipe Format! - %s" % (recipeData.getRecipeFormat()))
+
+#=============================================================================
+# Helpers
+#=============================================================================
+
+#=============================================================================
+def util_FancyBuildHeader( latexDoc, recipeName  ):
+    '''
+    Fancy Head build
+    '''
+    latexDoc.append( Command('hrule' ))
+    latexDoc.append( Command('vspace', ['5pt']))
+    with latexDoc.create(Center()) as centered:
+        centered.append( Subsection( "%s" % ( recipeName )))
+    latexDoc.append( Command('hrule' ))
+
+#=============================================================================
+def util_ijectNotes( latexDoc, recipeData  ):
+    latexDoc.append( Command('vspace', ['10pt'] ) )
+    latexDoc.append( LargeText( bold('Notes')) )
+    latexDoc.append( NewLine()  )
+    latexDoc.append( 
+            SmallText( italic( recipeData.GetDescription() ))
+        )
+#=============================================================================
+def util_addPicNotInFig(latexDoc, strPicPath, widthNum):
+    '''
+    Helper to put picture in that isn't in a figure.
+    '''
+    latexDoc.append( Command(
+        'includegraphics',
+        NoEscape( strPicPath ),
+        NoEscape(r'width=' + widthNum + r'\columnwidth'))
+    )
+    latexDoc.append( NewLine() )
+
+#=============================================================================
+# Builders
+#=============================================================================
+
+
+#=============================================================================
+def genRecipeFormatFancyTallPic( latexDoc, recipeName, recipeData  ):
+    '''
+    Fancy formating with inspiration from https://www.etsy.com/listing/827640730/printable-recipe-book-kit-editable
+    '''
+
+    ## Setup header
+    util_FancyBuildHeader(latexDoc, recipeName)
+    
+    # Generate Ingredients List and Format
+    # Add in Ingredients
+    ingredLaTex = recipeData.genIngredientsBlock('LaTex')
+    
+    ingredPage = Tabular('p{0.20\linewidth}p{0.75\linewidth}')
+    ingredPage.add_empty_row()
+    for ingredDat in ingredLaTex:
+        if ('' == ingredDat[0] and '' == ingredDat[2]):
+            ingredPage.add_row( ('', ingredDat[1])  )
+        else:
+            ingredPage.add_row( (ingredDat[0], ingredDat[1] + ' ' + ingredDat[2])  )
+    
+    
+    ###################
+    latexDoc.append( Command('begin',['tabularx',NoEscape(r"\textwidth"),  NoEscape(r' p{.5\textwidth}p{.01\textwidth}X')]))
+    
+    ## Column 1
+    if( recipeData.getPicturePrimary() ):
+        latexDoc.append( Command('hline') )
+        latexDoc.append( Command('vspace', ['5pt'] ) )
+        util_addPicNotInFig(
+            latexDoc, 
+            Path( recipeData.getPicturePrimary()['path']).absolute().as_posix(), 
+            '0.45')
+    
+    latexDoc.append( Command('vspace', ['10pt'] ) )
+    latexDoc.append( LargeText( bold('Ingredients')) )
+    latexDoc.append( NewLine() )
+    latexDoc.append(ingredPage )
+    
+    
+    latexDoc.append( NoEscape(r'&'))
+       
+    ## Column 2
+    latexDoc.append( Command('vrule depth  7in' ) )
+    latexDoc.append( NoEscape(r'&'))
+    
+    ## Column 3
+    latexDoc.append( Command('vspace', ['10pt'] ) )
+    
+    latexDoc.append( LargeText( bold('Directions')) )
+    latexDoc.append( NewLine() )
+    latexDoc.append(recipeData.genStepsBlock('LaTex', latexDoc) )
+    
+    
+    if recipeData.GetDescription():
+        util_ijectNotes( latexDoc, recipeData  )
+         
+    latexDoc.append( NoEscape(r'\\'))
+    
+    latexDoc.append( Command('end',['tabularx']))
+    
+    ## Setup for next page
+    latexDoc.append( NewPage() )
 
 #=============================================================================
 def genRecipeFormatFancyWidePic( latexDoc, recipeName, recipeData  ):
@@ -166,11 +272,7 @@ def genRecipeFormatFancyWidePic( latexDoc, recipeName, recipeData  ):
     '''
 
     ## Setup header
-    latexDoc.append( Command('hrule' ))
-    latexDoc.append( Command('vspace', ['5pt']))
-    with latexDoc.create(Center()) as centered:
-        centered.append( Subsection( "%s" % ( recipeName )))
-    latexDoc.append( Command('hrule' ))
+    util_FancyBuildHeader(latexDoc, recipeName)
     
     # Generate Ingredients List and Format
     # Add in Ingredients
@@ -195,14 +297,9 @@ def genRecipeFormatFancyWidePic( latexDoc, recipeName, recipeData  ):
     latexDoc.append(ingredPage )
     
     if recipeData.GetDescription():
-        latexDoc.append( Command('vspace', ['20pt'] ) )
+        latexDoc.append( Command('vspace', ['10pt'] ) )
         latexDoc.append( NewLine() )
-        latexDoc.append( LargeText( bold('Notes')) )
-        latexDoc.append( NewLine() )
-        latexDoc.append( 
-                SmallText( italic( recipeData.GetDescription() ))
-            )
-        latexDoc.append( NewLine() )
+        util_ijectNotes( latexDoc, recipeData  ) 
     
     latexDoc.append( NoEscape(r'&'))
        
@@ -214,13 +311,11 @@ def genRecipeFormatFancyWidePic( latexDoc, recipeName, recipeData  ):
     latexDoc.append( Command('vspace', ['10pt'] ) )
     
     if( recipeData.getPicturePrimary() ):
-        latexDoc.append( Command(
-            'includegraphics',
-            NoEscape(Path( recipeData.getPicturePrimary()['path']).absolute().as_posix()),
-            NoEscape(r"width=0.55\columnwidth"))
-        )
-        latexDoc.append( NewLine() )
-    
+        util_addPicNotInFig(
+            latexDoc, 
+            Path( recipeData.getPicturePrimary()['path']).absolute().as_posix(), 
+            '0.55')
+
     latexDoc.append( Command('vspace', ['5pt'] ) )
     latexDoc.append( NewLine() )
     latexDoc.append( LargeText( bold('Directions')) )

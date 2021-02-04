@@ -42,6 +42,7 @@ C_RECIPE_FORMATING = [
    
    ## Taken from Web example 
    'FANCY_WIDE_PIC_OVER_DIRECTIONS',
+   'FANCY_TALL_PIC_OVER_INSTRUCTIONS',
    ]
 
 #=============================================================================

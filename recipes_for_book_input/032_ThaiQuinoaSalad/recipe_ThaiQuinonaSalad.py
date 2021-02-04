@@ -26,7 +26,6 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPathLoc(dirPathRecipe)
         r.addPicture('ThaiSalad', '2020_10_02_ThaiQuinoaSalad.jpg')
         r.setPrimaryPicture('ThaiSalad')
-        
         #  -- Add Ingredients --
 
         ##

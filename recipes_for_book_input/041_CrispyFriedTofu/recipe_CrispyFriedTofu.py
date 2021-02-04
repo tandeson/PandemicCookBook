@@ -27,6 +27,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addPicture('Tofu_1', '20201_Tofu_1.JPEG')
         r.addPicture('Tofu_2','2021_Tofu_2.JPEG')
         r.setPrimaryPicture('Tofu_1')
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         #  -- Add Ingredients --
 
         ##

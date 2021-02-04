@@ -26,6 +26,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPathLoc(dirPathRecipe)
         r.addPicture('KaleOnAPlate', 'IMG_1303.JPEG')
         r.setPrimaryPicture('KaleOnAPlate')
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         
         #  -- Add Ingredients --
 

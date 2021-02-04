@@ -26,6 +26,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPathLoc(dirPathRecipe)
         r.addPicture('Apple_Pancake', '2020_09_12_ApplePancakes.jpg')
         r.setPrimaryPicture( 'Apple_Pancake' )
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         
         #  -- Add Ingredients --
 

@@ -26,6 +26,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPathLoc(dirPathRecipe)
         r.addPicture('ToastOnAPlate', '2020_10_25_ToastAndAvocado.jpg')
         r.setPrimaryPicture('ToastOnAPlate')
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         
         r.AddDescription(
             'While not a complex recipe, this is almost a daily breakfast for Bilyana.'

@@ -26,8 +26,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPathLoc(dirPathRecipe)
         r.addPicture( 'plate_1', '20201_ZucchiniPotatoBake_1.jpg' )
         r.addPicture( 'plate_2', '20201_ZucchiniPotatoBake_2.jpg' )
-        
         r.setPrimaryPicture( 'plate_1' )
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         ## Source: https://www.simplyquinoa.com/detox-moroccan-lentil-soup/
         #  -- Add Ingredients --
 

@@ -25,8 +25,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r = MyRecipe('Mushroom and Wild Rice Soup', 'Soups', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         r.addPicture('MushroomSoup', '2021_MushroomSoup.jpg')
-        
         r.setPrimaryPicture( 'MushroomSoup' )
+        
         ## ---
         r.addIngredient('Wild Rice Blend', 0.75, 'cup')
         r.addIngredient('Mushrooms', 4 ,'cups, diced')

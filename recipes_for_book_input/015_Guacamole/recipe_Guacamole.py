@@ -26,7 +26,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPathLoc(dirPathRecipe)
         r.addPicture('GuacOnSweetPotatoNachos', '2020_09_14_NachosWithGuac.JPG')
         r.setPrimaryPicture('GuacOnSweetPotatoNachos')
-
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         #  -- Add Ingredients --
 
         ## 

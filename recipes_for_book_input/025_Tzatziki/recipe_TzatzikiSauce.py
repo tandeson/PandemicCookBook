@@ -26,7 +26,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPathLoc(dirPathRecipe)
         r.addPicture('TzatzikiSauce', 'TzatzikiSauce.jpg')
         r.setPrimaryPicture('TzatzikiSauce')
-        
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         #  -- Add Ingredients --
 
         ##

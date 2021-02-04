@@ -26,6 +26,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPathLoc(dirPathRecipe)
         r.addPicture('CalzoneDone', '2020_02_02_CalzoneBake.jpeg')
         r.setPrimaryPicture('CalzoneDone')
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
 
         #  -- Add Ingredients --
 

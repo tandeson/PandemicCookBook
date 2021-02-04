@@ -26,10 +26,11 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPathLoc(dirPathRecipe)
         r.addPicture('SourdoughBiscuts', '2020_05_06_biscutsBaked.jpeg')
         r.setPrimaryPicture( 'SourdoughBiscuts')
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         
         #  -- Add Ingredients --
 
-        ## Garlic
+        ##
         r.addIngredient('All Purpose Flour', 120, 'grams ( 1 cups)')
         r.addIngredient('Baking Powder', 2, 'teaspoons')
         r.addIngredient('Salt', 0.75, 'teaspoons')

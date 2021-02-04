@@ -25,7 +25,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r = MyRecipe('Pumpkin Risotto', 'Main dishes', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         r.addPicture('BowlOfRisotto', 'PumpkinRisottoOnPlate.jpg')
-        r.setPrimaryPicture( 'BowlOfRisotto')        
+        r.setPrimaryPicture( 'BowlOfRisotto')
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')    
         #  -- Add Ingredients --
         
         r.addIngredient('Extra Virgin Olive Oil', 1, 'tablespoon')
