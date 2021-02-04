@@ -24,6 +24,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Corn Bread', 'Baking and Breads', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         
         ## ---
         r.addIngredient('All Purpose Flour', 206, 'grams (1 3/4 cup)')

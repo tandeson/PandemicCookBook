@@ -24,10 +24,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Banana Bread', 'Dessert', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
-
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')  
         #  -- Add Ingredients --
 
-        ## Garlic
+        ## 
         r.addIngredient('All Purpose Flour', 160 , 'grams (1 1/3 cups)')
         r.addIngredient('Salt', 0.75, 'teaspoons')
         r.addIngredient('Baking Soda', 0.5, 'teaspoons')

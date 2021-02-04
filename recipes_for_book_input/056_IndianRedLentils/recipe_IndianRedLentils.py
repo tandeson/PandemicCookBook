@@ -24,7 +24,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Indian Red Lentils', 'Main dishes', sharedIngredentList)
         r.setPathLoc( dirPathRecipe )
-        
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         #  -- Add Ingredients --
         
         ## Makes about 2 dozen?

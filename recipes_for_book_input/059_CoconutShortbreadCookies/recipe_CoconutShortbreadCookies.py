@@ -24,6 +24,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Coconut Shortbread Cookies', 'Dessert', sharedIngredentList)
         r.setPathLoc( dirPathRecipe )
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')  
         
         r.AddDescription(
            'Early in our dating, I found out that Bilyana likes coconut. I made '
@@ -31,7 +32,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         )
         #  -- Add Ingredients --
         
-        ## Makes about 2 dozen?
+        ##
         #--
         r.addIngredient('Coconut Flour', 32, 'grams (1/4 cup)')
         r.addIngredient('All Purpose Flour', 39, 'grams (1/4 cup)')

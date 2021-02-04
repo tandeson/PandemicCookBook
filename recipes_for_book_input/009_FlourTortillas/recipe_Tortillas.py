@@ -24,6 +24,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Flour Tortillas',"Baking and Breads", sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        r.setRecipeFormat('FANCY_WIDE_PIC_OVER_DIRECTIONS')
         
         r.AddDescription(
             'Rick Rodriguez shared this with me after a conversation at the coffee stand. '

@@ -23,7 +23,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         Make this specific Recipe
         """
         r = MyRecipe('Sweet Potato Pancakes', 'Main dishes', sharedIngredentList)
-        r.setPathLoc(dirPathRecipe)        
+        r.setPathLoc(dirPathRecipe)
+        r.setRecipeFormat('FANCY_WIDE_PIC_OVER_DIRECTIONS')    
         #  -- Add Ingredients --
         
         r.addIngredient('Sweet Potatoes', 3, 'cups, grated')

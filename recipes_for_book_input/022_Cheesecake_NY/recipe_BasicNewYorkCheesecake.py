@@ -24,7 +24,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('New York Style Cheesecake', 'Dessert', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
-
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')  
+        
         r.AddDescription(
             'This Recipe was shared with me by Lindsay Bruce, back in College. It comes '
             'from her father, who spent his life as in restaurant kitchens. It\'s been a '

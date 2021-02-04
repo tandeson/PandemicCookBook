@@ -170,8 +170,8 @@ def util_FancyBuildHeader( latexDoc, recipeName  ):
     '''
     Fancy Head build
     '''
-    latexDoc.append( Command('hrule' ))
-    latexDoc.append( Command('vspace', ['5pt']))
+    #latexDoc.append( Command('hrule' ))
+    #latexDoc.append( Command('vspace', ['5pt']))
     with latexDoc.create(Center()) as centered:
         centered.append( Subsection( "%s" % ( recipeName )))
     latexDoc.append( Command('hrule' ))
@@ -309,15 +309,14 @@ def genRecipeFormatFancyWidePic( latexDoc, recipeName, recipeData  ):
     
     ## Column 3
     latexDoc.append( Command('vspace', ['10pt'] ) )
-    
     if( recipeData.getPicturePrimary() ):
         util_addPicNotInFig(
             latexDoc, 
             Path( recipeData.getPicturePrimary()['path']).absolute().as_posix(), 
             '0.55')
+        latexDoc.append( Command('vspace', ['5pt'] ) )
+        latexDoc.append( NewLine() )
 
-    latexDoc.append( Command('vspace', ['5pt'] ) )
-    latexDoc.append( NewLine() )
     latexDoc.append( LargeText( bold('Directions')) )
     latexDoc.append( NewLine() )
     latexDoc.append(recipeData.genStepsBlock('LaTex', latexDoc) )

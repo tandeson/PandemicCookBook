@@ -24,11 +24,12 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Sourdough Crackers','Baking and Breads', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        r.setRecipeFormat('FANCY_WIDE_PIC_OVER_DIRECTIONS')
         
         #  -- Add Ingredients --
         r.AddDescription('A common use for my leftover starter. Note that which Herb is used isn\'t critical - but I like how rosemary turns out. ~Thomas')
         
-        ## Garlic
+        ## 
         r.addIngredient('All Purpose Flour', 113, 'grams (1/2 cup)')
         r.addIngredient('Salt', 0.5, 'teaspoon')
         r.addIngredient('Sourdough Starter', 227, 'grams (1 cup)')

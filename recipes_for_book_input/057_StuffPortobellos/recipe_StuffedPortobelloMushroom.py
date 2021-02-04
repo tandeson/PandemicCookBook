@@ -24,10 +24,11 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Stuffed Portobello Mushrooms', 'Main dishes', sharedIngredentList)
         r.setPathLoc( dirPathRecipe )
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         
         #  -- Add Ingredients --
         
-        ## Makes about 2 dozen?
+        ##
         #--
         r.addIngredient('Mushrooms', 2, 'large Portobello')
         r.addIngredient('Brie', 0.25, 'cups, approximately')
