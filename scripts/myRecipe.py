@@ -24,7 +24,7 @@ from pathlib import Path
 from scripts.html_helpers import makeHtmlEmbedImgFromFile
 from CookbookConst import C_BOOK_SECTIONS, C_RECIPE_FORMATING
 
-from pylatex import Itemize, Figure, NoEscape
+from pylatex import Itemize, Figure, Command, NewLine, NoEscape
 from pylatex.utils import bold
 
 ## TODO - TEMP RMEOVE?
@@ -85,17 +85,28 @@ class RecipeStep:
                     strStep += stepInfo.genStepBlock( genOutFormat, baseFilePath )
                 strStep += '</ul>'
         
-        elif('LaTex' == genOutFormat):
+        elif( 'LaTex' == genOutFormat or 'LaTex_noFig' == genOutFormat):
             ### TODO - Need to handle images
             imgFigList = []
             for picLoc in self.info['inPic']:
-                imgFig = Figure(position='h!')
-                imgFig.add_image( 
-                    str( Path( picLoc ).absolute() ), 
-                    width=NoEscape(r"0.3\textwidth")
-                    )
-                imgFigList.append( imgFig )
-            
+                if ('LaTex' == genOutFormat):
+                    imgFig = Figure(position='h!')
+                    imgFig.add_image( 
+                        str( Path( picLoc ).absolute() ), 
+                        width=NoEscape(r"0.3\textwidth")
+                        )
+                    imgFigList.append( imgFig )
+                elif('LaTex_noFig' == genOutFormat):
+                    imgFigList.append( Command('begin',['center'] ) )
+                    imgFigList.append(
+                        Command(
+                            'includegraphics',
+                            [NoEscape(str( Path( picLoc ).absolute().as_posix() ))],
+                            NoEscape(r'width=0.3\textwidth')
+                            )
+                        )
+                    imgFigList.append( Command('end',['center'] ) )
+                
             if( self.info['inText']): LaTexItemize.add_item(  self.info['inText'] )
             
             for iFig in imgFigList:
@@ -415,7 +426,7 @@ class MyRecipe:
             for step in self.info['steps']:
                 dataBack += step.genStepBlock( genOutFormat, self.getPathLoc() )
             dataBack += '</ul>'
-        elif( 'LaTex' == genOutFormat):
+        elif( 'LaTex' == genOutFormat or 'LaTex_noFig' == genOutFormat):
             if ( len( self.info['steps']) ):
                 itemize = Itemize() 
                 for step in self.info['steps']:

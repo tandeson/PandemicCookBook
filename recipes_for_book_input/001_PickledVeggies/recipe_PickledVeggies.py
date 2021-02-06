@@ -27,6 +27,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addPicture('picklesDone', '2020_09_09_Pickles_post.jpg')
         r.addPicture('picklesReady', '2020_09_09_Pickles_pre.jpg')
         r.setPrimaryPicture( 'picklesDone')
+        r.setRecipeFormat('FANCY_LONG_RECIPE')
+        
         r.AddDescription(
             'Bilyana\'s Friend Lisa shared this with us, and it was one of our first experiments.'
             )

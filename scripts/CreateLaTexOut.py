@@ -158,6 +158,8 @@ def genRecipe( latexDoc, recipeName, recipeData ):
         genRecipeFormatFancyWidePic( latexDoc, recipeName, recipeData )
     elif( recipeData.getRecipeFormat() == 'FANCY_TALL_PIC_OVER_INSTRUCTIONS'):
         genRecipeFormatFancyTallPic( latexDoc, recipeName, recipeData )
+    elif( recipeData.getRecipeFormat() == 'FANCY_LONG_RECIPE'):
+        genRecipeFormatFancyLong( latexDoc, recipeName, recipeData )
     else:
         raise Exception("Unknown Latex Recipe Format! - %s" % (recipeData.getRecipeFormat()))
 
@@ -200,7 +202,83 @@ def util_addPicNotInFig(latexDoc, strPicPath, widthNum):
 # Builders
 #=============================================================================
 
-
+#=============================================================================
+def genRecipeFormatFancyLong( latexDoc, recipeName, recipeData  ):
+    
+    ingredLaTex = recipeData.genIngredientsBlock('LaTex')   
+    ingredPage = Tabular('rl')
+    ingredPage.add_empty_row()
+    for ingredDat in ingredLaTex:
+        if ('' == ingredDat[0] and '' == ingredDat[2]):
+            ## Special case for Grouped title in the middle column
+            ingredPage.add_row('',ingredDat[1])
+        else:
+            ingredPage.add_row( (ingredDat[0], ingredDat[1] + ' ' + ingredDat[2])  )
+ 
+    dirPage =  recipeData.genStepsBlock('LaTex_noFig', latexDoc)
+    
+    util_FancyBuildHeader(latexDoc, recipeName)
+    
+    ## Create Recipe Header
+    picForRecipe = ''
+    if( recipeData.getPicturePrimary() ):
+        picForRecipe = Figure(position='h')
+        picForRecipe.add_image(
+            str( Path( recipeData.getPicturePrimary()['path']).absolute() ),
+            width=NoEscape(r"0.3\textwidth") )
+    
+    if recipeData.GetDescription():
+        latexDoc.append( Command('vspace', ['10pt'] ) )
+        latexDoc.append( 
+            italic( recipeData.GetDescription() )
+        )
+                                 
+    # Create Recipe body
+    latexDoc.append( NewLine() )
+    
+    latexDoc.append( NoEscape('\r') )
+    latexDoc.append(
+        Command('begin',
+                ['wrapfigure','r', NoEscape(r'0.5\textwidth')],
+                packages=[ Package('wrapfig')])
+        )
+    
+    latexDoc.append( ingredPage )
+    if( recipeData.getPicturePrimary() ):
+        latexDoc.append( Command('vspace', ['5pt'] ) )
+        latexDoc.append( NewLine() )
+        latexDoc.append( Command('begin', ['center']) )
+        latexDoc.append( picForRecipe )
+        util_addPicNotInFig(
+            latexDoc, 
+            Path( recipeData.getPicturePrimary()['path']).absolute().as_posix(), 
+            '0.3')
+        latexDoc.append( Command('end', ['center']) )
+        latexDoc.append( Command('vspace', ['-20pt']))
+        
+    latexDoc.append( Command('end',['wrapfigure']) )
+    latexDoc.append( Command('vline') )
+    latexDoc.append( NewLine() )
+    latexDoc.append( dirPage )
+    
+    ##----
+    # Add in Ingredients
+    
+    if( False ):
+        ##---- Directions            
+        
+        
+        with latexDoc.create( SmallText() ):
+            latexDoc.append( Command('columnratio',[0.53]) )
+            latexDoc.append( Command('begin',['paracol', 2], packages=[ Package('paracol')]) )
+            
+            latexDoc.append( picForRecipe )
+            latexDoc.append(  Command('switchcolumn',packages=[ Package('paracol')]) )
+            latexDoc.append( dirPage )
+            latexDoc.append(  Command('end','paracol',packages=[ Package('paracol')]) )
+        
+    latexDoc.append( NewPage() )
+    
 #=============================================================================
 def genRecipeFormatFancyTallPic( latexDoc, recipeName, recipeData  ):
     '''
