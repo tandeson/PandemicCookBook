@@ -248,13 +248,11 @@ def genRecipeFormatFancyLong( latexDoc, recipeName, recipeData  ):
         latexDoc.append( Command('vspace', ['5pt'] ) )
         latexDoc.append( NewLine() )
         latexDoc.append( Command('begin', ['center']) )
-        latexDoc.append( picForRecipe )
         util_addPicNotInFig(
             latexDoc, 
             Path( recipeData.getPicturePrimary()['path']).absolute().as_posix(), 
             '0.3')
         latexDoc.append( Command('end', ['center']) )
-        latexDoc.append( Command('vspace', ['-20pt']))
         
     latexDoc.append( Command('end',['wrapfigure']) )
     latexDoc.append( Command('vline') )
