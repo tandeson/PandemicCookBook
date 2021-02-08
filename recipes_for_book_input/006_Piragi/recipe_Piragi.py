@@ -27,7 +27,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addPicture('PerogiBatch', '2020_08_25_PerogiBatch_edited.JPG')
         r.addPicture('PerogiInHalf', '2020_08_25_PerogiInHalf_edited.JPG')
         r.setPrimaryPicture( 'PerogiBatch')
-        
+        r.setRecipeFormat('FANCY_LONG_RECIPE') 
+                
         r.AddDescription(
             'This recipe was shared with me by my friend Xenia Hertzenberg. We were co-workers at the '
             'time and I\'d used a Pizza Dough recipe to make something like Pierogi after a trip to a '

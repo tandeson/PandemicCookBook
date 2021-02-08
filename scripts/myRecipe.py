@@ -24,7 +24,7 @@ from pathlib import Path
 from scripts.html_helpers import makeHtmlEmbedImgFromFile
 from CookbookConst import C_BOOK_SECTIONS, C_RECIPE_FORMATING
 
-from pylatex import Itemize, Figure, Command, NewLine, NoEscape
+from pylatex import Itemize, Figure, Command, NewLine, NoEscape, Package
 from pylatex.utils import bold
 
 ## TODO - TEMP RMEOVE?
@@ -66,7 +66,7 @@ class RecipeStep:
         self.info['inPic'].append( picPath )
         
     #-------------------------------------------------------------------------
-    def genStepBlock(self, genOutFormat='html', baseFilePath='', LaTexDoc=None, LaTexItemize=None, isFirstCall=True):
+    def genStepBlock(self, genOutFormat='html', baseFilePath='', LaTexDoc=None, callDepth=0, LaTexItemize=None):
         """
         Generate the formatted for the steps section
         """
@@ -114,9 +114,35 @@ class RecipeStep:
             if( len( self.info['childStep'])):
                 itemize = Itemize()   
                 for stepInfo in self.info['childStep']:
-                    stepInfo.genStepBlock( genOutFormat, baseFilePath,LaTexDoc=LaTexDoc, LaTexItemize=itemize, isFirstCall=False )
+                    stepInfo.genStepBlock( genOutFormat, baseFilePath,LaTexDoc=LaTexDoc, LaTexItemize=itemize)
                 LaTexItemize.append( itemize )
                 strStep = LaTexItemize
+         
+        elif( 'LaTex_indented_InjectHere' == genOutFormat):
+            if( self.info['inText']):
+                strOut = ''
+                if(callDepth > 0 ): strOut += '- '
+                strOut += self.info['inText']
+                LaTexDoc.append( strOut )
+                LaTexDoc.append( NewLine() )
+            
+            for picLoc in self.info['inPic']:
+                LaTexDoc.append( Command('begin',['center'] ) )
+                LaTexDoc.append(
+                    Command(
+                            'includegraphics',
+                            [NoEscape(str( Path( picLoc ).absolute().as_posix() ))],
+                            NoEscape(r'width=0.3\textwidth')
+                        )
+                    )
+                LaTexDoc.append( Command('end',['center'] ) )
+            
+            if( len( self.info['childStep'])):
+                LaTexDoc.append( Command('vspace', [NoEscape(r'-10pt')] ) )
+                LaTexDoc.append( Command('begin',['addmargin', str('%sem' % (callDepth+1))], packages=[ Package('scrextend')]))
+                for stepInfo in self.info['childStep']:
+                        stepInfo.genStepBlock( genOutFormat, baseFilePath,LaTexDoc=LaTexDoc, callDepth=callDepth+1)
+                LaTexDoc.append( Command('end', ['addmargin']))
         else:
             raise Exception("Unknown format %s" % (genOutFormat) )
         
@@ -420,7 +446,7 @@ class MyRecipe:
     def genStepsBlock(self, genOutFormat='html', LaTexDoc=None):
         """
         """
-        dataBack =None
+        dataBack = None
         if( 'html' == genOutFormat):
             dataBack = '<ul>'
             for step in self.info['steps']:
@@ -432,6 +458,10 @@ class MyRecipe:
                 for step in self.info['steps']:
                     step.genStepBlock( genOutFormat, self.getPathLoc(), LaTexDoc=LaTexDoc, LaTexItemize=itemize)
                 dataBack = itemize
+        elif( 'LaTex_indented_InjectHere' == genOutFormat):
+            if ( len( self.info['steps']) ):
+                for step in self.info['steps']:
+                    step.genStepBlock( genOutFormat, self.getPathLoc(), LaTexDoc=LaTexDoc, callDepth=0)
         else:
             raise Exception(" Unknown Generation format %s" % genOutFormat)
         

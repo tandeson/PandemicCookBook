@@ -28,6 +28,7 @@ from pylatex import Document, Section, Subsection, LargeText, SmallText, \
                     Package, Figure
 from pylatex.utils import NoEscape, italic, bold
 from pylatex.section import Chapter
+from lib2to3.fixer_util import Newline
 
 #*  Constants ****************************************************************
 
@@ -206,17 +207,7 @@ def util_addPicNotInFig(latexDoc, strPicPath, widthNum):
 def genRecipeFormatFancyLong( latexDoc, recipeName, recipeData  ):
     
     ingredLaTex = recipeData.genIngredientsBlock('LaTex')   
-    ingredPage = Tabular('rl')
-    ingredPage.add_empty_row()
-    for ingredDat in ingredLaTex:
-        if ('' == ingredDat[0] and '' == ingredDat[2]):
-            ## Special case for Grouped title in the middle column
-            ingredPage.add_row('',ingredDat[1])
-        else:
-            ingredPage.add_row( (ingredDat[0], ingredDat[1] + ' ' + ingredDat[2])  )
- 
-    dirPage =  recipeData.genStepsBlock('LaTex_noFig', latexDoc)
-    
+
     util_FancyBuildHeader(latexDoc, recipeName)
     
     ## Create Recipe Header
@@ -243,10 +234,17 @@ def genRecipeFormatFancyLong( latexDoc, recipeName, recipeData  ):
                 packages=[ Package('wrapfig')])
         )
     
-    latexDoc.append( ingredPage )
+    for ingredDat in ingredLaTex:
+        if ('' == ingredDat[0] and '' == ingredDat[2]):
+            ## Special case for Grouped title in the middle column
+            if( len(ingredDat[1])):
+                latexDoc.append( ingredDat[1] )
+                latexDoc.append( Newline() )
+        else:
+            latexDoc.append( str(ingredDat[0]) + ' ' + ingredDat[1] + ' ' + ingredDat[2] )
+            latexDoc.append( Newline() )
+            
     if( recipeData.getPicturePrimary() ):
-        latexDoc.append( Command('vspace', ['5pt'] ) )
-        latexDoc.append( NewLine() )
         latexDoc.append( Command('begin', ['center']) )
         util_addPicNotInFig(
             latexDoc, 
@@ -255,26 +253,12 @@ def genRecipeFormatFancyLong( latexDoc, recipeName, recipeData  ):
         latexDoc.append( Command('end', ['center']) )
         
     latexDoc.append( Command('end',['wrapfigure']) )
-    latexDoc.append( Command('vline') )
-    latexDoc.append( NewLine() )
-    latexDoc.append( dirPage )
+
+    recipeData.genStepsBlock('LaTex_indented_InjectHere', latexDoc)
     
     ##----
     # Add in Ingredients
-    
-    if( False ):
-        ##---- Directions            
-        
-        
-        with latexDoc.create( SmallText() ):
-            latexDoc.append( Command('columnratio',[0.53]) )
-            latexDoc.append( Command('begin',['paracol', 2], packages=[ Package('paracol')]) )
-            
-            latexDoc.append( picForRecipe )
-            latexDoc.append(  Command('switchcolumn',packages=[ Package('paracol')]) )
-            latexDoc.append( dirPage )
-            latexDoc.append(  Command('end','paracol',packages=[ Package('paracol')]) )
-        
+         
     latexDoc.append( NewPage() )
     
 #=============================================================================
