@@ -28,7 +28,6 @@ from pylatex import Document, Section, Subsection, LargeText, SmallText, \
                     Package, Figure
 from pylatex.utils import NoEscape, italic, bold
 from pylatex.section import Chapter
-from lib2to3.fixer_util import Newline
 
 #*  Constants ****************************************************************
 
@@ -114,17 +113,29 @@ def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
             if (args.verbose):
                     print( "Building LaTex Code for Section:%s" % ( grpSectionName ) )
             
-            with doc.create( Section( grpSectionName ) ):
-                ## TODO - any info on this sections..
-                doc.append( NewPage())
+            with doc.create(Center()):
+                doc.append( Command('rule',['4in', '0.4pt'] ) )
+                doc.append( Section(  grpSectionName  ) )
+                doc.append( Command('rule',['4in', '0.4pt'] ) )
                 
-                for iRecipe in recipeList:
-                    if (args.verbose):
-                        print( "-Building LaTex Code for Recipe:%s" % ( iRecipe ) )
-                    if (cookbookData['Recipes']['inputObjects'][iRecipe].getSection() == grpSectionName):
-                        genRecipe(doc, iRecipe, cookbookData['Recipes']['inputObjects'][iRecipe] )
-        
+            ## TODO - any info on this sections..
+            doc.append( NewPage())
+            
+            for iRecipe in recipeList:
+                if (args.verbose):
+                    print( "-Building LaTex Code for Recipe:%s" % ( iRecipe ) )
+                if (cookbookData['Recipes']['inputObjects'][iRecipe].getSection() == grpSectionName):
+                    genRecipe(doc, iRecipe, cookbookData['Recipes']['inputObjects'][iRecipe] )
     
+        with doc.create( Chapter('Index') ):
+            doc.append( Command('thispagestyle', [ strNameBookStyle]) )
+            
+            doc.append( Command('twocolumn ',[],[NoEscape(r'\section{By Ingredient} \label{sec:ByIngredient}')]) )
+            getLateByIngredientIndex( doc, cookbookData)
+            
+            
+            doc.append( Command('onecolumn ') )
+            
     ## --------------------
     ## Do the generation
     if(args.verbose):
@@ -239,10 +250,10 @@ def genRecipeFormatFancyLong( latexDoc, recipeName, recipeData  ):
             ## Special case for Grouped title in the middle column
             if( len(ingredDat[1])):
                 latexDoc.append( ingredDat[1] )
-                latexDoc.append( Newline() )
+                latexDoc.append( NewLine() )
         else:
             latexDoc.append( str(ingredDat[0]) + ' ' + ingredDat[1] + ' ' + ingredDat[2] )
-            latexDoc.append( Newline() )
+            latexDoc.append( NewLine() )
             
     if( recipeData.getPicturePrimary() ):
         latexDoc.append( Command('begin', ['center']) )
@@ -440,7 +451,43 @@ def genRecipeFormatDefault( latexDoc, recipeName, recipeData  ):
         latexDoc.append(  Command('end','paracol',packages=[ Package('paracol')]) )
     
     latexDoc.append( NewPage() )
-   
+
+#=============================================================================
+def getLateByIngredientIndex( doc, cookbookData):
+    """
+    Generate Latex code for a index of recipes by Ingredient
+    """
+    lstIngred = []
+    dictIngred = {}
+    txtExcludeList = ['Household', 'Spices']
+    for ingredGrp in cookbookData['ingredients']['text_tree']:
+        if( ingredGrp not in txtExcludeList):
+            ingredGrpBase = cookbookData['ingredients']['text_tree'][ingredGrp] 
+            for ingred in ingredGrpBase:
+                print( ingred )
+                lstIngred.append( ingred )
+                dictIngred[ ingred ] = ingredGrpBase[ingred] 
+    
+    lstIngred.sort()
+    
+    doc.append( ' ' )
+    doc.append( Command( 'noindent') )
+    GrpLetter = ' '
+    for ingItem in lstIngred:
+        if (GrpLetter != ingItem[0].upper() ):
+            GrpLetter = ingItem[0].upper()
+            doc.append( NewLine() )
+            doc.append( bold( GrpLetter ) )
+            doc.append( NewLine() )
+        doc.append( ingItem )
+        lstRecipe = dictIngred[ingItem]['ingred'].getRecipeList()
+        for itemLstRecipe in lstRecipe:
+            doc.append( NewLine() )
+            doc.append('---' + itemLstRecipe)
+        doc.append( NewLine() )
+        
+    #listIngred = 'ingredients'
+
 #=============================================================================
 def buildPdfImg( outAbsPath, inFilePath, inMaxDpi=300, inMaxSizeInch=4):
     """
