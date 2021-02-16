@@ -238,6 +238,8 @@ def genRecipeFormatFancyLong( latexDoc, recipeName, recipeData  ):
         if ('' == ingredDat[0] and '' == ingredDat[2]):
             ## Special case for Grouped title in the middle column
             if( len(ingredDat[1])):
+                latexDoc.append( Command('vspace', ['10pt'] ) )
+                latexDoc.append( NoEscape('\n') )
                 latexDoc.append( ingredDat[1] )
                 latexDoc.append( Newline() )
         else:

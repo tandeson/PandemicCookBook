@@ -29,7 +29,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addPicture('ShepardPie', 'ShepardsPie.jpg' )
         r.addPicture('ShepardPiePlate', 'ShepardsPiePlate.jpg')
         r.addPicture('ShepardPiePlateClose', 'ShepardsPiePlateClose.jpg')
-        r.setPrimaryPicture('ShepardPie')
+        ##r.setPrimaryPicture('ShepardPie')
+        r.setRecipeFormat('FANCY_LONG_RECIPE') 
         
         r.AddDescription(
             'We decided to make this after watching a series of Episodes of the Great British Bake off. '
