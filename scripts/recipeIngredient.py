@@ -103,6 +103,13 @@ class RecipeIngredient:
             self.info['recipeList'][recipeUsingThisIngredient.getName() ] = recipeUsingThisIngredient
     
     #-------------------------------------------------------------------------
+    def getRecipeList( self ):
+        """
+        Get the list of recipes for this ingredeient
+        """
+        return self.info['recipeList']
+        
+    #-------------------------------------------------------------------------
     def genIngredientBlock(self, inAmount, inUnits, genOutFormat='html'):
         """
         One line description of method.
