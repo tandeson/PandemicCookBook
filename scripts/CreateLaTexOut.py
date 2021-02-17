@@ -485,7 +485,9 @@ def getLateByIngredientIndex( doc, cookbookData):
         lstRecipe = dictIngred[ingItem]['ingred'].getRecipeList()
         for itemLstRecipe in lstRecipe:
             doc.append( NewLine() )
-            doc.append('---' + itemLstRecipe)
+            doc.append( Command(NoEscape(r'hspace*'), ['3 mm']) )
+            doc.append( itemLstRecipe + ',')
+            doc.append( Command( 'pageref',['%s%s'%('subsec:', itemLstRecipe.replace(" ", "") )]) )
         doc.append( NewLine() )
         
     #listIngred = 'ingredients'
