@@ -26,6 +26,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPathLoc( dirPathRecipe )
         r.addPicture('OurPadKeeMaoMade', '2020_09_09_PadKeeMao_done.jpg')
         r.setPrimaryPicture( 'OurPadKeeMaoMade')
+        r.setRecipeFormat('TWO_COLUMN_OPTIONAL_PICTURES')
         
         r.AddDescription(
             'In July of 2020 we went and got takout for our 6 month anniversary at a Thai restaurant. '

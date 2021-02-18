@@ -173,6 +173,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Maple Syrup',
+    grpNameCondiments,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Molasses',
     grpNameCondiments,
     ))

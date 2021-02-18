@@ -461,12 +461,11 @@ def getLateByIngredientIndex( doc, cookbookData):
     """
     lstIngred = []
     dictIngred = {}
-    txtExcludeList = ['Household', 'Spices']
+    txtExcludeList = ['Household', 'Spices', 'Oils']
     for ingredGrp in cookbookData['ingredients']['text_tree']:
         if( ingredGrp not in txtExcludeList):
             ingredGrpBase = cookbookData['ingredients']['text_tree'][ingredGrp] 
             for ingred in ingredGrpBase:
-                print( ingred )
                 lstIngred.append( ingred )
                 dictIngred[ ingred ] = ingredGrpBase[ingred] 
     
@@ -482,7 +481,8 @@ def getLateByIngredientIndex( doc, cookbookData):
             doc.append( bold( GrpLetter ) )
             doc.append( NewLine() )
         doc.append( ingItem )
-        lstRecipe = dictIngred[ingItem]['ingred'].getRecipeList()
+        lstRecipe = list( dictIngred[ingItem]['ingred'].getRecipeList() )
+        lstRecipe.sort()
         for itemLstRecipe in lstRecipe:
             doc.append( NewLine() )
             doc.append( Command(NoEscape(r'hspace*'), ['3 mm']) )

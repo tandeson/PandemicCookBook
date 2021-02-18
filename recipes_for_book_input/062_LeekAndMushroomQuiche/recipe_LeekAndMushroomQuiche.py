@@ -24,6 +24,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Leek and Mushroom Quiche', 'Main dishes', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        r.addPicture('Quiche', '2021_fullQuiche.jpg')
+        r.setPrimaryPicture('Quiche')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         #  -- Add Ingredients --
 
