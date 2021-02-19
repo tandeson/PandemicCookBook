@@ -203,6 +203,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Red Chilli sauce',
+    grpNameCondiments, 
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Red Wine Vinegar',
     grpNameCondiments, 
     ))
@@ -226,6 +231,12 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Soy Sauce',
     grpNameCondiments, 
     ))
+
+C_INGREDIENTS.append( RecipeIngredient( 
+    'Tomato Ketchup',
+    grpNameCondiments, 
+    ))
+
 #=============================================================================
 grpNameDairy = 'Dairy'
 

@@ -22,7 +22,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
-        r = MyRecipe('Tofu with Peanut Sauce in Quinoa', 'Soups', sharedIngredentList)
+        r = MyRecipe('Tofu with Peanut Sauce in Quinoa', 'Main dishes', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         r.addPicture('Bowl_1', '2021_PeanutTofuBowl.JPEG')
         r.addPicture('Bowl_2', '2021_PeanutTofuBowl2.JPEG')
