@@ -229,14 +229,15 @@ def genRecipeFormatFancyLong( latexDoc, recipeName, recipeData  ):
             str( Path( recipeData.getPicturePrimary()['path']).absolute() ),
             width=NoEscape(r"0.3\textwidth") )
     
+    latexDoc.append( Command('vspace', ['10pt'] ) )
+    
     if recipeData.GetDescription():
-        latexDoc.append( Command('vspace', ['10pt'] ) )
         latexDoc.append( 
             italic( recipeData.GetDescription() )
         )
+        latexDoc.append( NewLine() )
                                  
     # Create Recipe body
-    latexDoc.append( NewLine() )
     
     latexDoc.append( NoEscape('\r') )
     latexDoc.append(

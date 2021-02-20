@@ -499,11 +499,6 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
-    'Red Cabbage',
-    grpNameDryGoods,
-    ))
-
-C_INGREDIENTS.append( RecipeIngredient(
     'Red Lentils',
     grpNameDryGoods,
     ))
@@ -773,7 +768,12 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Mushrooms',
     grpNameProduce,
     ))
-    
+
+C_INGREDIENTS.append( RecipeIngredient(
+   'Napa Cabbage',
+    grpNameProduce,
+    ))
+  
 C_INGREDIENTS.append( RecipeIngredient(
     'Onion',
     grpNameProduce,
@@ -798,6 +798,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 C_INGREDIENTS.append( RecipeIngredient(
     'Red Bell Pepper',
     grpNameProduce
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Red Cabbage',
+    grpNameDryGoods,
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
