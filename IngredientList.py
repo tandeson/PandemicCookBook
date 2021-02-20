@@ -281,6 +281,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Goat Cheese',
+    grpNameDairy,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Greek Yogurt',
     grpNameDairy,
     ))
@@ -684,6 +689,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Brussel Sprouts',
+    grpNameProduce
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Butternut Squash',
     grpNameProduce
     ))
 

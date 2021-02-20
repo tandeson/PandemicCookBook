@@ -46,7 +46,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'With a large spoon, stir in the hot Water.',
             'After the water is mixed in and the flour and oil start to cool-off '
             ', mix the ingredients with your hand until you have a big lump of flour dough.',
-            'Knead the dough and, if it\'s too "pie crush" like, add a little more hot water; or, '
+            'Knead the dough and, if it\'s too "pie crust" like, add a little more hot water; or, '
             'if it\'s too mushy, add a little flour.',
             'Break off little clump of dough and round them between the palms of your hands.'
             ' when you have a nice little ball, flatten it a little between your hands into a '
