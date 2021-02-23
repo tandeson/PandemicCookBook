@@ -22,7 +22,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
-        r = MyRecipe('Butternut Squash, Brussels Sprout goat cheese Galette', 'Main dishes', sharedIngredentList)
+        r = MyRecipe('Butternut Brussels Sprout goat cheese Galette', 'Main dishes', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         r.addPicture('GaletteSlice', '2021_Galette_slice.JPEG')
         r.addPicture('GaletteFull','2021_Galette_Full.JPEG')
