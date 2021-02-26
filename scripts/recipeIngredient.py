@@ -73,6 +73,13 @@ class RecipeIngredient:
         return self.info['group']
     
     #-------------------------------------------------------------------------
+    def getRecipeToMake(self):
+        '''
+        Return the name of a recipe to make this - or None if there isn't any
+        '''
+        return self.info['recipeToMakeName']
+    
+    #-------------------------------------------------------------------------
     def addVendor(self, vendorName, vendorDescription, vendorLink):
         """
         One line description of method.

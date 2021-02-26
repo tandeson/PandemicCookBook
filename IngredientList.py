@@ -80,17 +80,17 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Usually I get Las Palmas mild or medium sauce. '
     ))
     
-grapeLeavesPickled = RecipeIngredient(
+ingGrapeLeavesPickled = RecipeIngredient(
     'Grape Leaves',
     grpNameCanned, 
     'Pickled, used as a flavor or wrapping for meats, veggies, rice, etc.'
     )
-grapeLeavesPickled.addVendor(
+ingGrapeLeavesPickled.addVendor(
     'Orlando Grape Leaves 8 0z',
     'A Common example of pickled grape leaves, usually 8 oz is enough for most of our uses.',
     'https://www.amazon.com/Orlando-Grape-Leaves-0z-Pack/dp/B07CQBNYG7'
     )
-C_INGREDIENTS.append( grapeLeavesPickled )
+C_INGREDIENTS.append( ingGrapeLeavesPickled )
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Kidney Beans',
@@ -483,15 +483,15 @@ C_INGREDIENTS.append( RecipeIngredient(
     grpNameDryGoods,
     ))
     
-dryPizzaDoughFlavor = RecipeIngredient(
+ingDryPizzaDoughFlavor = RecipeIngredient(
     'Pizza Dough Flavor',
     grpNameDryGoods
     )
-dryPizzaDoughFlavor.addVendor(
+ingDryPizzaDoughFlavor.addVendor(
     'King Arthur Baking', 
     'For over the top flavor in your homemade pizza or Italian bread dough. Features cheese powder, garlic, and natural flavors.',
      'https://shop.kingarthurbaking.com/items/pizza-dough-flavor-4-oz')
-C_INGREDIENTS.append( dryPizzaDoughFlavor )
+C_INGREDIENTS.append( ingDryPizzaDoughFlavor )
  
 C_INGREDIENTS.append( RecipeIngredient(
     'Potato Flour',
@@ -581,7 +581,8 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Fried Tofu', 
-    grpNameProtien
+    grpNameProtien,
+    recipeToMakeName= 'Fried Tofu'
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(

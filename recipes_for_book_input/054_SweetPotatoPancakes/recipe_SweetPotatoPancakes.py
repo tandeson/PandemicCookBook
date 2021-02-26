@@ -24,6 +24,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Sweet Potato Pancakes', 'Main dishes', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        r.addPicture('Pancakes','2021_Feb_SweetPotatoPancakes.jpg')
+        r.setPrimaryPicture('Pancakes')
         r.setRecipeFormat('FANCY_WIDE_PIC_OVER_DIRECTIONS')    
         #  -- Add Ingredients --
         
@@ -41,21 +43,15 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
                 
         # Add Steps and Notes
         steps = [
-            'In a large bowl, combine the grated sweet potato, carrot, and salt.',
-            'Massage with both hands until wet and squishy, about 1 minute.',
+            'In a large bowl, combine the grated sweet potato, carrot, and salt. Massage with both hands until wet and squishy, about 1 minute.',
             'Transfer the grated veggies to a piece of muslin or a non-terry dish '
             'towel, and wrap the veggies in the towel. Standing over the sink, firmly squeeze and twist to expel moisture.'
-            'Dump the veggies into a dry bowl.',
-            'Add the green onion, mixing with a fork to distribute well.',
-            'Mix in the pepper, fish sauce, cornstarch, and rice flour. Add the egg, break it up with a fork, and mix well.',
-            'Press the mixture down to compact it, and then divide into 8 portions like a pie, using a 1/4  cup measuring scoop.',
+            'Dump the veggies into a dry bowl. Add the green onion, mixing with a fork to distribute well. Mix in the pepper, fish sauce, cornstarch, and rice flour. Add the egg, break it up with a fork, and mix well.',
             'Warm a large nonstick skillet over medium heat, then add about 2 tablespoons of oil to film the bottom. Fry in '
             'two batches, 4 pancakes at a time.',
             'For each one, use a fork and your fingers to scoop up the 1/4 cup portions of the potato-and-carrot mixture. '
             'Deposit into the skillet, spreading and flattening the mixture with the measuring cup bottom and fork to make a 3 1/2-inch-wide pancake ',
-            'Fry for about 3 minutes, until bits of the fringe-like edges are richly brown and crisp. Drizzle 2 to 3 teaspoons of oil on top of the '
-            'pancakes, then wield 2 spatulas to carefully flip each one over. Fry for about 3 minutes longer, until crisp and brown underneath. Cool on a rack.'
-            ' Fry the remaining batch.',
+            'Fry for about 3 minutes, until bits of the fringe-like edges are richly brown and crisp. Flip and Fry for about 3 minutes longer, until crisp and brown underneath. Repeat with the rest of the mix.'
             ]
         for s in steps:
             r.addStep( RecipeStep( s ) )
