@@ -24,6 +24,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Split Pea Soup', 'Soups', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        r.addPicture('splitpea_1', 'Splitpea_Cup_1.JPEG')
+        r.addPicture('splitpea_2', 'Splitpea_Cup_2.JPEG')
+        r.setPrimaryPicture('splitpea_1')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         #  -- Add Ingredients --
 

@@ -28,6 +28,7 @@ from pylatex import Document, Section, Subsection, LargeText, SmallText, \
                     Package, Figure
 from pylatex.utils import NoEscape, italic, bold
 from pylatex.section import Chapter
+from pylatex.basic import NewLine
 
 #*  Constants ****************************************************************
 

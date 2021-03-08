@@ -24,6 +24,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Indian Red Lentils', 'Main dishes', sharedIngredentList)
         r.setPathLoc( dirPathRecipe )
+        r.addPicture('redLentils', 'IndianRedLentils_1.JPEG')
+        r.setPrimaryPicture('redLentils')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         #  -- Add Ingredients --
         
