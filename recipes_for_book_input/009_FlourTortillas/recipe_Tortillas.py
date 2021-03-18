@@ -24,13 +24,14 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Flour Tortillas',"Baking and Breads", sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
-        r.setRecipeFormat('FANCY_WIDE_PIC_OVER_DIRECTIONS')
+        r.addPicture('set_of_tortias', '2021_threeTortia_small.jpg')
+        r.setPrimaryPicture( 'set_of_tortias' )
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         
         r.AddDescription(
             'Rick Rodriguez shared this with me after a conversation at the coffee stand. '
             'He likes to make these in the morning for his wife, and fill them with eggs and '
-            'potatoes. They can also come out like a Pita bread by adding a pinch of baking soda. '
-            'As Pita they work well, for things like the base of a Gyro. ~Thomas'    
+            'potatoes. They can also come out like a Pita bread by adding a pinch of baking soda. ~Thomas'    
         )
         #  -- Add Ingredients --
 
@@ -43,7 +44,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         # Add Steps and Notes
         steps = [
             'In a medium-large bowl, mix-in the Flour, Salt and Oil',
-            'With a large spoon, stir in the hot Water.',
+            'With a large spoon, stir in the hot Water.'
             'After the water is mixed in and the flour and oil start to cool-off '
             ', mix the ingredients with your hand until you have a big lump of flour dough.',
             'Knead the dough and, if it\'s too "pie crust" like, add a little more hot water; or, '
@@ -57,10 +58,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'over and over until you get a nice, flat, thin raw tortilla.',
             'Place the tortilla on a hot griddle for a few seconds, and then turn it over. You may '
             'want to rotate the tortilla with you hand while it\'s on the griddle so that it '
-            'cooks evenly. Flit it over again and cook until done.',
-            'If you\'re doing it right, and are lucky, the tortilla will sometimes fill with '
-            'hot air and "puff up" on the griddle. If it gets too puffy, you can flatten it.',
-            'When done, you should have about a dozen tortillas.'
+            'cooks evenly. Flit it over again and cook until done.'
              ]
         for s in steps:
             r.addStep( RecipeStep( s ) )
