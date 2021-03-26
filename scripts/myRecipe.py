@@ -267,26 +267,24 @@ class MyRecipe:
         
         knownListIng = []
         
+        # See if we need to add this group
         if( ingredientGroupName not in self.info['ingredients'].keys() ):
             self.info['ingredients'][ingredientGroupName] = []
             self.info['ingredientsGrpOrder'].append( ingredientGroupName )
-            
+        
+        # Look for ingredient in our known list.
         for alreadyAddedIngredient in self.info['ingredients'][ingredientGroupName]:
             knownListIng.append( alreadyAddedIngredient['ingredients'].getName() )
-            if( alreadyAddedIngredient['ingredients'].getName() == ingredientName):
-                if(alreadyAddedIngredient['units'] == ingredientUnits):
-                    alreadyAddedIngredient['amount'] += ingredientAmount
-                else:
-                    raise Exception("uh - how do we combind %s and %s units?" % (alreadyAddedIngredient['units'], ingredientUnits) )
+                    
+        self.info['ingredients'][ingredientGroupName].append( 
+            {
+                'ingredients':thisIngredientInfo,
+                'units': ingredientUnits,
+                'amount': ingredientAmount
+                } 
+            )
         
         if ingredientName not in knownListIng:
-            self.info['ingredients'][ingredientGroupName].append( 
-                {
-                    'ingredients':thisIngredientInfo,
-                    'units': ingredientUnits,
-                    'amount': ingredientAmount
-                    } 
-                )
             thisIngredientInfo.inRecipe( self )
                 
 
@@ -404,7 +402,8 @@ class MyRecipe:
                         (
                             ingredient['amount'],
                             ingredient['units'],
-                            ingredient['ingredients'].getName() 
+                            ingredient['ingredients'].getName(),
+                            ingredient['ingredients'].getRecipeToMake()
                         ) 
                     )
         

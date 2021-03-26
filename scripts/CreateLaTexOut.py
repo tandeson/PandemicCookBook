@@ -192,7 +192,7 @@ def util_FancyBuildHeader( latexDoc, recipeName  ):
     latexDoc.append( Command('hrule' ))
 
 #=============================================================================
-def util_ijectNotes( latexDoc, recipeData  ):
+def util_injectNotes( latexDoc, recipeData  ):
     latexDoc.append( Command('vspace', ['10pt'] ) )
     latexDoc.append( LargeText( bold('Notes')) )
     latexDoc.append( NewLine()  )
@@ -211,6 +211,13 @@ def util_addPicNotInFig(latexDoc, strPicPath, widthNum):
     )
     latexDoc.append( NewLine() )
 
+#=============================================================================
+def util_refRecipePageNum( latexDoc, strRecipeName):
+    latexDoc.append( 
+        Command( 
+            'pageref',
+            ['%s%s'%('subsec:', strRecipeName.replace(" ", "") )]) 
+        )
 #=============================================================================
 # Builders
 #=============================================================================
@@ -296,6 +303,8 @@ def genRecipeFormatFancyTallPic( latexDoc, recipeName, recipeData  ):
             ingredPage.add_row( ('', ingredDat[1])  )
         else:
             ingredPage.add_row( (ingredDat[0], ingredDat[1] + ' ' + ingredDat[2])  )
+            #if( ingredDat[3] != None):
+            #    util_refRecipePageNum(ingredPage, ingredDat[3])
     
     
     ###################
@@ -331,7 +340,7 @@ def genRecipeFormatFancyTallPic( latexDoc, recipeName, recipeData  ):
     
     
     if recipeData.GetDescription():
-        util_ijectNotes( latexDoc, recipeData  )
+        util_injectNotes( latexDoc, recipeData  )
          
     latexDoc.append( NoEscape(r'\\'))
     
@@ -374,7 +383,7 @@ def genRecipeFormatFancyWidePic( latexDoc, recipeName, recipeData  ):
     if recipeData.GetDescription():
         latexDoc.append( Command('vspace', ['10pt'] ) )
         latexDoc.append( NewLine() )
-        util_ijectNotes( latexDoc, recipeData  ) 
+        util_injectNotes( latexDoc, recipeData  ) 
     
     latexDoc.append( NoEscape(r'&'))
        
@@ -489,7 +498,7 @@ def getLateByIngredientIndex( doc, cookbookData):
             doc.append( NewLine() )
             doc.append( Command(NoEscape(r'hspace*'), ['3 mm']) )
             doc.append( itemLstRecipe + ',')
-            doc.append( Command( 'pageref',['%s%s'%('subsec:', itemLstRecipe.replace(" ", "") )]) )
+            util_refRecipePageNum( doc, itemLstRecipe)
         doc.append( NewLine() )
         
     #listIngred = 'ingredients'

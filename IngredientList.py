@@ -647,7 +647,12 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Peas',
     grpNameOther
     ))
-        
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Phyllo Dough',
+    grpNameOther,
+    ))
+
 C_INGREDIENTS.append( RecipeIngredient(
     'Pizza Dough',
     grpNameOther,
