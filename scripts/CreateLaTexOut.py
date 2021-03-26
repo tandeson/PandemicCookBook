@@ -212,12 +212,12 @@ def util_addPicNotInFig(latexDoc, strPicPath, widthNum):
     latexDoc.append( NewLine() )
 
 #=============================================================================
-def util_refRecipePageNum( latexDoc, strRecipeName):
-    latexDoc.append( 
-        Command( 
-            'pageref',
-            ['%s%s'%('subsec:', strRecipeName.replace(" ", "") )]) 
-        )
+def util_refRecipePageNum( strRecipeName):
+    '''
+    Done this way in order to allow for injection into tables with additional text.
+    '''
+    return NoEscape(r'\pageref{subsec:%s}' % (strRecipeName.replace(" ", "") ))
+
 #=============================================================================
 # Builders
 #=============================================================================
@@ -263,9 +263,20 @@ def genRecipeFormatFancyLong( latexDoc, recipeName, recipeData  ):
                 latexDoc.append( ingredDat[1] )
                 latexDoc.append( NewLine() )
         else:
-            latexDoc.append( str(ingredDat[0]) + ' ' + ingredDat[1] + ' ' + ingredDat[2] )
-            latexDoc.append( NewLine() )
-            
+            if( ingredDat[3] != None):
+                latexDoc.append( 
+                    NoEscape(
+                        str(ingredDat[0]) + ' ' + 
+                        ingredDat[1] + ' ' + 
+                        ingredDat[2] + ', pg ' + util_refRecipePageNum(ingredDat[3]) 
+                        )
+                    )
+                latexDoc.append( NewLine() )
+            else:
+                latexDoc.append( str(ingredDat[0]) + ' ' + ingredDat[1] + ' ' + ingredDat[2] )
+                latexDoc.append( NewLine() )
+    
+  
     if( recipeData.getPicturePrimary() ):
         latexDoc.append( Command('begin', ['center']) )
         util_addPicNotInFig(
@@ -302,9 +313,17 @@ def genRecipeFormatFancyTallPic( latexDoc, recipeName, recipeData  ):
         if ('' == ingredDat[0] and '' == ingredDat[2]):
             ingredPage.add_row( ('', ingredDat[1])  )
         else:
-            ingredPage.add_row( (ingredDat[0], ingredDat[1] + ' ' + ingredDat[2])  )
-            #if( ingredDat[3] != None):
-            #    util_refRecipePageNum(ingredPage, ingredDat[3])
+            if( ingredDat[3] != None):
+                ingredPage.add_row( 
+                    ingredDat[0], 
+                    (NoEscape(
+                        ingredDat[1] + ' ' + 
+                        ingredDat[2] + 
+                        ', pg ' + util_refRecipePageNum( ingredDat[3]) )
+                    )
+                )
+            else:
+                ingredPage.add_row( (ingredDat[0], ingredDat[1] + ' ' + ingredDat[2])  )
     
     
     ###################
@@ -368,7 +387,17 @@ def genRecipeFormatFancyWidePic( latexDoc, recipeName, recipeData  ):
         if ('' == ingredDat[0] and '' == ingredDat[2]):
             ingredPage.add_row( ('', ingredDat[1])  )
         else:
-            ingredPage.add_row( (ingredDat[0], ingredDat[1] + ' ' + ingredDat[2])  )
+            if( ingredDat[3] != None):
+                ingredPage.add_row( 
+                    ingredDat[0], 
+                    (NoEscape(
+                        ingredDat[1] + ' ' + 
+                        ingredDat[2] + 
+                        ', pg ' + util_refRecipePageNum(ingredDat[3]))
+                    )
+                )
+            else:
+                ingredPage.add_row( (ingredDat[0], ingredDat[1] + ' ' + ingredDat[2])  )
     
     
     ###################
@@ -446,10 +475,19 @@ def genRecipeFormatDefault( latexDoc, recipeName, recipeData  ):
     ingredPage.add_empty_row()
     for ingredDat in ingredLaTex:
         if ('' == ingredDat[0] and '' == ingredDat[2]):
-            ## Special case for Grouped title in the middle column
-            ingredPage.add_row('',ingredDat[1])
+            ingredPage.add_row( ('', ingredDat[1])  )
         else:
-            ingredPage.add_row( (ingredDat[0], ingredDat[1] + ' ' + ingredDat[2])  )
+            if( ingredDat[3] != None):
+                ingredPage.add_row( 
+                    ingredDat[0], 
+                    (NoEscape(
+                        ingredDat[1] + ' ' + 
+                        ingredDat[2] + 
+                        ', pg ' + util_refRecipePageNum(ingredDat[3]))
+                    )
+                )
+            else:
+                ingredPage.add_row( (ingredDat[0], ingredDat[1] + ' ' + ingredDat[2])  )
     
     ##---- Directions            
     dirPage =  recipeData.genStepsBlock('LaTex', latexDoc)
@@ -498,7 +536,7 @@ def getLateByIngredientIndex( doc, cookbookData):
             doc.append( NewLine() )
             doc.append( Command(NoEscape(r'hspace*'), ['3 mm']) )
             doc.append( itemLstRecipe + ',')
-            util_refRecipePageNum( doc, itemLstRecipe)
+            doc.append( util_refRecipePageNum( itemLstRecipe) )
         doc.append( NewLine() )
         
     #listIngred = 'ingredients'

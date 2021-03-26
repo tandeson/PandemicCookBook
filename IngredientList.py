@@ -679,6 +679,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Bean Sprouts',
+    grpNameProduce,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Bird Chillies',
     grpNameProduce,
     ))
@@ -838,6 +843,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Serrano Chile',
+    grpNameProduce,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Shredded Cabbage',
     grpNameProduce,
     ))
 

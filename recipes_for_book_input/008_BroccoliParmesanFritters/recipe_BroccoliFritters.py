@@ -67,15 +67,14 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addStep( 
             RecipeStep('Make the Fritters',
             [
-                RecipeStep('In the bottom of a large bowl, lightly beat your egg.'),
-                RecipeStep('Add the flour, cheese, garlic, salt and pepper.'),
-                RecipeStep('add the somewhat cooled broccoli and mash with a fork.'),
+                RecipeStep('In the bottom of a large bowl, lightly beat your egg.'
+                           'Add the flour, cheese, garlic, salt and pepper. Then add '
+                           'the somewhat cooled broccoli and mash with a fork.'),
                 RecipeStep('keep the bits recognizable, but small enough (1/4- to '
                            '1/2-inch chunks) that you can press a mound of the batter'
                            ' into a fritter in the pan.'),
                 RecipeStep('Once mashed a bit, stir or fold the ingredients together '
-                           'the rest of the way with a spoon.'),
-                RecipeStep('Adjust seasonings to taste.'),
+                           'the rest of the way with a spoon. Adjust seasonings to taste.'),
                 RecipeStep('Heat a large, heavy skillet over moderate heat.'),
                 RecipeStep('Once hot, add oil about 2 to 3 tablespoons.'),
                 RecipeStep('Once the oil is hot scoop a two tablespoon-size mound '
