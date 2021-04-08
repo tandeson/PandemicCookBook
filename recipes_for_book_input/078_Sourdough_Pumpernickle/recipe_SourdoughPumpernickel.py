@@ -24,7 +24,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Sourdough Pumpernickel',"Baking and Breads", sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
-        
+        r.addPicture('loaf_1', 'bread_1.jpg')
+        r.addPicture('loaf_2', 'bread_2.jpg')
+        r.setPrimaryPicture('loaf_2')
         #  -- Add Ingredients --
 
         ## 
