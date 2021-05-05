@@ -291,6 +291,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Half and Half',
+    grpNameDairy,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Heavy Cream',
     grpNameDairy,
     ))
@@ -844,6 +849,10 @@ C_INGREDIENTS.append( RecipeIngredient(
 C_INGREDIENTS.append( RecipeIngredient(
     'Romaine Lettuce',
     grpNameProduce
+    ))
+C_INGREDIENTS.append( RecipeIngredient(
+    'Savoy Cabbage',
+    grpNameProduce,
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
