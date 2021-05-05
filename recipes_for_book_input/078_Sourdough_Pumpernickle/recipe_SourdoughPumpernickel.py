@@ -37,9 +37,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Onion', 64, 'grams, diced', grpSpong)
         
         grpDough = 'Dough'
-        r.addIngredient('Vegetable Oil', 25, 'grams')
-        r.addIngredient('Salt', 2, 'teaspoons', grpDough)
+        r.addIngredient('Vegetable Oil', 25, 'grams', grpDough)
         r.addIngredient('Molasses', 85, 'grams', grpDough)
+        r.addIngredient('Salt', 2, 'teaspoons', grpDough)
         r.addIngredient('Bread Flour', 482, 'grams ( 4 cups)', grpDough)
         
         # Add Steps and Notes

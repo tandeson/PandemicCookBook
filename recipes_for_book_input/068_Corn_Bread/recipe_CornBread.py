@@ -24,6 +24,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Corn Bread', 'Baking and Breads', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        r.addPicture('slice_1', 'corbread_slice_1.jpg')
+        r.addPicture('whole_1', 'corbread_whole_1.jpg')
+        r.addPicture('slice_2', 'corbread_whole_2.jpg')
+        r.setPrimaryPicture('slice_1')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         
         ## ---
