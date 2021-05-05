@@ -30,6 +30,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     grpNameAlcohol,
     ))
 
+C_INGREDIENTS.append( RecipeIngredient(
+    'Beer',
+    grpNameAlcohol,
+    ))
+
 #=============================================================================
 ## Packaged goods
 grpNameCanned = 'Canned Goods'
