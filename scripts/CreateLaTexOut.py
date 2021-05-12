@@ -583,7 +583,7 @@ def buildPdfImg( outAbsPath, inFilePath, roundEdges=True, inMaxDpi=300, inMaxSiz
     if (roundEdges):
         myImage = myImage.convert('RGBA')
         # Use an Alpha Channel to round the corners
-        myImage = util_pdfImg_add_corners(myImage, 100)
+        myImage = util_pdfImg_add_corners(myImage, int( max([newDpioutW, newDpioutH])/2 ) )
         # Convert the Alpha Channel to a white background to allow saving
         # see - https://stackoverflow.com/a/33507138/2628864
         # Done because the PDF size with JPEG is about 1/10 the size of the one using PNG
@@ -592,7 +592,7 @@ def buildPdfImg( outAbsPath, inFilePath, roundEdges=True, inMaxDpi=300, inMaxSiz
     
     myImage = myImage.convert('RGB')
     myImage.save(
-        outFilePath, 'JPEG', 
+        outFilePath, 
         dpi=(newDpioutW, newDpioutH)
         )
     
