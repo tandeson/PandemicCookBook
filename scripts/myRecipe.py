@@ -289,7 +289,7 @@ class MyRecipe:
                 
 
     #-------------------------------------------------------------------------
-    def addPicture(self, pictureName, picLocation):
+    def addPicture(self, pictureName, picLocation, roundEdges=True):
         """
         Add a picture to this recipe
         """
@@ -300,7 +300,8 @@ class MyRecipe:
         
             newImgPath = buildPdfImg(
                 Path( os.path.join( self.info['dir_path'], '..', '..', 'output', 'img')).resolve(), 
-                self.info['pictures'][pictureName]['path_orig'] )
+                self.info['pictures'][pictureName]['path_orig'],
+                roundEdges )
             
             self.info['pictures'][pictureName]['path'] = newImgPath
     #-------------------------------------------------------------------------

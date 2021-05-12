@@ -28,7 +28,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r = MyRecipe('Soft Pretzels','Baking and Breads', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         r.addPicture('PretzelBasket', '2020_01_16_Pretzels_andPretzelRolls.jpeg')
-        r.addPicture('ShapePretzel','pretzel_shape_From_web.jpg')
+        r.addPicture('ShapePretzel','pretzel_shape_From_web.jpg', False)
         r.setPrimaryPicture('PretzelBasket')
 
         #  -- Add Ingredients --

@@ -19,7 +19,7 @@ from CookbookConst import C_BOOK_SECTIONS
 
 from pathlib import Path
 
-from PIL import Image
+from PIL import Image, ImageDraw
 
 ## For rendering options
 from pylatex import Document, Section, Subsection, LargeText, SmallText, \
@@ -542,7 +542,7 @@ def getLateByIngredientIndex( doc, cookbookData):
     #listIngred = 'ingredients'
 
 #=============================================================================
-def buildPdfImg( outAbsPath, inFilePath, inMaxDpi=300, inMaxSizeInch=4):
+def buildPdfImg( outAbsPath, inFilePath, roundEdges=True, inMaxDpi=300, inMaxSizeInch=4):
     """
     Convert a Image for use in LaTex PDF - and store to an out directory.
      
@@ -580,7 +580,14 @@ def buildPdfImg( outAbsPath, inFilePath, inMaxDpi=300, inMaxSizeInch=4):
         ( int( sizeInIncW * sizeInIncRatio * newDpioutW) , int(sizeInIncH * sizeInIncRatio * newDpioutH) ), 
         Image.ANTIALIAS)
     
-    myImage.convert('RGB').save(
+    
+    
+    myImage = myImage.convert('RGB')
+    if (roundEdges):
+        myImage = util_pdfImg_add_corners(myImage, 100)
+    outFilePath = outFilePath[ : outFilePath.rfind('.')] + '.png'
+    
+    myImage.save(
         outFilePath, 
         dpi=(newDpioutW, newDpioutH)
         )
@@ -591,6 +598,24 @@ def buildPdfImg( outAbsPath, inFilePath, inMaxDpi=300, inMaxSizeInch=4):
             (inFilePath, outFilePath) )
         
     return outFilePath
+
+#=============================================================================
+def util_pdfImg_add_corners(im, rad):
+    """
+    Add rounded corner to an image
+    taken from https://stackoverflow.com/questions/11287402/how-to-round-corner-a-logo-without-white-backgroundtransparent-on-it-using-pi
+    """
+    circle = Image.new('L', (rad * 2, rad * 2), 0)
+    draw = ImageDraw.Draw(circle)
+    draw.ellipse((0, 0, rad * 2, rad * 2), fill=255)
+    alpha = Image.new('L', im.size, 255)
+    w, h = im.size
+    alpha.paste(circle.crop((0, 0, rad, rad)), (0, 0))
+    alpha.paste(circle.crop((0, rad, rad, rad * 2)), (0, h - rad))
+    alpha.paste(circle.crop((rad, 0, rad * 2, rad)), (w - rad, 0))
+    alpha.paste(circle.crop((rad, rad, rad * 2, rad * 2)), (w - rad, h - rad))
+    im.putalpha(alpha)
+    return im
 
 #=============================================================================
 def main(argv=None):
