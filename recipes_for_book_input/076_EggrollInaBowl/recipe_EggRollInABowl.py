@@ -24,6 +24,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Egg Roll in a Bowl', 'Main dishes', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        r.addPicture('EggrollInABowl','EggrollInABowl.JPEG')
+        r.addPicture('EggrollInABowlWFork', 'EggrollInABowlWFork.JPEG')
+        r.setPrimaryPicture('EggrollInABowl')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         ## ---
         
