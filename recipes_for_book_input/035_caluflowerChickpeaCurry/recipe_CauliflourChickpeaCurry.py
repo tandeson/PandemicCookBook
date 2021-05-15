@@ -48,8 +48,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         steps= [
             'Preheat oven to 450 deg F.',
             'Place Cauliflower florets on a rimmed baking sheet. Drizzle with oil and sprinkle with Salt and Pepper.',
-            'Combine together, and then roast for 7-10 minutes, toss, and continue roasting for 7-10 minutes longer.'
-            ' The Cauliflower should be tender and lightly browned.',
+            'Combine together, and then roast for 15-20 minutes. The Cauliflower should be tender and lightly browned.',
             'In a large pan, heat oil over medium heat.',
             'Add Onions and Salt until translucent about 2-3 minutes.',
             'Add in Chili Powder, Garlic and Ginger. Saute until fragrant, about 30-60 seconds.',
