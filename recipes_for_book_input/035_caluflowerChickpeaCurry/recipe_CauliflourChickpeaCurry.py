@@ -24,6 +24,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Cauliflower and Chickpea Coconut Curry','Soups',  sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        r.addPicture('CurryNoSpoon', 'CurryNoSpoon.jpeg')
+        r.addPicture('CurrywSpoon', 'CurryWithSpoon.jpeg')
+        r.setPrimaryPicture('CurryNoSpoon')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         #  -- Add Ingredients --
 
