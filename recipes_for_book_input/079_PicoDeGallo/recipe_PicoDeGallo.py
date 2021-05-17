@@ -24,6 +24,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Pico de Gallo','Spreads and Dips', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        r.addPicture('PicoDeGalloBowl', 'PicoDeGalloBowl.JPEG')
+        r.setPrimaryPicture( 'PicoDeGalloBowl' )
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         #  -- Add Ingredients --
 
