@@ -13,6 +13,7 @@
 #*  Imports ******************************************************************
 import os
 
+import datetime
 import sys
 
 from CookbookConst import C_BOOK_SECTIONS
@@ -28,7 +29,6 @@ from pylatex import Document, Section, Subsection, LargeText, SmallText, \
                     Package, Figure
 from pylatex.utils import NoEscape, italic, bold
 from pylatex.section import Chapter
-from pylatex.basic import NewLine
 
 #*  Constants ****************************************************************
 
@@ -92,6 +92,8 @@ def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
     ## --------------------
     ## Build Up the Recipe Book Structure
     genTitlePage(doc)
+    
+    genCopyrightPage(doc, gitRepo)
     
     # Add in the Table of Contents
     doc.append( Command('tableofcontents') )
@@ -159,6 +161,35 @@ def genTitlePage( latexDoc ):
     latexDoc.preamble.append(Command('author', NoEscape(r'Bilyana Yakova \and Thomas Anderson')))
     latexDoc.preamble.append(Command('date', NoEscape(r'\today')))
     latexDoc.append(NoEscape(r'\maketitle'))
+
+#=============================================================================
+def genCopyrightPage( latexDoc, gitRepo ):
+    """
+    Add in a Copyright page
+    """
+    now = datetime.datetime.now()
+    with latexDoc.create(Center()) as centered:  
+        centered.append( NoEscape(
+            'Copyright '+ 
+            '\copyright' + 
+            ' ' + 
+            str(now.year) + 
+            ' by Thomas Anderson and Bilyana Yakova' ))
+        centered.append( NewLine() )
+        
+        centered.append( NewLine() )
+   
+        centered.append( 'All Rights Reserved.')
+        centered.append( NewLine() )
+        centered.append( NewLine() )
+        
+        centered.append( 'Git Info' )
+        centered.append( NewLine() )
+        centered.append( 'Commit:%s' % (gitRepo.commit().hexsha) )
+        centered.append( NewLine() )
+        centered.append( 'Clean Commit:%s'%(str(not gitRepo.is_dirty())).strip() )
+        centered.append( NewLine() )
+    latexDoc.append( NewPage() )
 
 #=============================================================================
 def genRecipe( latexDoc, recipeName, recipeData ):

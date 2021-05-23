@@ -113,6 +113,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Pepperoncini',
+    grpNameCanned
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Pizza Sauce',
     grpNameCanned
     ))
@@ -240,6 +245,12 @@ C_INGREDIENTS.append( RecipeIngredient(
 C_INGREDIENTS.append( RecipeIngredient( 
     'Tomato Ketchup',
     grpNameCondiments, 
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient( 
+    'Tzatziki Sauce',
+    grpNameCondiments,
+    recipeToMakeName='Tzatziki Sauce'
     ))
 
 #=============================================================================
@@ -445,6 +456,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Doritos',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Falafel Mix',
     grpNameDryGoods,
     ))
 
