@@ -168,6 +168,8 @@ def genCopyrightPage( latexDoc, gitRepo ):
     Add in a Copyright page
     """
     now = datetime.datetime.now()
+    V_SPACE_SIZE = '20pt'
+    
     with latexDoc.create(Center()) as centered:  
         centered.append( NoEscape(
             'Copyright '+ 
@@ -175,20 +177,19 @@ def genCopyrightPage( latexDoc, gitRepo ):
             ' ' + 
             str(now.year) + 
             ' by Thomas Anderson and Bilyana Yakova' ))
-        centered.append( NewLine() )
         
-        centered.append( NewLine() )
-   
+    with latexDoc.create(Center()) as centered:
+        latexDoc.append( Command('vspace', [V_SPACE_SIZE]))
         centered.append( 'All Rights Reserved.')
-        centered.append( NewLine() )
-        centered.append( NewLine() )
-        
-        centered.append( 'Git Info' )
-        centered.append( NewLine() )
+    
+    with latexDoc.create(Center()) as centered:
+        latexDoc.append( Command('vspace', [V_SPACE_SIZE]))
+        centered.append( bold('Git Info' ))
+        centered.append(NoEscape(r'\\')) 
         centered.append( 'Commit:%s' % (gitRepo.commit().hexsha) )
-        centered.append( NewLine() )
+        centered.append(NoEscape(r'\\')) 
         centered.append( 'Clean Commit:%s'%(str(not gitRepo.is_dirty())).strip() )
-        centered.append( NewLine() )
+    
     latexDoc.append( NewPage() )
 
 #=============================================================================
