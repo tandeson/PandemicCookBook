@@ -170,7 +170,8 @@ def genCopyrightPage( latexDoc, gitRepo ):
     now = datetime.datetime.now()
     V_SPACE_SIZE = '20pt'
     
-    with latexDoc.create(Center()) as centered:  
+    with latexDoc.create(Center()) as centered:
+        centered.append( Command('vspace', ['80pt']))
         centered.append( NoEscape(
             'Copyright '+ 
             '\copyright' + 
@@ -179,17 +180,23 @@ def genCopyrightPage( latexDoc, gitRepo ):
             ' by Thomas Anderson and Bilyana Yakova' ))
         
     with latexDoc.create(Center()) as centered:
-        latexDoc.append( Command('vspace', [V_SPACE_SIZE]))
+        centered.append( Command('vspace', [V_SPACE_SIZE]))
         centered.append( 'All Rights Reserved.')
-    
+        
     with latexDoc.create(Center()) as centered:
-        latexDoc.append( Command('vspace', [V_SPACE_SIZE]))
-        centered.append( bold('Git Info' ))
+        centered.append( Command('vspace', [V_SPACE_SIZE]))
+        centered.append( 'Published by Lulu Press' )
+        centered.append(NoEscape(r'\\'))
+        centered.append( 'www.lulu.com' )
+        
+    with latexDoc.create(Center()) as centered:
+        centered.append( Command('vspace', ['80pt']))
+        centered.append( 'Git Info' )
         centered.append(NoEscape(r'\\')) 
         centered.append( 'Commit:%s' % (gitRepo.commit().hexsha) )
         centered.append(NoEscape(r'\\')) 
         centered.append( 'Clean Commit:%s'%(str(not gitRepo.is_dirty())).strip() )
-    
+        
     latexDoc.append( NewPage() )
 
 #=============================================================================
