@@ -29,16 +29,17 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         
         #  -- Add Ingredients --
-        
-        r.addIngredient('Sourdough Starter', 170, 'grams')
-        r.addIngredient('Water', 170, 'grams, lukewarm')
-        r.addIngredient('Active Dry Yeast', 1, 'teaspoon')
         r.addIngredient('All Purpose Flour', 240, 'grams ( 2 cups)')
         r.addIngredient('Rye Flour', 28, 'grams (0.25 cups)')
         r.addIngredient('Potato Flour', 25, 'grams, 2 tablespoons')
         r.addIngredient('Bakers Special Dry Milk', 14, 'grams, 2 tablespoons')
+        r.addIngredient('Active Dry Yeast', 1, 'teaspoon')
         r.addIngredient('Salt', 1.5, 'teaspoons')
         r.addIngredient('Sugar', 1, 'tablespoon')
+        
+        r.addIngredient('Sourdough Starter', 170, 'grams')
+        r.addIngredient('Water', 170, 'grams, lukewarm')
+        
         r.addIngredient('Unsalted Butter', 57, 'grams, 4 tablespoons, soft')
            
         # Add Steps and Notes

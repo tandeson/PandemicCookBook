@@ -29,12 +29,12 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         #  -- Add Ingredients --
 
         ##
-        r.addIngredient('Sourdough Starter', 1, 'cup, 227 grams')
-        r.addIngredient('Water', 0.5 ,'cup, 113 grams, warm')
         r.addIngredient('Bread Flour', 2.5, 'cups, 298 grams')
         r.addIngredient('Salt', 1, 'teaspoon')
         r.addIngredient('Instant Yeast', 0.5 , 'teaspoon')
         r.addIngredient('Pizza Dough Flavor', 4, 'tablespoons')
+        r.addIngredient('Sourdough Starter', 1, 'cup, 227 grams')
+        r.addIngredient('Water', 0.5 ,'cup, 113 grams, warm')
         
         # Add Steps and Notes
         r.addStep( RecipeStep( 'Make the dough',
