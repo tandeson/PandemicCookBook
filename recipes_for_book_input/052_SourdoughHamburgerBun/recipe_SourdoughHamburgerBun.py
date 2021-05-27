@@ -24,6 +24,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Sourdough Hamburger Bun', 'Baking and Breads', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        r.addPicture('Buns', 'IMG_2327.JPEG')
+        r.setPrimaryPicture('Buns')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         
         #  -- Add Ingredients --
