@@ -29,13 +29,13 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         #  -- Add Ingredients --
 
         ## 
+        r.addIngredient('Bread Flour', 723, 'grams (6 cups)')
+        r.addIngredient('Salt', 1, 'tablespoon')
+        r.addIngredient('Active Dry Yeast', 1, 'tablespoon')
+        r.addIngredient('Extra Virgin Olive Oil', 74, 'grams, 6 tablespoons')
         r.addIngredient('Sourdough Starter', 340, 'grams, fed (1.5 cups)')
         r.addIngredient('Water', 340 , 'grams (1.5 cups)')
-        r.addIngredient('Bread Flour', 723, 'grams (6 cups)')
-        r.addIngredient('Extra Virgin Olive Oil', 74, 'grams, 6 tablespoons')
-        r.addIngredient('Salt', 1, 'tablespoon')
         r.addIngredient('Honey', 43, 'grams, 2 tablespoons')
-        r.addIngredient('Active Dry Yeast', 1, 'tablespoon')
         r.addIngredient('Rosemary', 1, 'tablespoon')
         
         # Add Steps and Notes
@@ -48,7 +48,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             ))
         
         r.addStep( RecipeStep( 
-            'Mix the dough until it\s smooth and elastic.',
+            "Mix the dough until it's smooth and elastic.",
             ))
         
         r.addStep( RecipeStep( 
