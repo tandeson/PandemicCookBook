@@ -565,6 +565,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Sunflower Seeds',
+    grpNameDryGoods,
+    ))
+    
+C_INGREDIENTS.append( RecipeIngredient(
     'Walnuts',
     grpNameDryGoods,
     ))
@@ -927,6 +932,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Asafetida',
+    grpNameSpices, 
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Basil',
     grpNameSpices, 
     ))
 

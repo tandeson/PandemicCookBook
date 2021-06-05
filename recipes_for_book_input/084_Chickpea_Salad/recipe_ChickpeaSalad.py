@@ -22,34 +22,43 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
-        r = MyRecipe('Orzo Salad', 'Salads', sharedIngredentList)
+        r = MyRecipe('Chickpea Salad', 'Salads', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
-        r.addPicture('Orzo_big_bowl', 'IMG_2358.JPEG')
-        r.addPicture('Orzo_bowl', 'IMG_2359.JPEG')
-        r.setPrimaryPicture('Orzo_big_bowl')
+        r.addPicture('chickpea_salad_1', 'IMG_2337.JPEG')
+        r.addPicture('chickpea_salad_2', 'IMG_2338.JPEG')
+        r.setPrimaryPicture('chickpea_salad_1')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
 
         #  -- Add Ingredients --
 
         ##
-        r.addIngredient('Orzo', 3, 'cups, cooked (1.5 cup dry)') 
-        r.addIngredient('Cucumber', 1, 'seeded and chopped')
-        r.addIngredient('Red Onion', 1, 'medium, chopped')
-        r.addIngredient('Feta Cheese', 1, 'cup, crumbled')
-        r.addIngredient('Black Olives', 2, 'oz, sliced')
-        r.addIngredient('Parsley', 0.25, 'cup, chopped')
+        r.addIngredient('Chickpeas', 15, 'oz, 1 can')
+        r.addIngredient('Green Onion', 3, 'stalks')
+        r.addIngredient('Celery', 2, 'stalks')
+        r.addIngredient('Carrot', 0.25 , 'cups, chopped')
+        r.addIngredient('Red Bell Pepper', 0.25, 'cups, chopped')
+        r.addIngredient('Pickles', 0.25, 'cups, dill, chopped')
+        r.addIngredient('Mayonnaise', 0.25, 'cups')
+        r.addIngredient('Mustard', 2, 'teaspoons, dijon')
+        r.addIngredient('Mustard', 2, 'teaspoons, yellow')
+        r.addIngredient('Dill', 0.25, 'teaspoons')
         r.addIngredient('Salt', 1, 'pinch, to taste')
         r.addIngredient('Black Pepper', 1, 'pinch, to taste')
-        
-        r.addIngredient('Extra Virgin Olive Oil', 6, 'tablespoons')
-        r.addIngredient('Red Wine Vinegar', 5, 'tablespoons')
-        r.addIngredient('Lemon Juice', 2, 'tablespoon')
+        r.addIngredient('Sunflower Seeds', 3, 'tablespoons, roasted')
+        r.addIngredient('Basil', 2, 'tablespoons, chopped')
         
         # Add Steps and Notes
         steps = [
-            'Mix all the ingredients together.'
-            'NOTE: Can use Tzatziki sauce instead of Oil, Vinegar and Lemon Juice.',
-            'Mix well, and let chill for 1 hour.'
+            'Drain and rinse your chickpeas and add them to a large bowl. Mash '
+            'with a potato masher until texture appears flaked, almost like '
+            'tuna salad. You can use both a potato masher and follow up with a fork '
+            'to make sure every chickpea is smashed.',
+            'Chop your green onion, celery, shredded carrots, pepper, and pickles.',
+            'Add to the bowl with your chickpeas, then add mayo, dijon, yellow '
+            'mustard, dill, salt, and pepper. Stir well to coat.',
+            "Fold in sunflower seeds and basil (as much or as "
+            "little as you'd like) and adjust any ingredients to taste.",
+            'Serve on a wrap or in a sandwich.'
         ]
         for s in steps:
             r.addStep( RecipeStep( s ) )
