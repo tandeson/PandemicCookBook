@@ -24,6 +24,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Stuffed Portobello Mushrooms', 'Main dishes', sharedIngredentList)
         r.setPathLoc( dirPathRecipe )
+        r.addPicture('mushroom_cap_1', 'IMG_2362.JPEG')
+        r.addPicture('mushroom_cap_2', 'IMG_2363.JPEG')
+        r.setPrimaryPicture('mushroom_cap_1')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         
         #  -- Add Ingredients --
