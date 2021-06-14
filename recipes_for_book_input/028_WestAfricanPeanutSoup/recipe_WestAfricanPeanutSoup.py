@@ -25,7 +25,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r = MyRecipe('West African Peanut Soup', 'Soups', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         r.addPicture('SoupPot', '2020_09_30_Peanut_soup.jpg')
-        r.setPrimaryPicture('SoupPot')
+        r.addPicture('SoupBowl', 'IMG_2370.jpeg')
+        r.setPrimaryPicture('SoupBowl')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         
         #  -- Add Ingredients --
