@@ -24,6 +24,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Fried Rice', 'Main dishes', sharedIngredentList)
         r.setPathLoc( dirPathRecipe )
+        r.addPicture('FriedRice', '2021_08_FriedRice_1.jpeg')
+        r.setPrimaryPicture( 'FriedRice' )
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         
         #  -- Add Ingredients --

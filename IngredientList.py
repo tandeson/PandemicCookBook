@@ -75,11 +75,6 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
-    'Dry Wide Rice Noodles',
-    grpNameCanned
-    ))
-
-C_INGREDIENTS.append( RecipeIngredient(
     'Enchilada Sauce',
     grpNameCanned,
     'Usually I get Las Palmas mild or medium sauce. '
@@ -460,6 +455,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Dry Wide Rice Noodles',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Falafel Mix',
     grpNameDryGoods,
     ))
@@ -550,12 +550,22 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Rice Vermicelli Noodles',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Rye Flour',
     grpNameDryGoods,
     ))
     
 C_INGREDIENTS.append( RecipeIngredient(
     'Split Peas',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Spring roll wrappers',
     grpNameDryGoods,
     ))
 

@@ -33,7 +33,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setRecipeFormat('FANCY_WIDE_PIC_OVER_DIRECTIONS')
         #  -- Add Ingredients --
 
-        ## 
+        ##
+        r.addIngredient('Eggs', 5, 'large') 
         r.addIngredient('Mushrooms', 4, 'oz')
         r.addIngredient('Green Onion', 1 , 'bunch, chopped')
         r.addIngredient('Extra Virgin Olive Oil', 0.25, 'cups' )
