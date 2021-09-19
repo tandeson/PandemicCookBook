@@ -312,6 +312,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Mozzarella',
+    grpNameDairy,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Parmesan Cheese',
     grpNameDairy,
     ))
@@ -461,6 +466,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Falafel Mix',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Farro',
     grpNameDryGoods,
     ))
 
@@ -776,6 +786,11 @@ C_INGREDIENTS.append(RecipeIngredient(
 
 C_INGREDIENTS.append(RecipeIngredient(
     'Collard Greens',
+    grpNameProduce, 
+    ))
+
+C_INGREDIENTS.append(RecipeIngredient(
+    'Corn',
     grpNameProduce, 
     ))
 
