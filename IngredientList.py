@@ -55,6 +55,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Butter Beans',
+    grpNameCanned,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Capers',
     grpNameCanned,
     ))
@@ -124,6 +129,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Sauerkraut',
+    grpNameCanned
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Tahini',
     grpNameCanned
     ))
     
@@ -350,6 +360,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 grpNameDryGoods = 'Dry Goods'
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Agar Agar Powder',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Arborio Rice',
     grpNameDryGoods,
     ))
@@ -425,6 +440,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Coconut Flakes',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Coconut Flour',
     grpNameDryGoods,
     ))
@@ -491,6 +511,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Instant Yeast',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Nutritional Yeast',
     grpNameDryGoods,
     ))
 
@@ -713,6 +738,12 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Pizza Dough',
     grpNameOther,
     recipeToMakeName='Sourdough Pizza Dough'
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Roasted Garlic',
+    grpNameOther,
+    recipeToMakeName='Roast Garlic'
     ))
 
 
@@ -1063,6 +1094,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Lemon Juice',
+    grpNameSpices,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Miso Paste',
     grpNameSpices,
     ))
 
