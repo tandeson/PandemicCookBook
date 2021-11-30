@@ -24,7 +24,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Roasted Garlic Miso Soup', 'Soups', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
-        
+        r.addPicture('Soup_1','Garlic_Soup_1.JPEG')
+        r.addPicture('Soup_2','Garlic_Soup_2.JPEG')
+        r.setPrimaryPicture('Soup_1')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         #  -- Add Ingredients --
 

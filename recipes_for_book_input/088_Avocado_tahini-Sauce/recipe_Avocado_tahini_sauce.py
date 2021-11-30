@@ -24,6 +24,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Avocado Tahini Sauce', 'Spreads and Dips', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        r.addPicture('Sauce','Avocado_Tahini_2021.jpeg')
+        r.setPrimaryPicture('Sauce')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         #  -- Add Ingredients --
         

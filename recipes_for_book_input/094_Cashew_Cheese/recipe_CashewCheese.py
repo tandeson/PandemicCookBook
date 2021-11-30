@@ -24,7 +24,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Cashew Cheese', "Appetizers", sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
-        
+        r.addPicture('Cheese_1', '2021_Cheese.jpg')
+        r.setPrimaryPicture('Cheese_1')
         r.setRecipeFormat('TWO_COLUMN_OPTIONAL_PICTURES')
         
          
