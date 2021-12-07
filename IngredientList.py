@@ -510,6 +510,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Green Lentils',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Instant Yeast',
     grpNameDryGoods,
     ))

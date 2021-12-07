@@ -24,7 +24,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Overnight Focaccia', 'Baking and Breads', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        r.addPicture('thanksgiving_focaccia', '2021_Focaccia.jpg')
+        r.setPrimaryPicture('thanksgiving_focaccia')
         
+        r.AddDescription('Andrew suggested this bread for Thanksgiving 2021 - and it was a hit! ~ Thomas')
         #  -- Add Ingredients --
 
         ## 
