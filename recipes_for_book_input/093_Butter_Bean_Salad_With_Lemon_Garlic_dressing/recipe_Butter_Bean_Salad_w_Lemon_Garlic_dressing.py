@@ -24,7 +24,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Butter Bean Salad with Lemon Garlic Dressing', 'Salads', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
-        
+        r.addPicture('ButterBeans_1', 'ButterBeans_1.JPEG')
+        r.addPicture('ButterBeans_2', 'ButterBeans_2.JPEG')
+        r.addPicture('ButterBeans_3', 'ButterBeans_3.JPEG')
+        r.setPrimaryPicture('ButterBeans_1')
         r.setRecipeFormat('TWO_COLUMN_OPTIONAL_PICTURES')
         #  -- Add Ingredients --
 
