@@ -540,6 +540,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Pecans',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
    'Powdered Sugar',
     grpNameDryGoods,
     ))
