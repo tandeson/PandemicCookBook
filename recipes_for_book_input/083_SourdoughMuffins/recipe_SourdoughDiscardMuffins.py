@@ -47,7 +47,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         steps = [
             'Preheat oven to 425 deg F. Grease a 12-cup muffin pan.',
             'Combine the dry ingredients in a mixing bowl.',
-            'In a second bowl, beat together the starter, milk, egg and melted butter,'
+            'In a second bowl, beat together the starter, milk, egg and melted butter'
             '. Blend the wet ingredients with the dry, taking about 20 '
             'seconds. Gently stir in the blueberries just until blended',
             'Fill the pan cups evenly with the batter.',

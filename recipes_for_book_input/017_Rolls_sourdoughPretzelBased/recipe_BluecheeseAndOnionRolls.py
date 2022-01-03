@@ -48,11 +48,11 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Line a baking sheet with parchmen paper.',
             'Mix and knead the dough ingredients to make a cohesive, fairly smooth dough.'
             'It should be slightly sticky, if it seems dry, knead in an additional '
-            'tablespoon or two of water. If working with the dough by hand, slighly greesing '
+            'tablespoon or two of water. If working with the dough by hand, slighly greasing '
             'your hands will make this process easier.',
             'Cover the dough and let it rest for 45 minutes. It will rise minimally.',
             'Toward the end of the rising time, preheat the over to 350 deg F.',
-            'Turn the dough out onot a lighly greased work surface. Fold it over a few tiems '
+            'Turn the dough out onto a lighly greased work surface. Fold it over a few times '
             'to gently deflate it. Divide into 12 peices, each about 70 grams.',
             'Roll each piece into a rope, and flatten.',
             'Fill the middle of the rope with Blue Cheese and Crispy Friend Onions.',

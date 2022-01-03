@@ -31,6 +31,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             )
         r.setPrimaryPicture('muffins_on_plate')
         r.setRecipeFormat('FANCY_WIDE_PIC_OVER_DIRECTIONS')
+        
+        r.AddDescription('These freeze very well. You can place two in a snack bag, leave in freezer. Move bag to fridge before bed and they will be defrosted to enjoy at breakfast.')
         #  -- Add Ingredients --
 
         ##

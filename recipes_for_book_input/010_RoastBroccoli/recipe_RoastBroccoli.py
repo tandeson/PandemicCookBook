@@ -28,6 +28,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPrimaryPicture('RoatedBroc')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         
+        r.AddDescription('One of our most favorite dishes, we eat it as a side to almost anything!')
+        
         #  -- Add Ingredients --
 
         ## Garlic

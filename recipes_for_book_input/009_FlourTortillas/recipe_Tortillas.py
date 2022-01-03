@@ -58,7 +58,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'over and over until you get a nice, flat, thin raw tortilla.',
             'Place the tortilla on a hot griddle for a few seconds, and then turn it over. You may '
             'want to rotate the tortilla with you hand while it\'s on the griddle so that it '
-            'cooks evenly. Flit it over again and cook until done.'
+            'cooks evenly. Flip it over again and cook until done.'
              ]
         for s in steps:
             r.addStep( RecipeStep( s ) )

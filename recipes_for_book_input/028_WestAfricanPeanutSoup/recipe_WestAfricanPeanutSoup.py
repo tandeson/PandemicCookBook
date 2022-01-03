@@ -39,9 +39,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Garlic', 4, 'cloves, chopped')
         r.addIngredient('Salt', 1, 'teaspoon')
         r.addIngredient('Collard Greens', 1, 'bunch (or Kale)')
-        r.addIngredient('Peanut Butter', 0.75, 'cups (unsalted')
+        r.addIngredient('Peanut Butter', 0.75, 'cups unsalted')
         r.addIngredient('Tomato Paste', 0.5 , 'cups')
-        r.addIngredient('Sriracha', 1, 'other hot sauce.')
+        r.addIngredient('Sriracha', 1, 'squrit, to taste, ')
         r.addIngredient('Peanuts', 0.25, 'cups, chopped')
         r.addIngredient('Sweet Potatoes', 1, 'chopped')
            
@@ -56,7 +56,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Stir in Collard Greens and season the soup with Hot Sauce to taste.',
             'Simmer for 15 minutes on medium-low heat, stirring often.',
             'Season with additional salt or Hot Sauce if desired.',
-            'Serve sprinkle of chopped Peanuts. Goes well over Quinoa or Brown Rice.'
+            'Serve with a sprinkle of chopped Peanuts. Goes well over Quinoa or Brown Rice.'
         ]
         for s in steps:
             r.addStep( RecipeStep( s ) )

@@ -32,7 +32,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         ## Garlic
         r.addIngredient('Black-Eyed Peas', 16, 'oz (1 can)')
         r.addIngredient('Vegetable Oil', 1, 'teaspoon' )
-        r.addIngredient('Asafetida', 1, 'pinch')
+        r.addIngredient('Asafetida', 1, 'pinch (optional)')
         r.addIngredient('Cumin Seeds', 0.25, 'teaspoon')
         r.addIngredient('Turmeric', 0.25, 'teaspoon')
         r.addIngredient('Cayenne Pepper', 0.25, 'teaspoon (optional)')

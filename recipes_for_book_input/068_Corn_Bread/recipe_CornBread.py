@@ -48,7 +48,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Lightly grease a 9" square or round pan (a cast-iron skillet will work fine, too), shallow 1 1/2 quart casserole dish, or 12 muffin cups.',
             'In a medium bowl, whisk together the flour, cornmeal, sugar, baking powder, baking soda, and salt',
             'In another bowl or large measuring cup, whisk together the milk, melted butter, vegetable oil, and egg.',
-            'Pour the liquid all at once into the flour mixture, stirring quickly and gently until just combined. Don\t over '
+            'Pour the liquid all at once into the flour mixture, stirring quickly and gently until just combined. Don\'t over '
             'mix: stir the batter just enough to bring it together and evenly moisten the ingredients.',
             'Spread the batter into the prepared pan, or scoop into the muffin tin.',
             'Bake the bread for 20 to 25 minutes, until the edges just begin to pull away from the pan and a cake tester or paring knife inserted in the center comes out clean.',

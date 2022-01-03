@@ -54,7 +54,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Chop the Apples into small chunks - I prefer Honeycrip Apples for this. Mix into the batter.',
             'Heat a heavy frying pan over medium heat, Lightly grease frying pan or griddle. The pan or griddle is '
             'ready if a drop of water will skitter across the surface, evaporating immediately.',
-            'rop 1/4 cupfuls of batter onto the lightly greased griddle. Bake on one side until bubbles begin to '
+            'Drop 1/4 cupfuls of batter onto the lightly greased griddle. Bake on one side until bubbles begin to '
             'form and break, about 2 minutes; then turn the pancakes and cook the other side until brown, about '
             '1 1/2 to 2 minutes.',
             'Turn over only once. Serve immediately.'

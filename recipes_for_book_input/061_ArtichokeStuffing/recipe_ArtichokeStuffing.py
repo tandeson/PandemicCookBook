@@ -49,7 +49,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'In a large skillet, saute the Mushrooms, Celery, Onion and Garlic in butter until tender.',
             'Stir in the Artichokes, Parmesan Cheese and Poultry Seasoning.',
             'Transfer to a large bowl. Stir in bread cubes.',
-            'In a small bowl, wisk egg and brother until blended.',
+            'In a small bowl, wisk egg and broth until blended.',
             'Pour over bread mixture and mix well.',
             'Transfer to a greased 3 quart baking dish ( the dish will be full).',
             'Cover and ake for 30 minutes.',

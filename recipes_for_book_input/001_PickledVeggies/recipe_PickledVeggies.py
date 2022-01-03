@@ -74,7 +74,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
                 RecipeStep(
                     "NOTE: Adjust this radio to match the number of Jars you plan to pickle."),
                 RecipeStep(
-                    "Mix 1 qt Vinegar, 3qts water, 1 cup non-iodize salt"),
+                    "Mix 1 qt Vinegar, 3qts water, 1 cup non-iodized salt"),
                 RecipeStep(
                     "Bring to a boil")
                 ]

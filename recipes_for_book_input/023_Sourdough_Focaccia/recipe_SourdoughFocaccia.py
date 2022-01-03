@@ -40,7 +40,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         # Add Steps and Notes
         r.addStep( RecipeStep( 
-            'Mix together the Flour, Salt and Yeast. Mix until combind.',
+            'Mix together the Flour, Salt and Yeast. Mix until combinde.',
             ))
         
         r.addStep( RecipeStep( 

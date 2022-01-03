@@ -35,7 +35,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Lime', 1, 'medium, juiced')
         r.addIngredient('Salt', 1, 'teaspoon')
                 
-        r.addIngredient('Tomatoes', 3, 'seeded and chopped fine')
+        r.addIngredient('Tomatoes', 3, 'seeded and finely chopped ')
         r.addIngredient('Cilantro', 0.25, 'bunch, chopped fine')
         
         # Add Steps and Notes

@@ -34,7 +34,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Garlic', 2, 'cloves, diced')              
         r.addIngredient('Unsalted Butter', 2, 'tablespoons')
         r.addIngredient('Parsley', 1, 'teaspoon')
-        r.addIngredient('Vegetable Broth', 5, 'cups')
+        r.addIngredient('Vegetable Broth', 4, 'cups')
         r.addIngredient('Coconut Milk', 1, 'can 14 oz')
         r.addIngredient('Salt', 1, 'Pinch to taste')
         r.addIngredient('Quinoa', 0.5, 'cups')

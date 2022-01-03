@@ -36,7 +36,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Extra Virgin Olive Oil', 1, 'tablespoon')
         r.addIngredient('Salt', 0.5, 'teaspoon')
         r.addIngredient('Black Pepper', 0.25, 'teaspoon')
-        r.addIngredient('Goat Cheese', 4, 'oz')
+        r.addIngredient('Goat Cheese', 4, 'oz  Cream Cheese or')
         r.addIngredient('Oregano', 2, 'tablespoons')
         
         # Add Steps and Notes
