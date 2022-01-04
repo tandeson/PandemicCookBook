@@ -34,7 +34,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         ##
         #--
         r.addIngredient('Mushrooms', 2, 'large Portobello')
-        r.addIngredient('Brie', 0.25, 'cups, approximately')
+        r.addIngredient('Brie', 0.25, 'cups, approximately Soft cheese like ')
         r.addIngredient('Extra Virgin Olive Oil', 2, 'tablespoons')
         r.addIngredient('Salt', 1, 'pinch, to taste')
         r.addIngredient('Black Pepper', 1, 'pinch, to taste')

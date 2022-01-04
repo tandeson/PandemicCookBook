@@ -31,7 +31,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         #  -- Add Ingredients --
 
         ## 
-        r.addIngredient('Kale', 10, 'oz, or Collard Greens')
+        r.addIngredient('Kale', 10, 'oz, Collard Greens or')
         r.addIngredient('Extra Virgin Olive Oil', 3 , 'tablespoons, or Butter')
         r.addIngredient('Ginger', 1.5 , 'teaspoons, minced')
         r.addIngredient('White Onion', 1, 'large, chopped')

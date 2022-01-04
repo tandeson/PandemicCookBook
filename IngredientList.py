@@ -173,11 +173,6 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
-    'Evaporated Cane Sugar', 
-    grpNameCondiments,
-    ))
-
-C_INGREDIENTS.append( RecipeIngredient(
     'Fish Sauce',
     grpNameCondiments,
     ))
@@ -1007,7 +1002,7 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
-    'Bebere',
+    'Berbere',
     grpNameSpices, 
     ))
     

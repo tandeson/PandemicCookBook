@@ -56,13 +56,13 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Pre-heat the oven to 350 deg F.',
             'Cream together shortening, sugar and brown sugar.',
             'Add the Eggs and Vanilla and beat together,',
-            'in a seperate bowl - sift and mix together Flour,'
+            'In a seperate bowl - sift and mix together Flour,'
             ' Baking Soda and Salt',
             'Mix the wet and dry mixtures together.',
-            'to the dough, add the Rice Crispies, Oatmeal, '
+            'To the dough, add the Rice Crispies, Oatmeal, '
             'Chocolate Chips and Butterscotch Chips.'
-            'mix well',
-            'Use a spoon to scope into large teaspoon sized balls'
+            'Mix well',
+            'Use a spoon to scoop into large teaspoon sized balls'
             ' on a bakeing sheet covered in parchment paper.',
             'Bake for 10-12 minutes.'
             'Remove, and allow to cool.'

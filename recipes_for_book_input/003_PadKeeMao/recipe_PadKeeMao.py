@@ -47,7 +47,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         grpSauce = "For Pad Kee Mao sauce"
         r.addIngredient('Fish Sauce', 1, 'tablespoon', grpSauce)
         r.addIngredient('Oyster Sauce', 1, 'tablespoon', grpSauce)
-        r.addIngredient('Evaporated Cane Sugar', 1, 'tablespoon', grpSauce)
+        r.addIngredient('Granulated White Sugar', 1, 'tablespoon', grpSauce)
         r.addIngredient('Rice Vinegar', 1, 'tablespoon', grpSauce)
         
         grpStirFry = 'For stir-fry'
@@ -82,7 +82,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Prepare the Tofu', 
             [
                 RecipeStep('Add the Tofu to a bowl'),
-                RecipeStep('mix in the Soy Sauce and Corn Starch to combined.'),
+                RecipeStep('Mix in the Soy Sauce and Corn Starch to combined.'),
                 RecipeStep('Let this marinate while you prepare the other ingredients.'),
             ],
         ))
@@ -96,7 +96,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Cook and Combind',
             [
                 RecipeStep('Heat a frying pan or wok over medium-high heat until hot'),
-                RecipeStep('add in 1 tablespoon of oil, and swirl to codat the pan.'),
+                RecipeStep('Add in 1 tablespoon of oil, and swirl to coat the pan.'),
                 RecipeStep(
                     'Add the Tofu, stir fry until brown, and remove the Tofu'
                     ' from the pan, leaving as much oil in the pan as possible'),

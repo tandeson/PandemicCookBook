@@ -27,7 +27,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addPicture('Bowl_1', '2021_PeanutTofuBowl.JPEG')
         r.addPicture('Bowl_2', '2021_PeanutTofuBowl2.JPEG')
         r.setPrimaryPicture( 'Bowl_2' )
-        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
+        r.setRecipeFormat('TWO_COLUMN_OPTIONAL_PICTURES')
+        
+        r.AddDescription('This sauce works very well over noodles or another grain / veggie combination.')
         ## ---
         
         
@@ -47,6 +49,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Ginger', 2, 'teaspoons, fresh grated', grpPeanutSauce)
         r.addIngredient('Garlic', 2, 'cloves, minced', grpPeanutSauce)
         r.addIngredient('Lime', 1, 'for juice only', grpPeanutSauce)
+        r.addIngredient('Sriracha', 1, 'pinch to taste', grpPeanutSauce)
+        
         
         # Add Steps and Notes
         r.addStep( 

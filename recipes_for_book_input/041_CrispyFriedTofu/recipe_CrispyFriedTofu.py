@@ -31,7 +31,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         #  -- Add Ingredients --
 
         ##
-        r.addIngredient('Tofu', 14, 'oz, extra firm')
+        r.addIngredient('Tofu', 14, 'oz, drained, extra firm')
         r.addIngredient('Soy Sauce', 2, 'tablespoons')
         r.addIngredient('Corn Starch', 3, 'tablespoons')
         r.addIngredient('Garlic Powder', 1, 'teaspoon')

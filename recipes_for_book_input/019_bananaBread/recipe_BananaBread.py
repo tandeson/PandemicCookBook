@@ -51,8 +51,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         steps = [
             'Preheat the oven to 350 deg F.',
             'Grease an 8 1/2 x 4 1/2 inch (6-cup) loaf pan.',
-            'Wisk together the Flour, Salt, Baking Soda, Baking Powder, Cinnamon and Nutmeg.',
-            'In a separate bowl, beat Butter and Sugar on high speed until lightened in color and text 2 to 3 minutes.',
+            'Whisk together the Flour, Salt, Baking Soda, Baking Powder, Cinnamon and Nutmeg.',
+            'In a separate bowl, beat Butter and Sugar on high speed until lightened in color and texture 2 to 3 minutes.',
             'Beat in the flour mixture until blended and the consistency of brown sugar.',
             'Gradually beat in the Eggs.',
             'Fold in Bananas, Chocolate Chips and Walnuts until just combined.',

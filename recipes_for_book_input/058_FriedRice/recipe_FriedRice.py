@@ -30,8 +30,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         #  -- Add Ingredients --
         r.AddDescription(
-            'This is typically a way for me to use up vegitable before '
-            'they go bad, so the kind of vegitable listed here is more of a suggestion. ~Thomas')
+            'This is typically a way for me to use up vegetable before '
+            'they go bad, so the kind of vegetable listed here is more of a suggestion.'
+            '\n\n'
+            'We have been experimenting with ingredients and really like this recipe with black rice too.')
         
         ## Makes about 2 dozen?
         #--
@@ -55,7 +57,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         # Add Steps and Notes
         steps = [
-            'Heat a large frying pan or caste iron pan on medium-high heat.',
+            'Heat a large frying pan or cast iron pan on medium-high heat.',
             'Stir fry the veggies (in this case Mushrooms, Broccoli, Onion and Carrots) as well as the garlic and ginger.'
             ' You can substitute whatever veggies you have on hand. Fry until just tender, about 4 minutes.',
             'Move the veggies to the side of the pan, and quickly fry the egg in the middle of the pan. Break it up like scrambled egg and mix it in when it\'s done.',

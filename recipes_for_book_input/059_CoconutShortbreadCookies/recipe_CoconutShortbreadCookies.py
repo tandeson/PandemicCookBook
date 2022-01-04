@@ -45,7 +45,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         # Add Steps and Notes
         steps = [
             'Pre-heat the oven to 400 deg F.',
-            'Lightly grease a baking sheet, or line it with parchment.',
+            'Lightly grease a baking sheet, or line it with parchment paper.',
             'Mix all the dough ingredients, by hand or mixer, until a '
             'well-blended, cohesive dough forms.',
             'Scoop the dough by the tablespoon and pat into rounds 1/2" '

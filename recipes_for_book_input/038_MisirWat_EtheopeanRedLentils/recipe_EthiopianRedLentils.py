@@ -35,7 +35,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Garlic', 3, 'cloves, minced')
         r.addIngredient('Roma Tomato', 1, 'finly chopped')
         r.addIngredient('Tomato Paste', 3, 'tablespoons')
-        r.addIngredient('Bebere', 1, 'tablespoon')
+        r.addIngredient('Berbere', 1, 'tablespoon')
         r.addIngredient('Red Lentils', 1, 'cup')
         r.addIngredient('Vegetable Broth', 2.5, 'cups')
         r.addIngredient('Salt', 1, 'teaspoon')

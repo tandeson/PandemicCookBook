@@ -37,11 +37,11 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         # Add Steps and Notes
         steps= [
             'Grease a 9" pan, prehead the oven to 350 deg F.',
-            'In a lareg mixing bowl, combine 4 Eggs yokes with Sugar. Beat until thick.',
+            'In a large mixing bowl, combine 4 Eggs yokes with Sugar. Beat until thick.',
             'Add in Almond Flour and Lemon Zest. Mix well with a spatula.',
             'In a seperate bowl beat 4 Egg whites until stiff peaks form.',
             'Fold the whites into the flour mixture one large spoonful at a time.',
-            'Mix until uniform - but try to do as little as possible. The air in the Eggs is what gives the cake it\'s flufflyness',
+            'Mix until uniform - but try to do as little as possible. The air in the Eggs is what gives the cake its flufflyness',
             'Transfer batter into pan. Bake for 30 minutes, until top is firm.',
             'Let cake rest for 15 minutes in pan, then loosen with a knife around the edges before removing.'
         ]

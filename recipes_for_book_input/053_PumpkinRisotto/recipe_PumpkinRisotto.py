@@ -48,20 +48,20 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Heat Oil and Butter in a pot over medium heat.',
             'Add Onion and Garlic, cook until softened.',
             'Add in Rice, stir for 30 seconds until combine.',
-            'Add in in Wine, stir until absorbed.'
+            'Add in Wine, stir until absorbed.'
             ]
         for s in steps:
             r.addStep( RecipeStep( s ) )
         
         r.addStep( RecipeStep(
-            'Start stirring in the broth, 0.5 cups at a time. Broth should be warm. At each addition, stir until absorbed befor adding the next 0.5 cup.',
+            'Start stirring in the broth, 0.5 cups at a time. Broth should be warm. At each addition, stir until absorbed before adding the next 0.5 cup.',
             [    
                 RecipeStep('After the first 0.5 cups, Add in spices'),
-                RecipeStep('With the last 0.5 cup of broth, add peas, pumpkin and Parma.')
+                RecipeStep('With the last 0.5 cup of broth, add peas, pumpkin and Parm.')
             ]))
         
         r.addStep( RecipeStep( 'Stir until full absorbed, take off heat.'))
-        r.addStep( RecipeStep( 'Serve with additional Param. Ta Da.' ))
+        r.addStep( RecipeStep( 'Serve with additional Parm. Ta Da.' ))
         
         # Return this back.
         return r

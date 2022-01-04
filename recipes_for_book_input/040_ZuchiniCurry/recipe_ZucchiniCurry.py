@@ -51,12 +51,12 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         # Add Steps and Notes
         steps= [
-            'add oil to a pan over medium heat and when warm, add in the diced onions and saute about 7 -10 minutes,'
+            'Add oil to a pan over medium heat and when warm, add in the diced onions and saute about 7 -10 minutes,'
             ' stirring to keep the onions from burning.',
             'While the onions are sauteing, dice the zucchini into bite sized pieces.',
             'Add in the ginger, garlic and zucchini into the pan with the sauteed onions and saute about 5 minutes, stirring often.',
             'Add in the coriander, cumin, smoked paprika and turmeric and stir so spices are well incorporated.',
-            'add in the tomato paste, vegetable stock and coconut milk and stir till all three have combined well. Once it has been mixed'
+            'Add in the tomato paste, vegetable stock and coconut milk and stir till all three have combined well. Once it has been mixed'
             ' well, let this simmer about 15 minutes.',
             'Season with salt and pepper. If you\'d like it a bit spicy, add in a teaspoon of chili powder and mix. Garnish with chopped '
             'cilantro and enjoy with quinoa, naan or rice.'

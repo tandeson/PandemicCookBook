@@ -24,6 +24,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Pistachio Apricot Bars', 'Dessert', sharedIngredentList)
         r.setPathLoc( dirPathRecipe )
+        r.addPicture('bar_1', 'PistachioAprocot_bars_1.JPEG')
+        r.addPicture('bar_2', 'PistachioAprocot_bars_2.JPEG')
+        r.setPrimaryPicture('bar_2')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS') 
         #  -- Add Ingredients --
         
@@ -46,8 +49,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Gradually mix in the flour.',
             'Stir in Pistachios.',
             'Press mixture into a greased 9x13 baking dish.',
-            'spread with preserve.',
-            'bake for 25 - 30 minutes.',
+            'Spread with preserve.',
+            'Bake for 25 - 30 minutes.',
             'Cool on a wire rack, and then cut into bars.',
             'Garnish with Pistachios, if desired.'
             ]

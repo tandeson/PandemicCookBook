@@ -27,6 +27,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addPicture('GobiManDish', '2021_02_15_GobiManchurian.jpg')
         r.setPrimaryPicture( 'GobiManDish' )
         r.setRecipeFormat('TWO_COLUMN_OPTIONAL_PICTURES')
+        
+        r.AddDescription('Thomas made this for my 38th birthday. It is a ton of work '
+                         'but absoletuly delisious. ~Bilyana')
         ## ---
         
         grpCauliflower ="Fried Cauliflower"
