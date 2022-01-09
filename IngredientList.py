@@ -694,6 +694,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Avocado Oil',
     grpNameOils
     ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Coconut Oil',
+    grpNameOils
+    ))
     
 C_INGREDIENTS.append( RecipeIngredient(
     'Extra Virgin Olive Oil',
