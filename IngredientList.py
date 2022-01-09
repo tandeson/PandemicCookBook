@@ -1143,6 +1143,12 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Pumpkin Pie Spice',
+    grpNameSpices,
+    ))
+
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Red Pepper Flakes',
     grpNameSpices,
     ))
