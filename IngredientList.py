@@ -103,6 +103,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Kimchi',
+    grpNameCanned
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Marinara Sauce',
     grpNameCanned
     ))
