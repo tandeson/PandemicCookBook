@@ -22,7 +22,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
-        r = MyRecipe('Pumpkin Streusel Coffee Cake', 'Baking and Breads', sharedIngredentList)
+        r = MyRecipe('Pumpkin Streusel Coffee Cake', 'Dessert', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         r.addPicture('slice_angled', 'IMG_2876.JPEG')
         r.addPicture('slice_top', 'IMG_2877.JPEG')

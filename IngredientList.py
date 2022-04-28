@@ -188,6 +188,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Hoisin Sauce',
+    grpNameCondiments,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Maple Syrup',
     grpNameCondiments,
     ))
