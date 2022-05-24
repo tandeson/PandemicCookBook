@@ -30,7 +30,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         ## ---
         
-        r.addIngredient('Tofu', 1, 'block, extra-firm')
+        r.addIngredient('Textured Tofu', 1, 'block, extra-firm')
         
         r.addIngredient('Corn Starch', 0.5, 'cups')
         

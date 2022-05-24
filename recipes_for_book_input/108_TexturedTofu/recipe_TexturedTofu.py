@@ -22,34 +22,30 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
-        r = MyRecipe('Green Lentil Salad', 'Salads', sharedIngredentList)
+        r = MyRecipe('Textured Tofu', 'Appetizers', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
-        r.addPicture('GreenLentilSalad', 'IMG_3179.jpeg')
-        r.setPrimaryPicture('GreenLentilSalad')
-        r.setRecipeFormat('TWO_COLUMN_OPTIONAL_PICTURES')
-        #  -- Add Ingredients --
-
-        ##
+        r.addPicture('TofuTextured', 'PostFrozenTofu.jpg')
+        r.setPrimaryPicture( 'TofuTextured')
         
-        r.addIngredient('Brown Lentils', 1, 'cup, dry')
-        r.addIngredient('Red Onion', 0.3, 'cup, chopped, to taste')
-        r.addIngredient('Tomatoes', 0.5, 'cup, chopped, to taste')
-        r.addIngredient('Parsley', 0.5, 'bunch, chopped, to taste')
-        r.addIngredient('Black Olives', 0.3, 'cup, sliced')
-        r.addIngredient('Salt', 1, 'pinch, to taste')
-        r.addIngredient('Black Pepper', 1, 'pinch, to taste')
-        r.addIngredient('Smoked Paprika', 1, 'pinch, to taste')
-        r.addIngredient('Cumin', 1, 'pinch, to taste')
-        r.addIngredient('Extra Virgin Olive Oil', 2, 'tablespoons, to taste')
-        r.addIngredient('Apple Cider Vinegar', 2, 'tablespoons, to taste')
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
+        ## ---
         
-        # Add Steps and Notes
-        steps= [
-            'Boil the lentils in water until soft, but not mushy - about 20 minutes. Drain, and let cool.',
-            'Mix the remaining ingredients into the lentils and stir well. Adjust seasoning to taste.'
-        ]
+        r.addIngredient('Tofu', 1, 'block, extra-firm')
+        
+        r.AddDescription('Andrew shared with us this trick to get tofu to have a spongy texture, which soask up sauce and improves a number of recipes!')
+        
+        ## Steps
+        steps = [
+            'Open and drain tofu.',
+            'Place the tofu in ziplock plastic bag.',
+            'Place the Tofu in the freezer for at least 24 hours.',
+            'Thaw out the tofu - in the refigerator if you don\'t need it for a day - or on the counter if you want to use it in a few hours.',
+            ]
+        
         for s in steps:
             r.addStep( RecipeStep( s ) )
+
+        
         # Return this back.
         return r
 

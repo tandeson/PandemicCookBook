@@ -24,7 +24,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Banana Oat Bake', 'Dessert', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
-
+        r.addPicture('Banana_oat_1', 'IMG_3160.jpeg')
+        r.addPicture('Banana_oat_2', 'IMG_3161.jpeg')
+        r.setPrimaryPicture('Banana_oat_1')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')  
         #  -- Add Ingredients --
 

@@ -24,8 +24,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Korean Vegetable Pancakes', 'Main dishes', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
-        
-        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
+        r.addPicture('Pancake_1', 'IMG_3151.jpeg')
+        r.addPicture('Pancake_2', 'IMG_3152.jpeg')
+        r.setPrimaryPicture('Pancake_1')
+        r.setRecipeFormat('TWO_COLUMN_OPTIONAL_PICTURES')
         ## ---
         
         grpRecipeBatter = "Batter"

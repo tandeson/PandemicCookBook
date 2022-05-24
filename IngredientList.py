@@ -692,6 +692,12 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Textured Tofu',
+    grpNameProtien,
+    recipeToMakeName='Textured Tofu'
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Veggie Grillers Crumbles',
     grpNameProtien,
     'I Commonly use MorningStar farms, this is a replacement for ground beef.'
