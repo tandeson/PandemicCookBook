@@ -24,6 +24,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Baked Farro with Vegetables', 'Main dishes', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        r.addPicture('BakeInBowl', 'BakeInBowl.jpeg')
+        r.addPicture('BakeInPot', 'BakeInPot.jpeg')
+        r.addPicture('BakeOnPlate', 'BakeOnPlate.jpeg')
+        r.setPrimaryPicture('BakeOnPlate')
         r.setRecipeFormat('TWO_COLUMN_OPTIONAL_PICTURES')
 
         #  -- Add Ingredients --
