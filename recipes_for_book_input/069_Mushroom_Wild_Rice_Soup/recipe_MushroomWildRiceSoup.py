@@ -26,7 +26,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPathLoc(dirPathRecipe)
         r.addPicture('MushroomSoup', '2021_MushroomSoup.jpg')
         r.setPrimaryPicture( 'MushroomSoup' )
-        
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         ## ---
         r.addIngredient('Wild Rice Blend', 0.75, 'cup')
         r.addIngredient('Mushrooms', 4 ,'cups, diced')

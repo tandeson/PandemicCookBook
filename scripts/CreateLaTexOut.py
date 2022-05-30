@@ -195,7 +195,7 @@ def genCopyrightPage( latexDoc, gitRepo ):
         centered.append(NoEscape(r'\\')) 
         centered.append( 'Commit:%s' % (gitRepo.commit().hexsha) )
         centered.append(NoEscape(r'\\')) 
-        centered.append( 'Clean Commit:%s'%(str(not gitRepo.is_dirty(path=gitRepo.common_dir))).strip() )
+        centered.append( 'Clean Commit:%s'%(str(not gitRepo.is_dirty())).strip() )
         
     latexDoc.append( NewPage() )
 

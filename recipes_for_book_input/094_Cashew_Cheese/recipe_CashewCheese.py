@@ -26,7 +26,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPathLoc(dirPathRecipe)
         r.addPicture('Cheese_1', '2021_Cheese.jpg')
         r.setPrimaryPicture('Cheese_1')
-        r.setRecipeFormat('TWO_COLUMN_OPTIONAL_PICTURES')
+        r.setRecipeFormat('FANCY_WIDE_PIC_OVER_DIRECTIONS')
         
          
         ## --

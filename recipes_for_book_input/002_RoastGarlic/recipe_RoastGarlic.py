@@ -27,6 +27,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addPicture('JustGarlic', '2020_09_09_RoastGarlic.jpg')
         r.addPicture('GarlicSnacks', '2020_09_09_RoastGarlicDone.jpg')
         r.setPrimaryPicture( 'JustGarlic')
+        r.setRecipeFormat('TWO_COLUMN_OPTIONAL_PICTURES')
         
         #  -- Add Ingredients --
 

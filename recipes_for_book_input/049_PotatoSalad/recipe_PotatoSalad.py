@@ -24,6 +24,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Potato Salad', 'Salads', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        r.addPicture('potatoSalad_1', 'IMG_3199.jpeg')
+        r.addPicture('potatoSalad_2', 'IMG_3200.jpeg')
+        r.addPicture('potatoSalad_3', 'IMG_3201.jpeg')
+        r.setPrimaryPicture('potatoSalad_1')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         #  -- Add Ingredients --
 

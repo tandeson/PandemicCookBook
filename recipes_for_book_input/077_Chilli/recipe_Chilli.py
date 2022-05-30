@@ -26,7 +26,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPathLoc(dirPathRecipe)
         r.addPicture('ChilliBowl', 'Chilli_bowl_1.jpg')
         r.setPrimaryPicture('ChilliBowl')
-        r.setRecipeFormat('TWO_COLUMN_OPTIONAL_PICTURES')
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         #  -- Add Ingredients --
 
         ##

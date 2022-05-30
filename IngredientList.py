@@ -193,6 +193,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Hot Sauce',
+    grpNameCondiments,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Maple Syrup',
     grpNameCondiments,
     ))
@@ -744,6 +749,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 #=============================================================================
 grpNameOther = 'Other'
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Almond Milk',
+    grpNameOther
+    ))
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Mayonnaise',
