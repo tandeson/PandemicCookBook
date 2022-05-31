@@ -27,7 +27,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addPicture('Pancake_1', 'IMG_3151.jpeg')
         r.addPicture('Pancake_2', 'IMG_3152.jpeg')
         r.setPrimaryPicture('Pancake_1')
-        r.setRecipeFormat('TWO_COLUMN_OPTIONAL_PICTURES')
+        r.setRecipeFormat('FANCY_WIDE_PIC_OVER_DIRECTIONS')
         ## ---
         
         grpRecipeBatter = "Batter"

@@ -28,7 +28,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addPicture('ButterBeans_2', 'ButterBeans_2.JPEG')
         r.addPicture('ButterBeans_3', 'ButterBeans_3.JPEG')
         r.setPrimaryPicture('ButterBeans_1')
-        r.setRecipeFormat('TWO_COLUMN_OPTIONAL_PICTURES')
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         #  -- Add Ingredients --
 
         ##
