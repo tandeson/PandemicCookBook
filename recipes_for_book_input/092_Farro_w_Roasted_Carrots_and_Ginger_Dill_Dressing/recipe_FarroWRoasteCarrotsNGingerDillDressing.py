@@ -24,7 +24,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Farro with Roasted Carrots and Ginger Dill Dressing', 'Main dishes', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
-        r.setRecipeFormat('TWO_COLUMN_OPTIONAL_PICTURES')
+        r.addPicture('FarroWithCarrots_1', 'IMG_3208.jpeg')
+        r.addPicture('FarroWithCarrots_2', 'IMG_3209.jpeg')
+        r.setPrimaryPicture('FarroWithCarrots_1')
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
 
         #  -- Add Ingredients --
 
