@@ -33,12 +33,12 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Chickpeas', 1, 'can drained and rinsed')
         r.addIngredient('Artichoke Hearts', 1, 'can drained and chopped')
         r.addIngredient('Breadcrumbs', 0.75, 'cups')
-        r.addIngredient('Nori', 1, 'sheet, chopped into flakes')
+        r.addIngredient('Nori', 2, 'sheet, chopped into flakes')
         r.addIngredient('Mayonnaise', 0.25, 'cups')
-        r.addIngredient('Lemon Juice', 1, 'tablespoon')
+        r.addIngredient('Lemon Juice', 2, 'tablespoon')
         r.addIngredient('Mustard', 1, 'tablespoon dijon')
-        r.addIngredient('Non-Iodized Salt', 0.25, 'teaspoon')
-        r.addIngredient('Black Pepper', 0.25, 'teaspoon')
+        r.addIngredient('Non-Iodized Salt', 0.5, 'teaspoon')
+        r.addIngredient('Black Pepper', 0.5, 'teaspoon')
         r.addIngredient('Extra Virgin Olive Oil', 2, 'tablespoons')
         
         ## Steps
