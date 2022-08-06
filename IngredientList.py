@@ -1124,6 +1124,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Gochujang Paste',
+    grpNameSpices,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Green Onion',
     grpNameSpices,
     ))
