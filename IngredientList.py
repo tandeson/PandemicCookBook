@@ -1051,6 +1051,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Black Pepper',
     grpNameSpices, 
     ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Bonito',
+    grpNameSpices, 
+    ))
     
 C_INGREDIENTS.append( RecipeIngredient(
     'Cardamom',
