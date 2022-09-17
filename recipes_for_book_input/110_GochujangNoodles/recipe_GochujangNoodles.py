@@ -26,7 +26,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPathLoc( dirPathRecipe )
         r.addPicture('2022_gochujang_noodles', '2022_gochujang_noodles.JPG')
         r.setPrimaryPicture('2022_gochujang_noodles')
-        r.setRecipeFormat('FANCY_LONG_RECIPE')
+        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         
         #  -- Add Ingredients --
         

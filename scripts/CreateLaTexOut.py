@@ -375,7 +375,7 @@ def genRecipeFormatFancyTallPic( latexDoc, recipeName, recipeData  ):
         util_addPicNotInFig(
             latexDoc, 
             Path( recipeData.getPicturePrimary()['path']).absolute().as_posix(), 
-            '0.45')
+            '0.40')
     
     latexDoc.append( Command('vspace', ['10pt'] ) )
     latexDoc.append( LargeText( bold('Ingredients')) )
@@ -581,7 +581,8 @@ def getLateByIngredientIndex( doc, cookbookData):
     #listIngred = 'ingredients'
 
 #=============================================================================
-def buildPdfImg( outAbsPath, inFilePath, roundEdges=True, inMaxDpi=300, inMaxSizeInch=4):
+def buildPdfImg( outAbsPath, inFilePath, roundEdges=True, scaleAmt=1.0,
+                  inMaxDpi=300, inMaxSizeInch=4):
     """
     Convert a Image for use in LaTex PDF - and store to an out directory.
      
@@ -615,6 +616,10 @@ def buildPdfImg( outAbsPath, inFilePath, roundEdges=True, inMaxDpi=300, inMaxSiz
     sizeInIncRatio = 1
     if(maxSizeInInc > inMaxSizeInch):
         sizeInIncRatio = inMaxSizeInch / maxSizeInInc
+    
+    # Adjust for Scale 
+    sizeInIncRatio *= scaleAmt
+
     myImage = myImage.resize( 
         ( int( sizeInIncW * sizeInIncRatio * newDpioutW) , int(sizeInIncH * sizeInIncRatio * newDpioutH) ), 
         Image.ANTIALIAS)
