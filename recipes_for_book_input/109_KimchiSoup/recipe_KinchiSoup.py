@@ -24,6 +24,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Kimchi Soup', 'Soups', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        r.addPicture('kimchiSoup_1', 'IMG_3243.jpeg')
+        r.setPrimaryPicture('kimchiSoup_1')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         #  -- Add Ingredients --
 
