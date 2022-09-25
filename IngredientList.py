@@ -623,7 +623,12 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Rye Flour',
     grpNameDryGoods,
     ))
-    
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Spagetti',
+    grpNameDryGoods,
+    ))
+
 C_INGREDIENTS.append( RecipeIngredient(
     'Split Peas',
     grpNameDryGoods,
