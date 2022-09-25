@@ -1039,6 +1039,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 grpNameSpices = "Spices"
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Allspice',
+    grpNameSpices, 
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Ancho Chili powder',
     grpNameSpices, 
     ))
@@ -1161,6 +1166,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Lemon Juice',
+    grpNameSpices,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Marjoram',
     grpNameSpices,
     ))
 
