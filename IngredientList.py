@@ -1004,6 +1004,12 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Sugar Snaps',
+    grpNameProduce,
+    ))
+   
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Sweet Potatoes',
     grpNameProduce,
     ))
