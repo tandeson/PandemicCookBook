@@ -98,6 +98,11 @@ ingGrapeLeavesPickled.addVendor(
 C_INGREDIENTS.append( ingGrapeLeavesPickled )
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Heart of Palm',
+    grpNameCanned
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Kidney Beans',
     grpNameCanned
     ))
@@ -1160,6 +1165,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Nutmeg',
+    grpNameSpices,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Old Bay Seasoning',
     grpNameSpices,
     ))
 
