@@ -947,6 +947,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Parsley',
     grpNameProduce,
     ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Parsnip',
+    grpNameProduce,
+    ))
     
 C_INGREDIENTS.append( RecipeIngredient(
     'Pickling Cucumbers',
@@ -1059,6 +1064,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Bay Leaves',
+    grpNameSpices, 
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Berbere',
     grpNameSpices, 
     ))
@@ -1078,6 +1088,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     grpNameSpices, 
     ))
     
+C_INGREDIENTS.append( RecipeIngredient(
+    'Caraway seeds',
+    grpNameSpices, 
+    ))
+
 C_INGREDIENTS.append( RecipeIngredient(
     'Cardamom',
     grpNameSpices, 
