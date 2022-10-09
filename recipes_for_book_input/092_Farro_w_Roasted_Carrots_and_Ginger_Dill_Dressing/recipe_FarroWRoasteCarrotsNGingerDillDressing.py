@@ -41,7 +41,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         
         grpDressing = "Ginger Dill Dressing"
-        r.addIngredient('Extra Virgin Olive Oil', 1.3, 'cups', grpDressing)
+        r.addIngredient('Extra Virgin Olive Oil', 0.3, 'cups', grpDressing)
         r.addIngredient('Ginger', 1, 'teaspoon, diced', grpDressing)
         r.addIngredient('Lemon', 1, 'juiced', grpDressing)
         r.addIngredient('Maple Syrup', 1, 'teaspoon', grpDressing)

@@ -59,7 +59,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
 
         # Add Steps and Notes
         steps = [
-            'Preheat the oven to 350 deg F.  Lightly grease an 8" square pan for 9" round pan.',
+            'Preheat the oven to 350 deg F.  Lightly grease an 8" square pan or 9" round pan.',
             
             'To make the topping: Whisk together the sugar, salt, flour, spice, and nuts. Add the '
             'melted butter, stirring just until well combined. Set the topping aside.',
