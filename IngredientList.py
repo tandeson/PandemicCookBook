@@ -455,6 +455,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Cocoa Powder',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Coconut Flakes',
     grpNameDryGoods,
     ))

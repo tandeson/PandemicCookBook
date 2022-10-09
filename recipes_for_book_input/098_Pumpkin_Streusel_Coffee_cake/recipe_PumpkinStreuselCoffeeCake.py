@@ -37,11 +37,12 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('All Purpose Flour', 80, 'grams (2/3 cup)', grpTopping)
         r.addIngredient('Cinnamon', 1, 'teaspoon', grpTopping)
         r.addIngredient('Pecans', 28, 'grams, (1/4 cup)', grpTopping)
-        r.addIngredient('Unsalted Butter', 57, 'grams, 4 tablespoons')
+        r.addIngredient('Unsalted Butter', 57, 'grams, 4 tablespoons'),grpTopping
         
         grpFilling = "Filling"
         r.addIngredient('Brown Sugar', 71, 'grams (1/3 cup)', grpFilling)
-        r.addIngredient('Cinnamon', 1, 'teaspoon', grpTopping)
+        r.addIngredient('Cocoa Powder', 1, 'taspoon, Dutch-process', grpFilling)
+        r.addIngredient('Cinnamon', 1, 'teaspoon', grpFilling)
         
         grpCake = "Cake"
         r.addIngredient('Vegetable Oil', 67, 'grams (1/3 cup)', grpCake)
