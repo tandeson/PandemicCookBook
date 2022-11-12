@@ -24,6 +24,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Sauerkraut Soup', 'Soups', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        r.addPicture('SoupBowl_1', 'IMG_3609.jpeg')
+        r.addPicture('SoupBowl_2', 'IMG_3610.jpeg')
+        r.setPrimaryPicture('SoupBowl_2')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         
         #  -- Add Ingredients --
@@ -40,7 +43,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Allspice', 1, 'teaspoon')
         r.addIngredient('Rosemary', 1, 'teaspoon')
         r.addIngredient('Bay Leaves', 3, '')
-        r.addIngredient('Sauerkraut', 1, 'pound (400g), drained')
+        r.addIngredient('Sauerkraut', 2, 'pound (800g), drained')
         r.addIngredient('Potato', 3, 'peeled and cut into cubes')
         r.addIngredient('Vegetable Broth', 6, 'cups')
         r.addIngredient('Salt', 1, 'pinch, to taste')
