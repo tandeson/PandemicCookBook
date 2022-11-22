@@ -34,13 +34,14 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Extra Virgin Olive Oil', 4, 'tablespoons')
         r.addIngredient('Garlic', 4, 'cloves, chopped')
         r.addIngredient('Yellow Onion', 1, 'medium, chopped')
+        r.addIngredient('Celery', 4, 'sticks, chopped')
         r.addIngredient('Vegetable Broth', 8, 'cups')
         r.addIngredient('Split Peas', 1, 'bag, 1 pound, dry')
         
         # Add Steps and Notes
         steps= [
             'Heat a large pot with a lid over medium-high heat.',
-            'Add the oil, garlic and Onion. Stir until the Onion becomes translucent, about 2-3 minutes.',
+            'Add the oil, garlic, celery and Onion. Stir until the Onion becomes translucent, about 2-3 minutes.',
             'Add in Vegetable Broth, raise the heat to high, and bring to just boiling.',
             'Add the Split Peas, and move the heat to low.',
             'Simmer for about 1 hour with the lid on.',
