@@ -29,7 +29,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         
         r.AddDescription('You can vary the mix of vegetables you add. As long as the flavors go together '
-                         'and the beggies are cooked, this recipe is very forgiving.')
+                         'and the veggies are cooked, this recipe is very forgiving.')
         #  -- Add Ingredients --
 
         ##
