@@ -52,7 +52,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'In a small bowl, wisk egg and broth until blended.',
             'Pour over bread mixture and mix well.',
             'Transfer to a greased 3 quart baking dish ( the dish will be full).',
-            'Cover and ake for 30 minutes.',
+            'Cover and bake for 30 minutes.',
             'Uncover - bake 5 - 15 minutes longer until a thermometer reads 160 deg F.',
             'Remove and serve.'
         ]
