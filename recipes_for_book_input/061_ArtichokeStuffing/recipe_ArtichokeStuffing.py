@@ -25,7 +25,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r = MyRecipe('Artichoke Stuffing', 'Main dishes', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         r.addPicture('Stuffing', '2020_StuffingOnly.jpg')
-        r.setPrimaryPicture('Stuffing')
+        r.addPicture('Stuffing_bowl_1', 'IMG_3623.jpeg')
+        r.addPicture('Stuffing_bowl_2', 'IMG_3624.jpeg')
+        r.setPrimaryPicture('Stuffing_bowl_1')
         #  -- Add Ingredients --
 
         ##
