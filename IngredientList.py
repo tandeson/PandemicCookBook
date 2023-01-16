@@ -60,6 +60,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Canellini Beans',
+    grpNameCanned,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Capers',
     grpNameCanned,
     ))
@@ -1160,6 +1165,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Fennel Seeds',
+    grpNameSpices,
+    ))
+    
+C_INGREDIENTS.append( RecipeIngredient(
     'Garam Masala',
     grpNameSpices,
     ))
@@ -1189,6 +1199,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     grpNameSpices,
     ))
 
+C_INGREDIENTS.append( RecipeIngredient(
+    'Liquid Smoke',
+    grpNameSpices,
+    ))
+    
 C_INGREDIENTS.append( RecipeIngredient(
     'Marjoram',
     grpNameSpices,
