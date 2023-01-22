@@ -24,7 +24,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Poolside Sesame Slaw', 'Salads', sharedIngredentList)
         r.setPathLoc( dirPathRecipe )
-        r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
+        r.addPicture('SlawBowl', 'SlawBowl.jpeg')
+        r.addPicture('SlawCup', 'SlawCup.jpeg')
+        r.setPrimaryPicture('SlawCup')
+        r.setRecipeFormat('TWO_COLUMN_OPTIONAL_PICTURES')
         
         #  -- Add Ingredients --
         
