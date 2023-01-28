@@ -1309,6 +1309,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Vegetable Broth',
     grpNameSpices,
     ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'White Pepper',
+    grpNameSpices, 
+    ))
 #=============================================================================
 #=============================================================================
 def main(argv=None):
