@@ -24,7 +24,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Miso Glazed Sweet Potatoes', 'Appetizers', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
-        
+        r.addPicture('GlazedSweetPotatoes', 'IMG_3764.jpeg')
+        r.addPicture('GlazedSweetPotatoes_1', 'IMG_3765.jpeg')
+        r.setPrimaryPicture('GlazedSweetPotatoes')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         ## ---
         
