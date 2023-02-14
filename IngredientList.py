@@ -701,6 +701,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Eggs Whites',
+    grpNameProtien
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Eggs Yolks',
     grpNameProtien
     ))
