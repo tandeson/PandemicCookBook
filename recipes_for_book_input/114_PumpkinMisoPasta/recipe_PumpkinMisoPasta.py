@@ -27,6 +27,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         r = MyRecipe('Pumpkin Miso Pasta', 'Main dishes', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
+        r.addPicture('pasta_in_pan', 'IMG_3933.jpeg')
+        r.setPrimaryPicture('pasta_in_pan')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         #  -- Add Ingredients --
 
