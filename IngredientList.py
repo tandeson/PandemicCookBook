@@ -180,7 +180,12 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Apricot Preserves',
     grpNameCondiments,
     ))
-    
+
+C_INGREDIENTS.append( RecipeIngredient( 
+    'Balsamic Vinegar',
+    grpNameCondiments,
+    ))
+
 C_INGREDIENTS.append( RecipeIngredient( 
     'Distilled White Vinegar', 
      grpNameCondiments,
@@ -561,6 +566,11 @@ C_INGREDIENTS.append( RecipeIngredient(
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Orzo',
+    grpNameDryGoods,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
+    'Pasta',
     grpNameDryGoods,
     ))
 
