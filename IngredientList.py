@@ -363,6 +363,12 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Pastry Cream',
+    grpNameDairy,
+    recipeToMakeName = 'Pastry Cream'
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Salted Butter',
     grpNameDairy,
     ))
