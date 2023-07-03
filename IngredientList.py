@@ -806,6 +806,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     'Almond Milk',
     grpNameOther
     ))
+C_INGREDIENTS.append( RecipeIngredient(
+    'Blitz Puff Pastry',
+    grpNameOther,
+    recipeToMakeName='Blitz Puff Pastry'
+    ))
 
 C_INGREDIENTS.append( RecipeIngredient(
     'Mayonnaise',
