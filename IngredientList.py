@@ -307,6 +307,12 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Chocolate Ganache',
+    grpNameDairy,
+    recipeToMakeName = 'Chocolate Ganache'
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
    'Cottage Cheese',
    grpNameDairy,
     ))
@@ -725,7 +731,7 @@ C_INGREDIENTS.append( RecipeIngredient(
     grpNameProtien,
     recipeToMakeName= 'Fried Tofu'
     ))
-
+    
 C_INGREDIENTS.append( RecipeIngredient(
     'Ham', 
     grpNameProtien
