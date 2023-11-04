@@ -69,7 +69,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             RecipeStep('Heat a large sauce pan on medium heat. Put the frozen peas in the pan.'),
             RecipeStep('When the peas are no longer frozen, add in the butter and garlic. Cook until the garlic starts to just brown.'),
             RecipeStep('Add in the milk, cheese, salt and pepper. Stir vigorously until cheese melts. If it\'s too thick, add more milk and repeat.'),
-            RecipeStep('Remove from heat, and mixe in Gnocchi.')
+            RecipeStep('Remove from heat, and mix in Gnocchi.')
         ]
         r.addStep( RecipeStep('Peas and White Sauce', stepsSauce ) )
 

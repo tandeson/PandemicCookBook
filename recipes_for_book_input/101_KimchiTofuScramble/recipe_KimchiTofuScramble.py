@@ -45,7 +45,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         steps = [
             'Open and drain tofu.',
             'In a large skillet, heat oil over medium-high heat.',
-            'Add tofu, crumbling between your ringers, cook, stirring occasionally for 2-3 minutes.',
+            'Add tofu, crumbling between your fingers, cook, stirring occasionally for 2-3 minutes.',
             'Turn heat to medium, add soy sauce and garlic powder and stir.',
             'Add kale and onions. Cook, stirring occasionally until kale becomes soft and wilts. Cover partially to help with the process, about 5-7 minutes.',
             'Add nutritional yest and Kimchi and mix. Cover in Sesame seeds.'

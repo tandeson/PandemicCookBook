@@ -24,7 +24,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Roasted Chickpeas', 'Appetizers', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
-        
+        r.addPicture('roasted', "Roast_Chickpeas.jpeg")
+        r.setPrimaryPicture('roasted')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         ## ---
         

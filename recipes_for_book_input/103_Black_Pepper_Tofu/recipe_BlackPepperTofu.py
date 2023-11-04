@@ -50,7 +50,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         steps = [
             'Slice tofu into pieces resembling checkers - long rectangles.',
             'Coat Tofu pieces in Corn Starch.',
-            'In a bowl, mix the Soy Sauce, Oyster Sauce, Water, Garlic, Ginger, Greens Onions and Black Pepper - and mix. Set Aside',
+            'In a bowl, mix the Soy Sauce, Oyster Sauce, Water, Garlic, Ginger, Green Onions and Black Pepper - and mix. Set Aside',
             'Heat a frying pan with oil.',
             'Fry the tofu, turning in order to fry all sides. Add the sauce and mix. Remove from heat and serve.'
             ]

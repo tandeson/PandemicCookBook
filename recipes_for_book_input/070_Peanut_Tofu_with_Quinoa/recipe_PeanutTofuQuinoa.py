@@ -35,7 +35,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         r.addIngredient('Fried Tofu', 14, 'oz')
         
-        grpQuinoa ="Coconut Quiona"
+        grpQuinoa ="Coconut Quinoa"
         r.addIngredient('Quinoa', 1, 'cups', grpQuinoa)
         r.addIngredient('Coconut Milk', 0.5, 'cup, full fat', grpQuinoa)
         r.addIngredient('Water', 1.25, 'cups', grpQuinoa)

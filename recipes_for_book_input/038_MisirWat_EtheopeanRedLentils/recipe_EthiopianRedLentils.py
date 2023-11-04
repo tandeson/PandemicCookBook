@@ -33,7 +33,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Unsalted Butter', 4, 'tablespoons')
         r.addIngredient('Yellow Onion', 1, 'large, diced')
         r.addIngredient('Garlic', 3, 'cloves, minced')
-        r.addIngredient('Roma Tomato', 1, 'finly chopped')
+        r.addIngredient('Roma Tomato', 1, 'finely chopped')
         r.addIngredient('Tomato Paste', 3, 'tablespoons')
         r.addIngredient('Berbere', 1, 'tablespoon')
         r.addIngredient('Red Lentils', 1, 'cup')
@@ -47,8 +47,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Add the Garlic, Tomatoes, Tomato Paste and 1 tablespoon of Berbere and cook for 5-7 minutes.'
             ' Reduce heat if needed to prevent burning.',
             'Add the Broth and Salt.',
-            'Bring to a boil, add the Lentils, reduce the heat to low and cover. Simmer the lentils, stirring occationally for 40 minutes until soft.',
-            'Stir in the remaining Butter and simmer for a couple more imnutes. Add Salt to taste.'
+            'Bring to a boil, add the Lentils, reduce the heat to low and cover. Simmer the lentils, stirring occasionally for 20 minutes until soft.',
+            'Add Salt to taste.'
         ]
         for s in steps:
             r.addStep( RecipeStep( s ) )

@@ -30,7 +30,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         #  -- Add Ingredients --
         r.AddDescription(
-            'This is typically a way for me to use up vegetable before '
+            'This is typically a way for me to use up vegetables before '
             'they go bad, so the kind of vegetable listed here is more of a suggestion.'
             '\n\n'
             'We have been experimenting with ingredients and really like this recipe with black rice too.')

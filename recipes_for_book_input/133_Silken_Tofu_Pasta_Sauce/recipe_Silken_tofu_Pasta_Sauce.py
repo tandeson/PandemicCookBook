@@ -22,44 +22,41 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
-        r = MyRecipe('Potato Leek Soup', 'Soups', sharedIngredentList)
+        r = MyRecipe('Silken Tofu Pasta Sauce','Spreads and Dips', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
-        r.addPicture('potatoeSoup_1', 'IMG_3496.jpeg')
-        r.addPicture('potatoeSoup_2', 'IMG_3497.jpeg')
-        r.setPrimaryPicture('potatoeSoup_1')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         #  -- Add Ingredients --
-
-        ##
-        r.addIngredient('Onion', 1, 'medium, chopped')
-        r.addIngredient('Garlic', 5, 'cloves, chopped')
-        r.addIngredient('Extra Virgin Olive Oil', 1, 'tablespoons')
-        r.addIngredient('Leek', 4, 'large, chopped')
-        r.addIngredient('Thyme', 1, 'teaspoon')
-        r.addIngredient('Rosemary', 1, 'teaspoon, dried')
-        r.addIngredient('Coriander Powder', 0.5, 'teaspoon')
-        r.addIngredient('Potato', 6, 'medium, peeled and chopped')
-        r.addIngredient('Vegetable Broth', 4, 'cups')
-        r.addIngredient('Almond Milk', 14, 'oz (or other cream)')
-        r.addIngredient('Salt', 1, 'pinch, to taste')
-        r.addIngredient('Black Pepper', 1, 'pinch, to taste')
+        
+        ## 
+        r.addIngredient('Tofu', 1, 'block, silken')
+        r.addIngredient('Onion', 1, 'medium, thin sliced')
+        r.addIngredient('Garlic', 6, 'cloves, diced')
+        r.addIngredient('Extra Virgin Olive Oil', 3, 'tablespoons')
+        r.addIngredient('Nutritional Yeast', 1, 'tablespoon')
+        r.addIngredient('Lemon Juice', 1, 'tablespoon')
+        r.addIngredient('Water', 1.5, 'from pasta')
+        r.addIngredient('Salt', 1, 'teaspoon, to taste')
+        r.addIngredient('Black Pepper', 0.5, 'teaspoon, to taste')
+        
+        
         
         # Add Steps and Notes
-        steps= [
-            'Add the chopped onion and leeks to a pot with the crushed garlic and '
-            'olive oil and saute until softened. Add in the thyme, rosemary and coriander '
-            'powder and saute.',
+        steps = [
+            'Peel and dice an onion and mince the cloves of garlic. Then saute them over low heat in olive oil '
+            'with a sprinkle of salt until they turn translucent.',
             
-            'Add the chopped potatoes and vegetable stock and bring to a boil. Reduce the '
-            'heat, cover the pot and simmer until the potatoes are soft and cooked.',
+            'Open the package of silken tofu and drain off any excess water then add the tofu to the blender. Then '
+            'add the sauteed onion and garlic, nutritional yeast, lemon juice, salt, and pepper.',
             
-            'Remove from the heat and add in the cream',
+            'Add 1 cup of the starchy pasta water to the blender and blend until smooth. Add an additional 1/2 cup '
+            'of the pasta water and blend again until very smooth.',
             
-            'Blend the soup using an immersion blender until smooth.',
-            'Add Salt and Pepper to taste - and enjoy!'
-        ]
+            'Pour the tofu cream sauce back into the frying pan used to saute the onions and warm it over low heat. '
+            'Add salt and pepper to taste.'
+            ]
         for s in steps:
             r.addStep( RecipeStep( s ) )
+        
         # Return this back.
         return r
 

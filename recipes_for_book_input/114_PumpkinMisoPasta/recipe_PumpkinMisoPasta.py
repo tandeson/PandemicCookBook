@@ -38,7 +38,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Pumpkin Puree', 6, 'oz')
         r.addIngredient('Miso Paste', 3, 'tablespoons')
         r.addIngredient('Red Pepper Flakes', 2, 'teaspoons')
-        r.addIngredient('Almond Milk', 1, 'cup, or equivalant')
+        r.addIngredient('Almond Milk', 1, 'cup, or equivalent')
                               
         # Add Steps and Notes
         steps= [

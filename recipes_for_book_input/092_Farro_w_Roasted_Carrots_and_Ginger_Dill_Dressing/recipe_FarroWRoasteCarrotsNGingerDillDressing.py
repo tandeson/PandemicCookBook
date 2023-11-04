@@ -57,7 +57,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             "Line a pan with Parchment paper and place the carrots in a single layer on it. Coat  with olive oil.",
             "Bake for 25 - 30 minutes and then remove from oven.",
             
-            "Put a pan on medium heat and add olive oil. Add onions and Satue for a few minutes.",
+            "Put a pan on medium heat and add olive oil. Add onions and saute for a few minutes.",
             "Add Farro and toast, stiring constantly for 2 minutes.",
             "Add Broth and bring to a boil. Lower heat and simmer for about 30 minutes covered, until cooked.",
             "Drain off excess liquid ( if any ) and set aside.",
