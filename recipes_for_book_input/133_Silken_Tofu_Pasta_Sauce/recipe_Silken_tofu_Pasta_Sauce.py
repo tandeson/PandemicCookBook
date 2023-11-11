@@ -52,6 +52,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'of the pasta water and blend again until very smooth.',
             
             'Pour the tofu cream sauce back into the frying pan used to saute the onions and warm it over low heat. '
+            
             'Add salt and pepper to taste.'
             ]
         for s in steps:
