@@ -20,6 +20,7 @@ import sys
 import importlib
 
 from pathlib import Path
+import pickle
 
 ## Custom objects
 from IngredientList import C_INGREDIENTS
@@ -45,7 +46,10 @@ def main(argv=None):
         argv = sys.argv
 
     args = parseCommandLine( argv[1:] )
-
+    
+    #Debug for now - may make an option or remove later.
+    args.cache_primary_photos = True
+    
     try:
         print( "Start date & time is " + time.strftime("%c") )
 
@@ -78,7 +82,12 @@ def parseCommandLine(args = sys.argv[1:]):
         '-i','--input_directory',
         action='store', default="recipes_for_book_input",
         help = "root directory where recipes are stored.")
-
+    
+    parser.add_argument(
+        '-n','--name',
+        action='store', default='Pandemic_Cookbook',
+        help = 'Name of the cookbook being built.')
+    
     parser.add_argument(
         '-o','--output_directory',
         action='store', default="output",
@@ -206,15 +215,29 @@ def mainControl(args):
         
     # -- HTML        
     genHtmlSample = False
-    if ( genHtmlSample ):
+    if genHtmlSample:
         genHtmlOut(args, outAbsPath, cookbookData, gitRepo)
         
     # -- LaTex
     getLaTexOut = True
-    if ( getLaTexOut ):
+    if getLaTexOut:
         genLaTexOut(args, outAbsPath, cookbookData, gitRepo)
 
+    # -- Photo List
+    if args.cache_primary_photos:
+        pkl_photo_name = args.name.replace(' ','') + '_primaryPhots.pkl'
+        pkl_photo_dic = []
+        
+        for iRecipeName in cookbookData['Recipes']['inputObjects']:
+            iRecipe = cookbookData['Recipes']['inputObjects'][iRecipeName]
+            if iRecipe.info['primaryPic'] is not None:
+                primaryPic =iRecipe.getPicturePrimary()
+                pkl_photo_dic.append( {'path':primaryPic['path_orig'] } )
+        
+        with open( Path( os.path.join(outAbsPath, 'img', pkl_photo_name)), 'wb') as handle:
+            pickle.dump(pkl_photo_dic, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
+    
     return True
 
 #*  Main Code Path ***********************************************************

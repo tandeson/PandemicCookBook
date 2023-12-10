@@ -38,7 +38,7 @@ def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
     outLaTexAbsPath = Path( os.path.join( outAbsPath, 'LaTex') )
     outLaTexAbsPath.mkdir(parents=True, exist_ok=True)
     
-    outLaTexAbsFilePath =  Path( os.path.join( outLaTexAbsPath, 'Pandemic_Cookbook') )
+    outLaTexAbsFilePath =  Path( os.path.join( outLaTexAbsPath, args.name) )
     
     ### --- Build LaTex Document / Object  ---
     if(args.verbose):
