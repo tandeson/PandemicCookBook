@@ -32,14 +32,14 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         r.addIngredient('Tofu', 1, 'block, extra-firm')
         
-        r.AddDescription('Andrew shared with us this trick to get tofu to have a spongy texture, which soask up sauce and improves a number of recipes!')
+        r.AddDescription('Andrew shared with us this trick to get tofu to have a spongy texture, which soaks up sauce and improves a number of recipes!')
         
         ## Steps
         steps = [
             'Open and drain tofu.',
             'Place the tofu in ziplock plastic bag.',
             'Place the Tofu in the freezer for at least 24 hours.',
-            'Thaw out the tofu - in the refigerator if you don\'t need it for a day - or on the counter if you want to use it in a few hours.',
+            'Thaw out the tofu - in the refrigerator if you don\'t need it for a day - or on the counter if you want to use it in a few hours.',
             ]
         
         for s in steps:

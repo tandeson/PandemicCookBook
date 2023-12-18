@@ -37,13 +37,13 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
            
         # Add Steps and Notes
         steps = [
-            'cut off aproximaly the top 1/4 of the garlic head',
-            'place each garlic head on a small square of alumnium foil',
-            'drizzle olive oil over the top of the garlic heads',
-            'wrap up each garlic head individually in the aluminum foil',
-            'heat the oven to 375 deg F',
-            'bake the garlic heads for at least 45 minutes', 
-            'allow to cool, then squeeze out the garlic using your fingers.'
+            'Cut off approximately the top 1/4 of the garlic head',
+            'Place each garlic head on a small square of aluminum foil',
+            'Drizzle olive oil over the top of the garlic heads',
+            'Wrap up each garlic head individually in the aluminum foil',
+            'Heat the oven to 375 deg F',
+            'Bake the garlic heads for at least 45 minutes', 
+            'Allow to cool, then squeeze out the garlic using your fingers.'
             ]
         for s in steps:
             r.addStep( RecipeStep( s ) )

@@ -55,9 +55,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         # Add Steps and Notes
         steps= [
             'In a large pot, heat the olive oil on medium high heat.',
-            'Add in the Garlic, onion, celery, peppers. cook until softened, about 3 minutes.',
+            'Add in the Garlic, onion, celery, peppers. Cook until softened, about 3 minutes.',
             'Add in the beans, tomatoes and broth. Bring to a boil.',
-            'Reduce heat and add in molasses and spices. stir well and let heat for 10 minutes.',
+            'Reduce heat and add in molasses and spices. Stir well and let heat for 10 minutes.',
             'Add in the flour to thicken, and stir well. Let cook for an additional 10 minutes.',
             'Remove from heat and serve.'
         ]

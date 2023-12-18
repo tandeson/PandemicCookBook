@@ -51,15 +51,15 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             "Bring a pot of water to a boil, and cook the noodles just until al dente - according "
             "to the package. Drain and rinse under cold water, then toss with sesame oil and salt.",
             
-            "Prepare the vegitables and place on a plate for easy access. The exactly list is up to"
-            " you, vegitiable listed here are to give you ideas.",
+            "Prepare the vegetables and place on a plate for easy access. The exact list is up to"
+            " you, vegetables listed here are to give you ideas.",
             
             "Put a layer of water on another plate - This will be used to soften the wraps.",
             
-            "Finially - have a place to store the completed wraps.",
+            "Finally - have a place to store the completed wraps.",
             
-            "To assemble, take a wrap and dip it in the water on the plate - about 5 to 10 seconsds on each side."
-            "Move it out of the water, and put down the Tofu, Lettuce, Noodles - and vegitiable of your choice.",
+            "To assemble, take a wrap and dip it in the water on the plate - about 5 to 10 seconds on each side."
+            "Move it out of the water, and put down the Tofu, Lettuce, Noodles - and vegetables of your choice.",
             
             "To wrap - fold the lower edge up over the fillings, rolling upward just until the filling is "
             "compactly enclosed. Fold over the short sides like you would a burrito. Roll it up, and you're done!",

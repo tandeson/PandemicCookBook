@@ -43,7 +43,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         ## Steps
         steps = [
-            'Line a sheet pan with parchment paper and preheat the oven to 415 deg F degrees '
+            'Line a sheet pan with parchment paper and preheat the oven to 415 deg F, '
             'spread the potatoes out evenly.',
             
             'Bake for 15 minutes, give them a toss so they cook evenly and roast for 15-20 '

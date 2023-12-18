@@ -56,7 +56,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'In a pan, put in the lentils, water, onion, Tomato, Coconut milk, chillies, turmeric, cumin and coriander. If you do not have the Chillies, you can use Chilli powder to taste.',
             'Bring to a boil, then lower to a simmer. Cook, stirring occasionally, about 25 minutes, until lentils are soft.',
             'In a separate small pan, heat oil over low heat and add in cumin seeds and mustard seeds. Cook until they pop. If using curry leaves, add and fry for about 1 minute.',
-            'pour everything into the lentils, stir together. Cook for a few minutes'
+            'Pour everything into the lentils, stir together. Cook for a few minutes'
             ]
         
         for s in steps:

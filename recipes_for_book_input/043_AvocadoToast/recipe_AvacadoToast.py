@@ -34,7 +34,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         #  -- Add Ingredients --
 
         ##
-        r.addIngredient('Avocados', 0.5, 'Haas, skin removed.')
+        r.addIngredient('Avocados', 0.5, 'Haas, skin removed,')
         r.addIngredient('Bread', 1, 'slice')
         r.addIngredient('Salt', 1, 'pinch, to taste')
         

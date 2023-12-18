@@ -50,7 +50,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Dill', 0.25, 'teaspoon', ingGrpName)
         
         # Add Steps and Notes
-        vegJarFullStep = RecipeStep("Load jar with vegetable")
+        vegJarFullStep = RecipeStep("Load jar with vegetables")
         vegJarFullStep.attachPic( r.getPicturePath('picklesReady'))
         
         stepPrepVeg = RecipeStep(
@@ -74,7 +74,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
                 RecipeStep(
                     "NOTE: Adjust this radio to match the number of Jars you plan to pickle."),
                 RecipeStep(
-                    "Mix 1 qt Vinegar, 3qts water, 1 cup non-iodized salt"),
+                    "Mix 1 qt Vinegar, 3 qts water, 1 cup non-iodized salt"),
                 RecipeStep(
                     "Bring to a boil")
                 ]
@@ -109,8 +109,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         r.addStep( 
             RecipeStep(
-                "The pickles can be usd in as little a 1 month, "
-                "however the origional recipe calls for waiting 3 months."
+                "The pickles can be used in as little as 1 month, "
+                "however the original recipe calls for waiting 3 months."
                 )
             )
         # Return this back.

@@ -43,8 +43,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         steps = [
             'Pre-heat the oven to 450 deg F.',
             'Slice the broccoli into 1/2 or 1/4 florets. stems peeled and sliced.',
-            'Toss the Broccoli with olive oil, Garlic, Salt on a baking sheet.'
-            'Spread them out and then roast, without stiring, until the edges '
+            'Toss the Broccoli with olive oil, Garlic, Salt on a baking sheet. '
+            'Spread them out and then roast, without stirring, until the edges '
             'are crispy and the stems are crips tender - about 20 minutes.',
             'Serve warm.'
             ]

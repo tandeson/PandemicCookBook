@@ -66,7 +66,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'and place in the bowl. Pour part of the dressing mixture on them, and stir to coat. '
             'Repeat until all the potatoes are in the bowl.',
             'Shell the hard boiled Eggs, chop, and place in the bowl.',
-            'Mix in the Olive, Capers and any remaining dressing. Mix well.'
+            'Mix in the olives, Capers and any remaining dressing. Mix well.'
         ]
         for s in steps:
             r.addStep( RecipeStep( s ) )

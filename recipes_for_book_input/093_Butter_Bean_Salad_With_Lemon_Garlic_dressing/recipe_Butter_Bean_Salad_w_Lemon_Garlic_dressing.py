@@ -39,15 +39,15 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Lemon Juice', 2, 'tablespoons')
         r.addIngredient('Garlic', 3, 'cloves, minced')
         r.addIngredient('Parsley', 2, 'tablespoons, chopped')
-        r.addIngredient('Mustard', 1, 'teaspoon, Djon')
+        r.addIngredient('Mustard', 1, 'teaspoon, Dijon')
         r.addIngredient('Salt', 1, 'pinch, to taste')
         r.addIngredient('Black Pepper', 1, 'pinch, to taste')
         
         # Add Steps and Notes
         steps= [
             'Drain and Rinse beans, put into a bowl.',
-            'In a seperate bowl, mix together the rest of the ingredients. Adjust seasoning then add the beans.',
-            'Marinate - ideally for at lest a few hours.'
+            'In a separate bowl, mix together the rest of the ingredients. Adjust seasoning then add the beans.',
+            'Marinate - ideally for at least a few hours.'
         ]
         for s in steps:
             r.addStep( RecipeStep( s ) )

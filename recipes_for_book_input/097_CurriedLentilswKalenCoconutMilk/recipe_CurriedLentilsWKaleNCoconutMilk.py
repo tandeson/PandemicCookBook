@@ -53,7 +53,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         # Add Steps and Notes
         steps = [
-            'In a large pot over medium-high, combine the oil, onion, garlic and '
+            'In a large pot over medium-high heat, combine the oil, onion, garlic and '
             '1 teaspoon salt. When you hear a sizzle, cover the pot, turn heat to '
             'low, and cook, stirring every so often, until the onion has softened and '
             'is just beginning to color, 7 to 9 minutes.',

@@ -33,17 +33,17 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         r.addIngredient('Textured Tofu', 1, 'block, extra-firm')
         
-        r.addIngredient('Almond Milk', 1.5, 'cups, aprox')
-        r.addIngredient('Corn Starch', 0.75, 'cup, apox')
-        r.addIngredient('Breadcrumbs', 0.75, 'cup, aprox')
+        r.addIngredient('Almond Milk', 1.5, 'cups, approx')
+        r.addIngredient('Corn Starch', 0.75, 'cup, approx')
+        r.addIngredient('Breadcrumbs', 0.75, 'cup, approx')
         r.addIngredient('Hot Sauce', 3, 'tablespoons, to taste')
         
         
         ## Steps
         steps = [
             'Drain Tofu and chop into large cubes.',
-            'Preheat the over to 400 deg F.',
-            'Get a bowl and two plates. Put Almond Milk into the bowl, Corn Starch on one plate and Breadcrums on the other. '
+            'Preheat the oven to 400 deg F.',
+            'Get a bowl and two plates. Put Almond Milk into the bowl, Corn Starch on one plate and Breadcrumbs on the other. '
             'Put out baking sheet with a wire rack on top( so all sides get crispy)',
             'Take each piece and dunk in: Almond Milk - Corn Starch - Almond Milk - Breadcrumbs. Then place on the wire rack.',
             'Bake for 25 minutes.',

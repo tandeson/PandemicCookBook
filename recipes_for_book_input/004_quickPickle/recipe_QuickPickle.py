@@ -30,8 +30,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setRecipeFormat('FANCY_WIDE_PIC_OVER_DIRECTIONS')
         
         r.AddDescription(
-            'After trying Lisa\'s Pickling recipe, and seeing this on "Beat Bobby Flay", we tried this. And lOVED it. '
-            'You\'ll see these quick pickled red onion in a lot of the other photos. ~Thomas'
+            'After trying Lisa\'s Pickling recipe, and seeing this on "Beat Bobby Flay", we tried this. And LOVED it. '
+            'You\'ll see this quick pickled red onion in a lot of the other photos. ~Thomas'
             )
         #  -- Add Ingredients --
 
@@ -51,7 +51,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'tupperware container. Close the lid and shake until Salt and Sugar are dissolved.',
             'Place the sliced Onion into the tupperware. Be sure all the Onions are covered '
             'by the liquid.',
-            'Put the lid back on, give a tupperware another shake, and place in the refrigerator.',
+            'Put the lid back on, give the tupperware another shake, and place in the refrigerator.',
             'Wait at least 2 hours, and then serve!'
             ]
         for s in steps:

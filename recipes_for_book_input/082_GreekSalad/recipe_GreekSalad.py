@@ -48,7 +48,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Make the Falafel by mixing in water as directed on the package.'
             ' Wait 10 minutes. Form, then bake at 400 deg F for 20 minutes on '
             'parchment paper.',
-            'Place all the ingrediants in a large bowl and mix.'
+            'Place all the ingredients in a large bowl and mix.'
         ]
         for s in steps:
             r.addStep( RecipeStep( s ) )

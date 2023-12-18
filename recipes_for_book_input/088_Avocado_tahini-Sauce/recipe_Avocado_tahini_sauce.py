@@ -30,7 +30,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         #  -- Add Ingredients --
         
         r.AddDescription(
-            "We added this to a grain bowl with farro and roasted vegitabled and enjoyed"
+            "We added this to a grain bowl with farro and roasted vegetables and enjoyed"
             " it- but it can go on a number of different dishes ~ Bilyana")
         
         ##

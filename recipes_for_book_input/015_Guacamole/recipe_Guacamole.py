@@ -44,9 +44,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         # Add Steps and Notes
         steps = [
-            'Place the Avocadoes in a bowl, mix with the Lime and mash into a chunky paste.',
+            'Place the Avocados in a bowl, mix with the Lime and mash into a chunky paste.',
             'Add in the Salt, Cumin, Cayenne, Chili Powder and mix.',
-            'Add in the Red Onion, Jalapeno, Tomatos, Cilantro and Garlic, again - mix well.'
+            'Add in the Red Onion, Jalapeno, Tomatoes, Cilantro and Garlic, again - mix well.'
             ]
         for s in steps:
             r.addStep( RecipeStep( s ) )
