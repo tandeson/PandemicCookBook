@@ -44,6 +44,9 @@ C_RECIPE_FORMATING = [
    'FANCY_WIDE_PIC_OVER_DIRECTIONS',
    'FANCY_TALL_PIC_OVER_INSTRUCTIONS',
    'FANCY_LONG_RECIPE',
+    
+    ## Playing with ChatGPT formatting
+   'TWO_COLUMN_LONG_FORMAT',
    ]
 
 #=============================================================================

@@ -233,6 +233,11 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
+    'Nutella',
+    grpNameCondiments,
+    ))
+
+C_INGREDIENTS.append( RecipeIngredient(
     'Oyster Sauce',
     grpNameCondiments,
     ))
@@ -531,6 +536,12 @@ C_INGREDIENTS.append( RecipeIngredient(
     grpNameDryGoods,
     ))
 
+C_INGREDIENTS.append( RecipeIngredient(
+    'Espresso Powder',
+    grpNameDryGoods,
+    ))
+
+    
 C_INGREDIENTS.append( RecipeIngredient(
     'Falafel Mix',
     grpNameDryGoods,
