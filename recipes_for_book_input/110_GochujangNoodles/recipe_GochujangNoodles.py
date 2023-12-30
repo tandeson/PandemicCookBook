@@ -44,11 +44,11 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Sesame Oil', 2, 'tablespoon', grpSauce)
         r.addIngredient('Garlic', 5, 'cloves, diced', grpSauce)
         
-        grpVegitables = "Vegitables"
-        r.addIngredient('Vegetable Oil', 1, 'tablespoon',grpVegitables)
-        r.addIngredient('Red Bell Pepper', 0.5, 'seeded and sliced', grpVegitables)
-        r.addIngredient('Savoy Cabbage', 0.5, 'head, shredded', grpVegitables)
-        r.addIngredient('Carrot', 0.5, 'cup, shredded',grpVegitables)
+        grpVegetables = "Vegetables"
+        r.addIngredient('Vegetable Oil', 1, 'tablespoon',grpVegetables)
+        r.addIngredient('Red Bell Pepper', 0.5, 'seeded and sliced', grpVegetables)
+        r.addIngredient('Savoy Cabbage', 0.5, 'head, shredded', grpVegetables)
+        r.addIngredient('Carrot', 0.5, 'cup, shredded',grpVegetables)
         
         # Add Steps and Notes
         steps = [

@@ -50,7 +50,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Transfer the dough and parchment together onto a baking sheet. Lightly brush with oil and then sprinkle the salt over the top of the crackers.',
             'Cut the dough into 1 1/4" squares; a rolling pizza wheel works well here.',
             'Prick each square with the tines of a fork.',
-            'Bake the crackers for 20 to 25 minutes, until the squares are starting to brown around the edges. Midway through, reverse the baking sheets: ',
+            'Bake the crackers for 20 to 25 minutes, until the squares are starting to brown around the edges. Midway through, reverse the baking sheets. ',
             'When fully browned, remove the crackers from the oven, and transfer them to a cooling rack.'
             ]
         for s in steps:

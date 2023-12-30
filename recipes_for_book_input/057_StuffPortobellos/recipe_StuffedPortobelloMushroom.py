@@ -44,7 +44,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         steps = [
             'Pre-heat the oven to 350 deg F.',
             'Lightly grease a baking sheet, or line it with parchment.',
-            'Brush the top of the mushroom cap with oil, and place on the sheet stem side up.',
+            'Brush the top of the mushroom caps with oil, and place on the sheet stem side up.',
             'Evenly divide the cheese between the mushrooms, and place on top. You can also use Feta, '
             'cream cheese or other cheese as well. If the mushrooms seems dry - add additional oil.',
             'Season to taste with Salt and Pepper.',

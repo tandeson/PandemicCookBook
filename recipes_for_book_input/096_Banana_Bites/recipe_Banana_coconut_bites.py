@@ -39,7 +39,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         steps = [
             'Preheat oven to 350 deg F',
             'In a bowl mix all ingredients.',
-            'Fill a baking sheeting sheet with 1 tablespoon sized scopes of batter.',
+            'Fill a baking sheet with 1 tablespoon sized scopes of batter.',
             'Bake for 15 minutes.',
              ]
         

@@ -33,7 +33,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         #  -- Add Ingredients --
 
         ##
-        r.addIngredient('Spagetti', 16, 'oz dry, or equivalant')
+        r.addIngredient('Spaghetti', 16, 'oz dry, or equivalent')
         r.addIngredient('Salt', 2, 'tablespoons, to taste')
         r.addIngredient('Pumpkin Puree', 6, 'oz')
         r.addIngredient('Miso Paste', 3, 'tablespoons')
@@ -42,7 +42,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
                               
         # Add Steps and Notes
         steps= [
-            'Prepare Spagetti or other pasta per package\'s instructions',
+            'Prepare Spaghetti or other pasta per package\'s instructions',
             
             'While the pasta is boiling, bring a skillet to medium heat. Add '
             'the pumpkin, miso paste and red pepper flakes to the pan. Immediately '

@@ -45,19 +45,19 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         # Add Steps and Notes
         steps = [
-            'Line a baking sheet with parchmen paper.',
+            'Line a baking sheet with parchment paper.',
             'Mix and knead the dough ingredients to make a cohesive, fairly smooth dough.'
             'It should be slightly sticky, if it seems dry, knead in an additional '
             'tablespoon or two of water. If working with the dough by hand, slighly greasing '
             'your hands will make this process easier.',
             'Cover the dough and let it rest for 45 minutes. It will rise minimally.',
-            'Toward the end of the rising time, preheat the over to 350 deg F.',
+            'Toward the end of the rising time, preheat the oven to 350 deg F.',
             'Turn the dough out onto a lighly greased work surface. Fold it over a few times '
             'to gently deflate it. Divide into 12 peices, each about 70 grams.',
             'Roll each piece into a rope, and flatten.',
             'Fill the middle of the rope with Blue Cheese and Crispy Friend Onions.',
             'Pinch the rope together to make a tube holding the fillings. Pinch off both ends.',
-            'Roll the ropes into a cinnamon shape, and place on the baking sheet.',
+            'Roll the ropes into a cinnamon roll shape, and place on the baking sheet.',
             'Bake for 25 - 30 minutes, until they\'re a light golden brown.',
             'Remove from the oven and allow to cool.'
             ]

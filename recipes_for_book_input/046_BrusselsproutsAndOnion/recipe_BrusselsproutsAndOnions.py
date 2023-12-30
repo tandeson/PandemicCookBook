@@ -44,7 +44,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Heat a cast Iron Frying pan on medium-high heat.',
             'When the pan is hot, add the Oil, Onion and Brussel Sprouts. Cook undisturbed until the Brussel Sprouts turn a lighter green, with one side browned, 5-7 minutes.',
             'Add in the Garlic, Salt and Pepper. Cook until the Garlic is lightly browned.',
-            'Remote from heat, serve hot.'
+            'Remove from heat, serve hot.'
         ]
         for s in steps:
             r.addStep( RecipeStep( s ) )

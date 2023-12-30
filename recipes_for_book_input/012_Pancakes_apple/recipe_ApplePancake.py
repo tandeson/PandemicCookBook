@@ -46,7 +46,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
            
         # Add Steps and Notes
         steps = [
-            'Beat the eggs, Vanilla and milk until light and foamy, about 3 minutes at high speed of a stand or hand mixer.',
+            'Beat the eggs, Vanilla and milk until light and foamy, about 3 minutes at high speed with a stand or hand mixer.',
             'Stir in the butter or vegetable oil.',
             'Whisk the dry ingredients together to evenly distribute the salt, baking powder, Cinnamon and sweetener.',
             'Gently and quickly mix into the egg and milk mixture. Let the batter rest for at least 15 minutes, '

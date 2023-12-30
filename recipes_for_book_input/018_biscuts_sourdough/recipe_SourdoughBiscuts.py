@@ -41,7 +41,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         # Add Steps and Notes
         steps = [
             'Preheat the oven to 425 deg F with a rack in the upper third. Line a baking sheet with parchment.',
-            'Combine the Flour, Baking Powder and Salt. Work the butter into the flour until the mixture is unevenly crumbly.',
+            'Combine the Flour, Baking Powder and Salt. Work the butter into the flour until the mixture is crumbly, roughly like cornmeal.',
             'Add the starter, mixing gently until the dough is cohesive.',
             'Turn the dough out onto a lightly floured surface (a piece of parchment works well) and gently pat it into a 6" '
             'round about 1" thick.',

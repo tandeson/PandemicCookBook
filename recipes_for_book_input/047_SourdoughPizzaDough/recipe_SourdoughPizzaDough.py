@@ -39,7 +39,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         # Add Steps and Notes
         r.addStep( RecipeStep( 'Make the dough',
             [
-                RecipeStep('Add the water, flour, salt, yeast, and Pizza Dough Flavor (if using). Mix to combine, then knead until the dough wraps '
+                RecipeStep('Add the water, flour, salt, yeast, and Pizza Dough Flavor (if using). Mix to combine, then knead until the dough '
                            'is smooth and elastic.'),
                 RecipeStep('Place the dough in a greased container, cover and let rise until almost doubled in bulk. Depending on the vitality of '
                            'your starter, this will take between 2 and 4 hours. For a faster rise, place the dough in a warm spot, or double the '

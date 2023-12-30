@@ -46,7 +46,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         steps = [
             'In a large bowl, Combine the flours, dry milk, salt, yeast and sugar.',
             'Add in the starter and water. Mix well, until it\'s a sticky, cohesive dough.',
-            'Add the butter, and kneed until the dough is smooth and elastic - 8 to 12 minutes.',
+            'Add the butter, and knead until the dough is smooth and elastic - 8 to 12 minutes.',
             'Cover the dough and let it rest in a warm place (75 deg F to 80 deg F) for about 2 hours. '
             'To de-gas and even out the temperature of the dough, stretch and fold it in the bowl two or'
             ' three times during the rest. You can be fairly flexible in your timing of these; one '

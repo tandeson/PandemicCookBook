@@ -673,7 +673,7 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
-    'Spagetti',
+    'Spaghetti',
     grpNameDryGoods,
     ))
 

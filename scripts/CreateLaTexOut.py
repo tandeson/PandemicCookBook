@@ -266,129 +266,63 @@ def util_refRecipePageNum( strRecipeName):
 #=============================================================================
 def genRecipeFormatTopTwoColumn( latexDoc, recipeName, recipeData  ):
     
-    ingredLaTex = recipeData.genIngredientsBlock('LaTex')   
-
-    # Header
-    with latexDoc.create(Center()) as centered:
-        centered.append( Subsection( f"{recipeName}" ))
-    
-    # Picture
+    ## Create Recipe Header
     picForRecipe = ''
     if( recipeData.getPicturePrimary() ):
-        # Generate Picture Info
-        picForRecipe = Figure(position='h')
+        picForRecipe = Figure(position='h!')
         picForRecipe.add_image(
             str( Path( recipeData.getPicturePrimary()['path']).absolute() ),
             width=NoEscape(r"0.3\textwidth") )
-        
-        # Add To Doc
-        latexDoc.append( Command('begin', ['center']) )
-        util_addPicNotInFig(
-            latexDoc, 
-            Path( recipeData.getPicturePrimary()['path']).absolute().as_posix(), 
-            '0.3')
-        latexDoc.append( Command('end', ['center']) )
     
-    
-    # Description
     if recipeData.GetDescription():
+        latexDoc.append( Command('vspace', ['10pt'] ) )
         latexDoc.append( 
             italic( recipeData.GetDescription() )
         )
         latexDoc.append( NewLine() )
+                                 
+    with latexDoc.create( Tabularx( 'XXX', width_argument=NoEscape(r"\textwidth")) ) as recipeHeadTable:
+        recipeHeadTable.add_empty_row()
+    latexDoc.append( NewLine() )
     
-    # Ingredients    
+    # Create Recipe body
+
+    ##----
+    # Add in Ingredients
+    ingredLaTex = recipeData.genIngredientsBlock('LaTex')
+    ingredPage = Tabular('rl')
+    ingredPage.add_empty_row()
     for ingredDat in ingredLaTex:
         if ('' == ingredDat[0] and '' == ingredDat[2]):
-            ## Special case for Grouped title in the middle column
-            if( len(ingredDat[1])):
-                latexDoc.append( Command('vspace', ['10pt'] ) )
-                latexDoc.append( NoEscape('\n') )
-                latexDoc.append( ingredDat[1] )
-                latexDoc.append( NewLine() )
+            ingredPage.add_row( ('', ingredDat[1])  )
         else:
             if( ingredDat[3] != None):
-                latexDoc.append( 
-                    NoEscape(
-                        str(ingredDat[0]) + ' ' + 
+                ingredPage.add_row( 
+                    ingredDat[0], 
+                    (NoEscape(
                         ingredDat[1] + ' ' + 
-                        ingredDat[2] + ', pg ' + util_refRecipePageNum(ingredDat[3]) 
-                        )
+                        ingredDat[2] + 
+                        ', pg ' + util_refRecipePageNum(ingredDat[3]))
                     )
-                latexDoc.append( NewLine() )
+                )
             else:
-                latexDoc.append( str(ingredDat[0]) + ' ' + ingredDat[1] + ' ' + ingredDat[2] )
-                latexDoc.append( NewLine() )
+                ingredPage.add_row( (ingredDat[0], ingredDat[1] + ' ' + ingredDat[2])  )
     
-    # Directions
-    recipeData.genStepsBlock('LaTex_indented_InjectHere', latexDoc)
+    ##---- Directions            
+    dirPage =  recipeData.genStepsBlock('LaTex', latexDoc)
     
-    #----------------------------------------
-    #------------ OLD STYLE -----------------
-    #----------------------------------------
-    ## Create Recipe Header
-    #picForRecipe = ''
-    #if( recipeData.getPicturePrimary() ):
-    #    picForRecipe = Figure(position='h')
-    #    picForRecipe.add_image(
-    #        str( Path( recipeData.getPicturePrimary()['path']).absolute() ),
-    #        width=NoEscape(r"0.3\textwidth") )
-    
-    #latexDoc.append( Command('vspace', ['10pt'] ) )
-    
-    #if recipeData.GetDescription():
-    #    latexDoc.append( 
-    #        italic( recipeData.GetDescription() )
-    #    )
-    #    latexDoc.append( NewLine() )
-                                 
-    # Create Recipe body
-    latexDoc.append( NoEscape('\r') )
-#    latexDoc.append(
-#        Command('begin',
-#                ['wrapfigure','r', NoEscape(r'0.5\textwidth')],
-#                packages=[ Package('wrapfig')])
-#        )
-    
-#    for ingredDat in ingredLaTex:
-#        if ('' == ingredDat[0] and '' == ingredDat[2]):
-#            ## Special case for Grouped title in the middle column
-#            if( len(ingredDat[1])):
-#                latexDoc.append( Command('vspace', ['10pt'] ) )
-#                latexDoc.append( NoEscape('\n') )
-#                latexDoc.append( ingredDat[1] )
-#                latexDoc.append( NewLine() )
-#        else:
-#            if( ingredDat[3] != None):
-#                latexDoc.append( 
-#                    NoEscape(
-#                        str(ingredDat[0]) + ' ' + 
-#                        ingredDat[1] + ' ' + 
-#                        ingredDat[2] + ', pg ' + util_refRecipePageNum(ingredDat[3]) 
-#                        )
-#                    )
-#                latexDoc.append( NewLine() )
-#            else:
-#                latexDoc.append( str(ingredDat[0]) + ' ' + ingredDat[1] + ' ' + ingredDat[2] )
-#                latexDoc.append( NewLine() )
-    
-  
-#    if( recipeData.getPicturePrimary() ):
-#        latexDoc.append( Command('begin', ['center']) )
-#        util_addPicNotInFig(
-#            latexDoc, 
-#            Path( recipeData.getPicturePrimary()['path']).absolute().as_posix(), 
-#            '0.3')
-#        latexDoc.append( Command('end', ['center']) )
+    util_FancyBuildHeader(latexDoc, recipeName)
+    with latexDoc.create( SmallText() ):
+        latexDoc.append( Command('columnratio',[0.53]) )
+        latexDoc.append( Command('begin',['paracol', 2], packages=[ Package('paracol')]) )
+        latexDoc.append( picForRecipe )
+        latexDoc.append(  Command('switchcolumn',packages=[ Package('paracol')]) )
+        latexDoc.append( ingredPage )
+        latexDoc.append(  Command('end','paracol',packages=[ Package('paracol')]) )
+        latexDoc.append( dirPage )
         
-#    latexDoc.append( Command('end',['wrapfigure']) )
-
-    recipeData.genStepsBlock('LaTex_indented_InjectHere', latexDoc)
-    
-    ##----
-         
-    latexDoc.append( NewPage() )
-
+    latexDoc.append( NewPage() )  
+  
 #=============================================================================
 def genRecipeFormatFancyLong( latexDoc, recipeName, recipeData  ):
     

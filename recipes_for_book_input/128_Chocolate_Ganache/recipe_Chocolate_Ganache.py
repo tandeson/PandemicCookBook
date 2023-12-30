@@ -41,9 +41,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Heat the Honey and Cream in a saucepan until boling. Remove from heat and pour'
             ' over the chocolate. Allow this to sit for 30 seconds.',
             'Stir with a wisk ( or a immersion blender ), starting in the center of the bowl.'
-            ' Stay in the middle until the mixture starts to combinde, then move out to the rest of the bowl.',
+            ' Stay in the middle until the mixture starts to combined, then move out to the rest of the bowl.',
             'Stire until all chocolate has melted. Add in the butter and stir to combine.',
-            'Ganache is now ready to use as a glaze - or it can be stored in the refigerator (3 weeks) or frozen ( 3 months).'
+            'Ganache is now ready to use as a glaze - or it can be stored in the refrigerator (3 weeks) or frozen ( 3 months).'
             ]
         for s in steps:
             r.addStep( RecipeStep( s ) )

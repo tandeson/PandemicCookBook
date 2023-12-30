@@ -93,7 +93,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             ))
         
         r.addStep( RecipeStep(
-            'Cook and Combind',
+            'Cook and Combine',
             [
                 RecipeStep('Heat a frying pan or wok over medium-high heat until hot'),
                 RecipeStep('Add in 1 tablespoon of oil, and swirl to coat the pan.'),

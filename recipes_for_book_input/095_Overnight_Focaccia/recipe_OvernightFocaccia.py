@@ -40,12 +40,12 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         # Add Steps and Notes
         r.addStep( RecipeStep( 
-            'Mix together the Flour, Salt and Yeast. Mix until combind.',
+            'Mix together the Flour, Salt and Yeast. Mix until combined.',
             ))
         
         r.addStep( RecipeStep( 
             'Add in the Water and mix until the liquid is absorbed and '
-            'the ingredients form a sticky bough ball. Rub the surface with olive oil, '
+            'the ingredients form a sticky dough ball. Rub the surface with olive oil, '
             'Cover the bowl and place in the refrigerator for at least 12 hours or up to 3 days.',
             ))
         

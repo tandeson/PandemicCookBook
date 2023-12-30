@@ -55,7 +55,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             ' don\'t have a mill, use a spoon and a strainer to rice into a bowl.',
             'Wait for the potatoes to cool - about 15 minutes.',
             'Start a pot of boiling water to cook the Gnocchi in - this can be the same water the potatoes were boiled in.',
-            'Mix in flour, salt and egg. Mix together, and then gently kneed. The dough should be wet, but not sticky. You can add more flour if it\'s sticky',
+            'Mix in flour, salt and egg. Mix together, and then gently knead. The dough should be wet, but not sticky. You can add more flour if it\'s sticky',
             'Divide into about 12 pieces.',
             'Roll each piece into a snake like log, and cut into pieces.',
             'In groups of about 20, place into the boiling water. Wait for the Gnocchi to float, and then give them another 10 second to cook.',

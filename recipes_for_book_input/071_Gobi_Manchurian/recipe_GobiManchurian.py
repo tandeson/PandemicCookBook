@@ -64,7 +64,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
                 RecipeStep('Cut the califlower head into medium sized florets.'),
                 RecipeStep('Heat 4 cups of water in large pot, add florets when the water is getting close to boiling.'),
                 RecipeStep('Turn off heat, let the florets sit in the hot water for 5 minutes.'),
-                RecipeStep('Remove the florets and spread on a cloth or paper towel to dry. Let dry, if they are not dry, they will not be cripsy when fried.')
+                RecipeStep('Remove the florets and spread on a cloth or paper towel to dry. Let dry, if they are not dry, they will not be crispy when fried.')
                 ] 
             )
         )

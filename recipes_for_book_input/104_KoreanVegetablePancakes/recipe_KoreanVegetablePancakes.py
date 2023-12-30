@@ -38,7 +38,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Turmeric', 0.5 , 'teaspoons', grpRecipeBatter)
         r.addIngredient('Water', 1.5 , 'cups', grpRecipeBatter)
         
-        grpRecipeVegies = "Vegitable Mix"
+        grpRecipeVegies = "Vegetable Mix"
         r.addIngredient('Zucchini', 1, 'medium, sliced into matchsticks', grpRecipeVegies)
         r.addIngredient('Sweet Potatoes', 1, 'small, sliced into matchsticks', grpRecipeVegies)
         r.addIngredient('Carrot', 1, 'medium, sliced into matchsticks', grpRecipeVegies)
@@ -55,7 +55,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Add the batter to the vegetables, and mix so they are well coated.',
             'Heat a large frying pan on medium heat, add in the oil.',
             'When the pan is hot - and the oil is translucent - put enough of the mixture into the pan to cover. '
-            'Fry for 1-2 minutes, then flip and repeate. When the pancake is cooked - removed and cut into 1/4ths.'
+            'Fry for 1-2 minutes, then flip and repeat. When the pancake is cooked - remove and cut into 1/4ths.'
             ]
         
         for s in steps:

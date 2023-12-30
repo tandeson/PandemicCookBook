@@ -54,7 +54,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             "Mix together oats, flour, cinnamon, baking soda, salt",
             "Combine the wet and dry ingredients",
             "Mix in the chocolate chips and walnuts, pour into pan",
-            "Bake for 25 minutes. Allow to cook for at least 30 minutes before cutting"
+            "Bake for 25 minutes. Allow to cool for at least 30 minutes before cutting"
              ]
         for s in steps:
             r.addStep( RecipeStep( s ) )

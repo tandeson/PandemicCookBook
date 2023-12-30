@@ -87,7 +87,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         assembleBakeSteps = [
             'Heat oven to 400 deg F.',
-            'Seperate Egg into white and yoke.',
+            'Separate Egg into white and yoke.',
             'Make Egg wash by whisk together cream and egg yolk in a small bowl and '
             'set aside',
             'lighly beat egg white, and set aside',

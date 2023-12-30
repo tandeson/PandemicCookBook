@@ -26,6 +26,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPathLoc(dirPathRecipe)
         r.addPicture('Pizza', 'IMG_3019.jpeg')
         r.setPrimaryPicture('Pizza')
+        r.setRecipeFormat('TWO_COLUMN_LONG_FORMAT')
         #  -- Add Ingredients --
 
         ##

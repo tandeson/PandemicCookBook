@@ -47,7 +47,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Saute for 1 - 2 minutes until fragrant',
             'Add broccoli and a little water - roughly 2 tablespoons to steam them.',
             'Stir for about 5 min, until broccoli becomes a brighter green',
-            'Add mushrooms, continue to stir over head for 10 - 15 minutes until everything is cooked.',
+            'Add mushrooms, continue to stir for 10 - 15 minutes until everything is cooked.',
             'Combine soy sauce and vinegar, then stir in for 5 -10 seconds.',
             'Remove from heat, sprinkle with sesame seeds',
         ]

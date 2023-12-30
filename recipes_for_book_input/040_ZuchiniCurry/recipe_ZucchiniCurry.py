@@ -35,7 +35,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Extra Virgin Olive Oil', 2, 'tablespoons')
         r.addIngredient('Red Onion', 1, 'large, diced')
         r.addIngredient('Garlic', 5, 'Cloves, diced')
-        r.addIngredient('Ginger', 2, 'teaspoons (fresh grated)')
+        r.addIngredient('Ginger', 2, 'teaspoons (freshly grated)')
         r.addIngredient('Coriander Powder', 2, 'teaspoons')
         r.addIngredient('Smoked Paprika', 2, 'teaspoons')
         r.addIngredient('Turmeric', 2, 'teaspoons')
