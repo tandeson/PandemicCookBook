@@ -26,7 +26,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPathLoc( dirPathRecipe )
         
         #  -- Add Ingredients --
-        r.AddDescription("This makes a lot (about 2 cups) - consider scaling down depending on what your making."
+        r.AddDescription("This makes a lot (about 2 cups) - consider scaling down depending on what you are making."
                   " It's from the Eclaire class at King Arthur.")
         ## 
         #--
@@ -40,9 +40,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Put the chocolate in a bowl and set aside.',
             'Heat the Honey and Cream in a saucepan until boling. Remove from heat and pour'
             ' over the chocolate. Allow this to sit for 30 seconds.',
-            'Stir with a wisk ( or a immersion blender ), starting in the center of the bowl.'
-            ' Stay in the middle until the mixture starts to combined, then move out to the rest of the bowl.',
-            'Stire until all chocolate has melted. Add in the butter and stir to combine.',
+            'Stir with a whisk ( or a immersion blender ), starting in the center of the bowl.'
+            ' Stay in the middle until the mixture starts to combine, then move out to the rest of the bowl.',
+            'Stir until all chocolate has melted. Add in the butter and stir to combine.',
             'Ganache is now ready to use as a glaze - or it can be stored in the refrigerator (3 weeks) or frozen ( 3 months).'
             ]
         for s in steps:

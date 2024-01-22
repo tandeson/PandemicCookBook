@@ -34,7 +34,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Extra Virgin Olive Oil', 3, 'tablespoons')
         r.addIngredient('Nutritional Yeast', 1, 'tablespoon')
         r.addIngredient('Lemon Juice', 1, 'tablespoon')
-        r.addIngredient('Water', 1.5, 'from pasta')
+        r.addIngredient('Water', 0.5, 'from pasta')
         r.addIngredient('Salt', 1, 'teaspoon, to taste')
         r.addIngredient('Black Pepper', 0.5, 'teaspoon, to taste')
         
@@ -48,8 +48,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Open the package of silken tofu and drain off any excess water then add the tofu to the blender. Then '
             'add the sauteed onion and garlic, nutritional yeast, lemon juice, salt, and pepper.',
             
-            'Add 1 cup of the starchy pasta water to the blender and blend until smooth. Add an additional 1/2 cup '
-            'of the pasta water and blend again until very smooth.',
+            'Add 1/2 cup of the starchy pasta water to the blender and blend until smooth.',
             
             'Pour the tofu cream sauce back into the frying pan used to saute the onions and warm it over low heat. '
             

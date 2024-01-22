@@ -31,7 +31,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         r.AddDescription('Andrew shared this during his visit in 2022. '
                   'It\'s named after a Character in Dracula - due to being able to double as '
-                  'a vampire deternt. ~Thomas')
+                  'a vampire deterrent. ~Thomas')
         ## 
         r.addIngredient('Goat Cheese', 8, 'Oz')
         r.addIngredient('Garlic', 0.5, 'cups raw')

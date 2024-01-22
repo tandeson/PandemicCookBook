@@ -50,23 +50,23 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         r.addStep(RecipeStep('For Savory',childStep=[
             RecipeStep('In a small bowl, stir together the mustard and paprika. Set aside.'),
-            RecipeStep('Spread the mustard mixture in a think, even layer to the edges of the pastry.'),
+            RecipeStep('Spread the mustard mixture in a thin, even layer to the edges of the pastry.'),
             RecipeStep('Sprinkle the parmesan evenly over the mustard.'),
         ]))
         
         r.addStep(RecipeStep('For Sweet',childStep=[
             RecipeStep('In a small bowl, stir together the sugar and cinnamon. Set aside.'),
-            RecipeStep('Sprinkle the mixture over the pastry evently.')
+            RecipeStep('Sprinkle the mixture over the pastry evenly.')
         ]))
             
         r.addStep(RecipeStep(
-            'Using both hands, gently lift one long edge of the pastry and fold it overr itself in 1" sections.'
+            'Using both hands, gently lift one long edge of the pastry and fold it over itself in 1" sections.'
             ' Alternate sides, until they both touch, forming a U shape.'
             ))
         r.addStep(RecipeStep('Slice the pastry into 1/2" thick slices. Place them about 2" apart on the pan.'))
         r.addStep(RecipeStep('Bake for 15 to 20 minutes or until puffed and deep golden brown.'))
         r.addStep(RecipeStep('For Sweet',childStep =[
-            RecipeStep('Re-heat the ganance in the microwavae. Dip 1/2 the palmiers in and sprinkle with sugar.')
+            RecipeStep('Re-heat the ganache in the microwave. Dip 1/2 the palmiers in and sprinkle with sugar.')
         ]))
         r.addStep(RecipeStep('Transfer the palmiers to a wire rack to cool completely.'))
         

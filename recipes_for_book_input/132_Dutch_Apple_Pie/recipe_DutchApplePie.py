@@ -52,7 +52,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         # Add Steps and Notes
         r.addStep( RecipeStep('Make the Crust',[
             RecipeStep('Place the flour and salt in a mixer bowl. Run the mixer at'
-                       ' low speed unit until lumps the size of peas (or smaller) remain.'),
+                       ' low speed until lumps the size of peas (or smaller) remain.'),
             RecipeStep('The water should be ice cold and added gradually while the mixer runs.'
                        ' When the dough starts to hold together a bit stop the mixer and gather'
                        ' it with your hands and form it into a ball.'),
@@ -70,7 +70,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addStep( RecipeStep('Pour the Apple mixture into the prepared pie pan.') )
         r.addStep( RecipeStep('Make the Topping',[
             RecipeStep('Cut the butter up with a knife. Add it to the flour and sugar and use a mixer to'
-                       ' get it to a breadcrum consistency.'),
+                       ' get it to a breadcrumb consistency.'),
             RecipeStep('Spread this mixture evenly over the top of the apples.')
             ]))
         

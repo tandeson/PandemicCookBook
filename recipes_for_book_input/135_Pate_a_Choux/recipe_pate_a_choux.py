@@ -24,6 +24,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         r = MyRecipe('Pate a Choux', 'Dessert', sharedIngredentList)
         r.setPathLoc( dirPathRecipe )
+
         
         #  -- Add Ingredients --
      
@@ -40,11 +41,11 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Combine the milk, water, chopped butter, and salt in a medium saucepan and bring to a boil'
             ' over medium-high heat.',
             
-            'Remove the pan from the heat and quickly thir in the flour, all at once.', 
+            'Remove the pan from the heat and quickly stir in the flour, all at once.', 
             
             'When the flour is dissolved and the mixture is smooth, return the pan to the heat. Cook over'
             ' medium-low heat, stirring constantly, until the mixture sizzles and the starches gelatinize'
-            ' on the bottom of the pot, an starts to form a crust (about 3 minutes). The mixture will be quite'
+            ' on the bottom of the pot, and starts to form a crust (about 3 minutes). The mixture will be quite'
             ' thick, similar in consistency to dry mashed potatoes.',
             
             'Transfer the mixture into the bowl of a stand mixer fitted with the paddle attachment.',
@@ -54,8 +55,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             ' overmix the dough or it will become oily and will not puff in the oven the way it should. The dough will'
             ' be thick like mayonnaise.',
             
-            'To test for proper consistency, scroup some batter up with your spatula and tip the spatula to see how fast'
-            ' it runs down the flat surface. It should run off very slowly and form a "V". If it is too tick and not running'
+            'To test for proper consistency, scoop some batter up with your spatula and tip the spatula to see how fast'
+            ' it runs down the flat surface. It should run off very slowly and form a "V". If it is too thick and not running'
             ' at all, stir in a little warm water, 1 tablespoon at a time, until it looks a bit looser.',
             
             'Use the Pate a Choux right away or cover the bowl with a wet kitchen towel or plastic wrap and let it stand at'

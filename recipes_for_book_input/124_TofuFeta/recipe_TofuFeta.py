@@ -27,11 +27,15 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addPicture('TofuFeta', 'TofuFeta_1.jpg')
         r.setPrimaryPicture('TofuFeta')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
+        
+        r.AddDescription("Keep the marinade remaining after the tofu is "
+                         "consumed - it can be delicious on its own as an"
+                         " addition to a salad")
         ## ---
         
         r.addIngredient('Tofu', 1, 'block, extra-firm')
         r.addIngredient('Lemon Juice', 0.25, 'cup')
-        r.addIngredient('Red Wine Vinegar', 0.25, 'cup')
+        r.addIngredient('Apple Cider Vinegar', 0.25, 'cup')
         r.addIngredient('Nutritional Yeast', 2, 'tablespoons')
         r.addIngredient('Miso Paste', 1, 'tablespoon')
         r.addIngredient('Basil', 1, 'teaspoon, dried')
@@ -41,8 +45,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         ## Steps
         steps = [
             'Mix everything except the tofu in a large tupperware container.',
-            'Cub the Tofo and place it in the tupperware, mix gently.',
-            'Refrigerate for at least 1 hour or up to a few days - then server.'
+            'Cub the Tofu and place it in the tupperware, mix gently.',
+            'Refrigerate for at least 1 hour or up to a few days - then serve.'
             ]
         
         for s in steps:

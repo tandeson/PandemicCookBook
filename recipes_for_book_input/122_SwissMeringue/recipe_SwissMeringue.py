@@ -39,12 +39,12 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Place the egg whites and powdered sugar in the bowl of a stand mixer. Place over a water '
             'bath and bring the mixture to 140 deg F, whisking constantly.',
             
-            'remove from the heat and place in the stand mixer. Using a whisk attachment beat the meringue '
+            'Remove from the heat and place in the stand mixer. Using a whisk attachment beat the meringue '
             'until it has completely cooled down, it is smooth and shiny and holds stiff peaks.',
             
             'Add Vanilla and mix (or - subsitude your own flavor).',
             
-            'Pre-heat the oven to 212 deg F. Transfer the Swiss meringue to a piping bag with a number 10 piping tip. '
+            'Pre-heat the oven to 210 deg F. Transfer the Swiss meringue to a piping bag with a number 10 piping tip. '
             'Place a parchment paper on the baking tray and pipe out small meringues. Make sure that the meringues are '
             'staggered so that air circulates as they bake.',
             

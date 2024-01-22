@@ -49,7 +49,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         r.addIngredient('Pasta', 16, 'oz, tube - rigatoni or penne rigate, etc')
         r.addIngredient('Balsamic Vinegar', 1, 'tablespoon')
-        r.addIngredient('Parsley', 1, 'bunch, italian, slivered')
+        r.addIngredient('Parsley', 1, 'bunch, italian, chopped')
            
 
         

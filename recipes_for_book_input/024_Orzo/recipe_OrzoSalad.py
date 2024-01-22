@@ -42,7 +42,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Black Pepper', 1, 'pinch, to taste')
         
         r.addIngredient('Extra Virgin Olive Oil', 6, 'tablespoons')
-        r.addIngredient('Red Wine Vinegar', 5, 'tablespoons')
+        r.addIngredient('Apple Cider Vinegar', 5, 'tablespoons')
         r.addIngredient('Lemon Juice', 2, 'tablespoon')
         
         # Add Steps and Notes

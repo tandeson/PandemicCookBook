@@ -53,7 +53,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'In a skillet heat the oil on medium high heat. Saute the leeks and mushrooms until tender.',
             'Stir in the thyme, and pour the mixture into the pastry shell.',
             'Sprinkle with cheese.',
-            'In a bowl, wisk the eggs, milk, salt, pepper and nutmeg. Pour into the pastry shell.',
+            'In a bowl, whisk the eggs, milk, salt, pepper and nutmeg. Pour into the pastry shell.',
             'Bake for 15 minutes. Then reduce heat to 375 deg F, and bake for another 20 - 25 minutes.',
             'Let stand for at least 10 minutes before cutting. The longer you let sit, the better the quiche will set.'
         ]

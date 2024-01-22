@@ -51,7 +51,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Bring to boil, then add the Red Onion, Ginger, Garlic, Salt and Sweet Potato.',
             'Cook on medium-low heat for 20 minutes.',
             'In a medium-sized heat-safe mixing bowl, combine the Peanut Butter and Tomato Paste.',
-            'Transfer 1 - 2 cups of the hot stock to the bowl. Wisk until smooth, then pour back '
+            'Transfer 1 - 2 cups of the hot stock to the bowl. Whisk until smooth, then pour back '
             'into the soup and mix well.',
             'Stir in Collard Greens and season the soup with Hot Sauce to taste.',
             'Simmer for 15 minutes on medium-low heat, stirring often.',

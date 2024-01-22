@@ -43,7 +43,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'This recipe goes fast - be sure to read all the steps and measure out the ingredents before starting.',
             'Place the milk and half the sugar in a saucepan and bring to a boil. Do not stir while heating.',
             'In a bowl, whisk together the remaining sugar, constarch, and salt.'
-            'Add the egg and yolks, wisking until very smooth.',
+            'Add the egg and yolks, whisking until very smooth.',
             'Temper the egg mixture with the milk and return to the saucepan. Bring the mixture back to a boil, whisking constantly.'
             ' Boil for 1 minute. Remove from the heat.',
             'Stir in the butter and vanilla extract. If you are using different flavor, this is the time to use that instead.',
