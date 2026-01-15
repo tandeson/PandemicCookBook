@@ -28,6 +28,7 @@ from IngredientList import C_INGREDIENTS
 ## For rendering options
 from scripts.CreateHtmlOut import genHtmlOut
 from scripts.CreateLaTexOut import genLaTexOut
+from scripts import myRecipe
 
 #*  Constants ****************************************************************
 C_DATETIME_STR_FMT_RULES = "%I:%M%p on %B %d, %Y" 
@@ -178,7 +179,9 @@ def mainControl(args):
                 
         ## for dir with info - run them
         for pythonModuleFile in pythonFiles:
-            strModulePath = str(pythonModuleFile).replace('\\','.')[:-3]
+            module_path = pythonModuleFile.with_suffix("")
+            # Normalize path separators so importlib works on Windows and POSIX.
+            strModulePath = str(module_path).replace("\\", ".").replace("/", ".")
             
             result = importlib.import_module(strModulePath)
 
@@ -221,6 +224,7 @@ def mainControl(args):
     # -- LaTex
     getLaTexOut = True
     if getLaTexOut:
+        myRecipe.set_latex_output_dir(outAbsPath / 'LaTex')
         genLaTexOut(args, outAbsPath, cookbookData, gitRepo)
 
     # -- Photo List

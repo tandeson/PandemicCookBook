@@ -30,9 +30,29 @@ from pylatex.utils import bold
 ## TODO - TEMP RMEOVE?
 from scripts.CreateLaTexOut import buildPdfImg
 
+# LaTeX output directory to support relative image paths.
+LATEX_OUT_DIR = None
+
+def set_latex_output_dir(outDir):
+    """
+    Configure output directory so LaTeX image paths can be relative.
+    """
+    global LATEX_OUT_DIR
+    LATEX_OUT_DIR = Path(outDir).resolve()
+
+def _latex_image_path(picPath):
+    if LATEX_OUT_DIR is None:
+        return Path(picPath).resolve().as_posix()
+    try:
+        relPath = os.path.relpath(Path(picPath).resolve(), LATEX_OUT_DIR)
+        return relPath.replace(os.sep, '/')
+    except Exception:
+        return Path(picPath).resolve().as_posix()
+
 #*  Constants ****************************************************************
 # PY-2.10
 # DELIMITER = ","
+RECIPE_STEP_IMG_WIDTH = r"0.2\textwidth"
 
 
 #*  Class and Function Definitions *******************************************
@@ -91,9 +111,9 @@ class RecipeStep:
             for picLoc in self.info['inPic']:
                 if ('LaTex' == genOutFormat):
                     imgFig = Figure(position='h!')
-                    imgFig.add_image( 
-                        str( Path( picLoc ).absolute() ), 
-                        width=NoEscape(r"0.3\textwidth")
+                    imgFig.add_image(
+                        _latex_image_path(picLoc),
+                        width=NoEscape(RECIPE_STEP_IMG_WIDTH)
                         )
                     imgFigList.append( imgFig )
                 elif('LaTex_noFig' == genOutFormat):
@@ -101,8 +121,8 @@ class RecipeStep:
                     imgFigList.append(
                         Command(
                             'includegraphics',
-                            [NoEscape(str( Path( picLoc ).absolute().as_posix() ))],
-                            NoEscape(r'width=0.3\textwidth')
+                            [NoEscape(_latex_image_path(picLoc))],
+                            NoEscape(r'width=%s' % RECIPE_STEP_IMG_WIDTH)
                             )
                         )
                     imgFigList.append( Command('end',['center'] ) )
@@ -131,8 +151,8 @@ class RecipeStep:
                 LaTexDoc.append(
                     Command(
                             'includegraphics',
-                            [NoEscape(str( Path( picLoc ).absolute().as_posix() ))],
-                            NoEscape(r'width=0.3\textwidth')
+                            [NoEscape(_latex_image_path(picLoc))],
+                            NoEscape(r'width=%s' % RECIPE_STEP_IMG_WIDTH)
                         )
                     )
                 LaTexDoc.append( Command('end',['center'] ) )
@@ -465,6 +485,36 @@ class MyRecipe:
         else:
             raise Exception(" Unknown Generation format %s" % genOutFormat)
         
+        return dataBack
+
+    #-------------------------------------------------------------------------
+    def genNotesBlock(self, genOutFormat='html'):
+        """
+        Generate the formatted block for notes.
+        """
+        dataBack = None
+
+        if genOutFormat == 'html':
+            if not self.info['notes']:
+                return ''
+
+            dataBack = '<ul class="notes-list">'
+            for note in self.info['notes']:
+                notePics = ''
+                for picLoc in note['picPathList']:
+                    notePics += (
+                        '<div class="note-pic">'
+                        + makeHtmlEmbedImgFromFile(picLoc, imageSize=(360, 360))
+                        + '</div>'
+                    )
+                if notePics:
+                    notePics = '<div class="note-pics">' + notePics + '</div>'
+
+                dataBack += '<li>' + note['txt'] + notePics + '</li>'
+            dataBack += '</ul>'
+        else:
+            raise Exception("Unknown gen format: %s" % genOutFormat)
+
         return dataBack
     
     #-------------------------------------------------------------------------

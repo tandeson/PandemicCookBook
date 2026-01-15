@@ -19,72 +19,158 @@ from scripts.html_helpers import makeHtmlEmbedImgFromFile
 # PY-2.10
 # DELIMITER = "," 
 %>\
-<hr color='GRAY' width="100%" size="2">
 ##============================================================================
 <html>
 <head>
 <title>
 Recipe: ${inRecipeData.getName()}
 </title>
-<head>
+</head>
 <style>
-
-% if inRecipeData.getPicturePrimary() == None:
-
-/* Style the header */
-header {
-  background-color: #666;
-  padding: 30px;
-  text-align: center;
-  font-size: 35px;
-  color: white;
-}
-
-% else:
-
-/* Style the header */
-headerPic {
-  background-color: #666;
-  color: white;
-  width: 300px;
-  float: left;
-}
-
-/* Style the header */
-header {
-  background-color: #666;
-  padding: 30px;
-  text-align: center;
-  font-size: 35px;
-  color: white;
-  width: calc(100% - 300px);
-  float: left;
-}
-
-% endif
-
-nav {
-  float: left;
-  width: 30%;
-  background: #ccc;
-  padding: 20px;
-}
-
-article {
-  float: left;
-  padding: 20px;
-  width: 70%;
-}
-
-/* Clear floats after the columns */
-bodySectionBlock {
-  content: "";
-  clear: both;
-  display: flex;
-  flex-direction: row;
-}
-
 ${makeHtmlStyle()}
+
+:root {
+  --ink: #1e1c19;
+  --muted: #6b6762;
+  --rule: #d6d0c4;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  color: var(--ink);
+  background: #f2efe9;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 14px 18px;
+  background: #ffffff;
+  border: 1px solid var(--rule);
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.7em;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+
+.recipe-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.recipe-layout.no-photo {
+  grid-template-columns: 1fr;
+}
+
+.recipe-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.recipe-text {
+  line-height: 1.35;
+}
+
+.recipe-text h1 {
+  font-size: 2.1em;
+  margin: 0 0 6px 0;
+  line-height: 1.05;
+}
+
+.section {
+  padding-top: 8px;
+  margin-top: 8px;
+}
+
+.section:first-of-type {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.section + .section {
+  border-top: 1px solid var(--rule);
+}
+
+.ingredients h2,
+.steps h2,
+.notes h3 {
+  margin: 0 0 6px 0;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.ingredients table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+
+.ingredients td {
+  padding: 1px 4px;
+  vertical-align: top;
+}
+
+.steps ul {
+  margin: 0;
+  padding-left: 1.2em;
+  list-style: decimal;
+}
+
+.steps ul ul {
+  list-style: lower-alpha;
+  margin-top: 4px;
+}
+
+.steps li {
+  margin-bottom: 0.45em;
+}
+
+.steps img {
+  max-width: 360px;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-top: 6px;
+}
+
+.notes-list {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.note-pics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.note-pic img {
+  width: 180px;
+  height: auto;
+  border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding: 16px;
+  }
+  .recipe-layout {
+    grid-template-columns: 1fr;
+  }
+}
 
 </style>
 
@@ -92,35 +178,45 @@ ${makeHtmlStyle()}
 
 <body>
 
-<bodySectionBlock>
-% if inRecipeData.getPicturePrimary() != None:
-<headerPic>
+<div class="page">
+
+<% 
+    hasPhoto = inRecipeData.getPicturePrimary() != None
+    notesBlock = inRecipeData.genNotesBlock('html')
+%>
+
+<div class="recipe-layout${' no-photo' if not hasPhoto else ''}">
+% if hasPhoto:
+<aside class="recipe-photo">
     ${makeHtmlEmbedImgFromFile( inRecipeData.getPicturePrimary()['path']) }
-</headerPic>
+</aside>
 % endif
 
-<header>
-  <h2>
-  Recipe: ${inRecipeData.getName()}
-  </h2>
-</header>
-</bodySectionBlock>
+<section class="recipe-text">
+  <div class="kicker">Recipe</div>
+  <h1>${inRecipeData.getName()}</h1>
 
-<bodySectionBlock>
+  <div class="section ingredients">
+  ## Generate the Ingredients List  
+  <h2>Ingredients</h2>
+  ${inRecipeData.genIngredientsBlock()}
+  </div>
 
-<nav>
+  <div class="section steps">
+  <h2>Steps</h2>
+  ${inRecipeData.genStepsBlock('html')}
+  </div>
 
-## Generate the Ingredients List  
-<h1> Ingredients </h1>
-${inRecipeData.genIngredientsBlock()}
-</nav>
+  % if notesBlock:
+  <div class="section notes">
+    <h3>Notes</h3>
+    ${notesBlock}
+  </div>
+  % endif
+</section>
+</div>
 
-<article>
-<h2>Directions</h2>
-${inRecipeData.genStepsBlock('html')}
-</article>
-
-</bodySectionBlock>
+</div>
 
 ##============================================================================
 ## Footer
@@ -135,6 +231,7 @@ Template: ${genToolTemplate}<BR>
 </i>
 </p>
 </footer>
+
 
 </body>
 

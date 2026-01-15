@@ -1,0 +1,26 @@
+LaTeX review checklist and notes
+
+Checklist
+- [x] Read LaTeX generation entrypoint and document setup for layout defaults and global page style.
+- [x] Review generated LaTeX output file for layout issues and wasted space.
+- [x] Review recipe formatting variants for duplication and layout inefficiencies (spacing, columns, tables).
+- [x] Review step/ingredient generation for spacing, image placement, and list structure.
+- [x] Check index/table-of-contents formatting and page-style consistency.
+- [x] Identify layout changes that reduce whitespace while preserving readability.
+- [x] Note bugs or questionable constructs with file refs for fixes later.
+
+Notes
+- Started with scripts/CreateLaTexOut.py and scripts/myRecipe.py.
+- Reviewed output/LaTex/Pandemic_Cookbook.tex for layout behavior and spacing.
+- Section headers each force a standalone page via \newpage after the centered section title/rules; likely large intentional whitespace.
+- Every recipe ends with \newpage, so even short recipes consume a full page with no stacking.
+- Many recipe layouts insert \vrule depth 7in inside tabularx; fixed depth likely forces tall columns and unused space for short recipes.
+- Some recipe layouts emit empty \begin{tabularx}{\textwidth}{XXX} rows as spacing; appears as blank rows before paracol content.
+- Labels use only space stripping (e.g., \label{subsec:Pierogi(Piragi)}), leaving punctuation in labels; may be fragile for cross-refs.
+- Images are referenced with absolute paths containing spaces; works here but not portable to other systems/LaTeX setups.
+- Implemented label sanitization (strip non-alnum), now used for subsection labels and \pageref targets.
+- Replaced fixed-height \vrule with inline separator in tabularx column specs to avoid forced tall columns.
+- Removed placeholder tabularx(XXX) spacers in default/two-column formats.
+- Replaced per-recipe and per-section \newpage with small \vspace{12pt} to allow stacking.
+- Switched LaTeX images to relative paths via output/LaTex base (and step images via myRecipe global).
+- Replaced Center list environments with grouped \\centering to fix LaTeX \\item errors; build now succeeds.
