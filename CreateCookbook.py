@@ -487,9 +487,11 @@ def mainControl(args):
         language_slug = language_slug.lower()
 
         local_mapping = {}
+        localized_by_recipe = {}
         for recipe in cookbookData['Recipes']['inputObjects'].values():
             localized_data = _load_localized_recipe_json(recipe.getPathLoc(), language_slug)
             if localized_data:
+                localized_by_recipe[recipe.getName()] = localized_data
                 recipe_map = _build_local_translation_map(recipe, localized_data)
                 _merge_translation_map(local_mapping, recipe_map)
 
@@ -515,9 +517,31 @@ def mainControl(args):
         elif openai_translator:
             set_translator(openai_translator)
         else:
-            raise Exception(
-                "OPENAI_API_KEY is required for translations when no local files are available."
-            )
+            set_translator(None)
+
+        if not openai_translator:
+            if not localized_by_recipe:
+                raise Exception(
+                    "No localized recipe files found for language '%s'." % args.language
+                )
+            filtered = {}
+            for name, recipe in cookbookData['Recipes']['inputObjects'].items():
+                if name in localized_by_recipe:
+                    filtered[name] = recipe
+            cookbookData['Recipes']['inputObjects'] = filtered
+            cookbookData['Recipes']['sorted_names'] = list(filtered.keys())
+            cookbookData['Recipes']['sorted_names'].sort()
+            if args.recipe_number is not None and not cookbookData['Recipes']['sorted_names']:
+                raise Exception(
+                    "No localized recipe file found for selected recipe number %s." % args.recipe_number
+                )
+            filtered_names = set(cookbookData['Recipes']['sorted_names'])
+            for ingredient in C_INGREDIENTS:
+                recipe_list = ingredient.info.get('recipeList', {})
+                ingredient.info['recipeList'] = {
+                    name: recipe for name, recipe in recipe_list.items()
+                    if name in filtered_names
+                }
     
     ## build up Git info
     gitRepo = git.Repo(search_parent_directories=True)
