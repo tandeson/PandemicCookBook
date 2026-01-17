@@ -1,4 +1,5 @@
 desktop.ini
 *.pyc
+__pycache__/
 output/
 /CoverWork
