@@ -26,6 +26,7 @@ from CookbookConst import C_BOOK_SECTIONS, C_RECIPE_FORMATING
 
 from pylatex import Itemize, Figure, Command, NewLine, NoEscape, Package
 from pylatex.utils import bold
+from scripts.translation_runtime import translate_text
 
 ## TODO - TEMP RMEOVE?
 from scripts.CreateLaTexOut import buildPdfImg
@@ -91,12 +92,13 @@ class RecipeStep:
         Generate the formatted for the steps section
         """
         strStep = None
+        translated_text = translate_text(self.info['inText']) if self.info['inText'] else ''
         
         if('html' == genOutFormat):
             strPics = ''
             for picLoc in self.info['inPic']:
                     strPics += makeHtmlEmbedImgFromFile( picLoc )
-            strStep = '<li>' + self.info['inText'] + '<br>' + strPics + '</li>'
+            strStep = '<li>' + translated_text + '<br>' + strPics + '</li>'
             
             
             if len(self.info['childStep']):
@@ -127,7 +129,8 @@ class RecipeStep:
                         )
                     imgFigList.append( Command('end',['center'] ) )
                 
-            if( self.info['inText']): LaTexItemize.add_item(  self.info['inText'] )
+            if translated_text:
+                LaTexItemize.add_item(translated_text)
             
             for iFig in imgFigList:
                 LaTexItemize.append( iFig ) 
@@ -139,10 +142,10 @@ class RecipeStep:
                 strStep = LaTexItemize
          
         elif( 'LaTex_indented_InjectHere' == genOutFormat):
-            if( self.info['inText']):
+            if translated_text:
                 strOut = ''
                 if(callDepth > 0 ): strOut += '- '
-                strOut += self.info['inText']
+                strOut += translated_text
                 LaTexDoc.append( strOut )
                 LaTexDoc.append( NewLine() )
             
@@ -221,6 +224,13 @@ class MyRecipe:
             string - name
         """
         return self.info['name']
+
+    #-------------------------------------------------------------------------
+    def getDisplayName(self):
+        """
+        Return the translated name of this Recipe for output.
+        """
+        return translate_text(self.info['name'])
     
     #-------------------------------------------------------------------------
     def getSection(self):
@@ -382,6 +392,13 @@ class MyRecipe:
         Keep track of missing information
         """
         return self.info['todo']
+
+    #-------------------------------------------------------------------------
+    def getDisplayToDoNotes(self):
+        """
+        Return translated TODO notes for output.
+        """
+        return [translate_text(item) for item in self.info['todo']]
         
     #-------------------------------------------------------------------------
     def genIngredientsBlock(self, genOutFormat='html'):
@@ -399,7 +416,8 @@ class MyRecipe:
         if ( genOutFormat == 'html'):
             dataBack = ''
             for ingredientGrp in self.info['ingredientsGrpOrder']:
-                dataBack += '<h2>' + ingredientGrp + '</h2>'
+                display_group = translate_text(ingredientGrp)
+                dataBack += '<h2>' + display_group + '</h2>'
                 
                 dataBack += '<table>'
                 for ingredient in self.info['ingredients'][ingredientGrp]:
@@ -416,14 +434,14 @@ class MyRecipe:
                 
                 if( len(ingredientGrp) ):
                     dataBack.append( ('',  '' , '') )
-                    dataBack.append( ('', bold(ingredientGrp), '') )
+                    dataBack.append( ('', bold(translate_text(ingredientGrp)), '') )
                     
                 for ingredient in self.info['ingredients'][ingredientGrp]:
                     dataBack.append( 
                         (
                             ingredient['amount'],
-                            ingredient['units'],
-                            ingredient['ingredients'].getName(),
+                            translate_text(ingredient['units']),
+                            translate_text(ingredient['ingredients'].getName()),
                             ingredient['ingredients'].getRecipeToMake()
                         ) 
                     )
@@ -510,7 +528,7 @@ class MyRecipe:
                 if notePics:
                     notePics = '<div class="note-pics">' + notePics + '</div>'
 
-                dataBack += '<li>' + note['txt'] + notePics + '</li>'
+                dataBack += '<li>' + translate_text(note['txt']) + notePics + '</li>'
             dataBack += '</ul>'
         else:
             raise Exception("Unknown gen format: %s" % genOutFormat)
@@ -527,7 +545,7 @@ class MyRecipe:
     #-------------------------------------------------------------------------
     def GetDescription(self):
         if 'description' in self.info.keys():
-            return self.info['description']
+            return translate_text(self.info['description'])
         else:
             return None
     

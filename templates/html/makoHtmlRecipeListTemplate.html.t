@@ -22,11 +22,12 @@ from scripts.html_helpers import makeHtmlLink
 %>\
 <hr color='GRAY' width="100%" size="2">
 ##============================================================================
-<html>
+<html lang="${labels['html_lang']}">
 
 <head>
+<meta charset="utf-8">
 <title>
-Recipe List
+${labels['recipe_list']}
 </title>
 <head>
 
@@ -75,7 +76,7 @@ ${makeHtmlStyle()}
 
 <header>
   <h2>
-  Recipe List
+  ${labels['recipe_list']}
   </h2>
 </header>
 
@@ -85,16 +86,16 @@ ${makeHtmlStyle()}
 
 <article>
 
-<h2>Recipes</h2>
+<h2>${labels['recipes']}</h2>
 <ul>
 % for recipName in cookbookData['Recipes']['sorted_names']:
     <li>
-        <a href="${cookbookData['Recipes']['html'][recipName]['file_name']}"> ${recipName} </a>
+        <a href="${cookbookData['Recipes']['html'][recipName]['file_name']}"> ${cookbookData['Recipes']['inputObjects'][recipName].getDisplayName()} </a>
     </li>
     %if len( cookbookData['Recipes']['inputObjects'][recipName].getToDoNotes() ):
     <ul>
-        %for todoItem in cookbookData['Recipes']['inputObjects'][recipName].getToDoNotes():
-            <li> TODO: ${todoItem} </li>
+        %for todoItem in cookbookData['Recipes']['inputObjects'][recipName].getDisplayToDoNotes():
+            <li> ${labels['todo']}: ${todoItem} </li>
         % endfor
     </ul>
     %endif
@@ -103,7 +104,7 @@ ${makeHtmlStyle()}
 </ul>
 
 % if len(cookbookData['errors']['dirMissingScripts']):
-<h2> Empty Directories </h2>
+<h2> ${labels['empty_directories']} </h2>
 <ul>
 <%
   strListDir = []
@@ -131,11 +132,11 @@ ${makeHtmlStyle()}
 ## Recommended: Identify template used to generate html output.
 <footer>
 <p>
-Template: ${genToolTemplate}<BR>
+${labels['template']}: ${genToolTemplate}<BR>
 <i>
-    Generated: ${runDate} <br>
-    using tool: ${genToolName} <br>
-    version: ${genToolVersion} <br>
+    ${labels['generated']}: ${runDate} <br>
+    ${labels['using_tool']}: ${genToolName} <br>
+    ${labels['version']}: ${genToolVersion} <br>
 </i>
 </p>
 </footer>

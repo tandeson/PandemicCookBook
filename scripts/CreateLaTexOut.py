@@ -30,6 +30,8 @@ from pylatex import Document, Section, Subsection, LargeText, SmallText, \
                     Package, Figure
 from pylatex.utils import NoEscape, italic, bold
 from pylatex.section import Chapter
+from scripts.i18n import get_language_pack
+from scripts.translation_runtime import translate_text
 
 #*  Constants ****************************************************************
 RECIPE_VSPACE_SMALL = '3pt'
@@ -46,6 +48,9 @@ def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
     outLaTexAbsPath.mkdir(parents=True, exist_ok=True)
     
     outLaTexAbsFilePath =  Path( os.path.join( outLaTexAbsPath, args.name) )
+    language_pack = get_language_pack(args.language)
+    labels = language_pack['labels']
+    latex_settings = language_pack['latex']
     
     ### --- Build LaTex Document / Object  ---
     if(args.verbose):
@@ -65,6 +70,12 @@ def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
             'includeheadfoot': True
             }
          )
+
+    if latex_settings.get('use_polyglossia'):
+        doc.preamble.append(Package('fontspec'))
+        doc.preamble.append(Package('polyglossia'))
+        doc.preamble.append(NoEscape(r'\setdefaultlanguage{%s}' % latex_settings['language']))
+        doc.preamble.append(NoEscape(r'\setmainfont{%s}' % latex_settings['main_font']))
     
     ## Setup Syle for Recipe pages
     strNameBookStyle = 'styleBookContents'
@@ -103,35 +114,51 @@ def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
 
     ## --------------------
     ## Build Up the Recipe Book Structure
-    genTitlePage(doc)
+    genTitlePage(doc, labels)
     
-    genCopyrightPage(doc, gitRepo)
+    genCopyrightPage(doc, gitRepo, labels)
     
     # Add in the Table of Contents
     doc.append( Command('tableofcontents') )
     
     # Add in the Recipes
     doc.change_document_style("styleBookContents")
-    with doc.create( Chapter('Recipes') ):
+    with doc.create( Chapter(labels['recipes']) ):
         doc.append( Command('thispagestyle', [ strNameBookStyle]) )
         doc.append( 
             italic(
-                "The following are the things we've been cooking together as we find ways to "
-                "keep busy inside and away from people. We've been enjoying them, and we hope you do too.")
+                labels['intro'])
             )
         doc.append( NewPage())
         
         recipeList = list( cookbookData['Recipes']['inputObjects'].keys() )
         recipeList.sort()
+
+        if args.recipe_number is not None:
+            if len(recipeList) == 1:
+                selected_recipe = recipeList[0]
+            else:
+                recipe_index = args.recipe_number - 1
+                selected_recipe = recipeList[recipe_index]
+            recipeList = [selected_recipe]
+            outLaTexAbsFilePath = Path(
+                os.path.join(
+                    outLaTexAbsPath,
+                    "%s_%s" % (args.name, util_sanitize_label(selected_recipe))
+                )
+            )
         
         first_section = True
         for grpSectionName in C_BOOK_SECTIONS:
             if (args.verbose):
                     print( "Building LaTex Code for Section:%s" % ( grpSectionName ) )
+            if args.recipe_number is not None:
+                if cookbookData['Recipes']['inputObjects'][recipeList[0]].getSection() != grpSectionName:
+                    continue
             if not first_section:
                 doc.append( NewPage() )
             doc.append( NoEscape(r'\begingroup\centering') )
-            doc.append( Section(  grpSectionName  ) )
+            doc.append( Section(translate_text(grpSectionName)) )
             doc.append( NoEscape(r'\par\endgroup') )
                 
             ## TODO - any info on this sections..
@@ -143,42 +170,60 @@ def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
                 if (args.verbose):
                     print( "-Building LaTex Code for Recipe:%s" % ( iRecipe ) )
                 if (cookbookData['Recipes']['inputObjects'][iRecipe].getSection() == grpSectionName):
-                    genRecipe(doc, iRecipe, cookbookData['Recipes']['inputObjects'][iRecipe], outLaTexAbsPath)
+                    genRecipe(
+                        doc,
+                        iRecipe,
+                        cookbookData['Recipes']['inputObjects'][iRecipe],
+                        outLaTexAbsPath,
+                        labels,
+                    )
     
-        with doc.create( Chapter('Index') ):
-            doc.append( Command('thispagestyle', [ strNameBookStyle]) )
-            
-            doc.append( Command('twocolumn ',[],[NoEscape(r'\section{By Ingredient} \label{sec:ByIngredient}')]) )
-            getLateByIngredientIndex( doc, cookbookData)
-            
-            
-            doc.append( Command('onecolumn ') )
+        if args.recipe_number is None:
+            with doc.create( Chapter(labels['index']) ):
+                doc.append( Command('thispagestyle', [ strNameBookStyle]) )
+                
+                doc.append( Command(
+                    'twocolumn ',
+                    [],
+                    [NoEscape(r'\section{%s} \label{sec:ByIngredient}' % labels['by_ingredient'])]
+                ))
+                getLateByIngredientIndex( doc, cookbookData)
+                
+                
+                doc.append( Command('onecolumn ') )
             
     ## --------------------
     ## Do the generation
     if(args.verbose):
         print("Building LaTex file: %s" % (outLaTexAbsFilePath) )
     
-    doc.generate_pdf(
-        outLaTexAbsFilePath, 
-        clean_tex=False)
+    compiler = latex_settings.get('compiler')
+    if compiler:
+        doc.generate_pdf(
+            outLaTexAbsFilePath,
+            clean_tex=False,
+            compiler=compiler)
+    else:
+        doc.generate_pdf(
+            outLaTexAbsFilePath,
+            clean_tex=False)
     
     if(args.verbose):
         print("Finished Building LaTex file: %s" % (outLaTexAbsFilePath) )
 
 
 #=============================================================================
-def genTitlePage( latexDoc ):
+def genTitlePage(latexDoc, labels):
     """
     Build the Title Page
     """
-    latexDoc.preamble.append(Command('title', 'The Pandemic Cookbook'))
+    latexDoc.preamble.append(Command('title', labels['title']))
     latexDoc.preamble.append(Command('author', NoEscape(r'Bilyana Yakova \and Thomas Anderson')))
     latexDoc.preamble.append(Command('date', NoEscape(r'\today')))
     latexDoc.append(NoEscape(r'\maketitle'))
 
 #=============================================================================
-def genCopyrightPage( latexDoc, gitRepo ):
+def genCopyrightPage(latexDoc, gitRepo, labels):
     """
     Add in a Copyright page
     """
@@ -188,38 +233,40 @@ def genCopyrightPage( latexDoc, gitRepo ):
     with latexDoc.create(Center()) as centered:
         centered.append( Command('vspace', ['80pt']))
         centered.append( NoEscape(
-            'Copyright '+ 
-            '\copyright' + 
-            ' ' + 
-            str(now.year) + 
-            ' by Thomas Anderson and Bilyana Yakova' ))
+            labels['copyright'] + ' ' +
+            '\copyright' +
+            ' ' +
+            str(now.year) +
+            ' ' +
+            labels['by'] +
+            ' Thomas Anderson and Bilyana Yakova' ))
         
     with latexDoc.create(Center()) as centered:
         centered.append( Command('vspace', [V_SPACE_SIZE]))
-        centered.append( 'All Rights Reserved.')
+        centered.append(labels['all_rights_reserved'])
         
     with latexDoc.create(Center()) as centered:
         centered.append( Command('vspace', [V_SPACE_SIZE]))
-        centered.append( 'Published by Lulu Press' )
+        centered.append(labels['published_by'])
         centered.append(NoEscape(r'\\'))
         centered.append( 'www.lulu.com' )
         
     with latexDoc.create(Center()) as centered:
         centered.append( Command('vspace', ['80pt']))
-        centered.append( 'Git Info' )
+        centered.append(labels['git_info'])
         centered.append(NoEscape(r'\\')) 
-        centered.append( 'Commit:%s' % (gitRepo.commit().hexsha) )
+        centered.append( '%s:%s' % (labels['commit'], gitRepo.commit().hexsha) )
         centered.append(NoEscape(r'\\')) 
-        centered.append( 'Clean Commit:%s'%(str(not gitRepo.is_dirty())).strip() )
+        centered.append( '%s:%s' % (labels['clean_commit'], str(not gitRepo.is_dirty()).strip()) )
         
     latexDoc.append( NewPage() )
 
 #=============================================================================
-def genRecipe( latexDoc, recipeName, recipeData, outLaTexAbsPath ):
+def genRecipe(latexDoc, recipeName, recipeData, outLaTexAbsPath, labels):
     """
     Format a Recipe into LaTex
     """
-    genRecipeFormatCompactImageLeft( latexDoc, recipeName, recipeData, outLaTexAbsPath )
+    genRecipeFormatCompactImageLeft(latexDoc, recipeName, recipeData, outLaTexAbsPath, labels)
 
 #=============================================================================
 # Helpers
@@ -232,7 +279,7 @@ def util_FancyBuildHeader( latexDoc, recipeName  ):
     '''
     label = 'subsec:%s' % (util_sanitize_label(recipeName))
     latexDoc.append( NoEscape(r'\begingroup\centering') )
-    latexDoc.append( Subsection( "%s" % ( recipeName ), label=label))
+    latexDoc.append( Subsection( "%s" % ( translate_text(recipeName) ), label=label))
     latexDoc.append( NoEscape(r'\par\endgroup') )
 
 #=============================================================================
@@ -241,9 +288,9 @@ def util_reserve_recipe_header_space(latexDoc, lines=RECIPE_HEADER_NEEDSPACE_LIN
     latexDoc.append(NoEscape(r'\nopagebreak[4]'))
 
 #=============================================================================
-def util_injectNotes( latexDoc, recipeData  ):
+def util_injectNotes(latexDoc, recipeData, labels):
     latexDoc.append( Command('vspace', [RECIPE_VSPACE_SMALL] ) )
-    latexDoc.append( LargeText( bold('Notes')) )
+    latexDoc.append( LargeText( bold(labels['notes'])) )
     latexDoc.append( NoEscape(r'\par')  )
     latexDoc.append( 
             SmallText( italic( recipeData.GetDescription() ))
@@ -271,8 +318,15 @@ def util_refRecipePageNum( strRecipeName):
     return NoEscape(r'\pageref{subsec:%s}' % (util_sanitize_label(strRecipeName)))
 
 #=============================================================================
+def util_page_ref_text(labels, recipeName):
+    """
+    Return a localized page reference text fragment.
+    """
+    return r'%s \pageref{subsec:%s}' % (labels['page_abbrev'], util_sanitize_label(recipeName))
+
+#=============================================================================
 def util_sanitize_label(strLabel):
-    sanitized = re.sub(r'[^A-Za-z0-9]', '', strLabel)
+    sanitized = re.sub(r'[^\w]', '', strLabel, flags=re.UNICODE)
     if not sanitized:
         sanitized = 'Recipe'
     return sanitized
@@ -293,7 +347,7 @@ def util_tex_image_path(imgPath, outLaTexAbsPath):
 #=============================================================================
 
 #=============================================================================
-def genRecipeFormatTopTwoColumn( latexDoc, recipeName, recipeData, outLaTexAbsPath ):
+def genRecipeFormatTopTwoColumn(latexDoc, recipeName, recipeData, outLaTexAbsPath, labels):
     
     ## Create Recipe Header
     util_reserve_recipe_header_space(latexDoc, RECIPE_HEADER_NEEDSPACE_LINES)
@@ -325,10 +379,10 @@ def genRecipeFormatTopTwoColumn( latexDoc, recipeName, recipeData, outLaTexAbsPa
             if( ingredDat[3] != None):
                 ingredPage.add_row( 
                     ingredDat[0], 
-                    (NoEscape(
-                        ingredDat[1] + ' ' + 
-                        ingredDat[2] + 
-                        ', pg ' + util_refRecipePageNum(ingredDat[3]))
+                    NoEscape(
+                        ingredDat[1] + ' ' +
+                        ingredDat[2] +
+                        ', ' + util_page_ref_text(labels, ingredDat[3])
                     )
                 )
             else:
@@ -351,7 +405,7 @@ def genRecipeFormatTopTwoColumn( latexDoc, recipeName, recipeData, outLaTexAbsPa
     latexDoc.append( Command('vspace', [RECIPE_VSPACE_AFTER]) )
   
 #=============================================================================
-def genRecipeFormatFancyLong( latexDoc, recipeName, recipeData, outLaTexAbsPath ):
+def genRecipeFormatFancyLong(latexDoc, recipeName, recipeData, outLaTexAbsPath, labels):
     
     ingredLaTex = recipeData.genIngredientsBlock('LaTex')   
 
@@ -397,7 +451,7 @@ def genRecipeFormatFancyLong( latexDoc, recipeName, recipeData, outLaTexAbsPath 
                     NoEscape(
                         str(ingredDat[0]) + ' ' + 
                         ingredDat[1] + ' ' + 
-                        ingredDat[2] + ', pg ' + util_refRecipePageNum(ingredDat[3]) 
+                        ingredDat[2] + ', ' + util_page_ref_text(labels, ingredDat[3])
                         )
                     )
                 latexDoc.append( NoEscape(r'\par') )
@@ -426,7 +480,7 @@ def genRecipeFormatFancyLong( latexDoc, recipeName, recipeData, outLaTexAbsPath 
     latexDoc.append( Command('vspace', [RECIPE_VSPACE_AFTER]) )
     
 #=============================================================================
-def genRecipeFormatFancyTallPic( latexDoc, recipeName, recipeData, outLaTexAbsPath ):
+def genRecipeFormatFancyTallPic(latexDoc, recipeName, recipeData, outLaTexAbsPath, labels):
     '''
     Fancy formating with inspiration from https://www.etsy.com/listing/827640730/printable-recipe-book-kit-editable
     '''
@@ -450,8 +504,8 @@ def genRecipeFormatFancyTallPic( latexDoc, recipeName, recipeData, outLaTexAbsPa
                     ingredDat[0], 
                     (NoEscape(
                         ingredDat[1] + ' ' + 
-                        ingredDat[2] + 
-                        ', pg ' + util_refRecipePageNum( ingredDat[3]) )
+                        ingredDat[2] +
+                        ', ' + util_page_ref_text(labels, ingredDat[3]) )
                     )
                 )
             else:
@@ -474,7 +528,7 @@ def genRecipeFormatFancyTallPic( latexDoc, recipeName, recipeData, outLaTexAbsPa
             outLaTexAbsPath)
     
     latexDoc.append( Command('vspace', [RECIPE_VSPACE_SMALL] ) )
-    latexDoc.append( LargeText( bold('Ingredients')) )
+    latexDoc.append( LargeText( bold(labels['ingredients'])) )
     latexDoc.append( NoEscape(r'\par') )
 
 #=============================================================================
@@ -499,13 +553,13 @@ def util_addPicFixedSize(latexDoc, strPicPath, widthStr, heightStr, outLaTexAbsP
     ## Column 3
     latexDoc.append( Command('vspace', [RECIPE_VSPACE_SMALL] ) )
     
-    latexDoc.append( LargeText( bold('Directions')) )
+    latexDoc.append( LargeText( bold(labels['directions'])) )
     latexDoc.append( NoEscape(r'\par') )
     latexDoc.append(recipeData.genStepsBlock('LaTex', latexDoc) )
     
     
     if recipeData.GetDescription():
-        util_injectNotes( latexDoc, recipeData  )
+        util_injectNotes(latexDoc, recipeData, labels)
          
     latexDoc.append( NoEscape(r'\\'))
     
@@ -516,7 +570,7 @@ def util_addPicFixedSize(latexDoc, strPicPath, widthStr, heightStr, outLaTexAbsP
     latexDoc.append( Command('vspace', [RECIPE_VSPACE_AFTER]) )
 
 #=============================================================================
-def genRecipeFormatFancyWidePic( latexDoc, recipeName, recipeData, outLaTexAbsPath ):
+def genRecipeFormatFancyWidePic(latexDoc, recipeName, recipeData, outLaTexAbsPath, labels):
     '''
     Fancy formating with inspiration from https://www.etsy.com/listing/827640730/printable-recipe-book-kit-editable
     '''
@@ -540,8 +594,8 @@ def genRecipeFormatFancyWidePic( latexDoc, recipeName, recipeData, outLaTexAbsPa
                     ingredDat[0], 
                     (NoEscape(
                         ingredDat[1] + ' ' + 
-                        ingredDat[2] + 
-                        ', pg ' + util_refRecipePageNum(ingredDat[3]))
+                        ingredDat[2] +
+                        ', ' + util_page_ref_text(labels, ingredDat[3]))
                     )
                 )
             else:
@@ -556,14 +610,14 @@ def genRecipeFormatFancyWidePic( latexDoc, recipeName, recipeData, outLaTexAbsPa
     
     ## Column 1
     latexDoc.append( Command('vspace', [RECIPE_VSPACE_SMALL] ) )
-    latexDoc.append( LargeText( bold('Ingredients')) )
+    latexDoc.append( LargeText( bold(labels['ingredients'])) )
     latexDoc.append( NoEscape(r'\par') )
     latexDoc.append(ingredPage )
     
     if recipeData.GetDescription():
         latexDoc.append( Command('vspace', [RECIPE_VSPACE_SMALL] ) )
         latexDoc.append( NoEscape(r'\par') )
-        util_injectNotes( latexDoc, recipeData  ) 
+        util_injectNotes(latexDoc, recipeData, labels)
     
     latexDoc.append( NoEscape(r'&'))
     
@@ -578,7 +632,7 @@ def genRecipeFormatFancyWidePic( latexDoc, recipeName, recipeData, outLaTexAbsPa
         latexDoc.append( Command('vspace', ['4pt'] ) )
         latexDoc.append( NoEscape(r'\par') )
 
-    latexDoc.append( LargeText( bold('Directions')) )
+    latexDoc.append( LargeText( bold(labels['directions'])) )
     latexDoc.append( NoEscape(r'\par') )
     latexDoc.append(recipeData.genStepsBlock('LaTex', latexDoc) )
     latexDoc.append( NoEscape(r'\\'))
@@ -590,7 +644,7 @@ def genRecipeFormatFancyWidePic( latexDoc, recipeName, recipeData, outLaTexAbsPa
     latexDoc.append( Command('vspace', [RECIPE_VSPACE_AFTER]) )
 
 #=============================================================================
-def genRecipeFormatDefault( latexDoc, recipeName, recipeData, outLaTexAbsPath ):
+def genRecipeFormatDefault(latexDoc, recipeName, recipeData, outLaTexAbsPath, labels):
     '''
     Generic Recipe processing function
     '''
@@ -628,8 +682,8 @@ def genRecipeFormatDefault( latexDoc, recipeName, recipeData, outLaTexAbsPath ):
                     ingredDat[0], 
                     (NoEscape(
                         ingredDat[1] + ' ' + 
-                        ingredDat[2] + 
-                        ', pg ' + util_refRecipePageNum(ingredDat[3]))
+                        ingredDat[2] +
+                        ', ' + util_page_ref_text(labels, ingredDat[3]))
                     )
                 )
             else:
@@ -651,7 +705,7 @@ def genRecipeFormatDefault( latexDoc, recipeName, recipeData, outLaTexAbsPath ):
     latexDoc.append( Command('vspace', [RECIPE_VSPACE_AFTER]) )
 
 #=============================================================================
-def genRecipeFormatCompactImageLeft( latexDoc, recipeName, recipeData, outLaTexAbsPath ):
+def genRecipeFormatCompactImageLeft(latexDoc, recipeName, recipeData, outLaTexAbsPath, labels):
     '''
     Compact layout with a fixed-size image on the left, ingredients on the right,
     instructions below, and notes at the end in italics.
@@ -660,7 +714,7 @@ def genRecipeFormatCompactImageLeft( latexDoc, recipeName, recipeData, outLaTexA
     util_FancyBuildHeader(latexDoc, recipeName)
 
     ingredLaTex = recipeData.genIngredientsBlock('LaTex')
-    ingredLines = [r'\textbf{Ingredients}']
+    ingredLines = [r'\textbf{%s}' % labels['ingredients']]
     for ingredDat in ingredLaTex:
         if ('' == ingredDat[0] and '' == ingredDat[2]):
             if len(ingredDat[1]):
@@ -672,7 +726,7 @@ def genRecipeFormatCompactImageLeft( latexDoc, recipeName, recipeData, outLaTexA
             parts = [p for p in (qty, name, unit) if p]
             line = ' '.join(parts)
             if ingredDat[3] != None:
-                line = line + r', pg \pageref{subsec:%s}' % util_sanitize_label(ingredDat[3])
+                line = line + r', ' + util_page_ref_text(labels, ingredDat[3])
             ingredLines.append(line)
 
     ingredText = r'\par '.join(ingredLines)
@@ -701,7 +755,7 @@ def genRecipeFormatCompactImageLeft( latexDoc, recipeName, recipeData, outLaTexA
         latexDoc.append( NoEscape(r'\par') )
         latexDoc.append( NoEscape(r'{\setlength{\parindent}{0pt}') )
         latexDoc.append( NoEscape(r'\noindent') )
-        latexDoc.append( bold('Instructions') )
+        latexDoc.append( bold(labels['instructions']) )
         latexDoc.append( NoEscape(r'\par') )
         latexDoc.append(recipeData.genStepsBlock('LaTex', latexDoc))
         latexDoc.append( NoEscape(r'}') )
@@ -728,27 +782,28 @@ def getLateByIngredientIndex( doc, cookbookData):
         if( ingredGrp not in txtExcludeList):
             ingredGrpBase = cookbookData['ingredients']['text_tree'][ingredGrp] 
             for ingred in ingredGrpBase:
-                lstIngred.append( ingred )
+                display_name = translate_text(ingred).strip()
+                lstIngred.append((display_name, ingred))
                 dictIngred[ ingred ] = ingredGrpBase[ingred] 
     
-    lstIngred.sort()
+    lstIngred.sort(key=lambda item: item[0].lower())
     
     doc.append( ' ' )
     doc.append( Command( 'noindent') )
     GrpLetter = ' '
-    for ingItem in lstIngred:
-        if (GrpLetter != ingItem[0].upper() ):
-            GrpLetter = ingItem[0].upper()
+    for display_name, ingItem in lstIngred:
+        if (GrpLetter != display_name[0].upper() ):
+            GrpLetter = display_name[0].upper()
             doc.append( NoEscape(r'\par') )
             doc.append( bold( GrpLetter ) )
             doc.append( NoEscape(r'\par') )
-        doc.append( ingItem )
+        doc.append( display_name )
         lstRecipe = list( dictIngred[ingItem]['ingred'].getRecipeList() )
         lstRecipe.sort()
         for itemLstRecipe in lstRecipe:
             doc.append( NoEscape(r'\par') )
             doc.append( Command(NoEscape(r'hspace*'), ['3 mm']) )
-            doc.append( itemLstRecipe + ',')
+            doc.append( translate_text(itemLstRecipe) + ',')
             doc.append( util_refRecipePageNum( itemLstRecipe) )
         doc.append( NoEscape(r'\par') )
         

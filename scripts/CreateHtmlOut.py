@@ -21,6 +21,7 @@ from pathlib import Path
 
 ## For rendering options
 from mako.template import Template
+from scripts.i18n import get_language_pack
 
 #*  Constants ****************************************************************
 
@@ -28,6 +29,8 @@ from mako.template import Template
 def genHtmlOut(args, outAbsPath, cookbookData, gitRepo):
     
     gitSha = gitRepo.head.object.hexsha
+    language_pack = get_language_pack(args.language)
+    labels = language_pack['labels']
         
     # -- HTML        
     outHtmlAbsPath = Path( os.path.join( outAbsPath, 'html') )
@@ -67,6 +70,7 @@ def genHtmlOut(args, outAbsPath, cookbookData, gitRepo):
                 genToolTemplate= strPathToTemplate,
                 genToolVersion = '0.00 - Git Hash:' + gitSha[:10] + ' Repo Clean:' + str(not gitRepo.is_dirty()),
                 inRecipeData = cookbookData['Recipes']['inputObjects'][iRecipe],
+                labels = labels,
                 )
         )
         fileHtmlOut.close()
@@ -94,6 +98,7 @@ def genHtmlOut(args, outAbsPath, cookbookData, gitRepo):
                 genToolTemplate= strPathToTemplate,
                 genToolVersion = '0.00 - Git Hash:' + gitSha[:10] + ' Repo Clean:' + str(not gitRepo.is_dirty()),
                 cookbookData = cookbookData,
+                labels = labels,
                 )
         )
         fileHtmlOut.close()
@@ -121,6 +126,7 @@ def genHtmlOut(args, outAbsPath, cookbookData, gitRepo):
                 genToolTemplate= strPathToTemplate,
                 genToolVersion = '0.00 - Git Hash:' + gitSha[:10] + ' Repo Clean:' + str(not gitRepo.is_dirty()),
                 cookbookData = cookbookData,
+                labels = labels,
                 )
         )
         fileHtmlOut.close()

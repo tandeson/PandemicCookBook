@@ -19,6 +19,7 @@ version = '$Revision$'[1:-2]
 #*  Imports ******************************************************************
 # from {module} import {function}
 import sys
+from scripts.translation_runtime import translate_text
 
 #*  Constants ****************************************************************
 # PY-2.10
@@ -61,6 +62,13 @@ class RecipeIngredient:
             string - name
         """
         return self.info['name']
+
+    #-------------------------------------------------------------------------
+    def getDisplayName(self):
+        """
+        Get the translated name of this ingredient for output.
+        """
+        return translate_text(self.info['name'])
     
     #-------------------------------------------------------------------------
     def getGroup(self):
@@ -71,6 +79,13 @@ class RecipeIngredient:
             string - name
         """
         return self.info['group']
+
+    #-------------------------------------------------------------------------
+    def getDisplayGroup(self):
+        """
+        Get the translated group name for output.
+        """
+        return translate_text(self.info['group'])
     
     #-------------------------------------------------------------------------
     def getRecipeToMake(self):
@@ -133,13 +148,13 @@ class RecipeIngredient:
         if ( genOutFormat == 'html_text'):    
             strLayout = "{0:6} {1:8} "
             strBack += strLayout.format(strAmnt, inUnits).replace(' ','&nbsp')
-            strBack += self.getName()
+            strBack += self.getDisplayName()
             
         elif (genOutFormat == 'html'):
             strBack = str( '<tr>'
                 '<td> %s </td>' % (strAmnt) +
-                '<td>' + inUnits + '</td>' +
-                '<td>' + self.getName() + '</td>' +
+                '<td>' + translate_text(inUnits) + '</td>' +
+                '<td>' + self.getDisplayName() + '</td>' +
                 '</tr>' )
         else:
             raise Exception(" Unable to generate format: %s" % ( genOutFormat) )

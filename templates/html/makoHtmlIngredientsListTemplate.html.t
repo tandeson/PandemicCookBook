@@ -13,6 +13,7 @@
 from scripts.html_helpers import makeHtmlStyle
 from scripts.html_helpers import makeHtmlEmbedImgFromFile
 from scripts.html_helpers import makeHtmlLink
+from scripts.translation_runtime import translate_text
 
 %>\
 ##  Constants ****************************************************************
@@ -22,11 +23,12 @@ from scripts.html_helpers import makeHtmlLink
 %>\
 <hr color='GRAY' width="100%" size="2">
 ##============================================================================
-<html>
+<html lang="${labels['html_lang']}">
 
 <head>
+<meta charset="utf-8">
 <title>
-Ingredients List
+${labels['ingredients_list']}
 </title>
 <head>
 
@@ -75,7 +77,7 @@ ${makeHtmlStyle()}
 
 <header>
   <h2>
-  Ingredients List
+  ${labels['ingredients_list']}
   </h2>
 </header>
 
@@ -87,18 +89,18 @@ ${makeHtmlStyle()}
 
 <%
    listGrps = list( cookbookData['ingredients']['text_tree'].keys() )
-   listGrps.sort()
+   listGrps.sort(key=lambda name: translate_text(name).lower())
 %>\
 %for grpName in listGrps:
-<h2> ${grpName} </h2>
+<h2> ${translate_text(grpName)} </h2>
 
 <%
  listIngredientNames = list( cookbookData['ingredients']['text_tree'][grpName].keys() )
- listIngredientNames.sort()
+ listIngredientNames.sort(key=lambda name: translate_text(name).lower())
 %>\
 <ul>
 %for ingredientName in listIngredientNames:
-<li> ${ingredientName} </li>
+<li> ${translate_text(ingredientName)} </li>
 %endfor // listIngredientNames
 </ul>
 
@@ -118,11 +120,11 @@ ${makeHtmlStyle()}
 ## Recommended: Identify template used to generate html output.
 <footer>
 <p>
-Template: ${genToolTemplate}<BR>
+${labels['template']}: ${genToolTemplate}<BR>
 <i>
-    Generated: ${runDate} <br>
-    using tool: ${genToolName} <br>
-    version: ${genToolVersion} <br>
+    ${labels['generated']}: ${runDate} <br>
+    ${labels['using_tool']}: ${genToolName} <br>
+    ${labels['version']}: ${genToolVersion} <br>
 </i>
 </p>
 </footer>

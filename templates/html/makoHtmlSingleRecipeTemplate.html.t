@@ -20,10 +20,11 @@ from scripts.html_helpers import makeHtmlEmbedImgFromFile
 # DELIMITER = "," 
 %>\
 ##============================================================================
-<html>
+<html lang="${labels['html_lang']}">
 <head>
+<meta charset="utf-8">
 <title>
-Recipe: ${inRecipeData.getName()}
+${labels['recipe_kicker']}: ${inRecipeData.getDisplayName()}
 </title>
 </head>
 <style>
@@ -40,7 +41,7 @@ body {
   padding: 20px;
   color: var(--ink);
   background: #f2efe9;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-family: ${labels['html_font_family']};
 }
 
 .page {
@@ -193,23 +194,23 @@ body {
 % endif
 
 <section class="recipe-text">
-  <div class="kicker">Recipe</div>
-  <h1>${inRecipeData.getName()}</h1>
+  <div class="kicker">${labels['recipe_kicker']}</div>
+  <h1>${inRecipeData.getDisplayName()}</h1>
 
   <div class="section ingredients">
   ## Generate the Ingredients List  
-  <h2>Ingredients</h2>
+  <h2>${labels['ingredients']}</h2>
   ${inRecipeData.genIngredientsBlock()}
   </div>
 
   <div class="section steps">
-  <h2>Steps</h2>
+  <h2>${labels['steps']}</h2>
   ${inRecipeData.genStepsBlock('html')}
   </div>
 
   % if notesBlock:
   <div class="section notes">
-    <h3>Notes</h3>
+    <h3>${labels['notes']}</h3>
     ${notesBlock}
   </div>
   % endif
