@@ -52,7 +52,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Add the Turmeric, Cayenne Pepper (if using), Coriander Powder, Salt and Water. Stir to mix.',
             'Bring to a boil.',
             'Cover with a lid and reduce the heat.',
-            'Simmer until most of the water is absorbed - 10 to 12 minutes.'
+            'Simmer until most of the water is absorbed - 10 to 12 minutes.',
             'Add the Garam Masala and Lemon Juice and stir to combine.',
             'Transfer to a serving Platter and enjoy.'
             ]

@@ -45,8 +45,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         steps = [
             'Cut dough into 6 equal parts. Flatten into a square. Cover with a thin layer of sauce, then put on toppings.',
             'Fold the dough over, making a pocket. Ensure that the seams are tight.',
-            'Place on a baking sheet with parchment paper, and cover with plastic wrap or a damp towel. Let rise for 45 - 60 min.',
-            'Near the end of the rise preheat the oven to 450 deg F.',
+            'Place on a baking sheet with parchment paper, and cover with plastic wrap or a damp towel. Let rise for 45 - 60 minutes.',
+            'Near the end of the rise, preheat the oven to 450 deg F.',
             'Slash the tops (or poke with a fork). If desired, cover with an egg wash.',
             'Bake for 15 minutes at 450 deg F, then turn down to 400 deg F. Bake for another 15 minutes or until crust is golden brown.',
             'Remove and let cool on a rack for 10 - 15 minutes. Then serve.'

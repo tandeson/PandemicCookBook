@@ -263,7 +263,7 @@ C_INGREDIENTS.append( RecipeIngredient(
     ))
 
 C_INGREDIENTS.append( RecipeIngredient(
-    'Pickled Red onions',
+    'Pickled Red Onions',
     grpNameCondiments, 
     ))
 

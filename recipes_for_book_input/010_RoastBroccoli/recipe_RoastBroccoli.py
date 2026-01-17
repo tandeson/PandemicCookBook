@@ -28,7 +28,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPrimaryPicture('RoatedBroc')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         
-        r.AddDescription('One of our most favorite dishes, we eat it as a side to almost anything!')
+        r.AddDescription('One of our favorite dishes, we eat it as a side to almost anything!')
         
         #  -- Add Ingredients --
 
@@ -42,10 +42,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         # Add Steps and Notes
         steps = [
             'Pre-heat the oven to 450 deg F.',
-            'Slice the broccoli into 1/2 or 1/4 florets. stems peeled and sliced.',
+            'Slice the broccoli into 1/2 or 1/4 florets; stems peeled and sliced.',
             'Toss the Broccoli with olive oil, Garlic, Salt on a baking sheet. '
             'Spread them out and then roast, without stirring, until the edges '
-            'are crispy and the stems are crips tender - about 20 minutes.',
+            'are crispy and the stems are crisp-tender - about 20 minutes.',
             'Serve warm.'
             ]
         for s in steps:

@@ -46,13 +46,13 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
            
         # Add Steps and Notes
         steps = [
-            'Beat the eggs, Vanilla and milk until light and foamy, about 3 minutes at high speed with a stand or hand mixer.',
+            'Beat the eggs, vanilla, and milk until light and foamy, about 3 minutes at high speed with a stand or hand mixer.',
             'Stir in the butter or vegetable oil.',
-            'Whisk the dry ingredients together to evenly distribute the salt, baking powder, Cinnamon and sweetener.',
+            'Whisk the dry ingredients together to evenly distribute the salt, baking powder, cinnamon and sweetener.',
             'Gently and quickly mix into the egg and milk mixture. Let the batter rest for at least 15 minutes, '
             'while the griddle is heating; it\'ll thicken slightly.',
-            'Chop the Apples into small chunks - I prefer Honeycrip Apples for this. Mix into the batter.',
-            'Heat a heavy frying pan over medium heat, Lightly grease frying pan or griddle. The pan or griddle is '
+            'Chop the Apples into small chunks - I prefer Honeycrisp Apples for this. Mix into the batter.',
+            'Heat a heavy frying pan over medium heat, lightly grease the frying pan or griddle. The pan or griddle is '
             'ready if a drop of water will skitter across the surface, evaporating immediately.',
             'Drop 1/4 cupfuls of batter onto the lightly greased griddle. Bake on one side until bubbles begin to '
             'form and break, about 2 minutes; then turn the pancakes and cook the other side until brown, about '

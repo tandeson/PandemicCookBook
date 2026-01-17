@@ -53,6 +53,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('White Onion', 1, 'small, minced', grpNameFilling)
         r.addIngredient('Heavy Cream', 1, 'tablespoon', grpNameFilling)
         r.addIngredient('Eggs', 1, 'large', grpNameFilling)
+        r.addIngredient('Salt', 0.5, 'teaspoon', grpNameFilling)
+        r.addIngredient('Black Pepper', 0.25, 'teaspoon', grpNameFilling)
         
         # Add Steps and Notes
         doughSteps = [
@@ -74,7 +76,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         fillingSteps = [
             'Heat oil in a 4-quart saucepan over medium heat.',
             'Add bacon/ham mixture. Cook stirring until fat renders - about 6 minutes.',
-            'Add Onion and cook, stirring, until the onion is lighly caramelized'
+            'Add Onion and cook, stirring, until the onion is lightly caramelized'
             ' but bacon/ham is not crisp - about 6 minutes',
             'Remove from heat, season with salt and pepper.',
             'Let cool completely.'
@@ -87,14 +89,14 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         assembleBakeSteps = [
             'Heat oven to 400 deg F.',
-            'Separate Egg into white and yoke.',
+            'Separate Egg into white and yolk.',
             'Make Egg wash by whisk together cream and egg yolk in a small bowl and '
             'set aside',
-            'lighly beat egg white, and set aside',
+            'lightly beat egg white, and set aside',
             'Transfer dough to a floured work surface and cut in half.',
-            'Work with one half at a time, roll the dough unti 1/4" thick.',
+            'Work with one half at a time, roll the dough until 1/4" thick.',
             'Using a 2 1/2" round cutter, cut out dough rounds.',
-            'Place 1 teaspon of filling in center of each round.',
+            'Place 1 teaspoon of filling in center of each round.',
             'Using your fingers, moisten edges of round with egg white',
             'fold over to enclose filling, and pinch edges together to seal.',
             'Transfer turnovers, seam side down, to parchment paper '

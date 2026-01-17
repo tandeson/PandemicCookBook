@@ -55,7 +55,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Turn the dough out onto a lighly greased work surface. Fold it over a few times '
             'to gently deflate it. Divide into 12 peices, each about 70 grams.',
             'Roll each piece into a rope, and flatten.',
-            'Fill the middle of the rope with Blue Cheese and Crispy Friend Onions.',
+            'Fill the middle of the rope with Blue Cheese and Crispy Fried Onions.',
             'Pinch the rope together to make a tube holding the fillings. Pinch off both ends.',
             'Roll the ropes into a cinnamon roll shape, and place on the baking sheet.',
             'Bake for 25 - 30 minutes, until they\'re a light golden brown.',

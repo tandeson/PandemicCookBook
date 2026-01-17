@@ -43,21 +43,21 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         # Add Steps and Notes
         steps = [
-            'In a medium-large bowl, mix-in the Flour, Salt and Oil',
-            'With a large spoon, stir in the hot Water.'
-            'After the water is mixed in and the flour and oil start to cool-off '
-            ', mix the ingredients with your hand until you have a big lump of flour dough.',
+            'In a medium-large bowl, mix the Flour, Salt and Oil.',
+            'With a large spoon, stir in the hot Water. After the water is mixed in and the '
+            'flour and oil start to cool off, mix the ingredients with your hand until you '
+            'have a big lump of flour dough.',
             'Knead the dough and, if it\'s too "pie crust" like, add a little more hot water; or, '
             'if it\'s too mushy, add a little flour.',
-            'Break off little clumps of dough and round them between the palms of your hands.'
-            ' When you have a nice little ball, flatten it a little between your hands into a '
+            'Break off little clumps of dough and round them between the palms of your hands. '
+            'When you have a nice little ball, flatten it a little between your hands into a '
             '"plump" disk-like shape.',
             'Spread a little flour on a cutting board and over-and-around a rolling pin.',
-            'Gently roll out the flour disk into a oblong (elliptical) shape. Pickup the dough, '
-            'fip-it-over and place it 90 degress to your original rolling motion. Repeat this step '
+            'Gently roll out the flour disk into an oblong (elliptical) shape. Pick up the dough, '
+            'flip it over and place it 90 degrees to your original rolling motion. Repeat this step '
             'over and over until you get a nice, flat, thin raw tortilla.',
             'Place the tortilla on a hot griddle for a few seconds, and then turn it over. You may '
-            'want to rotate the tortilla with you hand while it\'s on the griddle so that it '
+            'want to rotate the tortilla with your hand while it\'s on the griddle so that it '
             'cooks evenly. Flip it over again and cook until done.'
              ]
         for s in steps:

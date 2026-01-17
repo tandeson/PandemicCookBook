@@ -33,9 +33,13 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Bilyana\'s Friend Lisa shared this with us, and it was one of our first experiments.'
             )
         #  -- Add Ingredients --
-        r.addToDoNote( "Needs to list vegies for pickling - amounts")
+        r.addToDoNote( "Needs to list cucumbers for pickling - amounts")
         r.addToDoNote( "Jar sizes? used Kerr Wide Mouth Mason jars - not sure oz? 15 on glass on bottom.")
         
+        ## Vegetables
+        ingGrpName = "Vegetables for pickling"
+        r.addIngredient('Pickling Cucumbers', 1, 'batch, as needed', ingGrpName)
+
         ## Pickling liquid
         ingGrpName = "Pickling Liquid"
         r.addIngredient('Distilled White Vinegar', 1, 'quart', ingGrpName)
@@ -60,8 +64,6 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
                     "Clean the pickling cucumbers and " 
                     "prick each with a fork in a few places"),
                 RecipeStep(
-                    "Snap the beans"),
-                RecipeStep(
                     "Layer 1 clove garlic, 1 grape leaf, 1/4 tsp dill, 1/4 tsp celery seed."),
                 vegJarFullStep,    
                 ]
@@ -72,7 +74,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             "Prepare the liquid",
             [
                 RecipeStep(
-                    "NOTE: Adjust this radio to match the number of Jars you plan to pickle."),
+                    "NOTE: Adjust this ratio to match the number of jars you plan to pickle."),
                 RecipeStep(
                     "Mix 1 qt Vinegar, 3 qts water, 1 cup non-iodized salt"),
                 RecipeStep(

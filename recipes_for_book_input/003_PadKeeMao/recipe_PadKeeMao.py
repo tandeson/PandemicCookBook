@@ -29,7 +29,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setRecipeFormat('TWO_COLUMN_OPTIONAL_PICTURES')
         
         r.AddDescription(
-            'In July of 2020 we went and got takout for our 6 month anniversary at a Thai restaurant. '
+            'In July of 2020 we went and got takeout for our 6 month anniversary at a Thai restaurant. '
             'This was our first restaurant food since the pandemic lockdown. This caused us to bemoan '
             'the fact that we couldn\'t get Thai food. Later that month, we found this recipe online and '
             'adapted it for us. Since then we\'ve made it multiple times! ~Thomas'
@@ -39,10 +39,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         ## Noodles
         r.addIngredient('Dry Wide Rice Noodles', 150, 'grams', 'Noodles')
         
-        grpProtien = "For seasoned Tofu"
-        r.addIngredient('Fried Tofu', 7 , 'ounces, approximately', grpProtien )
-        r.addIngredient('Soy Sauce', 1, 'teaspoon', grpProtien )
-        r.addIngredient('Corn Starch', 1, 'teaspoon', grpProtien )
+        grpProtein = "For seasoned Tofu"
+        r.addIngredient('Fried Tofu', 7 , 'ounces, approximately', grpProtein )
+        r.addIngredient('Soy Sauce', 1, 'teaspoon', grpProtein )
+        r.addIngredient('Corn Starch', 1, 'teaspoon', grpProtein )
                       
         grpSauce = "For Pad Kee Mao sauce"
         r.addIngredient('Fish Sauce', 1, 'tablespoon', grpSauce)
@@ -82,7 +82,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Prepare the Tofu', 
             [
                 RecipeStep('Add the Tofu to a bowl'),
-                RecipeStep('Mix in the Soy Sauce and Corn Starch to combined.'),
+                RecipeStep('Mix in the Soy Sauce and Corn Starch to combine.'),
                 RecipeStep('Let this marinate while you prepare the other ingredients.'),
             ],
         ))
@@ -98,14 +98,14 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
                 RecipeStep('Heat a frying pan or wok over medium-high heat until hot'),
                 RecipeStep('Add in 1 tablespoon of oil, and swirl to coat the pan.'),
                 RecipeStep(
-                    'Add the Tofu, stir fry until brown, and remove the Tofu'
-                    ' from the pan, leaving as much oil in the pan as possible'),
+                    'Add the Tofu, stir fry until brown, and remove the Tofu '
+                    'from the pan, leaving as much oil in the pan as possible'),
                 RecipeStep('Add the garlic and fry until fragrant.'),
                 RecipeStep('Add the eggs and then scramble.'),
                 RecipeStep(
                     'When the Eggs are almost cooked, add another tablespoon of oil,'
                     ' along with the Onions, Bell Pepper and Carrot.'),
-                RecipeStep('Fry until the Onions are translucent but still crips.'),
+                RecipeStep('Fry until the Onions are translucent but still crisp.'),
                 RecipeStep(
                     'Add the rehydrated noodles and stir fry until the '
                     'noodles take on some color.'),
@@ -123,7 +123,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         r.addNote(
             "Pad Kee Mao is traditionally made with Holy Basil, which has a different fragrance "
-            "from the Thai Basil is used, but Thai Basil is easier to find."
+            "than the Thai Basil used, but Thai Basil is easier to find."
             )
         
         # Return this back.

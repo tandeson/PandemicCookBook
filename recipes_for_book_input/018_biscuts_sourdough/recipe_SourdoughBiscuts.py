@@ -31,7 +31,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         #  -- Add Ingredients --
 
         ##
-        r.addIngredient('All Purpose Flour', 120, 'grams ( 1 cups)')
+        r.addIngredient('All Purpose Flour', 120, 'grams (1 cup)')
         r.addIngredient('Baking Powder', 2, 'teaspoons')
         r.addIngredient('Salt', 0.75, 'teaspoons')
         r.addIngredient('Unsalted Butter', 8, 'tablespoons (113 grams) cold')

@@ -53,7 +53,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Romaine Lettuce', 0.25, 'head, chopped', GrpNameCondiments)
         r.addIngredient('Feta Cheese', 3, 'oz (to taste)', GrpNameCondiments)
         r.addIngredient('Pickled Jalapenos', 3, 'oz (to taste)', GrpNameCondiments)
-        r.addIngredient('Pickled Red onions', 3, 'oz (to taste)', GrpNameCondiments)
+        r.addIngredient('Pickled Red Onions', 3, 'oz (to taste)', GrpNameCondiments)
            
         # Add Steps and Notes
         r.addStep( RecipeStep(
@@ -72,16 +72,16 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         )
         
         r.addStep(RecipeStep(
-            'Prepare the Taco shells',[
+            'Prepare the Taco Shells',[
                 RecipeStep('Heat a frying pan on medium-high heat.'),
                 RecipeStep('Put about 1 tablespoon of Olive Oil into the pan.'),
-                RecipeStep('Taking 1 or 2 Tortilla(s) at a time, fry them until crispy and slighly browned on each side.'),
+                RecipeStep('Taking 1 or 2 Tortilla(s) at a time, fry them until crispy and slightly browned on each side.'),
                 RecipeStep('Remove from the pan, and allow to drain / cool on a paper towel.')
                 ])
             )
         
         r.addStep(RecipeStep( 'Place a Taco shell down. Layer on the Seasoned Black Beans and any Condiments you want.' ))
-        r.addStep(RecipeStep( 'Enjoy!.' ))
+        r.addStep(RecipeStep( 'Enjoy!' ))
         
         # Return this back.
         return r

@@ -32,7 +32,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
 
         ## Garlic
         r.addIngredient('Sweet Potatoes', 3, 'cleaned, sliced to 1/4"')
-        r.addIngredient('Extra Virgin Olive Oil', 1 , 'tablespoons')
+        r.addIngredient('Extra Virgin Olive Oil', 1 , 'tablespoon')
         r.addIngredient('Shredded Mexican Cheese', 1.5 , 'cups')
         r.addIngredient('Black Beans', 15, 'oz, canned')
         r.addIngredient('Cilantro', 0.25, 'cup')
@@ -41,19 +41,19 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         
         r.addIngredient('Pickled Jalapenos', 3, 'oz (to taste)')
-        r.addIngredient('Pickled Red onions', 3, 'oz (to taste)')
+        r.addIngredient('Pickled Red Onions', 3, 'oz (to taste)')
         
         # Add Steps and Notes
         steps = [
-            'Preheat oven to 400 deg F.',
+            'Preheat the oven to 400 deg F.',
             'Place the sweet potato rounds on a large baking sheet. You '
             'don\'t want to overcrowd the sweet potatoes. Toss the sweet '
             'potatoes in olive oil and season with salt and pepper. Bake for '
             '20 minutes. Use a spatula to flip the sweet potato rounds. Bake for '
             'an additional 10 minutes or until sweet potatoes are crisp.',
             'Remove the pan from the oven and sprinkle cheese and black beans '
-            'over the sweet potatoes. Bake until cheese is melted, about 5-7 minutes.',
-            'Remove pan from oven and top with Cilantro, Pickled Red Onions and Pickled Jalapenos.',
+            'over the sweet potatoes. Bake until cheese is melted, about 5 to 7 minutes.',
+            'Remove the pan from the oven and top with Cilantro, Pickled Red Onions and Pickled Jalapenos.',
             ]
         for s in steps:
             r.addStep( RecipeStep( s ) )
