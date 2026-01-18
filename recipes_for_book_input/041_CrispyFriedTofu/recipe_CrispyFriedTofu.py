@@ -43,10 +43,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         steps= [
             'Cut the Tofu into roughly 1" cubes.',
             'Marinate in the Soy Sauce for at least 5 minutes. Most of it should be absorbed by the Tofu.',
-            'Heat a large Frying pan on medium high heat.',
-            'Mix the Corn Starch, Garlic Power, Salt and Pepper together in a bowl or plastic bag.',
+            'Heat a large frying pan on medium-high heat.',
+            'Mix the Corn Starch, Garlic Powder, Salt and Pepper together in a bowl or plastic bag.',
             'Coat the Tofu with the mixture.',
-            'When the Frying pan is hot, add the Oil, and fry the Tofu one layer at time. Turn as the sides brown.',
+            'When the frying pan is hot, add the Oil and fry the Tofu one layer at a time. Turn as the sides brown.',
             'Once they are browned, remove them from the pan.',
         ]
         for s in steps:

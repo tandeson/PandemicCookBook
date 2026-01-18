@@ -57,12 +57,12 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         # Add Steps and Notes
         steps = [
-            'Heat a large frying pan or cast iron pan on medium-high heat.',
-            'Stir fry the veggies (in this case Mushrooms, Broccoli, Onion and Carrots) as well as the garlic and ginger.'
-            ' You can substitute whatever veggies you have on hand. Fry until just tender, about 4 minutes.',
-            'Move the veggies to the side of the pan, and quickly fry the egg in the middle of the pan. Break it up like scrambled egg and mix it in when it\'s done.',
+            'Heat a large frying pan or cast-iron pan on medium-high heat.',
+            'Stir-fry the veggies (in this case Mushrooms, Broccoli, Onion and Carrots) as well as the garlic and ginger. '
+            'You can substitute whatever veggies you have on hand. Fry until just tender, about 4 minutes.',
+            'Move the veggies to the side of the pan, and quickly fry the egg in the middle of the pan. Break it up like scrambled eggs and mix it in when it\'s done.',
             'Lower the heat to medium.',
-            'Add in the Rice and the seasoning - cook for several more minutes stirring often.',
+            'Add in the Rice and the seasoning - cook for several more minutes, stirring often.',
             'Remove from heat and serve.'
             ]
         

@@ -32,7 +32,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         ##
         r.addIngredient('Celery', 1, 'bunch, chopped')
         r.addIngredient('Yellow Onion', 1 ,'large, chopped')
-        r.addIngredient('Garlic', 2, 'Cloves, minced')
+        r.addIngredient('Garlic', 2, 'cloves, minced')
         r.addIngredient('Extra Virgin Olive Oil', 3, 'tablespoons')
         r.addIngredient('Kidney Beans', 1, 'can, 16 oz')
         r.addIngredient('Vegetable Broth', 1.5, 'cups')
@@ -45,12 +45,12 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         # Add Steps and Notes
         steps= [
-            'Heat a cast Iron Frying pan on medium-high heat.',
+            'Heat a cast-iron frying pan on medium-high heat.',
             'When the pan is hot, add the Oil, Celery, Onion and Garlic. Cook until soft, stirring often.',
-            'Pour the Vegetable broth into the pan.',
-            'Drain and Rinse the Kidney Beans, then add to the pan. Add in the spices.',
-            'Bring the mixture to a boil, and then simmer for 20 - 30 minutes, until reduced.',
-            'Add in the Crumbles, cook until heated.',
+            'Pour the vegetable broth into the pan.',
+            'Drain and rinse the Kidney Beans, then add to the pan. Add in the spices.',
+            'Bring the mixture to a boil, and then simmer for 20 to 30 minutes, until reduced.',
+            'Add in the Crumbles and cook until heated through.',
             'Serve over Quinoa.'
         ]
         for s in steps:

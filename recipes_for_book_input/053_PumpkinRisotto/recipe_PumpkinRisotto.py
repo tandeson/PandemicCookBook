@@ -34,7 +34,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Yellow Onion', 1, 'medium, chopped')
         r.addIngredient('Garlic', 5, 'cloves')
         r.addIngredient('Arborio Rice', 1, 'cup, dry')
-        r.addIngredient('Wine', 0.5, 'cup, White ')
+        r.addIngredient('Wine', 0.5, 'cup, white')
         r.addIngredient('Vegetable Broth', 3.5, 'cups')
         r.addIngredient('Pumpkin Puree', 0.75, 'can, 15 oz')
         r.addIngredient('Peas', 0.75, 'cup, frozen')
@@ -56,12 +56,12 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addStep( RecipeStep(
             'Start stirring in the broth, 0.5 cups at a time. Broth should be warm. At each addition, stir until absorbed before adding the next 0.5 cup.',
             [    
-                RecipeStep('After the first 0.5 cups, Add in spices'),
-                RecipeStep('With the last 0.5 cup of broth, add peas, pumpkin and Parm.')
+                RecipeStep('After the first 0.5 cups, add in spices.'),
+                RecipeStep('With the last 0.5 cup of broth, add peas, pumpkin and Parmesan.')
             ]))
         
-        r.addStep( RecipeStep( 'Stir until fully absorbed, take off heat.'))
-        r.addStep( RecipeStep( 'Serve with additional Parm. Ta Da.' ))
+        r.addStep( RecipeStep( 'Stir until fully absorbed, then take off heat.'))
+        r.addStep( RecipeStep( 'Serve with additional Parmesan.'))
         
         # Return this back.
         return r

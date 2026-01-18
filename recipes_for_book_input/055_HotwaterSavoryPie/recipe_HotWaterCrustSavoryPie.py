@@ -33,8 +33,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setRecipeFormat('FANCY_LONG_RECIPE') 
         
         r.AddDescription(
-            'We decided to make this after watching a series of Episodes of the Great British Bake off. '
-            'The base of the recipe is taken from one of Chetna\'s from the first season on Netflix. '
+            'We decided to make this after watching a series of episodes of The Great British Bake Off. '
+            'The base of the recipe is taken from one of Chetna\'s recipes from the first season on Netflix. '
             ' ~Thomas'
         )
         #  -- Add Ingredients --
@@ -72,20 +72,20 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addStep( RecipeStep(
             'To make the Shepherd\'s Pie Filling',
             [
-                RecipeStep('In a large pot, add Potatoes and cover with water and add Salt.'),
-                RecipeStep('Bring to boil, and then lower to a simmer - cook for 25 minutes.'),
-                RecipeStep('Dry potatoes, and remove the skins.'),
-                RecipeStep('Mash along with Butter and Milk. Set Aside'),
-                RecipeStep('In a Frying pan on medium heat, cook the Carrots, Onions and Garlic until just softening. About 2 - 3 minutes. and set aside.'),
-                RecipeStep('Defrost the peas in the microwave, covered with a paper towel to keep the moisure in, 2 - 4 minutes.'),
+                RecipeStep('In a large pot, add Potatoes, cover with water, and add Salt.'),
+                RecipeStep('Bring to a boil, then lower to a simmer and cook for 25 minutes.'),
+                RecipeStep('Drain the potatoes and remove the skins.'),
+                RecipeStep('Mash along with Butter and Milk. Set aside.'),
+                RecipeStep('In a frying pan on medium heat, cook the Carrots, Onions and Garlic until just softening, about 2 to 3 minutes, then set aside.'),
+                RecipeStep('Defrost the peas in the microwave, covered with a paper towel to keep the moisture in, 2 to 4 minutes.'),
                 RecipeStep('Heat the Crumbles in a frying pan until soft, add in the Worcestershire sauce. Remove from heat.'),
                 RecipeStep(
                     'When ready to place in the pie crust, assemble by:',
                     [
                         RecipeStep('Place the Mashed Potatoes on the bottom.'),
-                        RecipeStep('Then cover with the fried Vegetable mixture.'),
+                        RecipeStep('Then cover with the fried vegetable mixture.'),
                         RecipeStep('Place down the layer of peas.'),
-                        RecipeStep('Place down the layer of seasoned Veggies Crumbles.'),
+                        RecipeStep('Place down the layer of seasoned Veggie Crumbles.'),
                     ]
                     ),
             ]
@@ -96,10 +96,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addStep( RecipeStep(
             'To make the Indian Potato Filling',
             [
-                RecipeStep('Wash and Clean the Potatoes. Pre-cook them in the microwave - either about 8 - 10 minutes, or using the built in baked potato option.'),
-                RecipeStep('Heat a frying pan on medium high heat.'),
-                RecipeStep('Cut the potatoes into large cubes and put into the frying pan with the oil. Fry until browned on the sides 3 - 8 minutes.'),
-                RecipeStep('Add in the Garlic, Ginger, Onion, Chile, Salt, Curry and Cumin. Continue to cook until the vegetables are soft, 2 - 5 minutes.'),
+                RecipeStep('Wash and clean the Potatoes. Pre-cook them in the microwave - either about 8 to 10 minutes, or using the built-in baked potato option.'),
+                RecipeStep('Heat a frying pan on medium-high heat.'),
+                RecipeStep('Cut the potatoes into large cubes and put into the frying pan with the oil. Fry until browned on the sides, 3 to 8 minutes.'),
+                RecipeStep('Add in the Garlic, Ginger, Onion, Chile, Salt, Curry and Cumin. Continue to cook until the vegetables are soft, 2 to 5 minutes.'),
                 RecipeStep('When ready to place in the pie crust, fill with the mixture evenly.')
             ]),
             ['PotatoPieCut']
@@ -108,7 +108,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addStep( RecipeStep(
             'To make the Pastry Dough',
             [
-                RecipeStep('combine the flours in a large bowl.'),
+                RecipeStep('Combine the flours in a large bowl.'),
                 RecipeStep('Add the butter and, using your fingertips, rub it into the flour until it resembles breadcrumbs.'),
                 RecipeStep('In a pan, heat water, the salt and fat until just boiling.'),
                 RecipeStep('Pour the liquid onto the flour mixture and mix using a wooden spoon.'),
@@ -120,14 +120,14 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'To make a Pie',
             [
                 RecipeStep('Preheat the oven to 400 deg F.'),
-                RecipeStep('Grease a 20cm/8in springform cake tin with vegetable fat'),
+                RecipeStep('Grease a 20cm/8in springform cake tin with vegetable fat.'),
                 RecipeStep('Working as quickly as possible, roll out a large circle of dough and, using the rolling pin to help you, line the prepared tin.'),
-                RecipeStep('Spoon the filling into the pastry lined tin. Press it down and level the surface.'),
+                RecipeStep('Spoon the filling into the pastry-lined tin. Press it down and level the surface.'),
                 RecipeStep('Using the remaining pastry, roll out the pie lid on a lightly floured work surface.'),
                 RecipeStep('Crimp the edges to seal and trim off any excess pastry. Make a couple of slits in the top of the pie to allow the steam to escape. '
                            'Use any leftover pastry to make decorations for the top of the pie.'),
                 RecipeStep('Bake for 1 hour, or until the top is golden-brown.'),
-                RecipeStep('Leave to cool in the tin for 10 minutes then remove from the tins and leave to cool completely on a wire rack before serving.'),
+                RecipeStep('Leave to cool in the tin for 10 minutes, then remove from the tin and leave to cool completely on a wire rack before serving.'),
             ]
             ))
         

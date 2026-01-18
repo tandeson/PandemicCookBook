@@ -35,13 +35,13 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         #  -- Add Ingredients --
 
         ##
-        r.addIngredient('Wine', 0.5, 'Bottle, white or rose')
+        r.addIngredient('Wine', 0.5, 'bottle, white or rose')
         r.addIngredient('Doritos', 1, 'bag, preferably Cool Ranch')
         
         # Add Steps and Notes
         steps= [
-            'Pour Wine into cups.',
-            'Open bag of Doritos.',
+            'Pour wine into glasses.',
+            'Open a bag of Doritos.',
             'Enjoy.'
         ]
         for s in steps:

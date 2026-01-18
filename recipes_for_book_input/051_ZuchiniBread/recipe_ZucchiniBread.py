@@ -37,7 +37,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('All Purpose Flour', 2, 'cups')
         r.addIngredient('Cinnamon', 3, 'teaspoons')
         r.addIngredient('Baking Soda', 2, 'teaspoons')
-        r.addIngredient('Baking Powder', 0.25, 'teaspoons')
+        r.addIngredient('Baking Powder', 0.25, 'teaspoon')
         r.addIngredient('Salt', 0.75, 'teaspoons')
         r.addIngredient('Walnuts', 1, 'cup, chopped')
         r.addIngredient('Vanilla', 2, 'teaspoons')
@@ -45,12 +45,12 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         # Add Steps and Notes
         steps= [
             'Preheat oven to 350 deg F.',
-            'In a large bowl, Beat eggs until light.',
-            'Add sugar and oil together and beat until well mixed.',
+            'In a large bowl, beat eggs until light.',
+            'Add sugar and oil and beat until well mixed.',
             'Sift flour with cinnamon, baking soda, baking powder, and salt. Add to bowl and mix.',
             'Add zucchini to bowl and mix.',
             'Add nuts and vanilla, mix well.',
-            'In two greased and floured 8 inch by 4 inch baking pans, pour in the batter.',
+            'In two greased and floured 8-inch by 4-inch baking pans, pour in the batter.',
             'Bake for 1 hour.'
         ]
         for s in steps:

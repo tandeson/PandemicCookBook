@@ -32,7 +32,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         ##
         r.addIngredient('Brussel Sprouts', 1, 'pound')
         r.addIngredient('Yellow Onion', 1 ,'medium, chopped')
-        r.addIngredient('Garlic', 4, 'Cloves, minced')
+        r.addIngredient('Garlic', 4, 'cloves, minced')
         r.addIngredient('Extra Virgin Olive Oil', 4, 'tablespoons')
         r.addIngredient('Salt', 1, 'pinch, to taste')
         r.addIngredient('Black Pepper', 1, 'pinch, to taste')
@@ -40,11 +40,11 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         # Add Steps and Notes
         steps= [
-            'Cut the Brussel Sprout into 1/2 or 1/4 pieces, so they are all about the same size. Discard any exterior leaves that look bad.',
-            'Heat a cast Iron Frying pan on medium-high heat.',
-            'When the pan is hot, add the Oil, Onion and Brussel Sprouts. Cook undisturbed until the Brussel Sprouts turn a lighter green, with one side browned, 5-7 minutes.',
+            'Cut the Brussel Sprouts into 1/2 or 1/4 pieces so they are all about the same size. Discard any exterior leaves that look bad.',
+            'Heat a cast-iron frying pan on medium-high heat.',
+            'When the pan is hot, add the Oil, Onion and Brussel Sprouts. Cook undisturbed until the Brussel Sprouts turn a lighter green, with one side browned, 5 to 7 minutes.',
             'Add in the Garlic, Salt and Pepper. Cook until the Garlic is lightly browned.',
-            'Remove from heat, serve hot.'
+            'Remove from heat and serve hot.'
         ]
         for s in steps:
             r.addStep( RecipeStep( s ) )

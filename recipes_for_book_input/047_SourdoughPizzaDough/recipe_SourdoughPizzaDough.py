@@ -57,7 +57,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
                            ' the selected pan and press it out to the edges, again giving it a 15-minute rest before continuing if it starts to '
                            'snap back.'),
                 RecipeStep('Cover the pan(s) and let the dough rise until it\'s as thick as you like.'),
-                RecipeStep('Towards the end of the rise time, preheat your oven to 450 deg F'),
+                RecipeStep('Toward the end of the rise time, preheat your oven to 450 deg F.'),
                 RecipeStep('Sauce and top as you like, but don\'t add cheese yet. Bake thin-crust pizzas for 5 minutes before removing from the oven'
                            ' and adding cheese. For thick-crust pizza, bake for 10 minutes before removing from the oven and adding cheese. Return to'
                            ' the oven and bake for 5 to 7 more minutes, until the cheese is melted.')

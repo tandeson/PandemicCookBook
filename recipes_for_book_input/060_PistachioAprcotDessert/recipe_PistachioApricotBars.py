@@ -32,12 +32,12 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         ## 
         #--
-        r.addIngredient('Unsalted Butter', 1, 'cup, (2 sticks)')
+        r.addIngredient('Unsalted Butter', 1, 'cup (2 sticks)')
         r.addIngredient('Granulated White Sugar', 1, 'cup')
         r.addIngredient('Eggs', 1, 'medium')
         r.addIngredient('Vanilla', 1, 'teaspoon')
         r.addIngredient('All Purpose Flour', 2.5, 'cups')
-        r.addIngredient('Pistachios', 0.5, 'cups, chopped')
+        r.addIngredient('Pistachios', 0.5, 'cup, chopped')
         r.addIngredient('Apricot Preserves', 1, 'jar, 12-18 oz')
         
         
@@ -47,12 +47,12 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'In a bowl, cream butter and sugar.',
             'Beat in egg and vanilla.',
             'Gradually mix in the flour.',
-            'Stir in Pistachios.',
+            'Stir in pistachios.',
             'Press mixture into a greased 9x13 baking dish.',
-            'Spread with preserve.',
-            'Bake for 25 - 30 minutes.',
+            'Spread with preserves.',
+            'Bake for 25 to 30 minutes.',
             'Cool on a wire rack, and then cut into bars.',
-            'Garnish with Pistachios, if desired.'
+            'Garnish with pistachios, if desired.'
             ]
         
         for s in steps:

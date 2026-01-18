@@ -31,7 +31,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
 
         ##
         r.addIngredient('Pizza Dough', 16, 'oz')
-        r.addIngredient('Artichoke Hearts', 1, 'can, 14oz, in brine')
+        r.addIngredient('Artichoke Hearts', 1, 'can, 14 oz, in brine')
         r.addIngredient('Parmesan Cheese', 4, 'oz')
         r.addIngredient('Mayonnaise', 1, 'tablespoon')
         r.addIngredient('Cream Cheese', 1, 'tablespoon')
@@ -44,8 +44,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Spread the mixture thinly over the Pizza Dough, and then roll into a spiral.',
             'Preheat the oven to 400 deg F.',
             'Prepare a baking sheet with parchment paper.',
-            'Use floss to cut ends off the roll - about 1/2 " - and place on a baking sheet.',
-            'Bake for 25 - 30 minutes, until brown.'
+            'Use floss to cut the ends off the roll - about 1/2" - and place on a baking sheet.',
+            'Bake for 25 to 30 minutes, until brown.'
         ]
         
         for s in steps:

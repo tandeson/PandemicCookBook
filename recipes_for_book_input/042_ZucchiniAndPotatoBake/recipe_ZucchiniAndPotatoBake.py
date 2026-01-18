@@ -35,7 +35,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Zucchini', 2, 'medium' )
         r.addIngredient('Potato', 4, 'medium')
         r.addIngredient('Red Bell Pepper', 1, 'medium')
-        r.addIngredient('Garlic', 2, 'Cloves, sliced')
+        r.addIngredient('Garlic', 2, 'cloves, sliced')
         r.addIngredient('Breadcrumbs', 0.5, 'cups')
         r.addIngredient('Extra Virgin Olive Oil', 0.25, 'cups')
         r.addIngredient('Paprika', 1, 'pinch, to taste')
@@ -50,7 +50,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Seed the Red Bell Pepper, and chop.',
             'In a medium baking pan, toss together the zucchini, potatoes, red bell pepper, '
             'garlic, bread crumbs, and olive oil. Season with paprika, salt, and pepper.',
-            'Bake 1 hour in the preheated oven, stirring occasionally, until potatoes are tender and lightly brown.'
+            'Bake 1 hour in the preheated oven, stirring occasionally, until potatoes are tender and lightly browned.'
         ]
         for s in steps:
             r.addStep( RecipeStep( s ) )

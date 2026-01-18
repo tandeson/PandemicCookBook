@@ -45,7 +45,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Mustard', 1, 'tablespoon')
         r.addIngredient('Dill', 0.5, 'tablespoon')
         r.addIngredient('Salt', 2, 'teaspoons')
-        r.addIngredient('Black Pepper', 1, 'teaspoons')
+        r.addIngredient('Black Pepper', 1, 'teaspoon')
                         
         r.addIngredient('Black Olives', 1, 'can, 2.25 oz')
         r.addIngredient('Capers', 1, 'can, 3.5 oz')
@@ -54,19 +54,19 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
          
         # Add Steps and Notes
         steps= [
-            'Fill a large pot about 1/3 of the way with water, add Salt and bring to a Boil.',
+            'Fill a large pot about 1/3 of the way with water, add Salt and bring to a boil.',
             'Add the Potatoes to the pot, reduce heat to just below a boil. Let cook for 8 minutes.',
-            'Add in the Eggs to the pot with the Potatoes, let cook for 12 more minutes.',
+            'Add the Eggs to the pot with the Potatoes and cook for 12 more minutes.',
             'Heat a frying pan on medium heat.',
-            'Chop the Pickles, Celery and Onion. Fry in the pan with oil until just softened 3 - 5 minutes.',
+            'Chop the Pickles, Celery and Onion. Fry in the pan with oil until just softened, 3 to 5 minutes.',
             'Put the cooked Pickles, Celery and Onion into a large bowl.',
-            'In a separate container mix the Mayonnaise, Vinegar, Mustard, Dill, Salt and Pepper.',
-            'When the potatoes are done - Turn the stove off.',
-            'Working with groups of 2 - 4, remove the potatoes from the pot, slice into large chunks '
+            'In a separate container, mix the Mayonnaise, Vinegar, Mustard, Dill, Salt and Pepper.',
+            'When the potatoes are done, turn the stove off.',
+            'Working with groups of 2 to 4, remove the potatoes from the pot, slice into large chunks '
             'and place in the bowl. Pour part of the dressing mixture on them, and stir to coat. '
             'Repeat until all the potatoes are in the bowl.',
-            'Shell the hard boiled Eggs, chop, and place in the bowl.',
-            'Mix in the olives, Capers and any remaining dressing. Mix well.'
+            'Shell the hard-boiled Eggs, chop, and place in the bowl.',
+            'Mix in the olives, capers and any remaining dressing. Mix well.'
         ]
         for s in steps:
             r.addStep( RecipeStep( s ) )

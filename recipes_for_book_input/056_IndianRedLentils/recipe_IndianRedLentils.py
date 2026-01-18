@@ -36,7 +36,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Water', 2, 'cups')
         r.addIngredient('Onion', 1, 'chopped')
         r.addIngredient('Tomatoes', 1, 'chopped')
-        r.addIngredient('Coconut Milk', 1, 'Can, about 16 oz')
+        r.addIngredient('Coconut Milk', 1, 'can, about 16 oz')
         r.addIngredient('Green Chillies', 2, 'chopped')
         r.addIngredient('Turmeric', 0.25, 'teaspoon')
         r.addIngredient('Cumin', 0.5, 'teaspoon')
@@ -53,10 +53,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         # Add Steps and Notes
         steps = [
-            'In a pan, put in the lentils, water, onion, Tomato, Coconut milk, chillies, turmeric, cumin and coriander. If you do not have the Chillies, you can use Chilli powder to taste.',
+            'In a pan, put in the lentils, water, onion, tomatoes, coconut milk, chillies, turmeric, cumin and coriander. If you do not have the chillies, you can use chilli powder to taste.',
             'Bring to a boil, then lower to a simmer. Cook, stirring occasionally, about 25 minutes, until lentils are soft.',
             'In a separate small pan, heat oil over low heat and add in cumin seeds and mustard seeds. Cook until they pop. If using curry leaves, add and fry for about 1 minute.',
-            'Pour everything into the lentils, stir together. Cook for a few minutes'
+            'Pour everything into the lentils, stir together, and cook for a few minutes.'
             ]
         
         for s in steps:

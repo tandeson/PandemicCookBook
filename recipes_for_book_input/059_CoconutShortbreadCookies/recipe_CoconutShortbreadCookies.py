@@ -37,14 +37,14 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Coconut Flour', 32, 'grams (1/4 cup)')
         r.addIngredient('All Purpose Flour', 39, 'grams (1/4 cup)')
         r.addIngredient('Granulated White Sugar', 50, 'grams (1/4 cup)')
-        r.addIngredient('Unsalted Butter', 57, 'grams (4 tablespoons) soft')
+        r.addIngredient('Unsalted Butter', 57, 'grams (4 tablespoons), soft')
         r.addIngredient('Salt', 0.25, 'teaspoon')
         r.addIngredient('Eggs', 1, 'large')
         
         
         # Add Steps and Notes
         steps = [
-            'Pre-heat the oven to 400 deg F.',
+            'Preheat the oven to 400 deg F.',
             'Lightly grease a baking sheet, or line it with parchment paper.',
             'Mix all the dough ingredients, by hand or mixer, until a '
             'well-blended, cohesive dough forms.',

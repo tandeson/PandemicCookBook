@@ -34,7 +34,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         ##
         #--
         r.addIngredient('Mushrooms', 2, 'large Portobello')
-        r.addIngredient('Brie', 0.25, 'cups, approximately Soft cheese like ')
+        r.addIngredient('Brie', 0.25, 'cups, approximately')
         r.addIngredient('Extra Virgin Olive Oil', 2, 'tablespoons')
         r.addIngredient('Salt', 1, 'pinch, to taste')
         r.addIngredient('Black Pepper', 1, 'pinch, to taste')
@@ -42,11 +42,11 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         # Add Steps and Notes
         steps = [
-            'Pre-heat the oven to 350 deg F.',
+            'Preheat the oven to 350 deg F.',
             'Lightly grease a baking sheet, or line it with parchment.',
             'Brush the top of the mushroom caps with oil, and place on the sheet stem side up.',
-            'Evenly divide the cheese between the mushrooms, and place on top. You can also use Feta, '
-            'cream cheese or other cheese as well. If the mushrooms seems dry - add additional oil.',
+            'Evenly divide the cheese between the mushrooms and place on top. You can also use Feta, '
+            'cream cheese or other cheese as well. If the mushrooms seem dry, add additional oil.',
             'Season to taste with Salt and Pepper.',
             'Bake for 15 minutes.',
             'Remove and serve.'

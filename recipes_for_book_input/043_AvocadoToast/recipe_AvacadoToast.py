@@ -34,14 +34,14 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         #  -- Add Ingredients --
 
         ##
-        r.addIngredient('Avocados', 0.5, 'Haas, skin removed,')
+        r.addIngredient('Avocados', 0.5, 'Hass, skin removed')
         r.addIngredient('Bread', 1, 'slice')
         r.addIngredient('Salt', 1, 'pinch, to taste')
         
         # Add Steps and Notes
         steps= [
-            'If the Bread if fresh, use as is. If not, lightly toast.',
-            'Cut the 1/2 an Avocado into 4 roughly equal pieces. Place on a plate next to the Bread.',
+            'If the Bread is fresh, use as is. If not, lightly toast.',
+            'Cut 1/2 an Avocado into 4 roughly equal pieces. Place on a plate next to the Bread.',
             'Lightly salt the Avocado to taste.'
         ]
         for s in steps:
