@@ -15,7 +15,7 @@
 - Status: English edits and Bulgarian translation completed (pending final review)
 
 ## Batch 061–080
-- Status: Not started
+- Status: English edits and Bulgarian translation completed (pending final review)
 
 ## Batch 081–100
 - Status: Not started
