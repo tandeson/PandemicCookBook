@@ -22,7 +22,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
-        r = MyRecipe('Butternut Brussels Sprout goat cheese Galette', 'Main dishes', sharedIngredentList)
+        r = MyRecipe('Butternut Brussels Sprout Goat Cheese Galette', 'Main dishes', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         r.addPicture('GaletteSlice', '2021_Galette_slice.JPEG')
         r.addPicture('GaletteFull','2021_Galette_Full.JPEG')
@@ -36,22 +36,22 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Extra Virgin Olive Oil', 1, 'tablespoon')
         r.addIngredient('Salt', 0.5, 'teaspoon')
         r.addIngredient('Black Pepper', 0.25, 'teaspoon')
-        r.addIngredient('Goat Cheese', 4, 'oz  Cream Cheese or')
+        r.addIngredient('Goat Cheese', 4, 'oz, or cream cheese')
         r.addIngredient('Oregano', 2, 'tablespoons')
         
         # Add Steps and Notes
         steps = [
             'Preheat oven to 400 deg F and line a baking sheet with foil.',
-            'Slice peeled and seeded squash into 1/4 inch cubes and slice brussels into thin slices.',
+            'Slice peeled and seeded squash into 1/4 inch cubes and slice brussels sprouts into thin slices.',
             'In a large bowl, first toss squash with 1/2 the oil, salt and pepper.',
             'Place on the pan, and roast for 15 minutes.',
             'While squash is roasting, prepare the brussels sprouts in the same way, with the remaining oil, salt and pepper.',
             'When the time is up, add the brussels sprouts to the pan, and roast for an additional 10 minutes.',
             'Return the squash and sprouts to the bowl. Change the oven temperature to 375 deg F.',
-            'Add the goat cheese and herbs to the bowl and toss. Adjust seasoning as you see fit.'
-            'Put parchment paper on the baking sheet and Place the Pastry shell on it.',
-            'Fill the middle of the shell with the mixture from the bowl, and fold the edges up to form a galette.'
-            'Place the galette in the oven for 40-50 minutes at 375 or until the crust is golden brown. Serve warm.'
+            'Add the goat cheese and herbs to the bowl and toss. Adjust seasoning as you see fit.',
+            'Put parchment paper on the baking sheet and place the pastry shell on it.',
+            'Fill the middle of the shell with the mixture from the bowl, and fold the edges up to form a galette.',
+            'Bake for 40 to 50 minutes at 375 deg F or until the crust is golden brown. Serve warm.'
             ]
         for s in steps:
             r.addStep( RecipeStep( s ) )

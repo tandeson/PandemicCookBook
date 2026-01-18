@@ -30,7 +30,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         ## ---
         
-        r.addIngredient('Extra Virgin Olive Oil', 1, 'tablespoons')
+        r.addIngredient('Extra Virgin Olive Oil', 1, 'tablespoon')
         r.addIngredient('Veggie Grillers Crumbles', 1, 'pound')
         r.addIngredient('Green Onion', 5, 'whole')               
         r.addIngredient('Red Pepper Flakes', 1, 'tablespoon')
@@ -47,10 +47,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         # Add Steps and Notes
         steps = [
-            'Heat a large skillet to medium heat and add the cooking oil. Add green onions, garlic, ginger and red chili and cook for a minute or two',
+            'Heat a large skillet to medium heat and add the cooking oil. Add green onions, garlic, ginger and red pepper flakes and cook for a minute or two.',
             'Defrost the Veggie Crumbles in the microwave according to the packaging, and set aside.',
-            'Add the cabbage and carrot to the pan and cook until it starts to get tender',
-            'Add the bean sprouts and cook for a minute more before adding the Veggie Crumbles, rice vinegar, sesame oil and soy sauce and tossing until the mixture is coated.'
+            'Add the cabbage and carrot to the pan and cook until it starts to get tender.',
+            'Add the bean sprouts and cook for a minute more before adding the Veggie Crumbles, rice vinegar, sesame oil and soy sauce, tossing until the mixture is coated.',
             'Garnish with Cilantro.'
             
             ]

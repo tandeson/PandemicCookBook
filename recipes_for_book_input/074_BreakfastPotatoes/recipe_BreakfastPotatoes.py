@@ -28,7 +28,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addPicture('potatoes_2', 'PotatoesPlate_2.JPEG')
         r.setPrimaryPicture( 'potatoes_1')
         r.AddDescription(
-            'This is the process')
+            'This is the process we use.')
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         ## ---
         
@@ -43,23 +43,23 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addStep( RecipeStep('Wash and scrub the Potatoes') )
         r.addStep( 
             RecipeStep( 'Cook Potatoes (Microwave)', [
-                RecipeStep('Poke holes in the Potatoes with a fork'),
-                RecipeStep('Place in a microwave on a paper towel. Set to "baked potatoes" (usually about 10 min).'),
+                RecipeStep('Poke holes in the Potatoes with a fork.'),
+                RecipeStep('Place in a microwave on a paper towel. Set to "baked potatoes" (usually about 10 minutes).'),
             ]))
         
         r.addStep(
             RecipeStep( 'Cook Potatoes (boiled)', [
-                RecipeStep('Place in a pot and cover with cold salt water, and then bring to a boil'),
-                RecipeStep('Reduce to a low boil, and cook for 25 - 30 minutes.'),
-                RecipeStep('Drain, and let sit for 5 minute to dry the Potatoes.'),
+                RecipeStep('Place in a pot and cover with cold salted water, and then bring to a boil.'),
+                RecipeStep('Reduce to a low boil, and cook for 25 to 30 minutes.'),
+                RecipeStep('Drain, and let sit for 5 minutes to dry the Potatoes.'),
             ]))
         
         # Add Steps and Notes
         steps = [
-            'Heat oil on medium high heat in a large frying pan.',
+            'Heat oil on medium-high heat in a large frying pan.',
             'Cut the potatoes into roughly 1/2" cubes.',
             'Place the potatoes in the pan, cover with Corn Starch, Salt and Pepper. Stir with a wooden spoon to mix well.',
-            'Stir occasionally while the potatoes cook to get even browning. As soon as some side appear brown, add in the garlic and onion.',
+            'Stir occasionally while the potatoes cook to get even browning. As soon as some sides appear brown, add in the garlic and onion.',
             'Continue to cook until Potatoes are mostly brown, about 5 minutes. Remove from heat and serve.'
             ]
         for s in steps:

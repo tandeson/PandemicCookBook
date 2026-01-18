@@ -31,7 +31,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         #  -- Add Ingredients --
 
         ##
-        r.addIngredient('Bread', 1, 'loaf (1 pound),sourdough')
+        r.addIngredient('Bread', 1, 'loaf (1 pound), sourdough')
         r.addIngredient('Mushrooms', 0.5, 'pounds, sliced')
         r.addIngredient('Celery', 2, 'ribs, chopped')
         r.addIngredient('Yellow Onion', 1, 'medium, chopped')
@@ -53,9 +53,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Transfer to a large bowl. Stir in bread cubes.',
             'In a small bowl, whisk egg and broth until blended.',
             'Pour over bread mixture and mix well.',
-            'Transfer to a greased 3 quart baking dish ( the dish will be full).',
+            'Transfer to a greased 3-quart baking dish (the dish will be full).',
             'Cover and bake for 30 minutes.',
-            'Uncover - bake 5 - 15 minutes longer until a thermometer reads 160 deg F.',
+            'Uncover and bake 5 to 15 minutes longer, until a thermometer reads 160 deg F.',
             'Remove and serve.'
         ]
         

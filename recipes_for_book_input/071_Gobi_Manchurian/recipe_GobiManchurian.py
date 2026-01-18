@@ -29,7 +29,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setRecipeFormat('TWO_COLUMN_OPTIONAL_PICTURES')
         
         r.AddDescription('Thomas made this for my 38th birthday. It is a ton of work '
-                         'but absoletuly delisious. ~Bilyana')
+                         'but absolutely delicious. ~Bilyana')
         ## ---
         
         grpCauliflower ="Fried Cauliflower"
@@ -61,35 +61,35 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         # Add Steps and Notes
         r.addStep( 
             RecipeStep( "Prepare the Cauliflower",[
-                RecipeStep('Cut the califlower head into medium sized florets.'),
+                RecipeStep('Cut the cauliflower head into medium-sized florets.'),
                 RecipeStep('Heat 4 cups of water in large pot, add florets when the water is getting close to boiling.'),
                 RecipeStep('Turn off heat, let the florets sit in the hot water for 5 minutes.'),
                 RecipeStep('Remove the florets and spread on a cloth or paper towel to dry. Let dry, if they are not dry, they will not be crispy when fried.')
                 ] 
             )
         )
-        r.addStep( RecipeStep( "Place the oil in deep pan, and heat to medium heat for deep frying." ))
+        r.addStep( RecipeStep( "Place the oil in a deep pan and heat to medium for deep frying." ))
         r.addStep( 
             RecipeStep( "Prepare the batter",[
-                RecipeStep('Add corn Starch, flour, chilli powder, black pepper and salt in a mixing bowl.'),
-                RecipeStep('Mix, and add water little by little as needed. Make a free flowing lump free batter.'),
-                RecipeStep('NOTE: the mix should be between a paste and crepe batter.'),
+                RecipeStep('Add corn starch, flour, chili powder, black pepper and salt in a mixing bowl.'),
+                RecipeStep('Mix, and add water little by little as needed. Make a free-flowing, lump-free batter.'),
+                RecipeStep('NOTE: The mix should be between a paste and crepe batter.'),
                 ]
             )
         )
         r.addStep(
             RecipeStep(
                 'Using a spoon, Dip florets in batter to coat and place in the oil. Do this until there is a single layer'
-                ' in the pan. If not covered in oil, flip half way though frying. Fry until crispy, then remove and place '
+                ' in the pan. If not covered in oil, flip halfway through frying. Fry until crispy, then remove and place '
                 'on paper towel. Repeat until all the cauliflower is cooked.' ))
         
         r.addStep(
             RecipeStep("Make the Manchurian Sauce", [ 
-                RecipeStep('Heat oil on medium in wide pan large enough to hold all the fried caulifower and a sauce.'),
-                RecipeStep('Add in the garlic, ginger and green chilies. Saute for 1 - 2 minutes.'),
+                RecipeStep('Heat oil on medium in a wide pan large enough to hold all the fried cauliflower and the sauce.'),
+                RecipeStep('Add in the garlic, ginger and green chilies. Saute for 1 to 2 minutes.'),
                 RecipeStep('Raise the heat to high, add onions and bell pepper. Saute for 2 minutes.'),
-                RecipeStep('Reduce heat to medium. Add in Soy sauce, red chili sauce, ketchup, chili paste, sugar, vinegar and water. Mix and cook stiring until sauce thickens.'),
-                RecipeStep('Remove from heat and let cool for 1 - 2 minutes.'),
+                RecipeStep('Reduce heat to medium. Add in Soy sauce, red chili sauce, ketchup, sugar, vinegar and water. Mix and cook stirring until sauce thickens.'),
+                RecipeStep('Remove from heat and let cool for 1 to 2 minutes.'),
             ]
             )
         )

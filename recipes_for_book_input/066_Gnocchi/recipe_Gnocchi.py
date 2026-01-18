@@ -23,7 +23,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         Make this specific Recipe
         """
         
-        ## From First for women magaizin, 2020-11-30
+        ## From First for women magazine, 2020-11-30
         
         r = MyRecipe('Gnocchi', 'Main dishes', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
@@ -35,7 +35,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         ##
         grpNameGnocchi = 'For the Gnocchi'
         r.addIngredient('Potato', 2, 'large Russet, about 1.75 pounds', grpNameGnocchi)
-        r.addIngredient('Eggs', 1, 'large, scrambled', grpNameGnocchi)
+        r.addIngredient('Eggs', 1, 'large, beaten', grpNameGnocchi)
         r.addIngredient('All Purpose Flour', 0.75, 'cups', grpNameGnocchi)
         r.addIngredient('Salt', 1.5, 'teaspoon', grpNameGnocchi)
         
@@ -46,27 +46,27 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Whole Milk', 0.5, 'cups', grpNameSauce)
         r.addIngredient('Parmesan Cheese', 1, 'cup', grpNameSauce)
         r.addIngredient('Salt', 2, 'teaspoons, to taste', grpNameSauce)
-        r.addIngredient('Black Pepper', 1, 'teaspoons, to taste', grpNameSauce)
+        r.addIngredient('Black Pepper', 1, 'teaspoon, to taste', grpNameSauce)
         # Add Steps and Notes
         steps= [
-            'Fill a large pot with water and bring to a boil. Salt can be added',
+            'Fill a large pot with water and bring to a boil. Salt can be added.',
             'Place the Potatoes in the boiling water, and boil for about 45 minutes, until tender.',
-            'Remove the potatoes one at a time, peel, and run though a food mill into a bowl. If you'
+            'Remove the potatoes one at a time, peel, and run through a food mill into a bowl. If you'
             ' don\'t have a mill, use a spoon and a strainer to rice into a bowl.',
             'Wait for the potatoes to cool - about 15 minutes.',
             'Start a pot of boiling water to cook the Gnocchi in - this can be the same water the potatoes were boiled in.',
-            'Mix in flour, salt and egg. Mix together, and then gently knead. The dough should be wet, but not sticky. You can add more flour if it\'s sticky',
+            'Mix in flour, salt and egg. Mix together, and then gently knead. The dough should be wet, but not sticky. You can add more flour if it\'s sticky.',
             'Divide into about 12 pieces.',
-            'Roll each piece into a snake like log, and cut into pieces.',
-            'In groups of about 20, place into the boiling water. Wait for the Gnocchi to float, and then give them another 10 second to cook.',
-            'Remove them with a slotted spoon, and place on a plate, or sauce if ready.'
+            'Roll each piece into a snake-like log, and cut into pieces.',
+            'In groups of about 20, place into the boiling water. Wait for the Gnocchi to float, and then give them another 10 seconds to cook.',
+            'Remove them with a slotted spoon and place on a plate, or into the sauce if ready.'
         ]
         
         for s in steps:
             r.addStep( RecipeStep( s ) )
         
         stepsSauce = [
-            RecipeStep('Heat a large sauce pan on medium heat. Put the frozen peas in the pan.'),
+            RecipeStep('Heat a large saucepan on medium heat. Put the frozen peas in the pan.'),
             RecipeStep('When the peas are no longer frozen, add in the butter and garlic. Cook until the garlic starts to just brown.'),
             RecipeStep('Add in the milk, cheese, salt and pepper. Stir vigorously until cheese melts. If it\'s too thick, add more milk and repeat.'),
             RecipeStep('Remove from heat, and mix in Gnocchi.')

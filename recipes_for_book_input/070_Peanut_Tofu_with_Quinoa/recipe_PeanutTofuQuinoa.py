@@ -29,7 +29,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPrimaryPicture( 'Bowl_2' )
         r.setRecipeFormat('TWO_COLUMN_OPTIONAL_PICTURES')
         
-        r.AddDescription('This sauce works very well over noodles or another grain / veggie combination.')
+        r.AddDescription('This sauce works very well over noodles or another grain/veggie combination.')
         ## ---
         
         
@@ -56,8 +56,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addStep( 
             RecipeStep( "Cook the Coconut Quinoa",[
                 RecipeStep( 
-                    'Put the water, Quinoa, Coconut milk and water into a medium'
-                    ' pot. Bring to boil, then let simmer for 15 minutes covered.'
+                    'Put the quinoa, coconut milk and water into a medium'
+                    ' pot. Bring to a boil, then let simmer for 15 minutes covered.'
                     ' Turn off the heat and remove the lid.' )
                 ] 
             )
@@ -65,17 +65,17 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addStep( 
             RecipeStep( "Make the Sauce",[
                 RecipeStep(
-                    'In a large pan add all the sauce ingredients and turn the heat'
-                    ' to medium, stir constantly until smooth and creamy, about 5-10'
+                    'In a large pan, add all the sauce ingredients and turn the heat'
+                    ' to medium. Stir constantly until smooth and creamy, about 5 to 10'
                     ' minutes.'),
                 RecipeStep(
-                    'Mix in the fried Tofu, and stir until well mixed.')
+                    'Mix in the Fried Tofu and stir until well mixed.')
                 ]
             )
         )                
     
         r.addStep( 
-            RecipeStep( "Put the Quinoa into a bowl, and scoop the sauce on top to serve.")
+            RecipeStep( "Put the Quinoa into a bowl and scoop the sauce on top to serve.")
         )
         
         # Return this back.

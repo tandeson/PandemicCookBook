@@ -38,7 +38,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Phyllo Dough', 0.5, '16-oz package')
         r.addIngredient('Water', 0.75, 'cups')
         r.addIngredient('Honey', 3 ,'tablespoons')
-        r.addIngredient('Lemon', 1, 'for shredded peel and juice')
+        r.addIngredient('Lemon', 1, 'for zest and juice')
         r.addIngredient('Cinnamon', 1 , 'stick, 2 inches')
         
         # Add Steps and Notes
@@ -46,12 +46,12 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Preheat oven to 325 deg F.',
             'In a large bowl, stir together walnuts, 1/2 cup sugar and ground cinnamon.',
             'Brush the bottom of a 13x9x2 inch baking pan with some of the melted butter. Unroll phyllo dough; cover with a moist towel.'
-            ' As you work, keep dough covered in order keep it from drying out. Layer 5 sheets of phyllo in the prepared baking pan, brushing'
-            ' each sheet generously with some of the melted butter. Layer in 1/3 of the filling. Repeat layer phyllo sheet and filling two more times, '
-            'brushing each sheet with more butter. Layer 5 more sheets on the top. Drizzel remaining butter across the top.',
+            ' As you work, keep dough covered in order to keep it from drying out. Layer 5 sheets of phyllo in the prepared baking pan, brushing'
+            ' each sheet generously with some of the melted butter. Layer in 1/3 of the filling. Repeat layering phyllo and filling two more times, '
+            'brushing each sheet with more butter. Layer 5 more sheets on the top. Drizzle remaining butter across the top.',
             'Using a sharp knife, cut into 24 to 48 rectangle pieces.',
-            'Bake for 35 - 45 minutes or until golden brown. Remove from oven, and cool slightly on a wire rack in the pan.',
-            'For syrup: In a medium sauce pan, stir together the remaining sugar, honey, water, lemon peel, lemon juice and cinnamon stick.',
+            'Bake for 35 to 45 minutes or until golden brown. Remove from oven, and cool slightly on a wire rack in the pan.',
+            'For syrup: In a medium saucepan, stir together the remaining sugar, honey, water, lemon zest, lemon juice and cinnamon stick.',
             ' Bring to boiling; reduce heat. Simmer, uncovered, for 20 minutes. Remove cinnamon stick, and pour evenly over the baklava in the pan.'
             ]
         

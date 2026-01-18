@@ -23,7 +23,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         Make this specific Recipe
         """
         
-        ## From First for women magaizin, 2020-11-30
+        ## From First for women magazine, 2020-11-30
         
         r = MyRecipe('Gingerbread House', 'Dessert', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
@@ -68,9 +68,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             RecipeStep('Add flour 1 cup at a time until you have a smooth, stiff dough. It should be stiff enough to be flexible, '
                        'and neither crumbly nor sticky.'),
             RecipeStep('Divide the dough in half, flatten each half, and wrap in plastic. Refrigerate for at least 1 hour.'),
-            RecipeStep('If desired - food coloring can be added, as can flavoring such as Lemon extract, Vanilla extract, etc')
+            RecipeStep('If desired, food coloring can be added, as can flavoring such as lemon extract, vanilla extract, etc.')
         ]
-        r.addStep( RecipeStep( 'To Make the dough', stepsDough ) )
+        r.addStep( RecipeStep( 'To Make the Dough', stepsDough ) )
         
         r.addStep( RecipeStep('Make a plan for your construction, cutting out paper shapes if desired.'))
         r.addStep( RecipeStep('Preheat the oven to 350 deg F.'))

@@ -23,9 +23,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         Make this specific Recipe
         """
         
-        ## From First for women magaizin, 2020-11-30
+        ## From First for women magazine, 2020-11-30
         
-        r = MyRecipe('Blue cheese and Walnut Stuffed Mushrooms', 'Appetizers', sharedIngredentList)
+        r = MyRecipe('Blue Cheese and Walnut Stuffed Mushrooms', 'Appetizers', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         r.addPicture('Mushrooms', 'StuffedMushrooms_Nov2020.jpg')
         r.setPrimaryPicture('Mushrooms')
@@ -44,13 +44,13 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
                               
         # Add Steps and Notes
         steps= [
-            'Heat oven to 375 deg F.',
+            'Heat the oven to 375 deg F.',
             'Coat baking sheet with parchment paper.',
             'Brush mushrooms with oil, arrange, stem sides down, on baking sheet.',
-            'Bake until almost tender, 10 minues.',
+            'Bake until almost tender, 10 minutes.',
             'In a bowl, combine remaining ingredients.',
             'Flip mushrooms over. Fill evenly with cheese mixture.',
-            'Heat broiler, broil until cheese melts, 1-2 minutes.'
+            'Heat the broiler and broil until cheese melts, 1 to 2 minutes.'
         ]
         
         for s in steps:

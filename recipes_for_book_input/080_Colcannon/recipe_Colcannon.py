@@ -33,12 +33,12 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         ##
         r.addIngredient('Potato', 2, 'pounds, russet')
         r.addIngredient('Leek', 2, 'large, whole')
-        r.addIngredient('Savoy Cabbage', 0.5, 'headed, finely shredded')
+        r.addIngredient('Savoy Cabbage', 0.5, 'head, finely shredded')
         r.addIngredient('Garlic', 3, 'cloves, minced')
         r.addIngredient('Unsalted Butter', 6, 'tablespoons')
         r.addIngredient('Half and Half', 1, 'cup')
         r.addIngredient('Salt', 2, 'teaspoons')
-        r.addIngredient('Black Pepper', 1, 'teaspoons')
+        r.addIngredient('Black Pepper', 1, 'teaspoon')
 
         
        
@@ -54,10 +54,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'While potatoes are boiling, melt 4 tablespoons butter in a large skillet '
             'until foaming subsides. Add cabbage and 1 teaspoon each kosher salt and black'
             ' pepper. Cook over medium-high heat, stirring frequently, until cabbage is just'
-            ' starting to brown, 5-8 minutes.',
+            ' starting to brown, 5 to 8 minutes.',
             
             'Add leeks and an additional 1/2 teaspoon of salt. Continue cooking, stirring often, '
-            'until vegetables are tender, 5-8 minutes more. Add garlic, and cook for an additional '
+            'until vegetables are tender, 5 to 8 minutes more. Add garlic, and cook for an additional '
             'minute. Stir in half and half, bring to a simmer, and remove from heat.',
             
             'Stir vegetables and half and half into the cooked potatoes. Use a potato masher to fully'

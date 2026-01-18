@@ -41,21 +41,21 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Tomatoes', 3, 'seeded and chopped')
         r.addIngredient('Black Beans', 2, 'cans, 16 oz')
         r.addIngredient('Kidney Beans',2, 'cans, 16 oz')
-        r.addIngredient('Vegetable Broth', 2, 'cup' )
+        r.addIngredient('Vegetable Broth', 2, 'cups' )
         
         r.addIngredient('Molasses', 2, 'tablespoons')
         r.addIngredient('Smoked Paprika', 1, 'tablespoon')
         r.addIngredient('Cumin', 2, 'tablespoons')
         r.addIngredient('Chili powder', 1, 'tablespoon')
         r.addIngredient('Salt', 2, 'teaspoons')
-        r.addIngredient('Black Pepper', 1, 'teaspoons')
+        r.addIngredient('Black Pepper', 1, 'teaspoon')
         
         r.addIngredient('All Purpose Flour', 2, 'tablespoons')
           
         # Add Steps and Notes
         steps= [
-            'In a large pot, heat the olive oil on medium high heat.',
-            'Add in the Garlic, onion, celery, peppers. Cook until softened, about 3 minutes.',
+            'In a large pot, heat the olive oil on medium-high heat.',
+            'Add in the Garlic, onion, celery, and peppers. Cook until softened, about 3 minutes.',
             'Add in the beans, tomatoes and broth. Bring to a boil.',
             'Reduce heat and add in molasses and spices. Stir well and let heat for 10 minutes.',
             'Add in the flour to thicken, and stir well. Let cook for an additional 10 minutes.',

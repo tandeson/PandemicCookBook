@@ -28,12 +28,12 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setPrimaryPicture( 'DumplingDish' )
         r.AddDescription(
             'We tried this recipe for Chinese New Year in 2021, and loved it! It\'s'
-            ' based on a recipe from the blog "Two Red Bowls" ~Thomas')
+            ' based on a recipe from the blog "Two Red Bowls." ~Thomas')
         r.setRecipeFormat('FANCY_LONG_RECIPE')
         ## ---
         
         grpDough ="Dough"
-        r.addIngredient('All Purpose Flour', 376, 'grams,~3 cups', grpDough)
+        r.addIngredient('All Purpose Flour', 376, 'grams, ~3 cups', grpDough)
         r.addIngredient('Salt', 0.75, 'teaspoon', grpDough)
         r.addIngredient('Water', 255, 'grams, boiling, ~1 cup', grpDough)
 
@@ -119,7 +119,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
                     'Bring a large, shallow pot of water to a boil. Add as many dumplings as can comfortably fit in a single '
                     'layer in the pot and let cook until the dumplings float, about 3 minutes. Simmer for 2 minutes more, until'
                     ' cooked through, then transfer to a plate and repeat with any remaining dumplings.'),
-                RecipeStep('Quickly Fry the dumpling on medium heat unitl the outside browns just a little, and retun to the plate.'),
+                RecipeStep('Quickly fry the dumplings on medium heat until the outside browns just a little, and return to the plate.'),
                 RecipeStep('Serve warm. Refrigerate any leftovers, well wrapped, for several days; freeze for longer storage.'),
                 ] 
             )

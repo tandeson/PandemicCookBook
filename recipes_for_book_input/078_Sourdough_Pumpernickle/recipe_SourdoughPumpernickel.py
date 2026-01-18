@@ -45,7 +45,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         # Add Steps and Notes
         r.addStep( RecipeStep('Make the sponge', [
             RecipeStep(
-                'Put the Starter, water, coffee, pumpernickel and '
+                'Put the Starter, water (or coffee), pumpernickel and '
                 'onion in a bowl. Stir together, cover and let rest at room'
                 ' temperature overnight.')
             ]))
@@ -56,8 +56,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             RecipeStep('Once the dough has come together, shape it into a ball (boule). Place the boule smooth side down in a flour-dusted or lined brotform or bowl.'),
             RecipeStep('Cover and let rise in a draft-free spot until puffy. This will take anywhere from 1 to 3 hours depending on the temperature of the space where the dough is rising and the strength of your starter. '),
             RecipeStep('About an hour before the boule is finished rising, preheat the oven to 425 deg F with a baking stone on the center rack. Place an empty cast-iron skillet on the lowest rack.'),
-            RecipeStep('Transfer the boule to the hot stone, and add steam to the oven: Pour about 1 cup of boiling water into the cast iron frying pan. Steam will billow from the pan upwards to envelop the baking bread; be sure to wear good oven mitts to shield your hands and arms. Quickly close the oven door to trap the steam.'),
-            RecipeStep('Bake the boule for 40 to 45 minutes, Remove the boule from the oven and cool it on a rack before slicing. '),
+            RecipeStep('Transfer the boule to the hot stone, and add steam to the oven: Pour about 1 cup of boiling water into the cast-iron skillet. Steam will billow from the pan upwards to envelop the baking bread; be sure to wear good oven mitts to shield your hands and arms. Quickly close the oven door to trap the steam.'),
+            RecipeStep('Bake the boule for 40 to 45 minutes. Remove the boule from the oven and cool it on a rack before slicing.'),
             
             ]))
         

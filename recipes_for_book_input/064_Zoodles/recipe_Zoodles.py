@@ -23,7 +23,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         Make this specific Recipe
         """
         
-        ## From First for women magaizin, 2020-11-30
+        ## From First for women magazine, 2020-11-30
         
         r = MyRecipe('Zoodles', 'Main dishes', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
@@ -41,10 +41,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
                               
         # Add Steps and Notes
         steps= [
-            'Zoodle the zucchini, removing large chunk of skin from the pile.',
+            'Spiralize the zucchini, removing large chunks of skin from the pile.',
             'Heat the oil in a frying pan on medium heat.',
-            'Lightly cook the zoodles with the red pepper flakes and garlic, 3-5 minutes.',
-            'Add in pasta sauce and cook until heated.',
+            'Lightly cook the zoodles with the red pepper flakes and garlic, 3 to 5 minutes.',
+            'Add in marinara sauce and cook until heated.',
             'Season to taste.'
         ]
         
