@@ -198,15 +198,20 @@ def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
         print("Building LaTex file: %s" % (outLaTexAbsFilePath) )
     
     compiler = latex_settings.get('compiler')
-    if compiler:
-        doc.generate_pdf(
-            outLaTexAbsFilePath,
-            clean_tex=False,
-            compiler=compiler)
-    else:
-        doc.generate_pdf(
-            outLaTexAbsFilePath,
-            clean_tex=False)
+    passes = max(1, int(latex_settings.get('passes', 1)))
+    for idx in range(passes):
+        clean = (idx == (passes - 1))
+        if compiler:
+            doc.generate_pdf(
+                outLaTexAbsFilePath,
+                clean_tex=False,
+                clean=clean,
+                compiler=compiler)
+        else:
+            doc.generate_pdf(
+                outLaTexAbsFilePath,
+                clean_tex=False,
+                clean=clean)
     
     if(args.verbose):
         print("Finished Building LaTex file: %s" % (outLaTexAbsFilePath) )
@@ -777,11 +782,19 @@ def getLateByIngredientIndex( doc, cookbookData):
     """
     lstIngred = []
     dictIngred = {}
+    used_ingredients = set()
+    recipe_objects = cookbookData.get('Recipes', {}).get('inputObjects', {})
+    for recipe in recipe_objects.values():
+        for ingredient_grp in recipe.info.get('ingredientsGrpOrder', []):
+            for ingredient in recipe.info['ingredients'].get(ingredient_grp, []):
+                used_ingredients.add(ingredient['ingredients'].getName())
     txtExcludeList = ['Household', 'Spices', 'Oils']
     for ingredGrp in cookbookData['ingredients']['text_tree']:
         if( ingredGrp not in txtExcludeList):
             ingredGrpBase = cookbookData['ingredients']['text_tree'][ingredGrp] 
             for ingred in ingredGrpBase:
+                if used_ingredients and ingred not in used_ingredients:
+                    continue
                 display_name = translate_text(ingred).strip()
                 lstIngred.append((display_name, ingred))
                 dictIngred[ ingred ] = ingredGrpBase[ingred] 

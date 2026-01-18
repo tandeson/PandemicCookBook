@@ -49,6 +49,7 @@ LANGUAGE_PACKS = {
             'use_polyglossia': False,
             'main_font': None,
             'language': 'english',
+            'passes': 1,
         },
     },
     'bg': {
@@ -93,6 +94,7 @@ LANGUAGE_PACKS = {
             'use_polyglossia': True,
             'main_font': 'DejaVu Serif',
             'language': 'bulgarian',
+            'passes': 2,
         },
     },
 }
