@@ -6,7 +6,7 @@
 - Translation: Completed for batch 001–020.
 
 ## Batch 021–040
-- Status: Not started
+- Status: English edits and Bulgarian translation completed (pending final review)
 
 ## Batch 041–060
 - Status: Not started

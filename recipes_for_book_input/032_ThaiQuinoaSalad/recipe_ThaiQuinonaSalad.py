@@ -53,8 +53,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         # Add Steps and Notes
         r.addStep( RecipeStep( 'Make the dressing.', [ 
-                RecipeStep( 'Add peanut butter and honey to a medium microwave safe bowl; heat in microwave for 20 seconds.' ),
-                RecipeStep( 'Add in ginger, soy sauce, vinegar, and both sesame and olive oil and stir until mixture is smooth and creamy.'),
+                RecipeStep( 'Add peanut butter and honey to a medium microwave-safe bowl; heat in the microwave for 20 seconds.' ),
+                RecipeStep( 'Add in ginger, soy sauce, vinegar, and both sesame and olive oil, and stir until the mixture is smooth and creamy.'),
                 RecipeStep('If you want a thinner dressing, simply stir in a teaspoon or two of water or olive oil.'),
             ]))
         

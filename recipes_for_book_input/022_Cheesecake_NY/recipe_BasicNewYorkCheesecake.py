@@ -27,10 +27,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')  
         
         r.AddDescription(
-            'This Recipe was shared with me by Lindsay Bruce, back in College. It comes '
-            'from her father, who spent his life as in restaurant kitchens. It\'s been a '
-            'standby for years. It can easily be modified by adding a toppings like raspberries or '
-            ' chocolate. ~Thomas'
+            'This recipe was shared with me by Lindsay Bruce back in college. It comes '
+            'from her father, who spent his life in restaurant kitchens. It\'s been a '
+            'standby for years. It can easily be modified by adding toppings like raspberries or '
+            'chocolate. ~Thomas'
         )
         #  -- Add Ingredients --
         
@@ -63,17 +63,17 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         r.addStep( RecipeStep( 'Preheat the oven to 325 deg F.') )
         r.addStep( RecipeStep( 
-            'Combine all the filling ingredients in a bowl - Cream Cheese, Heavy Cream, Eggs, Sugar, Lemon, Flour and Vanilla.'
-            ' Mix until combine, but no more, as extra air in the mix will cause cracking.'
+            'Combine all the filling ingredients in a bowl - Cream Cheese, Heavy Cream, Eggs, Sugar, Lemon, Flour and Vanilla. '
+            'Mix until combined, but no more, as extra air in the mix will cause cracking.'
             ))
         r.addStep( RecipeStep('Pour the filling mixture into the crust.') )
         r.addStep( RecipeStep(
-            'Create a cover for the bottom of the spring form pan using layers of saran wrap and aluminium foil. make 4 - 6 layers. '
-            ' This will allow the cake to float in a water bath during baking.'))
+            'Create a cover for the bottom of the springform pan using layers of plastic wrap and aluminum foil. '
+            'Make 4 to 6 layers. This will allow the cake to sit in a water bath during baking.'))
         r.addStep( RecipeStep(
-            'Fill a cookie sheet with water and place in the oven. Float the cake on top of the water. Bake for 1 hour and 45'
+            'Fill a cookie sheet with water and place in the oven. Set the cake pan in the water bath. Bake for 1 hour and 45'
             ' minutes.'))
-        r.addStep( RecipeStep(' Cool for at least 6 hours.'))
+        r.addStep( RecipeStep('Cool for at least 6 hours.'))
         
             
         

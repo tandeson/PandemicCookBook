@@ -39,23 +39,23 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Garlic', 4, 'cloves, chopped')
         r.addIngredient('Salt', 1, 'teaspoon')
         r.addIngredient('Collard Greens', 1, 'bunch (or Kale)')
-        r.addIngredient('Peanut Butter', 0.75, 'cups unsalted')
+        r.addIngredient('Peanut Butter', 0.75, 'cups, unsalted')
         r.addIngredient('Tomato Paste', 0.5 , 'cups')
-        r.addIngredient('Sriracha', 1, 'squrit, to taste, ')
+        r.addIngredient('Sriracha', 1, 'squirt, to taste')
         r.addIngredient('Peanuts', 0.25, 'cups, chopped')
         r.addIngredient('Sweet Potatoes', 1, 'chopped')
            
         # Add Steps and Notes
         steps= [
             'Combine the broth and water in a medium pot.',
-            'Bring to boil, then add the Red Onion, Ginger, Garlic, Salt and Sweet Potato.',
+            'Bring to a boil, then add the Red Onion, Ginger, Garlic, Salt and Sweet Potato.',
             'Cook on medium-low heat for 20 minutes.',
             'In a medium-sized heat-safe mixing bowl, combine the Peanut Butter and Tomato Paste.',
             'Transfer 1 - 2 cups of the hot stock to the bowl. Whisk until smooth, then pour back '
             'into the soup and mix well.',
-            'Stir in Collard Greens and season the soup with Hot Sauce to taste.',
+            'Stir in Collard Greens and season the soup with Sriracha to taste.',
             'Simmer for 15 minutes on medium-low heat, stirring often.',
-            'Season with additional salt or Hot Sauce if desired.',
+            'Season with additional salt or Sriracha if desired.',
             'Serve with a sprinkle of chopped Peanuts. Goes well over Quinoa or Brown Rice.'
         ]
         for s in steps:

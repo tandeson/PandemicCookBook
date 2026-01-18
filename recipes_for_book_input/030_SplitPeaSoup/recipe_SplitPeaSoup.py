@@ -41,12 +41,12 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         # Add Steps and Notes
         steps= [
             'Heat a large pot with a lid over medium-high heat.',
-            'Add the oil, garlic, celery and Onion. Stir until the Onion becomes translucent, about 2-3 minutes.',
-            'Add in Vegetable Broth, raise the heat to high, and bring to just boiling.',
+            'Add the oil, garlic, celery and onion. Stir until the onion becomes translucent, about 2 to 3 minutes.',
+            'Add the vegetable broth, raise the heat to high, and bring to just boiling.',
             'Add the Split Peas, and move the heat to low.',
             'Simmer for about 1 hour with the lid on.',
-            'Check the Peas, if they are not soft, simmer for another 20-30 minutes.',
-            'Mash the soft mixture with a Potato masher until smooth.',
+            'Check the peas; if they are not soft, simmer for another 20 to 30 minutes.',
+            'Mash the soft mixture with a potato masher until smooth.',
             'Serve!'
         ]
         for s in steps:

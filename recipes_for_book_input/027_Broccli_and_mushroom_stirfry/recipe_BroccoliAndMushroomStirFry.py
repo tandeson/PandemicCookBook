@@ -34,22 +34,22 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Garlic', 6, 'cloves, or more')
         r.addIngredient('Ginger', 2 , 'tablespoons, chopped')
         r.addIngredient('Red Pepper Flakes', 1, 'shake, or to taste')
-        r.addIngredient('Soy Sauce', 3, 'tablespoons (aprox)')
-        r.addIngredient('Rice Vinegar', 3 , 'tablespoons (aprox)')
+        r.addIngredient('Soy Sauce', 3, 'tablespoons (approx)')
+        r.addIngredient('Rice Vinegar', 3 , 'tablespoons (approx)')
         r.addIngredient('Broccoli', 3, 'heads, about 1 pound, chopped')
         r.addIngredient('Mushrooms', 8, 'oz (or more) chopped')
-        r.addIngredient('Sesame seeds', 2, 'tablespoons (aprox)')
-        r.addIngredient('Extra Virgin Olive Oil', 2, 'tablespoons (aprox)')
+        r.addIngredient('Sesame seeds', 2, 'tablespoons (approx)')
+        r.addIngredient('Extra Virgin Olive Oil', 2, 'tablespoons (approx)')
         # Add Steps and Notes
         steps= [
-            'Heat olive oil in pan on medium-high heat.',
-            'Add ginger, garlic and red pepper flakes',
-            'Saute for 1 - 2 minutes until fragrant',
+            'Heat olive oil in a pan on medium-high heat.',
+            'Add ginger, garlic and red pepper flakes.',
+            'Saute for 1 to 2 minutes until fragrant.',
             'Add broccoli and a little water - roughly 2 tablespoons to steam them.',
-            'Stir for about 5 min, until broccoli becomes a brighter green',
-            'Add mushrooms, continue to stir for 10 - 15 minutes until everything is cooked.',
-            'Combine soy sauce and vinegar, then stir in for 5 -10 seconds.',
-            'Remove from heat, sprinkle with sesame seeds',
+            'Stir for about 5 minutes, until broccoli becomes a brighter green.',
+            'Add mushrooms and continue to stir for 10 to 15 minutes until everything is cooked.',
+            'Combine soy sauce and vinegar, then stir in for 5 to 10 seconds.',
+            'Remove from heat and sprinkle with sesame seeds.',
         ]
         for s in steps:
             r.addStep( RecipeStep( s ) )

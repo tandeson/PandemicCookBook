@@ -32,7 +32,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         ##
         r.addIngredient('Greek Yogurt', 2, 'cups') 
         r.addIngredient('Cucumber', 0.5, 'finely diced')
-        r.addIngredient('Extra Virgin Olive Oil', 1, 'tablespoons')
+        r.addIngredient('Extra Virgin Olive Oil', 1, 'tablespoon')
         r.addIngredient('Lemon Juice', 1, 'teaspoon')
         r.addIngredient('Dill', 3, 'tablespoons')
         r.addIngredient('Garlic', 6, 'cloves, finely diced')
@@ -41,9 +41,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         # Add Steps and Notes
         steps = [
-            'OPTIONAL: Press the Cucumber in cheese cloth or paper towels to remove moisture prior to mixing below.',
+            'OPTIONAL: Press the cucumber in cheesecloth or paper towels to remove moisture before mixing.',
             'Mix the Greek Yogurt, Cucumber, Oil and Lemon Juice.',
-            'When fully combined, add in the spices, mix well.'
+            'When fully combined, add the spices and mix well.'
         ]
         for s in steps:
             r.addStep( RecipeStep( s ) )

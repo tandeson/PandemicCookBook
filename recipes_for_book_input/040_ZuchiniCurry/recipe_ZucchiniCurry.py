@@ -34,15 +34,15 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         ##
         r.addIngredient('Extra Virgin Olive Oil', 2, 'tablespoons')
         r.addIngredient('Red Onion', 1, 'large, diced')
-        r.addIngredient('Garlic', 5, 'Cloves, diced')
+        r.addIngredient('Garlic', 5, 'cloves, diced')
         r.addIngredient('Ginger', 2, 'teaspoons (freshly grated)')
         r.addIngredient('Coriander Powder', 2, 'teaspoons')
         r.addIngredient('Smoked Paprika', 2, 'teaspoons')
         r.addIngredient('Turmeric', 2, 'teaspoons')
-        r.addIngredient('Cumin', 1, 'teaspoons')
+        r.addIngredient('Cumin', 1, 'teaspoon')
         r.addIngredient('Zucchini', 3, 'medium' )
         r.addIngredient('Tomato Paste', 1, 'can, 6 oz')
-        r.addIngredient('Vegetable Broth', 1, 'cups')
+        r.addIngredient('Vegetable Broth', 1, 'cup')
         r.addIngredient('Coconut Milk', 1, 'can, 14 oz full fat')
         r.addIngredient('Salt', 1, 'pinch, to taste')
         r.addIngredient('Black Pepper', 1, 'pinch, to taste')
@@ -51,14 +51,13 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         # Add Steps and Notes
         steps= [
-            'Add oil to a pan over medium heat and when warm, add in the diced onions and saute about 7 -10 minutes,'
+            'Add oil to a pan over medium heat and, when warm, add the diced onions and saute about 7 to 10 minutes,'
             ' stirring to keep the onions from burning.',
-            'While the onions are sauteing, dice the zucchini into bite sized pieces.',
-            'Add in the ginger, garlic and zucchini into the pan with the sauteed onions and saute about 5 minutes, stirring often.',
-            'Add in the coriander, cumin, smoked paprika and turmeric and stir so spices are well incorporated.',
-            'Add in the tomato paste, vegetable stock and coconut milk and stir till all three have combined well. Once it has been mixed'
-            ' well, let this simmer about 15 minutes.',
-            'Season with salt and pepper. If you\'d like it a bit spicy, add in a teaspoon of chili powder and mix. Garnish with chopped '
+            'While the onions are sauteing, dice the zucchini into bite-sized pieces.',
+            'Add the ginger, garlic and zucchini to the pan with the sauteed onions and saute about 5 minutes, stirring often.',
+            'Add the coriander, cumin, smoked paprika and turmeric and stir so the spices are well incorporated.',
+            'Add the tomato paste, vegetable stock and coconut milk and stir until combined. Simmer about 15 minutes.',
+            'Season with salt and pepper. If you\'d like it a bit spicy, add a teaspoon of chili powder and mix. Garnish with chopped '
             'cilantro and enjoy with quinoa, naan or rice.'
         ]
         for s in steps:

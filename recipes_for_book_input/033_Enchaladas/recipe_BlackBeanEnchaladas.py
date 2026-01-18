@@ -36,7 +36,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Jalapeno Pepper', 2, 'seeded and chopped')
         r.addIngredient('Cilantro', 0.5, 'cup, chopped')
         
-        r.addIngredient('Extra Virgin Olive Oil', 4, 'tablespoons, aprox')
+        r.addIngredient('Extra Virgin Olive Oil', 4, 'tablespoons, approx')
         r.addIngredient('Garlic', 4, 'cloves (or more), minced')
         r.addIngredient('Onion', 1, 'large, chopped')
         
@@ -44,19 +44,19 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
 
         # Add Steps and Notes
         steps= [
-            'preheat oven to 400 deg F with a rack in the middle.',
+            'Preheat the oven to 400 deg F with a rack in the middle.',
             'Drain and rinse the Black Beans. Put into a large bowl.',
-            'Add to the Bowl 1/2 of the Enchilada Sauce, 1/2 of the Shredded Cheese, Jalapeno, Cilantro and Olives.',
-            'Over medium-high heat, fry the Onion and Garlic until translucent in 1 tablespoon of oil. When done, add to the bowl.',
+            'Add to the bowl 1/2 of the Enchilada Sauce, 1/2 of the Shredded Cheese, Jalapeno, Cilantro and Olives.',
+            'Over medium-high heat, saute the Onion and Garlic until translucent in 1 tablespoon of oil. When done, add to the bowl.',
             'Mix all the fillings in the bowl well, and set aside.',
             'Heat a frying pan to medium heat, and place a small amount of oil in it.',
             'Lightly grease two 11x15 baking pans with some of the Oil and set aside.',
             'One or two at a time, fry the Corn Tortillas until just soft. When they are ready, spoon the filling into them, roll and place in the pan.',
-            'Repeat until all the filling is used up, and the pans are full ( about 8 Enchiladas per pan).',
+            'Repeat until all the filling is used up, and the pans are full (about 8 enchiladas per pan).',
             'Pour the remaining Enchilada sauce over the tops of the Enchiladas.',
             'Cover the Enchiladas with the remaining cheese.',
             'Bake in the oven, uncovered, for 20 minutes.',
-            'remove and serve!'
+            'Remove and serve.'
         ]
         for s in steps:
             r.addStep( RecipeStep( s ) )

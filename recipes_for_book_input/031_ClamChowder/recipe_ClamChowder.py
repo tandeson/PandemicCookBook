@@ -41,7 +41,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Thyme', 3, 'teaspoon')
         r.addIngredient('Dill', 3, 'teaspoon')
         r.addIngredient('Salt', 2, 'teaspoons')
-        r.addIngredient('Black Pepper', 1, 'teaspoons')
+        r.addIngredient('Black Pepper', 1, 'teaspoon')
        
         r.addIngredient('Whole Milk', 3, 'cups')
         r.addIngredient('All Purpose Flour', 0.75, 'cups')
@@ -54,8 +54,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'In a large pot over medium-high heat, melt the Butter.',
             'Add in the Oil, Onion, Garlic and Celery. Saute until softened, mixing often.',
             'Add in the Potatoes, Broth, Thyme, Dill, Salt and Pepper.',
-            'Bring to a boil, then reduce heat and simmer uncovered until Potatoes are tender, 15-20 minutes',
-            'In a small bowl, combine flour and Milk. Gradually stir into soup. Bring to Boil an stir until thickened, 1 - 2 minutes.',
+            'Bring to a boil, then reduce heat and simmer uncovered until potatoes are tender, 15 to 20 minutes.',
+            'In a small bowl, combine flour and Milk. Gradually stir into soup. Bring to a boil and stir until thickened, 1 to 2 minutes.',
             'Stir in Clams with their juice and heat.',
             'Check seasoning - and add additional Salt, Pepper, Dill and Thyme to taste.'
         ]

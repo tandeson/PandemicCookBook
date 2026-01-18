@@ -43,12 +43,11 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         r.addIngredient('Extra Virgin Olive Oil', 6, 'tablespoons')
         r.addIngredient('Apple Cider Vinegar', 5, 'tablespoons')
-        r.addIngredient('Lemon Juice', 2, 'tablespoon')
+        r.addIngredient('Lemon Juice', 2, 'tablespoons')
         
         # Add Steps and Notes
         steps = [
-            'Mix all the ingredients together.'
-            'NOTE: Can use Tzatziki sauce instead of Oil, Vinegar and Lemon Juice.',
+            'Mix all the ingredients together. NOTE: You can use Tzatziki sauce instead of Oil, Vinegar and Lemon Juice.',
             'Mix well, and let chill for 1 hour.'
         ]
         for s in steps:

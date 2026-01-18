@@ -31,12 +31,12 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         #  -- Add Ingredients --
 
         ##
-        r.addIngredient('Extra Virgin Olive Oil', 1, 'tablespoons')
+        r.addIngredient('Extra Virgin Olive Oil', 1, 'tablespoon')
         r.addIngredient('Onion', 1, 'cup, chopped')
         r.addIngredient('Celery', 1, 'cup, chopped')
         r.addIngredient('Carrot', 1, 'cup, chopped')
         r.addIngredient('Potato', 1, 'cup, chopped (Russet)')
-        r.addIngredient('Garlic', 4, 'Cloves, minced')
+        r.addIngredient('Garlic', 4, 'cloves, minced')
         r.addIngredient('Salt', 1, 'teaspoon')
         r.addIngredient('Black Pepper', 1, 'teaspoon')
         r.addIngredient('Turmeric', 2, 'teaspoons')
@@ -54,15 +54,14 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         # Add Steps and Notes
         steps= [
-            'Heat the oil in a large Pot.',
+            'Heat the oil in a large pot.',
             'Add Onions, Celery, Carrot, Potato and Garlic. Saute for about 5 minutes until everything softens slightly.',
             'Season with salt, pepper and the spices and cook about 2 minutes.',
-            'Add lentils and saute 1 - 2 minutes',
-            'Add the broth, water and tomato paste. Stir to combine and until the tomato paste has dissolved.',
-            'Bring the soup to a boil, cover and reduce to simmer for 40 minutes (if spinach is frozen), 60 minutes if using fresh spinach. '
-            'With frozen spinach, add and let simmer an additional 20 minutes. '
-            ,
-            'Remove from heat and stir in Coconut milk, lemon juice, and spinach, and stir until the spinach has wilted.',
+            'Add lentils and saute 1 to 2 minutes.',
+            'Add the broth, water and tomato paste. Stir until the tomato paste has dissolved.',
+            'Bring the soup to a boil, cover and reduce to a simmer for 40 minutes.',
+            'If using frozen spinach, add it and let simmer an additional 20 minutes. If using fresh spinach, add it at the end.',
+            'Remove from heat and stir in coconut milk, lemon juice, and spinach until the spinach has wilted.',
             'Serve immediately and top with your desired toppings.'
         ]
         for s in steps:

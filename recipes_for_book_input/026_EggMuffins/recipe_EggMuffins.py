@@ -50,12 +50,12 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         # Add Steps and Notes
         steps= [
-            'Saute mushroom and onions in 1 tablespoon olive oil until tender',
-            'In a bowl, combine flour, baking powder and salt',
-            'In another bowl combined eggs, cheese and 1/4 cup olive oil',
-            'Combine all ingredients into one bowl, and mix',
-            'Fill greased muffin cups',
-            'Bake at 350 deg F for 35 minutes'
+            'Saute mushrooms and onions in 1 tablespoon of olive oil until tender.',
+            'In a bowl, combine flour, baking powder and salt.',
+            'In another bowl, combine eggs, cheese and 1/4 cup olive oil.',
+            'Combine all ingredients in one bowl and mix.',
+            'Fill greased muffin cups.',
+            'Bake at 350 deg F for 35 minutes.'
         ]
         for s in steps:
             r.addStep( RecipeStep( s ) )

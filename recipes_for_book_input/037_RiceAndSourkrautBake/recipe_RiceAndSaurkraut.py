@@ -22,7 +22,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
-        r = MyRecipe('Rice and Saurkraut Bake', 'Main dishes', sharedIngredentList)
+        r = MyRecipe('Rice and Sauerkraut Bake', 'Main dishes', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         r.addPicture( 'PlateRiceSourkraut', 'RiceAndSourkraut.jpg')
         r.setPrimaryPicture( 'PlateRiceSourkraut')
@@ -31,7 +31,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
 
         ##
         r.addIngredient('Sauerkraut', 1, '2 pound jar')
-        r.addIngredient('Rice', 0.75, 'cup, rice') 
+        r.addIngredient('Rice', 0.75, 'cup, dry') 
         r.addIngredient('Water', 2.5, 'cups')
         r.addIngredient('Extra Virgin Olive Oil', 0.3, 'cup')
         r.addIngredient('Smoked Paprika', 1.5, 'tablespoon')
@@ -40,8 +40,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         # Add Steps and Notes
         steps= [
             'Heat the oven to 375 deg F.',
-            'Combine all ingredients in a baking pan, and mix.',
-            'Bake until cooked - about 90 minutes.'
+            'Combine all ingredients in a baking pan and mix.',
+            'Bake until cooked, about 90 minutes.'
         ]
         for s in steps:
             r.addStep( RecipeStep( s ) )

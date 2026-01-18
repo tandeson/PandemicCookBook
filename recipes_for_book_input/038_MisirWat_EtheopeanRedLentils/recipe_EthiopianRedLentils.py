@@ -42,13 +42,13 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         # Add Steps and Notes
         steps= [
-            'Melt 3 tablespoons of the Butter in a medium pot on medium high heat.',
+            'Melt 3 tablespoons of the Butter in a medium pot on medium-high heat.',
             'Add the Onions and cook for 8-10 minutes until golden brown.',
-            'Add the Garlic, Tomatoes, Tomato Paste and 1 tablespoon of Berbere and cook for 5-7 minutes.'
-            ' Reduce heat if needed to prevent burning.',
+            'Add the Garlic, Tomatoes, Tomato Paste and 1 tablespoon of Berbere and cook for 5-7 minutes. '
+            'Reduce heat if needed to prevent burning.',
             'Add the Broth and Salt.',
             'Bring to a boil, add the Lentils, reduce the heat to low and cover. Simmer the lentils, stirring occasionally for 20 minutes until soft.',
-            'Add Salt to taste.'
+            'Adjust salt to taste.'
         ]
         for s in steps:
             r.addStep( RecipeStep( s ) )

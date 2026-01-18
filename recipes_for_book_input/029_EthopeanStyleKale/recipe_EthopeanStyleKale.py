@@ -31,25 +31,28 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         #  -- Add Ingredients --
 
         ## 
-        r.addIngredient('Kale', 10, 'oz, Collard Greens or')
-        r.addIngredient('Extra Virgin Olive Oil', 3 , 'tablespoons, or Butter')
+        r.addIngredient('Kale', 10, 'oz, or Collard Greens')
+        r.addIngredient('Extra Virgin Olive Oil', 3 , 'tablespoons, or butter')
+        r.addIngredient('Garlic', 3, 'cloves, minced')
         r.addIngredient('Ginger', 1.5 , 'teaspoons, minced')
         r.addIngredient('White Onion', 1, 'large, chopped')
         r.addIngredient('Smoked Paprika', 1, 'teaspoon')
         r.addIngredient('Cardamom', 0.5, 'teaspoon')
         r.addIngredient('Chili powder', 0.5, 'teaspoon')
+        r.addIngredient('Cumin', 0.5, 'teaspoon')
         r.addIngredient('Cayenne Pepper', 0.5, 'teaspoon')
         r.addIngredient('Lemon', 1, 'medium')
+        r.addIngredient('Salt', 1, 'pinch, to taste')
+        r.addIngredient('Black Pepper', 1, 'pinch, to taste')
         
         # Add Steps and Notes
         steps= [
-            'In a large skillet, add oil, garlic, ginger, chili pepper, cumin, cardamom, '
-            'paprika, saute for about 30 seconds or more, be careful not to let the '
-            'ingredients burn.',
-            'Add onions, mix with the spices. Saute for about 3-5 minutes.',
-            'Throw in chopped Kale, cayenne pepper, lemon juice.',
-            'Continue cooking for another 7-10 minutes until flavors have blended and greens are cooked, according to preference.',
-            'Adjust seasoning - Salt and pepper.',
+            'In a large skillet, add oil, garlic, ginger, chili powder, cumin, cardamom and '
+            'paprika. Saute for about 30 seconds, being careful not to let the ingredients burn.',
+            'Add onions and mix with the spices. Saute for about 3 to 5 minutes.',
+            'Add chopped kale, cayenne pepper and lemon juice.',
+            'Continue cooking for another 7 to 10 minutes until flavors have blended and greens are cooked to your preference.',
+            'Adjust seasoning with salt and pepper.',
             'Remove from heat and let cool.'
         ]
         for s in steps:

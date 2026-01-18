@@ -52,7 +52,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             ))
         
         r.addStep( RecipeStep( 
-            'Place the dough in bowl lightly coated with Olive Oil and let rise for 60 minutes.',
+            'Place the dough in a bowl lightly coated with Olive Oil and let rise for 60 minutes.',
             ))
         
         r.addStep( RecipeStep( 
@@ -60,7 +60,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             ))
         
         r.addStep( RecipeStep( 
-            'In two 9x13 baking pans, place 2 tablespoon of oil and then place 1/2 of the dough in each.',
+            'In two 9x13 baking pans, place 2 tablespoons of oil and then place 1/2 of the dough in each.',
             ))
         
         r.addStep( RecipeStep( 
@@ -89,8 +89,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             ))
         
         r.addStep( RecipeStep(
-            'Drizzle 2 tablespoons olive oil (or enough to collect a bit in the dimples), then sprinkle with rosemary and a'
-            ' bit of flaked sea salt.'
+            'Drizzle 2 tablespoons olive oil (or enough to collect a bit in the dimples), then sprinkle with rosemary and a '
+            'bit of flaked sea salt.'
             ))
         
         r.addStep( RecipeStep(

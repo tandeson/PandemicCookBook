@@ -51,16 +51,16 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         steps= [
             'Preheat oven to 450 deg F.',
             'Place Cauliflower florets on a rimmed baking sheet. Drizzle with oil and sprinkle with Salt and Pepper.',
-            'Combine together, and then roast for 15-20 minutes. The Cauliflower should be tender and lightly browned.',
+            'Toss to combine, then roast for 15 to 20 minutes. The Cauliflower should be tender and lightly browned.',
             'In a large pan, heat oil over medium heat.',
-            'Add Onions and Salt until translucent about 2-3 minutes.',
-            'Add in Chili Powder, Garlic and Ginger. Saute until fragrant, about 30-60 seconds.',
+            'Add Onions and Salt and cook until translucent, about 2 to 3 minutes.',
+            'Add in Chili Powder, Garlic and Ginger. Saute until fragrant, about 30 to 60 seconds.',
             'Add Diced Tomatoes, Agave and Salt. Cook for 2-3 minutes to soften and meld flavors.',
-            'Pour in Coconut Milk and lightly simmer for 3-4 minutes to reduce. Don\'t boil.',
+            'Pour in Coconut Milk and simmer gently for 3 to 4 minutes to reduce. Don\'t boil.',
             'Add in Chickpeas and Lime Juice. Gently simmer to warm and soften Chickpeas.',
             'Remove from heat.',
             'Add Roasted Cauliflower and gently toss to combine well.',
-            'Adjust seasoning to taste, sprinkle with Cilantro.'
+            'Adjust seasoning to taste and sprinkle with Cilantro.'
             
             
         ]

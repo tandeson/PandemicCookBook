@@ -23,7 +23,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         Make this specific Recipe
         
         Based on Recipe provided in class at King Arthur Baking School in Skagit Valley WA.
-        Yeilds: 12 Pretzels
+        Yields: 12 Pretzels
         """
         r = MyRecipe('Soft Pretzels','Baking and Breads', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
@@ -52,7 +52,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         steps = [
             'Combine all the ingredients in the bowl of a stand mixer.',
             'Mix for about 3 minutes on slow speed, and then turn up to medium speed '
-            '( around speed 4 on a Kitchen Aid) for 5-6 minutes.',
+            '(around speed 4 on a KitchenAid) for 5 to 6 minutes.',
             'Cover the bowl and allow the dough to rest for 30-40 minutes.'
              ]
         for s in steps:
@@ -60,20 +60,20 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         r.addStep( RecipeStep(
             'Divide the dough into 12 pieces, weighing approximately 80 grams each. Roll '
-            'each piece into a cylinder about 24 inches long, with the center being thicker than the ends.'
-            ' Pick the dough up by the ends and twist twice. Take the ends and press down on each side.'),
+            'each piece into a cylinder about 24 inches long, with the center being thicker than the ends. '
+            'Pick the dough up by the ends and twist twice. Take the ends and press down on each side.'),
             ['ShapePretzel']
             )
         
         steps = [
-            'Place pretzels on a parchment lined baking sheet, cover and leave at room temperature for 30 minutes.',
-            'Preheat oven to 400 deg F',
+            'Place pretzels on a parchment-lined baking sheet, cover, and leave at room temperature for 30 minutes.',
+            'Preheat oven to 400 deg F.',
             'Chill the risen pretzels, still covered, for 30 minutes.',
-            'While the pretzels are chilling, make the baking soda bath by combining the water and Baking Soda.'
-            ' Bring to a rolling boil in a wide pan.',
-            'Simmer the pretzels ( a few at a time) in the baking soda water for 10 seconds per side.',
-            'Place on a parchment lined baking sheet, and sprinkle lightly with coarse salt, if desired.'
-            ' Alternatively, you can also coat with Cinnamon Sugar.',
+            'While the pretzels are chilling, make the baking soda bath by combining the water and baking soda. '
+            'Bring to a rolling boil in a wide pan.',
+            'Simmer the pretzels (a few at a time) in the baking soda water for 10 seconds per side.',
+            'Place on a parchment-lined baking sheet and sprinkle lightly with coarse salt, if desired. '
+            'Alternatively, you can also coat with cinnamon sugar.',
             'Bake for 14 to 18 minutes, until deep golden brown.',
             'If desired, brush with melted butter while still warm.',
              ]

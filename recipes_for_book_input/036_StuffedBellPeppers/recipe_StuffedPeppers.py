@@ -49,34 +49,34 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Quinoa', 1.5, 'cups, cooked', grpRecipeBeans)
         r.addIngredient('Cumin', 0.75, 'teaspoon', grpRecipeBeans)
         r.addIngredient('Smoked Paprika', 0.75, 'teaspoon', grpRecipeBeans)
-        r.addIngredient('Diced Tomatoes', 1, 'cap, aprox 15 oz')
+        r.addIngredient('Diced Tomatoes', 1, 'can, approx 15 oz', grpRecipeBeans)
         
         # Add Steps and Notes
         r.addStep( RecipeStep('Preheat the oven to 400 deg F.' ))
-        r.addStep( RecipeStep('Chop the tops off the peppers, and seed.'))
-        r.addStep( RecipeStep('Put in a pan with Oil Spray, Place open side up.'))
+        r.addStep( RecipeStep('Chop the tops off the peppers and remove the seeds.'))
+        r.addStep( RecipeStep('Lightly oil a pan and place peppers open-side up.'))
         r.addStep( RecipeStep(
-            'Bake until soft, about 30 minutes',
-            [ RecipeStep( 'At about 20 min  of cooking, remove from oven and pour out liquid inside peppers.' ) ]
+            'Bake until soft, about 30 minutes.',
+            [ RecipeStep( 'At about 20 minutes of cooking, remove from the oven and pour out the liquid inside the peppers.' ) ]
             ))
             
-        r.addStep( RecipeStep('In a pan over medium heat cook the onion and garlic until soft.'))
+        r.addStep( RecipeStep('In a pan over medium heat, cook the onion and garlic until soft.'))
         r.addStep( RecipeStep('For Faux Meat',
             [
                 RecipeStep('Add meat, Cauliflower and seasoning.'),
-                RecipeStep('cook, stirring for 8 - 10 minutes'),
-                RecipeStep('reduce heat to low, add Marinara. Cook, stirring, about 2 minutes.')
+                RecipeStep('Cook, stirring, for 8 to 10 minutes.'),
+                RecipeStep('Reduce heat to low, add Marinara. Cook, stirring, about 2 minutes.')
             ] ))
         
         r.addStep( RecipeStep('For Beans',
             [
-                RecipeStep('Add the bean, tomatoes, Quinoa and seasoning.'),
-                RecipeStep('Cook, stirring for 8 - 10 minutes.')
+                RecipeStep('Add the beans, tomatoes, Quinoa and seasoning.'),
+                RecipeStep('Cook, stirring for 8 to 10 minutes.')
             ]))
             
-        r.addStep( RecipeStep('Remove from heat, fill Peppers with mixture.' ))
+        r.addStep( RecipeStep('Remove from heat and fill peppers with the mixture.' ))
         r.addStep( RecipeStep('Sprinkle with cheese.' ))
-        r.addStep( RecipeStep('Bake until cheese melts, about 5 - 10 minutes.' ))
+        r.addStep( RecipeStep('Bake until cheese melts, about 5 to 10 minutes.' ))
         
         # Return this back.
         return r
