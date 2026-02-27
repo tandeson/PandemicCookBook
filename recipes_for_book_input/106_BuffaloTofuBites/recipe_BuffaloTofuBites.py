@@ -44,10 +44,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Drain Tofu and chop into large cubes.',
             'Preheat the oven to 400 deg F.',
             'Get a bowl and two plates. Put Almond Milk into the bowl, Corn Starch on one plate and Breadcrumbs on the other. '
-            'Put out baking sheet with a wire rack on top( so all sides get crispy)',
+            'Put out a baking sheet with a wire rack on top (so all sides get crispy).',
             'Take each piece and dunk in: Almond Milk - Corn Starch - Almond Milk - Breadcrumbs. Then place on the wire rack.',
             'Bake for 25 minutes.',
-            'Cool for 5 minutes, and the toss with the Hot Sauce in a bowl. We like to use Frank\'s Hot Sauce.'
+            'Cool for 5 minutes, then toss with the hot sauce in a bowl. We like to use Frank\'s Hot Sauce.'
             ]
         
         for s in steps:

@@ -73,7 +73,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addStep( RecipeStep( 
             'Transfer the pans or pan to the oven and bake for 25 to 30 minutes, until the under side is '
             'golden and crisp. Remove the pans or pan from the oven and transfer the focaccia to a cooling '
-            'rack. Let it cool for 10 minutes before cutting and serving'
+            'rack. Let it cool for 10 minutes before cutting and serving.'
             ))
         
         # Return this back.

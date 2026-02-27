@@ -41,7 +41,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Miso Paste', 2, 'tablespoons', grpDressing)
         r.addIngredient('Honey', 1, 'tablespoon', grpDressing)
         r.addIngredient('Rice Vinegar', 0.25, 'cups', grpDressing)
-        r.addIngredient('Sesame Oil', 2, 'tablespoon', grpDressing)
+        r.addIngredient('Sesame Oil', 2, 'tablespoons', grpDressing)
         r.addIngredient('Vegetable Oil', 2, 'tablespoons (or other neutral oil)', grpDressing)
         
         grpSlaw = 'Slaw'
@@ -50,7 +50,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Celery', 0.75, 'cups, thin sliced', grpSlaw)
         r.addIngredient('Red Bell Pepper', 0.75, 'seeded and thin sliced', grpSlaw)
         r.addIngredient('Sugar Snaps', 0.75, 'cups', grpSlaw)
-        r.addIngredient('Savoy Cabbage', 2, 'cups, thin slicked', grpSlaw)
+        r.addIngredient('Savoy Cabbage', 2, 'cups, thin sliced', grpSlaw)
         r.addIngredient('Peanuts', 1, 'cup, salted', grpSlaw)
         r.addIngredient('Green Onion', 1, 'cup, thin sliced', grpSlaw)
         r.addIngredient('Cilantro', 1, 'handful, chopped', grpSlaw)

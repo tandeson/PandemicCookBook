@@ -45,7 +45,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         # Add Steps and Notes
         steps= [
-            'Drain and Rinse beans, put into a bowl.',
+            'Drain and rinse the beans, then put them into a bowl.',
             'In a separate bowl, mix together the rest of the ingredients. Adjust seasoning then add the beans.',
             'Marinate - ideally for at least a few hours.'
         ]

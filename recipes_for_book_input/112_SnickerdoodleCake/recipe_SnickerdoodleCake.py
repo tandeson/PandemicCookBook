@@ -56,7 +56,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             ' in prepared baking dish until well blended.',  
             
             'Next, make 3 depressions in dry ingredients – two small, one larger. Add the vinegar in one depression, '
-            'vanilla in the other and the vegetable oil in the third larger depression.',
+            'vanilla in the other, and the olive oil in the third larger depression.',
             
             'Pour water over all. Mix well until smooth.',
             'Bake on middle rack of oven for approximately 35 minutes.',
@@ -65,7 +65,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Check center of cake with toothpick to make sure it comes out clean. While the cake is still warm fresh out '
             'of the oven, sprinkle cinnamon sugar evenly over top.',
             
-            'Allow to cool,  enjoy!'
+            'Allow to cool, then enjoy!'
             ]
         
         for s in steps:

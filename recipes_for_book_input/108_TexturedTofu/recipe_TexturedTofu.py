@@ -37,8 +37,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         ## Steps
         steps = [
             'Open and drain tofu.',
-            'Place the tofu in ziplock plastic bag.',
-            'Place the Tofu in the freezer for at least 24 hours.',
+            'Place the tofu in a ziplock plastic bag.',
+            'Place the tofu in the freezer for at least 24 hours.',
             'Thaw out the tofu - in the refrigerator if you don\'t need it for a day - or on the counter if you want to use it in a few hours.',
             ]
         

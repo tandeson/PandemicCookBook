@@ -48,11 +48,11 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         # Add Steps and Notes
         steps= [
             'Soak the cashews overnight in water, drain before using the next day.',
-            'Blend the cashews, Lemon, spices and 0.5 cups water until uniform, set aside.',
+            'Blend the cashews, lemon, spices, and 0.5 cups water until uniform. Set aside.',
             
-            'Put Agar Agar powder and remaining 0.75 cups of water into a pot and bring to boil then simmer for 5 minutes while stirring constantly.',
-            'Add the blended mixture and stir.'
-            
+            'Put agar agar powder and remaining 0.75 cups of water into a pot and bring to a boil, then simmer for 5 minutes while stirring constantly.',
+            'Add the blended mixture and stir.',
+
             'Pour the mixture into a container lined with parchment paper.',
             'Let sit in the refrigerator for at least two hours - then Enjoy!'
         ]

@@ -33,7 +33,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         ##
         r.addIngredient('Onion', 1, 'medium, chopped')
         r.addIngredient('Garlic', 5, 'cloves, chopped')
-        r.addIngredient('Extra Virgin Olive Oil', 1, 'tablespoons')
+        r.addIngredient('Extra Virgin Olive Oil', 1, 'tablespoon')
         r.addIngredient('Leek', 4, 'large, chopped')
         r.addIngredient('Thyme', 1, 'teaspoon')
         r.addIngredient('Rosemary', 1, 'teaspoon, dried')
@@ -53,10 +53,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Add the chopped potatoes and vegetable stock and bring to a boil. Reduce the '
             'heat, cover the pot and simmer until the potatoes are soft and cooked.',
             
-            'Remove from the heat and add in the cream',
+            'Remove from the heat and add in the cream.',
             
             'Blend the soup using an immersion blender until smooth.',
-            'Add Salt and Pepper to taste - and enjoy!'
+            'Add salt and pepper to taste, and enjoy!'
         ]
         for s in steps:
             r.addStep( RecipeStep( s ) )

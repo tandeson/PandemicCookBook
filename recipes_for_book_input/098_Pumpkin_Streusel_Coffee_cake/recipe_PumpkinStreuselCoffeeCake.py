@@ -37,11 +37,11 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('All Purpose Flour', 80, 'grams (2/3 cup)', grpTopping)
         r.addIngredient('Cinnamon', 1, 'teaspoon', grpTopping)
         r.addIngredient('Pecans', 28, 'grams, (1/4 cup)', grpTopping)
-        r.addIngredient('Unsalted Butter', 57, 'grams, 4 tablespoons'),grpTopping
+        r.addIngredient('Unsalted Butter', 57, 'grams, 4 tablespoons, melted', grpTopping)
         
         grpFilling = "Filling"
         r.addIngredient('Brown Sugar', 71, 'grams (1/3 cup)', grpFilling)
-        r.addIngredient('Cocoa Powder', 1, 'taspoon, Dutch-process', grpFilling)
+        r.addIngredient('Cocoa Powder', 1, 'teaspoon, Dutch-process', grpFilling)
         r.addIngredient('Cinnamon', 1, 'teaspoon', grpFilling)
         
         grpCake = "Cake"
@@ -67,7 +67,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'To make the filling: Mix together the brown sugar, and spice. Set it aside.',
             
             'To make the cake: Beat together the oil, eggs, sugar, pumpkin, spices, salt, and baking '
-            'powder until smooth.',
+            'soda until smooth.',
             'Add the flour, stirring just until smooth.',
             'Pour/spread half the batter into the prepared pan, spreading it all the way to the edges. '
             'If you have a scale, half the batter is about 13 1/2 ounces.',

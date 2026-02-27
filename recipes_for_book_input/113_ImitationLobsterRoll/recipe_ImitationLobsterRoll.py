@@ -27,7 +27,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.setRecipeFormat('FANCY_TALL_PIC_OVER_INSTRUCTIONS')
         
         ## ---
-        grpLobsterBase = 'Immitation Lobster'
+        grpLobsterBase = 'Imitation Lobster'
         r.addIngredient('Extra Virgin Olive Oil', 3, 'tablespoons', grpLobsterBase)
         r.addIngredient('Old Bay Seasoning', 1, 'tablespoon',grpLobsterBase)
         r.addIngredient('Lemon Juice', 1, 'tablespoon',grpLobsterBase)
@@ -36,11 +36,11 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         grpCreamyDressing = 'Creamy Dressing'
         r.addIngredient('Mayonnaise', 0.75, 'cups', grpCreamyDressing)
-        r.addIngredient('Lemon Juice', 3, 'tablespoon',grpCreamyDressing)
+        r.addIngredient('Lemon Juice', 3, 'tablespoons',grpCreamyDressing)
         r.addIngredient('Celery', 2, 'stalks, finely chopped',grpCreamyDressing)
         r.addIngredient('Red Onion', 1, 'small, finely diced',grpCreamyDressing)
-        r.addIngredient('Dill', 1.5, 'tablespoon',grpCreamyDressing)
-        r.addIngredient('Unsalted Butter', 2, 'Tablespoons, melted'), grpCreamyDressing
+        r.addIngredient('Dill', 1.5, 'tablespoons',grpCreamyDressing)
+        r.addIngredient('Unsalted Butter', 2, 'tablespoons, melted', grpCreamyDressing)
 
         ## Steps
         steps = [

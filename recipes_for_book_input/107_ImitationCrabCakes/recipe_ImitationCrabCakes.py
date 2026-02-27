@@ -35,8 +35,8 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Breadcrumbs', 0.75, 'cups')
         r.addIngredient('Nori', 2, 'sheet, chopped into flakes')
         r.addIngredient('Mayonnaise', 0.25, 'cups')
-        r.addIngredient('Lemon Juice', 2, 'tablespoon')
-        r.addIngredient('Mustard', 1, 'tablespoon dijon')
+        r.addIngredient('Lemon Juice', 2, 'tablespoons')
+        r.addIngredient('Mustard', 1, 'tablespoon, dijon')
         r.addIngredient('Non-Iodized Salt', 0.5, 'teaspoon')
         r.addIngredient('Black Pepper', 0.5, 'teaspoon')
         r.addIngredient('Extra Virgin Olive Oil', 2, 'tablespoons')
@@ -47,7 +47,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'Add in the artichokes, bread-crumbs, chopped nori, mayonnaise, lemon juice, dijon '
             'mustard, salt, and pepper. Mix gently.',
             'Divide the mixture into 6 and use your hands to form 6 patties.',
-            'Heat the oil in a large skillet over medium high heat. When hot add the patties and fry 3-5 minutes per side until golden brown.',
+            'Heat the oil in a large skillet over medium-high heat. When hot, add the patties and fry 3-5 minutes per side until golden brown.',
             'Serve hot.'
             ]
         

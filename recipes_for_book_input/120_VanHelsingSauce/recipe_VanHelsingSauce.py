@@ -30,15 +30,15 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         #  -- Add Ingredients --
         
         r.AddDescription('Andrew shared this during his visit in 2022. '
-                  'It\'s named after a Character in Dracula - due to being able to double as '
+                  'It\'s named after a character in Dracula - due to being able to double as '
                   'a vampire deterrent. ~Thomas')
         ## 
-        r.addIngredient('Goat Cheese', 8, 'Oz')
-        r.addIngredient('Garlic', 0.5, 'cups raw')
+        r.addIngredient('Goat Cheese', 8, 'oz')
+        r.addIngredient('Garlic', 0.5, 'cups, raw')
         r.addIngredient('Extra Virgin Olive Oil', 1, 'cup')
         r.addIngredient('Onion', 2, 'medium, thin sliced')
-        r.addIngredient('Thyme', 1.5, 'Teaspoons')
-        r.addIngredient('Garlic Powder', 1.5, 'Teaspoons')
+        r.addIngredient('Thyme', 1.5, 'teaspoons')
+        r.addIngredient('Garlic Powder', 1.5, 'teaspoons')
         r.addIngredient('Salt', 0.5, 'teaspoon, to taste')
         r.addIngredient('White Pepper', 0.5, 'teaspoon, to taste')
         

@@ -38,10 +38,10 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         ## Steps
         steps = [
-            'Position rack in upper third of oven; pre-heat to 450 deg F.',
+            'Position rack in upper third of oven; preheat to 450 deg F.',
             'Blot chickpeas dry and toss in a bowl with the rest of the ingredients.',
             'Spread on a rimmed baking sheet.',
-            'Bake, stirring once or twice, until browned and crunchy. 25 to 30 minutes (for large batched, add another 10 minutes).',
+            'Bake, stirring once or twice, until browned and crunchy, 25 to 30 minutes (for large batches, add another 10 minutes).',
             'Let cool on the baking sheet for 15 minutes.'
             ]
         

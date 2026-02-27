@@ -41,18 +41,18 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Kimchi', 0.5, 'jar')
         r.addIngredient('Bonito', 1, 'tablespoon')
         r.addIngredient('Soy Sauce', 2, 'tablespoons to taste')
-        r.addIngredient('Sesame Oil', 1, 'tablespoons')
+        r.addIngredient('Sesame Oil', 1, 'tablespoon')
                         
         # Add Steps and Notes
         steps= [
-            'Drain and chop Tofu into roughly 1/2 inch cubes',
+            'Drain and chop tofu into roughly 1/2-inch cubes.',
             'Bring water to a boil - about 3 cups - and cover and soak the mushrooms.'
             ' Need to soak at least 30 min - keep water when done for broth.',
             'Once rehydrated, slice the mushrooms into halves.',
             'In 1 - 2 tablespoons of olive oil, saute the white onion for a few minutes.'
             ' Then add garlic and green onion and cook for a few minutes. Then add the mushrooms - saute for a minute.',
             'Add the Gochujang and Kimchi, stir well.', 
-            "Add the water from the mushrooms, Tofu, Bonito, Soy Sauce, sesame oil. Add water to cover everything if there isn't enough.",
+            "Add the water from the mushrooms, tofu, bonito, soy sauce, and sesame oil. Add water to cover everything if there isn't enough.",
             "Bring to a boil - cover, lower the heat to simmer, and simmer for 20 minutes."
         ]
         for s in steps:

@@ -31,7 +31,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         ## 
         #--
-        r.addIngredient('Pumpkin Puree', 1, 'cups')
+        r.addIngredient('Pumpkin Puree', 1, 'cup')
         r.addIngredient('Oatmeal', 2, 'cups')
         r.addIngredient('Maple Syrup', 0.25, 'cups')
         r.addIngredient('Peanut Butter', 0.5, 'cups')
@@ -42,11 +42,11 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         steps = [
             'Preheat oven to 350 deg F.',
             'Prepare 2 baking sheets with nonstick spray.',
-            'Add Pumpkin, oats, syrup, peanut butter and pumpkin pie spice in a large bowl and with hand mixer mix for about 30 seconds.',
-            'Form the dough into tablespoon sized balls. The dough should be sticky. To make balls easier to roll with sticky dough, lightly wetten your fingers. Place on cookie sheets.',
+            'Add pumpkin, oats, syrup, peanut butter, and pumpkin pie spice in a large bowl and mix with a hand mixer for about 30 seconds.',
+            'Form the dough into tablespoon-sized balls. The dough should be sticky. To make balls easier to roll, lightly dampen your fingers. Place on cookie sheets.',
             'Gently press down each cookie with your fingers or spoon. You don\'t want to squash them you just want to flatten them into a cookie shape.',
             'Add chocolate chips ( about 5-8) on top of each cookie.',
-            'Bake for 15-17 minuts.'
+            'Bake for 15-17 minutes.'
             ]
         
         for s in steps:

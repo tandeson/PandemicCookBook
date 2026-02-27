@@ -49,13 +49,13 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         # Add Steps and Notes
         steps = [
             'In a dry preheated cast iron (or other heavy bottomed) pan over medium '
-            'heat add the mushrooms and onions and cook until the mushroom begin '
+            'heat add the mushrooms and onions and cook until the mushrooms begin '
             'to sweat and the onions begin to brown.',
             
             'Add the mustard, butter and flour. Cook over medium heat stirring constantly '
             'until the flour is completely saturated with the oils.',
             
-            'Reduce the heat to medium low and slowly add  about four ounces of the beer, '
+            'Reduce the heat to medium low and slowly add about four ounces of the beer, '
             'whisking to combine into a smooth paste (except, of course, for the onions and mushrooms). '
             'Once that is incorporated, continue to add the beer and half and half. Once this is done '
             'add the Rosemary, Worcestershire sauce, Salt and pepper. Heat, stirring frequently, until the '

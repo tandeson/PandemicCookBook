@@ -22,7 +22,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
-        r = MyRecipe('Neopolitan Pizza Dough', 'Baking and Breads', sharedIngredentList)
+        r = MyRecipe('Neapolitan Pizza Dough', 'Baking and Breads', sharedIngredentList)
         r.setPathLoc(dirPathRecipe)
         r.addPicture('Pizza', 'IMG_3019.jpeg')
         r.setPrimaryPicture('Pizza')
@@ -33,7 +33,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Bread Flour', 2, 'cups, 232 grams')
         r.addIngredient('Instant Yeast', 0.25 , 'teaspoon')
         r.addIngredient('Sugar', 0.5, 'tablespoons')
-        r.addIngredient('Salt', 1.25, 'teaspoon, 8 grams')
+        r.addIngredient('Salt', 1.25, 'teaspoons, 8 grams')
         r.addIngredient('Water', 0.75 ,'cup, 170 grams, warm')
         
         ## Steps

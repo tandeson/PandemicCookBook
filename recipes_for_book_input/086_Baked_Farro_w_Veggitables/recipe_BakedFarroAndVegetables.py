@@ -33,7 +33,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         #  -- Add Ingredients --
 
         ##
-        r.addIngredient('Extra Virgin Olive Oil', 2, 'tablesppons')
+        r.addIngredient('Extra Virgin Olive Oil', 2, 'tablespoons')
         r.addIngredient('Salt', 1, 'pinch, to taste')
         r.addIngredient('Black Pepper', 1, 'pinch, to taste')
         r.addIngredient('Corn', 3, 'ears')
@@ -54,7 +54,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         # Add Steps and Notes
         steps = [
-            "pre-heat oven to 375 deg F.",
+            "Preheat oven to 375 deg F.",
             
             "If you have an ovenproof 11-inch or 4-quart pan with a "
             "lid, use it here. If not, use a large (11- to 12-inch) "
@@ -73,7 +73,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             " occasionally, until the tomatoes soften and begin to form a sauce, about 5 "
             "minutes. Stir in the tomato paste and cook for 1 minute. Add the wine and cook"
             " until the wine has reduced and the sauce is fairly thick, about 3 minutes more."
-            " Return the corn and zucchini to pan the and cook with the sauce for 2 minutes. "
+            " Return the corn and zucchini to the pan and cook with the sauce for 2 minutes. "
             "Add basil and stir to combine.",
             
             "Add farro, water, and 1 more teaspoon of salt and stir to combine. If you need to transfer"

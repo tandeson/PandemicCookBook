@@ -39,7 +39,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Baking Soda', 0.5, 'teaspoons')
         r.addIngredient('Cinnamon', 1, 'teaspoon')
         r.addIngredient('Salt', 0.25, 'teaspoon')
-        r.addIngredient('Vanilla', 2, 'teaspoon')
+        r.addIngredient('Vanilla', 2, 'teaspoons')
         
         r.addIngredient('Eggs', 1, 'large, lightly beaten')
         
@@ -49,7 +49,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         
         # Add Steps and Notes
         steps = [
-            'Preheat oven to 350F, line a 9x9 inch pan with foil (or spray with cooking spray only), set aside',
+            'Preheat oven to 350 deg F. Line a 9x9 inch pan with foil (or spray with cooking spray), and set aside.',
             'In a bowl, combine egg, bananas, sugars, butter, vanilla, and mix or beat on medium speed until well combined',
             "Mix together oats, flour, cinnamon, baking soda, salt",
             "Combine the wet and dry ingredients",

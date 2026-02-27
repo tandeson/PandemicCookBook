@@ -58,7 +58,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             
             "Finally - have a place to store the completed wraps.",
             
-            "To assemble, take a wrap and dip it in the water on the plate - about 5 to 10 seconds on each side."
+            "To assemble, take a wrap and dip it in the water on the plate - about 5 to 10 seconds on each side. "
             "Move it out of the water, and put down the Tofu, Lettuce, Noodles - and vegetables of your choice.",
             
             "To wrap - fold the lower edge up over the fillings, rolling upward just until the filling is "

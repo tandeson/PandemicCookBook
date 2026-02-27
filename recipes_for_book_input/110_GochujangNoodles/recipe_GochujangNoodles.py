@@ -54,12 +54,12 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         steps = [
             'Cook the noodles as per the package directions. Drain and set aside.',
             
-            'Make the sauce by Stiring together the gochujang paste, hoisin sauce, soy sauce, '
+            'Make the sauce by stirring together the gochujang paste, hoisin sauce, soy sauce, '
             'lime juice, sesame oil, and garlic in a small bowl.',
             
             'Heat vegetable oil in a large skillet over high heat.',
             'Once the oil is hot, add mixed bell peppers, cabbage, and carrots and saute for a minute on high heat.',
-            'Add the cooked noodles and the sauce mixture and toss everything well using two large spoons or a pair of tongs',
+            'Add the cooked noodles and the sauce mixture and toss everything well using two large spoons or a pair of tongs.',
             'Serve hot.'
             ]
         

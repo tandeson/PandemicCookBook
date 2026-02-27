@@ -39,7 +39,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Salt', 1, 'pinch, to taste')
         r.addIngredient('Ginger', 1, 'tablespoon, finely grated')
         r.addIngredient('Black Mustard Seeds', 2, 'teaspoons')
-        r.addIngredient('Turmeric', 2, 'teaspoon')
+        r.addIngredient('Turmeric', 2, 'teaspoons')
         r.addIngredient('Coriander Powder', 1, 'teaspoon')
         r.addIngredient('Cumin', 1, 'teaspoon')
         r.addIngredient('Red Pepper Flakes', 0.5, 'teaspoon')
@@ -59,7 +59,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
             'is just beginning to color, 7 to 9 minutes.',
             
             'Stir in the ginger, the mustard '
-            'seeds, turmeric, coriander, fennel and red pepper flakes. Cook, stirring '
+            'seeds, turmeric, coriander, cumin, and red pepper flakes. Cook, stirring '
             'often, until fragrant, about 1 minute.',
             
             'Add the water, coconut milk, lentils, '

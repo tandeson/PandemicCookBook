@@ -42,9 +42,9 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
                                 
         # Add Steps and Notes
         steps= [
-            'In a large pot squeeze garlic bulbs into the pan and mush together and add liquids.',
+            'In a large pot, squeeze the roasted garlic cloves from the bulbs, mash them together, and add the liquids.',
             'Turn heat to medium-low.',
-            'Add Miso and stir to incorporate. Add Tofu',
+            'Add miso and stir to incorporate. Add tofu.',
             'Add Kale, and let wilt for about 5 - 10 minutes.',
             'Serve! (add optional Green Onion and/or Lemon at this point.)'
         ]

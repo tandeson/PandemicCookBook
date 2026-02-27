@@ -38,7 +38,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         steps = [
             'Preheat oven to 350 deg F',
             'In a bowl mix the Banana and Coconut Flakes.',
-            'Fill a baking sheet with 1 tablespoon sized scoopes of batter.',
+            'Fill a baking sheet with 1 tablespoon-sized scoops of batter.',
             'Bake for 20 minutes.',
             'Once cooled, drizzle with melted chocolate if using.'
              ]

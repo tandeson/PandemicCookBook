@@ -36,15 +36,15 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Agave Nectar', 3, 'tablespoons, 60 grams')
         r.addIngredient('Soy Sauce', 2, 'teaspoons, 10 grams')
         r.addIngredient('Lemon Juice', 2, 'teaspoons, 12 grams')
-        r.addIngredient('Red Pepper Flakes', 1.5, 'teaspoon, 10 grams')
+        r.addIngredient('Red Pepper Flakes', 1.5, 'teaspoons, 10 grams')
         r.addIngredient('Sesame seeds', 1, 'teaspoon, 4 grams' )
         r.addIngredient('Ginger', 0.5, 'teaspoon, ground')
         r.addIngredient('Water', 3, 'tablespoons, 45 grams')
         
         ## Steps
         steps = [
-            'Line a sheet pan with parchment paper and preheat the oven to 415 deg F, '
-            'spread the potatoes out evenly.',
+            'Line a sheet pan with parchment paper and preheat the oven to 415 deg F. '
+            'Spread the potatoes out evenly.',
             
             'Bake for 15 minutes, give them a toss so they cook evenly and roast for 15-20 '
             'more minutes or until golden brown and cooked through, but not mushy. Check and '

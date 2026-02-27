@@ -22,7 +22,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         """
         Make this specific Recipe
         """
-        r = MyRecipe('Coconut Four Chocolate Chip Cookies', 'Dessert', sharedIngredentList)
+        r = MyRecipe('Coconut Flour Chocolate Chip Cookies', 'Dessert', sharedIngredentList)
         r.setPathLoc( dirPathRecipe )
         r.addPicture('CoconutCookies', 'IMG_2889.jpeg')
         r.setPrimaryPicture('CoconutCookies')
@@ -42,13 +42,13 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         # Add Steps and Notes
         steps = [
             'Preheat oven to 350 deg F.',
-            'Line a baking sheet with parchment paper or parchment paper sheets.',
+            'Line a baking sheet with parchment paper.',
             'In a medium size bowl, combine coconut flour, melted and cooled coconut oil, syrup, eggs vanilla and salt.',
             'Whisk mixture together.',
             'Allow dough to sit five minutes so the dough thickens.',
             'Add the chocolate chips.',
             'Using a tablespoon or cookie scoop, drop 12 cookies onto baking sheet.',
-            'Bake 13-14 minutes and remove from oven when the edges begin to turn golden brown.'
+            'Bake 13-14 minutes and remove from oven when the edges begin to turn golden brown.',
             'Cool.'
             ]
         

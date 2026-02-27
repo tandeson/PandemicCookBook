@@ -42,7 +42,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
                               
         # Add Steps and Notes
         steps= [
-            'Prepare Spaghetti or other pasta per package\'s instructions',
+            'Prepare spaghetti or other pasta per the package instructions.',
             
             'While the pasta is boiling, bring a skillet to medium heat. Add '
             'the pumpkin, miso paste and red pepper flakes to the pan. Immediately '
