@@ -489,11 +489,13 @@ def mainControl(args):
         local_mapping = {}
         localized_by_recipe = {}
         for recipe in cookbookData['Recipes']['inputObjects'].values():
+            recipe.local_substitutes = []
             localized_data = _load_localized_recipe_json(recipe.getPathLoc(), language_slug)
             if localized_data:
                 localized_by_recipe[recipe.getName()] = localized_data
                 recipe_map = _build_local_translation_map(recipe, localized_data)
                 _merge_translation_map(local_mapping, recipe_map)
+                recipe.local_substitutes = localized_data.get('substitutes', [])
 
         local_translator = None
         if local_mapping:

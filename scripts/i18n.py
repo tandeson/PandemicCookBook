@@ -61,6 +61,7 @@ LANGUAGE_PACKS = {
             'ingredients': 'Съставки',
             'steps': 'Стъпки',
             'notes': 'Бележки',
+            'substitutes': 'Замени',
             'instructions': 'Инструкции',
             'directions': 'Приготвяне',
             'recipes': 'Рецепти',

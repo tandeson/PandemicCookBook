@@ -47,7 +47,8 @@ def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
     outLaTexAbsPath = Path( os.path.join( outAbsPath, 'LaTex') )
     outLaTexAbsPath.mkdir(parents=True, exist_ok=True)
     
-    outLaTexAbsFilePath =  Path( os.path.join( outLaTexAbsPath, args.name) )
+    book_name = args.name + '_' + (args.language or 'en')
+    outLaTexAbsFilePath =  Path( os.path.join( outLaTexAbsPath, book_name) )
     language_pack = get_language_pack(args.language)
     labels = language_pack['labels']
     latex_settings = language_pack['latex']
@@ -144,7 +145,7 @@ def genLaTexOut(args, outAbsPath, cookbookData, gitRepo):
             outLaTexAbsFilePath = Path(
                 os.path.join(
                     outLaTexAbsPath,
-                    "%s_%s" % (args.name, util_sanitize_label(selected_recipe))
+                    "%s_%s" % (book_name, util_sanitize_label(selected_recipe))
                 )
             )
         
@@ -769,6 +770,20 @@ def genRecipeFormatCompactImageLeft(latexDoc, recipeName, recipeData, outLaTexAb
             latexDoc.append( Command('vspace', ['2pt'] ) )
             latexDoc.append( NoEscape(r'\par') )
             latexDoc.append( italic( recipeData.GetDescription() ) )
+
+        substitutes = getattr(recipeData, 'local_substitutes', [])
+        if substitutes:
+            latexDoc.append(Command('vspace', ['4pt']))
+            latexDoc.append(NoEscape(r'\par'))
+            latexDoc.append(bold(labels['substitutes']))
+            for sub in substitutes:
+                original = sub.get('original', '')
+                substitute = sub.get('substitute', '')
+                note = sub.get('note', '')
+                line = '%s \u2192 %s' % (original, substitute)
+                if note:
+                    line += ' (%s)' % note
+                latexDoc.append(NoEscape(r'\par ' + line))
 
         latexDoc.append( Command('vspace', ['4pt'] ) )
         latexDoc.append( NoEscape(r'\par\noindent\rule{\textwidth}{0.4pt}') )

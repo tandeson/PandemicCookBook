@@ -201,5 +201,10 @@
       ]
     }
   ],
-  "notes": []
+  "notes": [],
+  "substitutes": [
+    {"original": "Шортънинг", "substitute": "Кокосово масло (твърдо) или несолено масло", "note": ""},
+    {"original": "Серано чили", "substitute": "Зелени люти чушки", "note": ""},
+    {"original": "Вегетарианска кайма (Veggie Grillers Crumbles)", "substitute": "Натрошено тофу или текстуриран соев протеин", "note": ""}
+  ]
 }

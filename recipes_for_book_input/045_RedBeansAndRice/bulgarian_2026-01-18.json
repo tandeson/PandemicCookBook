@@ -88,5 +88,8 @@
       "text": "Сервирайте върху киноа."
     }
   ],
-  "notes": []
+  "notes": [],
+  "substitutes": [
+    {"original": "Вегетарианска кайма (Veggie Grillers Crumbles)", "substitute": "Натрошено тофу или текстуриран соев протеин", "note": ""}
+  ]
 }
