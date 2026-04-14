@@ -104,6 +104,11 @@
   ],
   "notes": [],
   "substitutes": [
-    {"original": "Анчо чили на прах", "substitute": "Чили на прах + щипка пушена паприка", "note": ""}
-  ]
+    {
+      "original": "Анчо чили на прах",
+      "substitute": "Чили на прах + щипка пушена паприка",
+      "note": ""
+    }
+  ],
+  "recipe_file_hash": "18445c24c335ea8450d350454f035fc6cc55397f6c65626fd0ebe2e223c6a542"
 }

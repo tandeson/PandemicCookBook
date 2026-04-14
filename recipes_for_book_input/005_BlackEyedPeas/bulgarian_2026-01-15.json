@@ -102,6 +102,11 @@
   ],
   "notes": [],
   "substitutes": [
-    {"original": "Асафетида", "substitute": "½ ч.л. чесън на прах + ½ ч.л. лук на прах", "note": ""}
-  ]
+    {
+      "original": "Асафетида",
+      "substitute": "½ ч.л. чесън на прах + ½ ч.л. лук на прах",
+      "note": ""
+    }
+  ],
+  "recipe_file_hash": "44c59aab06cc667f26dcc1c2fc7c0119c2c63a864d186423e8b3225390b73b88"
 }

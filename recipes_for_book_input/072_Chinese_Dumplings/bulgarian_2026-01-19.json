@@ -123,7 +123,16 @@
   ],
   "notes": [],
   "substitutes": [
-    {"original": "Оризов оцет", "substitute": "Ябълков оцет", "note": "Малко по-сладък"},
-    {"original": "Вегетарианска кайма (Veggie Grillers Crumbles)", "substitute": "Натрошено тофу или текстуриран соев протеин", "note": ""}
-  ]
+    {
+      "original": "Оризов оцет",
+      "substitute": "Ябълков оцет",
+      "note": "Малко по-сладък"
+    },
+    {
+      "original": "Вегетарианска кайма (Veggie Grillers Crumbles)",
+      "substitute": "Натрошено тофу или текстуриран соев протеин",
+      "note": ""
+    }
+  ],
+  "recipe_file_hash": "85993996542981ba959c9f987eceb419667642e528875020c7a4e70d58dbce9f"
 }

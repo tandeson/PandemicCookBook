@@ -203,8 +203,21 @@
   ],
   "notes": [],
   "substitutes": [
-    {"original": "Шортънинг", "substitute": "Кокосово масло (твърдо) или несолено масло", "note": ""},
-    {"original": "Серано чили", "substitute": "Зелени люти чушки", "note": ""},
-    {"original": "Вегетарианска кайма (Veggie Grillers Crumbles)", "substitute": "Натрошено тофу или текстуриран соев протеин", "note": ""}
-  ]
+    {
+      "original": "Шортънинг",
+      "substitute": "Кокосово масло (твърдо) или несолено масло",
+      "note": ""
+    },
+    {
+      "original": "Серано чили",
+      "substitute": "Зелени люти чушки",
+      "note": ""
+    },
+    {
+      "original": "Вегетарианска кайма (Veggie Grillers Crumbles)",
+      "substitute": "Натрошено тофу или текстуриран соев протеин",
+      "note": ""
+    }
+  ],
+  "recipe_file_hash": "0d3c39003655cf41b21e71a9a917684b15e4df99d5249fb0d7ed36a75b831d40"
 }

@@ -95,6 +95,11 @@
   ],
   "notes": [],
   "substitutes": [
-    {"original": "Кори за пролетни рула", "substitute": "Фило кори", "note": "Навсякъде налични като кори за баница"}
-  ]
+    {
+      "original": "Кори за пролетни рула",
+      "substitute": "Фило кори",
+      "note": "Навсякъде налични като кори за баница"
+    }
+  ],
+  "recipe_file_hash": "bfe9fca0718a50d8d3c478a643ce684d81c63ee0adc25765da9b5db0c0fff417"
 }

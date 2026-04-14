@@ -165,6 +165,11 @@
   ],
   "notes": [],
   "substitutes": [
-    {"original": "Оризов оцет", "substitute": "Ябълков оцет", "note": "Малко по-сладък"}
-  ]
+    {
+      "original": "Оризов оцет",
+      "substitute": "Ябълков оцет",
+      "note": "Малко по-сладък"
+    }
+  ],
+  "recipe_file_hash": "b3daed1eb05ab99f0196d1d1f9f942db71b67a46ac424d962569163ebd272647"
 }

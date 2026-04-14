@@ -90,6 +90,11 @@
   ],
   "notes": [],
   "substitutes": [
-    {"original": "Смес от див ориз", "substitute": "Кафяв ориз", "note": ""}
-  ]
+    {
+      "original": "Смес от див ориз",
+      "substitute": "Кафяв ориз",
+      "note": ""
+    }
+  ],
+  "recipe_file_hash": "ac10099d9b8c68a4190130582895b67217b32d18b5a84b7581b71bde573532b4"
 }

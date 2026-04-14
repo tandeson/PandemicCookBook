@@ -78,6 +78,11 @@
   ],
   "notes": [],
   "substitutes": [
-    {"original": "Сметана и мляко (Half and Half)", "substitute": "50% пълномаслено мляко + 50% сметана за разбиване", "note": ""}
-  ]
+    {
+      "original": "Сметана и мляко (Half and Half)",
+      "substitute": "50% пълномаслено мляко + 50% сметана за разбиване",
+      "note": ""
+    }
+  ],
+  "recipe_file_hash": "6a4ccde6916d0a280af1a8135d64a37a5d36f186d8a048d7ca4711d33ceaf6be"
 }

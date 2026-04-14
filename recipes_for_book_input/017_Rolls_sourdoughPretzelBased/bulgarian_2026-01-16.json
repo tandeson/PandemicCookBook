@@ -97,6 +97,11 @@
   ],
   "notes": [],
   "substitutes": [
-    {"original": "Хрупкав пържен лук French's", "substitute": "Тънко нарязан лук, овален в брашно и пържен", "note": ""}
-  ]
+    {
+      "original": "Хрупкав пържен лук French's",
+      "substitute": "Тънко нарязан лук, овален в брашно и пържен",
+      "note": ""
+    }
+  ],
+  "recipe_file_hash": "99e63b9a2bfb1aae3ce6ca4d247e0ac9831bc0ca5b19f903ff7cc9d41272f471"
 }

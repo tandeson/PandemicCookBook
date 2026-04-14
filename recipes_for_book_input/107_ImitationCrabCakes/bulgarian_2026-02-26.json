@@ -79,6 +79,11 @@
   ],
   "notes": [],
   "substitutes": [
-    {"original": "Нори", "substitute": "Пропуснете или добавете щипка морска сол", "note": ""}
-  ]
+    {
+      "original": "Нори",
+      "substitute": "Пропуснете или добавете щипка морска сол",
+      "note": ""
+    }
+  ],
+  "recipe_file_hash": "65dc0d020b0645d3d7573ba259a3dcc5a844ae51eb3524fefdc9e604ed49674e"
 }

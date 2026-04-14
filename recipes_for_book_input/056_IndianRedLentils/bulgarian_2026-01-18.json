@@ -96,6 +96,11 @@
   ],
   "notes": [],
   "substitutes": [
-    {"original": "Листа от къри", "substitute": "Пропуснете + добавете щипка куркума и кимион", "note": ""}
-  ]
+    {
+      "original": "Листа от къри",
+      "substitute": "Пропуснете + добавете щипка куркума и кимион",
+      "note": ""
+    }
+  ],
+  "recipe_file_hash": "8c6fc152eb317bfe1cf9a1cd96d8f05b44bb525f4683db3b3f204e9648f19a59"
 }

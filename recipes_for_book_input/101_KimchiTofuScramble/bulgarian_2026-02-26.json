@@ -77,7 +77,16 @@
   ],
   "notes": [],
   "substitutes": [
-    {"original": "Кимчи", "substitute": "Кисело зеле", "note": "Същото ферментирало кисело усещане"},
-    {"original": "Кейл", "substitute": "Спанак или младо зеле", "note": "За извън София"}
-  ]
+    {
+      "original": "Кимчи",
+      "substitute": "Кисело зеле",
+      "note": "Същото ферментирало кисело усещане"
+    },
+    {
+      "original": "Кейл",
+      "substitute": "Спанак или младо зеле",
+      "note": "За извън София"
+    }
+  ],
+  "recipe_file_hash": "1d9672abdb60d2d43ca45cfc0fe0efeae3192484fdf709064c87849e0df36b04"
 }

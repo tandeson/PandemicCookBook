@@ -369,9 +369,41 @@ def mainControl(args):
         return None
 
     ##------------------------------
+    ## Bulgarian hash check
+    ##------------------------------
+    if args.language == 'bg':
+        import hashlib as _hashlib
+        import glob as _glob
+        _stale = []
+        _missing = []
+        for _recipe_dir in sorted(Path(args.input_directory).iterdir()):
+            if not _recipe_dir.is_dir():
+                continue
+            _py_files = sorted(_recipe_dir.glob('recipe_*.py'))
+            _bg_files = sorted(_recipe_dir.glob('bulgarian_*.json'))
+            if not _py_files or not _bg_files:
+                continue
+            with open(_py_files[0], 'rb') as _f:
+                _current_hash = _hashlib.sha256(_f.read()).hexdigest()
+            with open(_bg_files[0], 'r', encoding='utf-8') as _f:
+                _bg_data = json.load(_f)
+            _stored_hash = _bg_data.get('recipe_file_hash')
+            if _stored_hash is None or _stored_hash != _current_hash:
+                _stale.append(_recipe_dir.name)
+        if _stale:
+            sys.stderr.write(
+                "WARNING: %d Bulgarian file(s) are stale or missing a hash:\n" % len(_stale)
+            )
+            for _name in _stale:
+                sys.stderr.write("  %s\n" % _name)
+            sys.stderr.write(
+                "Run: python scripts/helper_check_bulgarian_hashes.py\n"
+            )
+
+    ##------------------------------
     ## Read in data
     ##------------------------------
-         
+
     # Sample of handling errors.
     if not os.path.isdir( args.input_directory ):
         sys.stderr.write("Directory '%s' does not exist.\n" % args.input_directory)

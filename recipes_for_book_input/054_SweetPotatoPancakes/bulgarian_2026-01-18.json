@@ -79,6 +79,11 @@
   ],
   "notes": [],
   "substitutes": [
-    {"original": "Рибен сос", "substitute": "Соев сос + щипка морска сол", "note": ""}
-  ]
+    {
+      "original": "Рибен сос",
+      "substitute": "Соев сос + щипка морска сол",
+      "note": ""
+    }
+  ],
+  "recipe_file_hash": "81c93007723c265eb68650f553efdee92eaca69c665724feba9e623b54d1ff8e"
 }

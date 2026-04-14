@@ -101,6 +101,11 @@
   ],
   "notes": [],
   "substitutes": [
-    {"original": "Кейл", "substitute": "Спанак или младо зеле", "note": "За извън София"}
-  ]
+    {
+      "original": "Кейл",
+      "substitute": "Спанак или младо зеле",
+      "note": "За извън София"
+    }
+  ],
+  "recipe_file_hash": "fa3eff67e0c07c6b3c99d951d2c2ad88db2b4422d8f229172821cbbac4b9d0f9"
 }

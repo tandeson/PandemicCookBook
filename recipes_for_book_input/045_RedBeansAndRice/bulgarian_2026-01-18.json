@@ -90,6 +90,11 @@
   ],
   "notes": [],
   "substitutes": [
-    {"original": "Вегетарианска кайма (Veggie Grillers Crumbles)", "substitute": "Натрошено тофу или текстуриран соев протеин", "note": ""}
-  ]
+    {
+      "original": "Вегетарианска кайма (Veggie Grillers Crumbles)",
+      "substitute": "Натрошено тофу или текстуриран соев протеин",
+      "note": ""
+    }
+  ],
+  "recipe_file_hash": "73823390674aa0bfd67e8b766a21f1d2947fe651f6c1153662d361bb94907dac"
 }

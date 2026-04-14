@@ -101,6 +101,11 @@
   ],
   "notes": [],
   "substitutes": [
-    {"original": "Колард зелени листа", "substitute": "Зеле или спанак", "note": ""}
-  ]
+    {
+      "original": "Колард зелени листа",
+      "substitute": "Зеле или спанак",
+      "note": ""
+    }
+  ],
+  "recipe_file_hash": "e24fc1e40d56afe2b017063bf6ddff4d2002732407eabb13a776fda587fc854f"
 }

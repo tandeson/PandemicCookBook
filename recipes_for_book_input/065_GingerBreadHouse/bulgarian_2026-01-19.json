@@ -119,6 +119,11 @@
   ],
   "notes": [],
   "substitutes": [
-    {"original": "Крем тартара", "substitute": "Няколко капки лимонов сок", "note": "При разбиване на белтъци"}
-  ]
+    {
+      "original": "Крем тартара",
+      "substitute": "Няколко капки лимонов сок",
+      "note": "При разбиване на белтъци"
+    }
+  ],
+  "recipe_file_hash": "68c6bfdd2a6c068a5c9e4aaebe59f6dd56be08ce34ee105a2e28f3ab4f4139e4"
 }

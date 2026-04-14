@@ -82,6 +82,11 @@
   ],
   "notes": [],
   "substitutes": [
-    {"original": "Агар-агар на прах", "substitute": "Желатин (не е веган)", "note": ""}
-  ]
+    {
+      "original": "Агар-агар на прах",
+      "substitute": "Желатин (не е веган)",
+      "note": ""
+    }
+  ],
+  "recipe_file_hash": "f23fc6b0ecfb9aebaddeb47fbf56b1d214c860fb553787aad0ca60f4697b0f98"
 }
