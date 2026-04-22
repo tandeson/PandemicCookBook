@@ -27,8 +27,7 @@ import pickle
 ## Custom objects
 from IngredientList import C_INGREDIENTS
 from scripts.i18n import get_language_pack
-from scripts.translate import OpenAITranslator, LocalMapTranslator, CompositeTranslator
-from scripts.translation_runtime import set_translator
+from scripts.translation_runtime import set_translator, LocalMapTranslator
 
 ## For rendering options
 from scripts.CreateHtmlOut import genHtmlOut
@@ -109,26 +108,6 @@ def parseCommandLine(args = sys.argv[1:]):
         action='store', type=int, default=None,
         help = "Generate PDF for a single recipe by its 1-based number in sorted order.")
 
-    parser.add_argument(
-        '--translate',
-        action='store_true',
-        help = "Translate recipe content using OpenAI and cache results.")
-
-    parser.add_argument(
-        '--translation-cache',
-        action='store', default=os.path.join('translations', 'translation_cache.json'),
-        help = "Path to translation cache JSON file.")
-
-    parser.add_argument(
-        '--translation-model',
-        action='store', default='gpt-4o',
-        help = "OpenAI model for translation (default: gpt-4o).")
-
-    parser.add_argument(
-        '--refresh-translations',
-        action='store_true',
-        help = "Re-translate even if cache entries exist.")
-    
     parser.add_argument(
         '-v','--verbose',
         action='store_true',
@@ -512,7 +491,7 @@ def mainControl(args):
     ##------------------------------
 
     language_pack = get_language_pack(args.language)
-    if args.translate and args.language != 'en':
+    if args.language and args.language != 'en':
         language_slug = language_pack.get('latex', {}).get('language')
         if not language_slug:
             language_slug = language_pack.get('language_name', '').lower()
@@ -529,53 +508,31 @@ def mainControl(args):
                 _merge_translation_map(local_mapping, recipe_map)
                 recipe.local_substitutes = localized_data.get('substitutes', [])
 
-        local_translator = None
         if local_mapping:
-            local_translator = LocalMapTranslator(local_mapping, language_pack['language_name'])
+            set_translator(LocalMapTranslator(local_mapping, language_pack['language_name']))
 
-        api_key = os.environ.get('OPENAI_API_KEY')
-        openai_translator = None
-        if api_key:
-            openai_translator = OpenAITranslator(
-                api_key=api_key,
-                model=args.translation_model,
-                target_language=language_pack['language_name'],
-                cache_path=args.translation_cache,
-                refresh=args.refresh_translations,
+        if not localized_by_recipe:
+            raise Exception(
+                "No localized recipe files found for language '%s'." % args.language
             )
-
-        if local_translator and openai_translator:
-            set_translator(CompositeTranslator([local_translator, openai_translator]))
-        elif local_translator:
-            set_translator(local_translator)
-        elif openai_translator:
-            set_translator(openai_translator)
-        else:
-            set_translator(None)
-
-        if not openai_translator:
-            if not localized_by_recipe:
-                raise Exception(
-                    "No localized recipe files found for language '%s'." % args.language
-                )
-            filtered = {}
-            for name, recipe in cookbookData['Recipes']['inputObjects'].items():
-                if name in localized_by_recipe:
-                    filtered[name] = recipe
-            cookbookData['Recipes']['inputObjects'] = filtered
-            cookbookData['Recipes']['sorted_names'] = list(filtered.keys())
-            cookbookData['Recipes']['sorted_names'].sort()
-            if args.recipe_number is not None and not cookbookData['Recipes']['sorted_names']:
-                raise Exception(
-                    "No localized recipe file found for selected recipe number %s." % args.recipe_number
-                )
-            filtered_names = set(cookbookData['Recipes']['sorted_names'])
-            for ingredient in C_INGREDIENTS:
-                recipe_list = ingredient.info.get('recipeList', {})
-                ingredient.info['recipeList'] = {
-                    name: recipe for name, recipe in recipe_list.items()
-                    if name in filtered_names
-                }
+        filtered = {}
+        for name, recipe in cookbookData['Recipes']['inputObjects'].items():
+            if name in localized_by_recipe:
+                filtered[name] = recipe
+        cookbookData['Recipes']['inputObjects'] = filtered
+        cookbookData['Recipes']['sorted_names'] = list(filtered.keys())
+        cookbookData['Recipes']['sorted_names'].sort()
+        if args.recipe_number is not None and not cookbookData['Recipes']['sorted_names']:
+            raise Exception(
+                "No localized recipe file found for selected recipe number %s." % args.recipe_number
+            )
+        filtered_names = set(cookbookData['Recipes']['sorted_names'])
+        for ingredient in C_INGREDIENTS:
+            recipe_list = ingredient.info.get('recipeList', {})
+            ingredient.info['recipeList'] = {
+                name: recipe for name, recipe in recipe_list.items()
+                if name in filtered_names
+            }
     
     ## build up Git info
     gitRepo = git.Repo(search_parent_directories=True)
