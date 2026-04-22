@@ -32,7 +32,7 @@ def makeRecipe( dirPathRecipe, sharedIngredentList ):
         r.addIngredient('Spinach', 1, 'lb, fresh baby spinach, roughly chopped')
         r.addIngredient('Dill', 0.25, 'cup, fresh, chopped')
         r.addIngredient('Parsley', 2, 'tablespoons, fresh, chopped (optional)')
-        r.addIngredient('Vegetable Broth', 4, 'cups, warmed (chicken broth also works)')
+        r.addIngredient('Vegetable Broth', 4, 'cups, warmed')
         r.addIngredient('Salt', 0.5, 'tsp')
         r.addIngredient('Black Pepper', 0.25, 'tsp')
         r.addIngredient('Lemon', 1, 'small, zested and juiced')
