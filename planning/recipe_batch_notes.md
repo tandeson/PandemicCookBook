@@ -24,4 +24,7 @@
 - Status: English edits and Bulgarian translation completed (pending final review)
 
 ## Batch 121–140
-- Status: Not started
+- Status: In progress
+- 121–136: Bulgarian translations completed [2026-02-27]; English edits not yet reviewed
+- 137: Added 2026-04-13 (Cottage Cheese Pasta Bake); English + Bulgarian completed
+- 138: Added 2026-04-22 (Spanakorizo - Greek Spinach Rice); English + Bulgarian completed
