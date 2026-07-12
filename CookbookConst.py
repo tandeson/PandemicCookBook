@@ -37,7 +37,13 @@ C_BOOK_SECTIONS = [
 
 #*  Sections *****************************************************************
 C_RECIPE_FORMATING = [
-    ## Default used at first creation
+   ## Adaptive layouts. AUTO is the default; the force options are intended
+   ## for the small number of recipes that need a manual override.
+   'AUTO',
+   'FORCE_STANDARD',
+   'FORCE_LONG',
+
+   ## Default used at first creation
    'TWO_COLUMN_OPTIONAL_PICTURES',
    
    ## Taken from Web example 

@@ -24,7 +24,7 @@ from pathlib import Path
 from scripts.html_helpers import makeHtmlEmbedImgFromFile
 from CookbookConst import C_BOOK_SECTIONS, C_RECIPE_FORMATING
 
-from pylatex import Itemize, Figure, Command, NewLine, NoEscape, Package
+from pylatex import Itemize, Enumerate, Figure, Command, NewLine, NoEscape, Package
 from pylatex.utils import bold
 from scripts.translation_runtime import translate_text
 
@@ -130,6 +130,7 @@ class RecipeStep:
                     imgFigList.append( Command('end',['center'] ) )
                 
             if translated_text:
+                LaTexItemize.append(NoEscape(r'\needspace{3\baselineskip}'))
                 LaTexItemize.add_item(translated_text)
             
             for iFig in imgFigList:
@@ -213,7 +214,7 @@ class MyRecipe:
                 (self['RecipeSection']) 
                 )
         
-        self.setRecipeFormat( 'TWO_COLUMN_OPTIONAL_PICTURES' )
+        self.setRecipeFormat('AUTO')
 
     #-------------------------------------------------------------------------
     def getName(self):
@@ -492,7 +493,7 @@ class MyRecipe:
             dataBack += '</ul>'
         elif( 'LaTex' == genOutFormat or 'LaTex_noFig' == genOutFormat):
             if ( len( self.info['steps']) ):
-                itemize = Itemize() 
+                itemize = Enumerate()
                 for step in self.info['steps']:
                     step.genStepBlock( genOutFormat, self.getPathLoc(), LaTexDoc=LaTexDoc, LaTexItemize=itemize)
                 dataBack = itemize
