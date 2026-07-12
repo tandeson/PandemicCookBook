@@ -17,7 +17,7 @@ from scripts.html_helpers import makeHtmlEmbedImgFromFile
 ##  Constants ****************************************************************
 <%
 # PY-2.10
-# DELIMITER = "," 
+# DELIMITER = ","
 %>\
 ##============================================================================
 <html lang="${labels['html_lang']}">
@@ -28,150 +28,65 @@ ${labels['recipe_kicker']}: ${inRecipeData.getDisplayName()}
 </title>
 </head>
 <style>
-${makeHtmlStyle()}
 
-:root {
-  --ink: #1e1c19;
-  --muted: #6b6762;
-  --rule: #d6d0c4;
+% if inRecipeData.getPicturePrimary() == None:
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
 }
 
-body {
-  margin: 0;
+% else:
+
+/* Style the header */
+headerPic {
+  background-color: #666;
+  color: white;
+  width: 300px;
+  float: left;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  width: calc(100% - 300px);
+  float: left;
+}
+
+% endif
+
+nav {
+  float: left;
+  width: 30%;
+  background: #ccc;
   padding: 20px;
-  color: var(--ink);
-  background: #f2efe9;
   font-family: ${labels['html_font_family']};
 }
 
-.page {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 14px 18px;
-  background: #ffffff;
-  border: 1px solid var(--rule);
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  font-family: ${labels['html_font_family']};
 }
 
-.kicker {
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.7em;
-  color: var(--muted);
-  margin-bottom: 2px;
-}
-
-.recipe-layout {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 18px;
-  align-items: start;
-}
-
-.recipe-layout.no-photo {
-  grid-template-columns: 1fr;
-}
-
-.recipe-photo img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-.recipe-text {
-  line-height: 1.35;
-}
-
-.recipe-text h1 {
-  font-size: 2.1em;
-  margin: 0 0 6px 0;
-  line-height: 1.05;
-}
-
-.section {
-  padding-top: 8px;
-  margin-top: 8px;
-}
-
-.section:first-of-type {
-  padding-top: 0;
-  margin-top: 0;
-}
-
-.section + .section {
-  border-top: 1px solid var(--rule);
-}
-
-.ingredients h2,
-.steps h2,
-.notes h3 {
-  margin: 0 0 6px 0;
-  font-size: 1.1em;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.ingredients table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.95em;
-}
-
-.ingredients td {
-  padding: 1px 4px;
-  vertical-align: top;
-}
-
-.steps ul {
-  margin: 0;
-  padding-left: 1.2em;
-  list-style: decimal;
-}
-
-.steps ul ul {
-  list-style: lower-alpha;
-  margin-top: 4px;
-}
-
-.steps li {
-  margin-bottom: 0.45em;
-}
-
-.steps img {
-  max-width: 360px;
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-  margin-top: 6px;
-}
-
-.notes-list {
-  margin: 0;
-  padding-left: 1.2em;
-}
-
-.note-pics {
+/* Clear floats after the columns */
+bodySectionBlock {
+  content: "";
+  clear: both;
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 6px;
+  flex-direction: row;
 }
 
-.note-pic img {
-  width: 180px;
-  height: auto;
-  border-radius: 4px;
-}
-
-@media (max-width: 900px) {
-  .page {
-    padding: 16px;
-  }
-  .recipe-layout {
-    grid-template-columns: 1fr;
-  }
-}
+${makeHtmlStyle()}
 
 </style>
 
@@ -179,45 +94,42 @@ body {
 
 <body>
 
-<div class="page">
-
-<% 
-    hasPhoto = inRecipeData.getPicturePrimary() != None
-    notesBlock = inRecipeData.genNotesBlock('html')
-%>
-
-<div class="recipe-layout${' no-photo' if not hasPhoto else ''}">
-% if hasPhoto:
-<aside class="recipe-photo">
+<bodySectionBlock>
+% if inRecipeData.getPicturePrimary() != None:
+<headerPic>
     ${makeHtmlEmbedImgFromFile( inRecipeData.getPicturePrimary()['path']) }
-</aside>
+</headerPic>
 % endif
 
-<section class="recipe-text">
-  <div class="kicker">${labels['recipe_kicker']}</div>
-  <h1>${inRecipeData.getDisplayName()}</h1>
+<header>
+  <h2>
+  ${labels['recipe_kicker']}: ${inRecipeData.getDisplayName()}
+  </h2>
+</header>
+</bodySectionBlock>
 
-  <div class="section ingredients">
-  ## Generate the Ingredients List  
-  <h2>${labels['ingredients']}</h2>
-  ${inRecipeData.genIngredientsBlock()}
-  </div>
+<bodySectionBlock>
 
-  <div class="section steps">
-  <h2>${labels['steps']}</h2>
-  ${inRecipeData.genStepsBlock('html')}
-  </div>
+<nav>
 
-  % if notesBlock:
-  <div class="section notes">
-    <h3>${labels['notes']}</h3>
-    ${notesBlock}
-  </div>
-  % endif
-</section>
-</div>
+## Generate the Ingredients List
+<h1>${labels['ingredients']}</h1>
+${inRecipeData.genIngredientsBlock()}
+</nav>
 
-</div>
+<article>
+<h2>${labels['directions']}</h2>
+${inRecipeData.genStepsBlock('html')}
+<%
+notesBlock = inRecipeData.genNotesBlock('html')
+%>
+% if notesBlock:
+<h3>${labels['notes']}</h3>
+${notesBlock}
+% endif
+</article>
+
+</bodySectionBlock>
 
 ##============================================================================
 ## Footer
@@ -238,5 +150,5 @@ Template: ${genToolTemplate}<BR>
 
 </html>
 ## end of examples
-            
+
 ##****************************************************************************
