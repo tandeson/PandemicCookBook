@@ -272,7 +272,19 @@ def genRecipe(latexDoc, recipeName, recipeData, outLaTexAbsPath, labels):
     """
     Format a Recipe into LaTex
     """
-    genRecipeFormatCompactImageLeft(latexDoc, recipeName, recipeData, outLaTexAbsPath, labels)
+    fmt = recipeData.getRecipeFormat()
+    if fmt == 'TWO_COLUMN_OPTIONAL_PICTURES':
+        genRecipeFormatDefault(latexDoc, recipeName, recipeData, outLaTexAbsPath, labels)
+    elif fmt == 'FANCY_WIDE_PIC_OVER_DIRECTIONS':
+        genRecipeFormatFancyWidePic(latexDoc, recipeName, recipeData, outLaTexAbsPath, labels)
+    elif fmt == 'FANCY_TALL_PIC_OVER_INSTRUCTIONS':
+        genRecipeFormatFancyTallPic(latexDoc, recipeName, recipeData, outLaTexAbsPath, labels)
+    elif fmt == 'FANCY_LONG_RECIPE':
+        genRecipeFormatFancyLong(latexDoc, recipeName, recipeData, outLaTexAbsPath, labels)
+    elif fmt == 'TWO_COLUMN_LONG_FORMAT':
+        genRecipeFormatTopTwoColumn(latexDoc, recipeName, recipeData, outLaTexAbsPath, labels)
+    else:
+        raise Exception("Unknown Latex Recipe Format! - %s" % fmt)
 
 #=============================================================================
 # Helpers
@@ -284,9 +296,9 @@ def util_FancyBuildHeader( latexDoc, recipeName  ):
     Fancy Head build
     '''
     label = 'subsec:%s' % (util_sanitize_label(recipeName))
-    latexDoc.append( NoEscape(r'\begingroup\centering') )
-    latexDoc.append( Subsection( "%s" % ( translate_text(recipeName) ), label=label))
-    latexDoc.append( NoEscape(r'\par\endgroup') )
+    with latexDoc.create(Center()) as centered:
+        centered.append( Subsection( "%s" % ( translate_text(recipeName) ), label=label))
+    latexDoc.append( Command('hrule' ))
 
 #=============================================================================
 def util_reserve_recipe_header_space(latexDoc, lines=RECIPE_HEADER_NEEDSPACE_LINES):
@@ -295,10 +307,10 @@ def util_reserve_recipe_header_space(latexDoc, lines=RECIPE_HEADER_NEEDSPACE_LIN
 
 #=============================================================================
 def util_injectNotes(latexDoc, recipeData, labels):
-    latexDoc.append( Command('vspace', [RECIPE_VSPACE_SMALL] ) )
+    latexDoc.append( Command('vspace', ['10pt'] ) )
     latexDoc.append( LargeText( bold(labels['notes'])) )
-    latexDoc.append( NoEscape(r'\par')  )
-    latexDoc.append( 
+    latexDoc.append( NewLine()  )
+    latexDoc.append(
             SmallText( italic( recipeData.GetDescription() ))
         )
 #=============================================================================
@@ -354,7 +366,7 @@ def util_tex_image_path(imgPath, outLaTexAbsPath):
 
 #=============================================================================
 def genRecipeFormatTopTwoColumn(latexDoc, recipeName, recipeData, outLaTexAbsPath, labels):
-    
+
     ## Create Recipe Header
     util_reserve_recipe_header_space(latexDoc, RECIPE_HEADER_NEEDSPACE_LINES)
     picForRecipe = ''
@@ -362,15 +374,15 @@ def genRecipeFormatTopTwoColumn(latexDoc, recipeName, recipeData, outLaTexAbsPat
         picForRecipe = Figure(position='h!')
         picForRecipe.add_image(
             util_tex_image_path(recipeData.getPicturePrimary()['path'], outLaTexAbsPath),
-            width=NoEscape(r"0.4\textwidth") )
-    
+            width=NoEscape(r"0.3\textwidth") )
+
     if recipeData.GetDescription():
-        latexDoc.append( Command('vspace', [RECIPE_VSPACE_SMALL] ) )
-        latexDoc.append( 
+        latexDoc.append( Command('vspace', ['10pt'] ) )
+        latexDoc.append(
             italic( recipeData.GetDescription() )
         )
-        latexDoc.append( NoEscape(r'\par') )
-                                 
+        latexDoc.append( NewLine() )
+
     # Create Recipe body
 
     ##----
@@ -383,8 +395,8 @@ def genRecipeFormatTopTwoColumn(latexDoc, recipeName, recipeData, outLaTexAbsPat
             ingredPage.add_row( ('', ingredDat[1])  )
         else:
             if( ingredDat[3] != None):
-                ingredPage.add_row( 
-                    ingredDat[0], 
+                ingredPage.add_row(
+                    ingredDat[0],
                     NoEscape(
                         ingredDat[1] + ' ' +
                         ingredDat[2] +
@@ -393,10 +405,10 @@ def genRecipeFormatTopTwoColumn(latexDoc, recipeName, recipeData, outLaTexAbsPat
                 )
             else:
                 ingredPage.add_row( (ingredDat[0], ingredDat[1] + ' ' + ingredDat[2])  )
-    
-    ##---- Directions            
+
+    ##---- Directions
     dirPage =  recipeData.genStepsBlock('LaTex', latexDoc)
-    
+
     util_FancyBuildHeader(latexDoc, recipeName)
     with latexDoc.create( SmallText() ):
         latexDoc.append( Command('columnratio',[0.53]) )
@@ -406,9 +418,8 @@ def genRecipeFormatTopTwoColumn(latexDoc, recipeName, recipeData, outLaTexAbsPat
         latexDoc.append( ingredPage )
         latexDoc.append(  Command('end','paracol',packages=[ Package('paracol')]) )
         latexDoc.append( dirPage )
-        
-    latexDoc.append( NoEscape(r'\par') )
-    latexDoc.append( Command('vspace', [RECIPE_VSPACE_AFTER]) )
+
+    latexDoc.append( NewPage() )
   
 #=============================================================================
 def genRecipeFormatFancyLong(latexDoc, recipeName, recipeData, outLaTexAbsPath, labels):
@@ -426,64 +437,63 @@ def genRecipeFormatFancyLong(latexDoc, recipeName, recipeData, outLaTexAbsPath, 
             util_tex_image_path(recipeData.getPicturePrimary()['path'], outLaTexAbsPath),
             width=NoEscape(r"0.4\textwidth") )
     
-    latexDoc.append( Command('vspace', [RECIPE_VSPACE_SMALL] ) )
-    
+    latexDoc.append( Command('vspace', ['10pt'] ) )
+
     if recipeData.GetDescription():
-        latexDoc.append( 
+        latexDoc.append(
             italic( recipeData.GetDescription() )
         )
-        latexDoc.append( NoEscape(r'\par') )
-                                 
+        latexDoc.append( NewLine() )
+
     # Create Recipe body
-    
+
     latexDoc.append( NoEscape('\r') )
     latexDoc.append(
         Command('begin',
                 ['wrapfigure','r', NoEscape(r'0.5\textwidth')],
                 packages=[ Package('wrapfig')])
         )
-    
+
     for ingredDat in ingredLaTex:
         if ('' == ingredDat[0] and '' == ingredDat[2]):
             ## Special case for Grouped title in the middle column
             if( len(ingredDat[1])):
-                latexDoc.append( Command('vspace', [RECIPE_VSPACE_SMALL] ) )
+                latexDoc.append( Command('vspace', ['10pt'] ) )
                 latexDoc.append( NoEscape('\n') )
                 latexDoc.append( ingredDat[1] )
-                latexDoc.append( NoEscape(r'\par') )
+                latexDoc.append( NewLine() )
         else:
             if( ingredDat[3] != None):
-                latexDoc.append( 
+                latexDoc.append(
                     NoEscape(
-                        str(ingredDat[0]) + ' ' + 
-                        ingredDat[1] + ' ' + 
+                        str(ingredDat[0]) + ' ' +
+                        ingredDat[1] + ' ' +
                         ingredDat[2] + ', ' + util_page_ref_text(labels, ingredDat[3])
                         )
                     )
-                latexDoc.append( NoEscape(r'\par') )
+                latexDoc.append( NewLine() )
             else:
                 latexDoc.append( str(ingredDat[0]) + ' ' + ingredDat[1] + ' ' + ingredDat[2] )
-                latexDoc.append( NoEscape(r'\par') )
-    
-  
+                latexDoc.append( NewLine() )
+
+
     if( recipeData.getPicturePrimary() ):
         latexDoc.append( Command('begin', ['center']) )
         util_addPicNotInFig(
-            latexDoc, 
+            latexDoc,
             recipeData.getPicturePrimary()['path'],
             '0.3',
             outLaTexAbsPath)
         latexDoc.append( Command('end', ['center']) )
-        
+
     latexDoc.append( Command('end',['wrapfigure']) )
 
     recipeData.genStepsBlock('LaTex_indented_InjectHere', latexDoc)
-    
+
     ##----
     # Add in Ingredients
-         
-    latexDoc.append( NoEscape(r'\par') )
-    latexDoc.append( Command('vspace', [RECIPE_VSPACE_AFTER]) )
+
+    latexDoc.append( NewPage() )
     
 #=============================================================================
 def genRecipeFormatFancyTallPic(latexDoc, recipeName, recipeData, outLaTexAbsPath, labels):
@@ -519,61 +529,45 @@ def genRecipeFormatFancyTallPic(latexDoc, recipeName, recipeData, outLaTexAbsPat
     
     
     ###################
-    latexDoc.append( Command(
-        'begin',
-        ['tabularx', NoEscape(r"\textwidth"),
-         NoEscape(r'p{.5\textwidth}X')]))
-    
+    latexDoc.append( Command('begin',['tabularx',NoEscape(r"\textwidth"),  NoEscape(r' p{.5\textwidth}p{.01\textwidth}X')]))
+
     ## Column 1
     if( recipeData.getPicturePrimary() ):
-        latexDoc.append( Command('vspace', ['4pt'] ) )
+        latexDoc.append( Command('hline') )
+        latexDoc.append( Command('vspace', ['5pt'] ) )
         util_addPicNotInFig(
-            latexDoc, 
+            latexDoc,
             recipeData.getPicturePrimary()['path'],
             '0.40',
             outLaTexAbsPath)
-    
-    latexDoc.append( Command('vspace', [RECIPE_VSPACE_SMALL] ) )
-    latexDoc.append( LargeText( bold(labels['ingredients'])) )
-    latexDoc.append( NoEscape(r'\par') )
 
-#=============================================================================
-def util_addPicFixedSize(latexDoc, strPicPath, widthStr, heightStr, outLaTexAbsPath=None):
-    '''
-    Helper to put a fixed-size picture (width/height with aspect ratio).
-    '''
-    imgPath = strPicPath
-    if outLaTexAbsPath is not None:
-        imgPath = util_tex_image_path(strPicPath, outLaTexAbsPath)
-    latexDoc.append( Command(
-        'includegraphics',
-        NoEscape( imgPath ),
-        NoEscape(r'width=' + widthStr + r',height=' + heightStr + r',keepaspectratio'))
-    )
-    latexDoc.append( NoEscape(r'\par') )
+    latexDoc.append( Command('vspace', ['10pt'] ) )
+    latexDoc.append( LargeText( bold(labels['ingredients'])) )
+    latexDoc.append( NewLine() )
     latexDoc.append(ingredPage )
-    
-    
+
     latexDoc.append( NoEscape(r'&'))
-    
+
+    ## Column 2
+    latexDoc.append( Command('vrule depth  7in' ) )
+    latexDoc.append( NoEscape(r'&'))
+
     ## Column 3
-    latexDoc.append( Command('vspace', [RECIPE_VSPACE_SMALL] ) )
-    
+    latexDoc.append( Command('vspace', ['10pt'] ) )
+
     latexDoc.append( LargeText( bold(labels['directions'])) )
-    latexDoc.append( NoEscape(r'\par') )
+    latexDoc.append( NewLine() )
     latexDoc.append(recipeData.genStepsBlock('LaTex', latexDoc) )
-    
-    
+
     if recipeData.GetDescription():
         util_injectNotes(latexDoc, recipeData, labels)
-         
+
     latexDoc.append( NoEscape(r'\\'))
-    
+
     latexDoc.append( Command('end',['tabularx']))
-    
+
     ## Setup for next page
-    latexDoc.append( NoEscape(r'\par') )
-    latexDoc.append( Command('vspace', [RECIPE_VSPACE_AFTER]) )
+    latexDoc.append( NewPage() )
 
 #=============================================================================
 def genRecipeFormatFancyWidePic(latexDoc, recipeName, recipeData, outLaTexAbsPath, labels):
@@ -609,45 +603,45 @@ def genRecipeFormatFancyWidePic(latexDoc, recipeName, recipeData, outLaTexAbsPat
     
     
     ###################
-    latexDoc.append( Command(
-        'begin',
-        ['tabularx', NoEscape(r"\textwidth"),
-         NoEscape(r'p{.3\textwidth}X')]))
-    
+    latexDoc.append( Command('begin',['tabularx',NoEscape(r"\textwidth"),  NoEscape(r' p{.3\textwidth}p{.01\textwidth}X')]))
+
     ## Column 1
-    latexDoc.append( Command('vspace', [RECIPE_VSPACE_SMALL] ) )
+    latexDoc.append( Command('vspace', ['10pt'] ) )
     latexDoc.append( LargeText( bold(labels['ingredients'])) )
-    latexDoc.append( NoEscape(r'\par') )
+    latexDoc.append( NewLine() )
     latexDoc.append(ingredPage )
-    
+
     if recipeData.GetDescription():
-        latexDoc.append( Command('vspace', [RECIPE_VSPACE_SMALL] ) )
-        latexDoc.append( NoEscape(r'\par') )
+        latexDoc.append( Command('vspace', ['10pt'] ) )
+        latexDoc.append( NewLine() )
         util_injectNotes(latexDoc, recipeData, labels)
-    
+
     latexDoc.append( NoEscape(r'&'))
-    
+
+    ## Column 2
+    latexDoc.append( Command('vrule depth  7in' ) )
+    latexDoc.append( NoEscape(r'&'))
+
     ## Column 3
-    latexDoc.append( Command('vspace', [RECIPE_VSPACE_SMALL] ) )
+    latexDoc.append( Command('vspace', ['10pt'] ) )
     if( recipeData.getPicturePrimary() ):
         util_addPicNotInFig(
-            latexDoc, 
+            latexDoc,
             recipeData.getPicturePrimary()['path'],
             '0.55',
             outLaTexAbsPath)
-        latexDoc.append( Command('vspace', ['4pt'] ) )
-        latexDoc.append( NoEscape(r'\par') )
+        latexDoc.append( Command('vspace', ['5pt'] ) )
+        latexDoc.append( NewLine() )
 
     latexDoc.append( LargeText( bold(labels['directions'])) )
-    latexDoc.append( NoEscape(r'\par') )
+    latexDoc.append( NewLine() )
     latexDoc.append(recipeData.genStepsBlock('LaTex', latexDoc) )
     latexDoc.append( NoEscape(r'\\'))
-    
+
     latexDoc.append( Command('end',['tabularx']))
-    
+
     ## Setup for next page
-    latexDoc.append( NoEscape(r'\par') )
-    latexDoc.append( Command('vspace', [RECIPE_VSPACE_AFTER]) )
+    latexDoc.append( NewPage() )
 
 #=============================================================================
 def genRecipeFormatDefault(latexDoc, recipeName, recipeData, outLaTexAbsPath, labels):
@@ -663,15 +657,15 @@ def genRecipeFormatDefault(latexDoc, recipeName, recipeData, outLaTexAbsPath, la
         picForRecipe = Figure(position='h!')
         picForRecipe.add_image(
             util_tex_image_path(recipeData.getPicturePrimary()['path'], outLaTexAbsPath),
-            width=NoEscape(r"0.4\textwidth") )
-    
+            width=NoEscape(r"0.3\textwidth") )
+
     if recipeData.GetDescription():
-        latexDoc.append( Command('vspace', [RECIPE_VSPACE_SMALL] ) )
-        latexDoc.append( 
+        latexDoc.append( Command('vspace', ['10pt'] ) )
+        latexDoc.append(
             italic( recipeData.GetDescription() )
         )
-        latexDoc.append( NoEscape(r'\par') )
-                                 
+        latexDoc.append( NewLine() )
+
     # Create Recipe body
 
     ##----
@@ -684,20 +678,20 @@ def genRecipeFormatDefault(latexDoc, recipeName, recipeData, outLaTexAbsPath, la
             ingredPage.add_row( ('', ingredDat[1])  )
         else:
             if( ingredDat[3] != None):
-                ingredPage.add_row( 
-                    ingredDat[0], 
+                ingredPage.add_row(
+                    ingredDat[0],
                     (NoEscape(
-                        ingredDat[1] + ' ' + 
+                        ingredDat[1] + ' ' +
                         ingredDat[2] +
                         ', ' + util_page_ref_text(labels, ingredDat[3]))
                     )
                 )
             else:
                 ingredPage.add_row( (ingredDat[0], ingredDat[1] + ' ' + ingredDat[2])  )
-    
-    ##---- Directions            
+
+    ##---- Directions
     dirPage =  recipeData.genStepsBlock('LaTex', latexDoc)
-    
+
     with latexDoc.create( SmallText() ):
         latexDoc.append( Command('columnratio',[0.53]) )
         latexDoc.append( Command('begin',['paracol', 2], packages=[ Package('paracol')]) )
@@ -706,9 +700,8 @@ def genRecipeFormatDefault(latexDoc, recipeName, recipeData, outLaTexAbsPath, la
         latexDoc.append(  Command('switchcolumn',packages=[ Package('paracol')]) )
         latexDoc.append( dirPage )
         latexDoc.append(  Command('end','paracol',packages=[ Package('paracol')]) )
-    
-    latexDoc.append( NoEscape(r'\par') )
-    latexDoc.append( Command('vspace', [RECIPE_VSPACE_AFTER]) )
+
+    latexDoc.append( NewPage() )
 
 #=============================================================================
 def genRecipeFormatCompactImageLeft(latexDoc, recipeName, recipeData, outLaTexAbsPath, labels):
