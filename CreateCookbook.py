@@ -32,6 +32,7 @@ from scripts.translation_runtime import set_translator, LocalMapTranslator
 ## For rendering options
 from scripts.CreateHtmlOut import genHtmlOut
 from scripts.CreateLaTexOut import genLaTexOut
+from scripts.generate_recipe_completeness_report import generate_report
 from scripts import myRecipe
 
 #*  Constants ****************************************************************
@@ -566,7 +567,10 @@ def mainControl(args):
         with open( Path( os.path.join(outAbsPath, 'img', pkl_photo_name)), 'wb') as handle:
             pickle.dump(pkl_photo_dic, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-    
+    # Keep the recipe audit in sync with every successful cookbook build.
+    report_path, recipe_count = generate_report(Path(args.input_directory))
+    print("Wrote %s (%d recipes audited)" % (report_path, recipe_count))
+
     return True
 
 #*  Main Code Path ***********************************************************
